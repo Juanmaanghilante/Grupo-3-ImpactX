@@ -1,0 +1,23 @@
+{
+  "name": "grupo-3-impactx",
+  "version": "1.0.0",
+  "description": "Nuestra nueva start-up se dedica al desarrollo de software de ventas, páginas web y marketing. Nuestros productos y servicios están diseñados para satisfacer las necesidades específicas de cada cliente, el segmento al que apuntamos son pequeñas y medianas empresas que necesiten innovar en software y marketing, con soluciones personalizables y fáciles de usar.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juanmaanghilante/Grupo-3-ImpactX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juanmaanghilante/Grupo-3-ImpactX/issues"
+  },
+  "homepage": "https://github.com/Juanmaanghilante/Grupo-3-ImpactX#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
