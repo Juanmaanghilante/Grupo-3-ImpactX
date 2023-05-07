@@ -26,7 +26,7 @@ Nuestro objetivo es proporcionar a las empresas las herramientas y servicios de 
 - Subscription Marketing médium
 - Subscription Marketing pro
 
-## Integrate
+## Integrates
 
 - Alex Cho
 - Felipe Leon
