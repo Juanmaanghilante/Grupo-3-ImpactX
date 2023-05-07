@@ -34,3 +34,7 @@ Nuestro objetivo es proporcionar a las empresas las herramientas y servicios de 
     - El segmento al que apunta, el diseño idea de servicios divididos por categoría.
 - https://humorojo.com/?gclid=Cj0KCQjwgLOiBhC7ARIsAIeetVALr6_up7pF_m5F4c0j0SGtxyoLzUPELIPrIvGORQkU4myQz5fDL30aAoinEALw_wcB 
     - De esta página tomamos las herramientas con las que trabajan.
+- https://web.minehost.com.ar/buy/index.php
+    - De aca tomamos la idea de la venta de packs que agrupen servicios con distintas caracteristicas.
+- https://www.inviu.com.ar
+    - Nos inspiramos en esta página por su diseño simple, animaciones suaves y adaptabilidad a diferentes dispositivos. También nos llamó la atención su consistencia en la paleta de colores, utilizándola de manera coherente en toda la página, desde logotipos hasta textos e infografías.
