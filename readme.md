@@ -26,6 +26,14 @@ Nuestro objetivo es proporcionar a las empresas las herramientas y servicios de 
 - Subscription Marketing médium
 - Subscription Marketing pro
 
+## Integrate
+
+- Alex Cho
+- Felipe Leon
+- Juan Martin Anghilante
+- Tomas A. Garcia Tarantino
+- Richard Mazo
+
 ## Sitios de referencia
 
 - https://www.spacex.com/ 
