@@ -33,6 +33,9 @@ Nuestro objetivo es proporcionar a las empresas las herramientas y servicios de 
 - Juan Martin Anghilante
 - Tomas A. Garcia Tarantino
 - Richard Mazo
+- Nicolas Prados
+- Victor R. Ojeda
+- Cristian Lopez
 
 ## Sitios de referencia
 
