@@ -9,6 +9,6 @@ app.listen(3000, () => {
   console.log('Servidor en puerto 3000')
 });
 
-app.get('/singup', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/singup.html'));
 });
