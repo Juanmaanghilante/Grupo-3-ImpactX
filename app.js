@@ -19,3 +19,7 @@ app.get('/', (req, res) => {
 app.get('/singup', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/singup.html'));
 });
+
+app.get('/product', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/product.html'));
+});
