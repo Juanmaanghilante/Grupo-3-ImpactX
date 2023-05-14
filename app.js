@@ -27,3 +27,8 @@ app.get('/product', (req, res) => {
 app.get('/footer', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/footer.html'));
 });
+
+
+app.get('/header', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/header.html'));
+});
