@@ -16,8 +16,8 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/singup', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/singup.html'));
+app.get('/signup', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/signup.html'));
 });
 
 app.get('/product', (req, res) => {
