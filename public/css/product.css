@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font: "Arial", "sans-sherif";
+    background-color: #1e3442;
+    color: white;
+}
+
+body article {
+    
+}
