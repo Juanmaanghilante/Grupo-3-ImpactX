@@ -1,12 +1,12 @@
 body {
-    display: flex;
+    background-color: #1e34;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
     flex-direction: row;
-    align-items: center;
-    font: "Arial", "sans-sherif";
-    background-color: #1e3442;
-    color: white;
+    display: flex;
 }
 
-body article {
-    
+article h1 {
+    font-size: 24px;
+    font-weight: bold;
 }
