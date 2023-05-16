@@ -1,0 +1,91 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #1e3442;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-right: 50px;
+  background-color: #283c4f;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.image-sign-up {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.create-form {
+  width: 100%;
+}
+
+.control-formulario {
+  margin-bottom: 15px;
+}
+
+.control {
+  font-size: 11px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+}
+
+.boton-formulario {
+  display: block;
+  margin: 0 auto;
+  background: #000;
+  border: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.titulo-registrar-usuario {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (min-width: 361px) {
+  .titulo-registrar-usuario {
+    font-size: 20px;
+  }  
+  .boton-formulario{
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .content {
+    padding: 100px; 
+  }
+  .control {
+    font-size: 16px;
+  }
+  .image-sign-up {
+    max-width: 25vw;
+  }
+  .titulo-registrar-usuario {
+    font-size: 22px;
+  }   
+  .boton-formulario{
+    font-size: 20px;
+  }  
+}
