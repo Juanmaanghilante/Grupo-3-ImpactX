@@ -4,14 +4,14 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: 'Hanken Grotesk', sans-serif;
+    
   }  
 
 
   .heroSection {
     display: flex;
     flex-direction: column;
-
-    height: 100vh; 
+    padding-bottom: 3.5rem;
     overflow: hidden;
   }
   .heroImg {
@@ -46,6 +46,10 @@
   .heroSection h2{
     font-size: 2.25rem;
     font-weight: 300;
+  }
+
+  .heroSection h1 {
+    color: #161C2D;
   }
   .heroSection h2 {
     color: #185ABC;
@@ -118,20 +122,46 @@
   
 
 
+/* Seccion Quienes Somos */
+  .seccionQuienesSomos {
+    overflow: hidden;
+    padding: 1.5rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  }
+
+  .imagenQuienesSomos {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    border-bottom-right-radius: 150px;
+  }
+
+  .containerTextoQuienesSomos {
+    margin-top: 1.5rem;
+  }
+
+
+  .containerTextoQuienesSomos h2 {
+    color: #185ABC;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .containerTextoQuienesSomos p {
+    color: #869AB8;
+    line-height: 1.5;
+  }
 
 
 
 
 
 
-
-
-
-
-
-
-
-  
   
   /* seccion de contactanos */
   .formulario-contacto {
