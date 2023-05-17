@@ -1,0 +1,80 @@
+
+
+/* seccion de quienes confiaron en nosotros */
+.confiaron {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid black;
+    
+  }
+  
+  .confiaron h2 {
+    margin-bottom: 20px;
+  }
+  
+  .confiaron .imagenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .confiaron img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 10px;
+  }
+ 
+  
+  
+  /* seccion de contactanos */
+  .formulario-contacto {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+   
+  }
+  
+  .formulario-contacto h2 {
+    margin-bottom: 20px;
+    
+  }
+  
+  .formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .formulario-contacto label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  }
+  
+  .formulario-contacto button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .formulario-contacto button:hover {
+    background-color: #45a049;
+  }
+  
