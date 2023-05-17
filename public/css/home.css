@@ -78,3 +78,62 @@
     background-color: #45a049;
   }
   
+
+/* media queries para quienes confiaron en nosotros y formulario  */
+  @media (min-width: 361px) {
+    /* Estilos para dispositivos con una resolución mínima de 361px */
+  
+    /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
+    .confiaron {
+      padding: 30px;
+    }
+  
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 30px;
+    }
+  
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .imagenes img {
+      width: 220px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* Estilos para dispositivos con una resolución mínima de 768px (tabletas y pantallas más grandes) */
+  
+    /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
+    .confiaron {
+      padding: 40px;
+    }
+  
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 40px;
+    }
+  
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .imagenes img {
+      width: 250px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    /* Estilos para dispositivos con una resolución mínima de 1200px (pantallas de escritorio más grandes) */
+  
+    /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
+    .confiaron {
+      padding: 60px;
+    }
+  
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 60px;
+    }
+  
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .imagenes img {
+      width: 300px;
+    }
+  } 
+  /* fin media queries para formulario y quienes confiaron en nosotros */
