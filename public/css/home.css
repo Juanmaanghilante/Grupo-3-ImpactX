@@ -39,6 +39,8 @@
     color: #869AB8;
     line-height: 1.5;
     margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    max-width: 520px;
   }
 
 
@@ -79,10 +81,47 @@
     
   }
 
+  /* Seccion Quienes Somos */
+  .seccionQuienesSomos {
+    overflow: hidden;
+    padding: 1.5rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  }
+
+  .imagenQuienesSomos {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    border-bottom-right-radius: 150px;
+  }
+
+  .containerTextoQuienesSomos {
+    margin-top: 1.5rem;
+  }
+
+
+  .containerTextoQuienesSomos h2 {
+    color: #185ABC;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .containerTextoQuienesSomos p {
+    color: #869AB8;
+    line-height: 1.5;
+  }
+
+
+
 
   /* Sección Servicios Productos */
     .seccionServiciosProductos {
-      background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+      /* background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%); */
       padding-top: 3rem;
       padding-bottom: 3rem;
       padding-left: 1.5rem;
@@ -144,10 +183,6 @@
       margin-top: 4rem;
     }
 
-    .tarjetasProductos {
-      border-top-color: #185ABC;
-    }
-
 
 
 
@@ -192,41 +227,6 @@
  
   
 
-
-/* Seccion Quienes Somos */
-  .seccionQuienesSomos {
-    overflow: hidden;
-    padding: 1.5rem;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
-  }
-
-  .imagenQuienesSomos {
-    width: 100%;
-    object-fit: cover;
-    border-radius: .5rem;
-    border-bottom-right-radius: 150px;
-  }
-
-  .containerTextoQuienesSomos {
-    margin-top: 1.5rem;
-  }
-
-
-  .containerTextoQuienesSomos h2 {
-    color: #185ABC;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .containerTextoQuienesSomos p {
-    color: #869AB8;
-    line-height: 1.5;
-  }
 
 
 
@@ -284,3 +284,97 @@
     background-color: #45a049;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (min-width: 1200px) {
+
+    /* SECCION HERO IMAGEN PRINCIPAL */
+    .heroSection {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      height: 100vh;
+    }
+
+
+
+    .contenedorTexto {
+      text-align: left;
+    }
+
+    .contenedorTexto h1 {
+      font-size: 4rem;
+    }
+
+    .contenedorTexto h2 {
+      font-size: 4rem;
+    }
+
+    .heroImg {
+      width: 1000px;
+    }
+
+
+
+    /* SECCION QUIENES SOMOS EN HOME */
+    .seccionQuienesSomos {
+      display: flex;
+      flex-direction: row;
+      height: 50vh;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-top: 3rem;
+
+      margin-bottom: 2rem;
+    }
+
+    .imagenQuienesSomos {
+      width: 500px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .containerTextoQuienesSomos {
+      max-width: 500px;
+    }
+
+
+
+
+
+    /* SECCIÓN PRODUCTOS Y SERVICIOS EN HOME */
+    .seccionServiciosProductos {
+      
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+    }
+
+    .tarjetasServiciosProductos {
+      margin-top: 0px;
+      padding-bottom: 5rem;
+    }
+
+    .tarjetasServiciosProductos article:nth-child(4) {
+      border-bottom: none;
+    }
+    .tarjetasServiciosProductos:first-of-type article:nth-child(2) {
+      border-bottom: none;
+    }
+
+    .containerTextoProductos {
+      margin-top: 0px;
+    }
+  }
