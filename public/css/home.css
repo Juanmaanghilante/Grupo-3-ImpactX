@@ -215,6 +215,7 @@
     padding: 20px;
     border: 2px solid black;
     
+    
   }
   
   .confiaron h2 {
@@ -235,6 +236,12 @@
     margin: 10px;
   }
  
+  .imagenes{
+    display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        height: 100vh;
+  }
   
 
 
@@ -388,7 +395,6 @@
       margin-top: 0px;
     }
   }
-
 
 
 
