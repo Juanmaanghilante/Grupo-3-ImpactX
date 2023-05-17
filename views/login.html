@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <a href="/"><img src="" alt="Logo ImpactX" /></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="">Nosotros</a></li>
-          <li><a href="">Producto</a></li>
-          <li><a href="">Contacto</a></li>
-          <li><a href="">Registrarse</a></li>
-        </ul>
-      </nav>
-      <div class="shopping-cart">
-        <a href="#"><i class="fas fa-shopping-cart"></i></a>
-      </div>
-      <div class="burger-menu">
-        <i class="fa fa-bars burger"></i>
-      </div>
-    </header>
-    <form action="/ingresar-usuario" method="POST" class="create-form">
-      <div class="control-formulario">
-        <input
-          type="text"
-          name="usuario"
-          class="control"
-          placeholder="Usuario"
-          required
-        />
-      </div>
-      <div class="control-formulario">
-        <input
-          type="password"
-          name="password"
-          class="control"
-          placeholder="Contraseña"
-          required
-        />
-      </div>
-      <button type="submit" class="boton-formulario">Log In</button>
-    </form>
-    <footer>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles_signup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100&family=Lato:ital,wght@1,100&family=Roboto:wght@100;400&display=swap"
+    rel="stylesheet">
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/"><img src="" alt="Logo ImpactX" /></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="">Nosotros</a></li>
+        <li><a href="">Producto</a></li>
+        <li><a href="">Contacto</a></li>
+        <li><a href="">Registrarse</a></li>
+      </ul>
+    </nav>
+    <div class="shopping-cart">
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+    <div class="burger-menu">
+      <i class="fa fa-bars burger"></i>
+    </div>
+  </header>
+  <form action="/ingresar-usuario" method="POST" class="create-form">
+    <div class="content">
       <div>
-          <ul>
-              <li>Asesoramiento</li>
-              <li>Medios de pago</li>
-              <li>Politicas de privacidad y uso</li>
-          </ul>
-
-          <ul>
-              <li>Legales</li>
-              <li>Preguntas Frecuentes</li>
-              <li>Trabaja con nosotros</li>
-          </ul>
-          
-          <p>¡Encontranos en nuestra redes!</p>
-
-          <a href="https://twitter.com/ImpactXServices" target="_blank
-          ">Twitter</i></a>
-          <a href="https://www.instagram.com/ImpactXServices" target="_blank">Instagram</i></a>
-          <a href="https://www.facebook.com/ImpactXServices" target="_blank">Facebook</i></a>
-          <a href="https://www.youtube.com/ImpactXServices" target="_blank">Youtube</a>
-
-          <p>2023 ImpactX - Todos los derechos reservados</p>
+        <h2 class="titulo-registrar-usuario">Registrar usuario</h2>
+        <img src="https://i.kym-cdn.com/entries/icons/original/000/033/340/yoda.jpg" alt="" class="image-sign-up" />
       </div>
-  </footer>    
-  </body>
+      <div>
+        <div class="control-formulario">
+          <input type="text" name="usuario" class="control" placeholder="Usuario" required />
+        </div>
+        <div class="control-formulario">
+          <input type="password" name="password" class="control" placeholder="Contraseña" required />
+        </div>
+        <button type="submit" class="boton-formulario">Ingresar</button>
+      </div>
+    </div>
+  </form>
+  <footer>
+    <div>
+      <ul>
+        <li>Asesoramiento</li>
+        <li>Medios de pago</li>
+        <li>Politicas de privacidad y uso</li>
+      </ul>
+
+      <ul>
+        <li>Legales</li>
+        <li>Preguntas Frecuentes</li>
+        <li>Trabaja con nosotros</li>
+      </ul>
+
+      <p>¡Encontranos en nuestra redes!</p>
+
+      <a href="https://twitter.com/ImpactXServices" target="_blank
+          ">Twitter</i></a>
+      <a href="https://www.instagram.com/ImpactXServices" target="_blank">Instagram</i></a>
+      <a href="https://www.facebook.com/ImpactXServices" target="_blank">Facebook</i></a>
+      <a href="https://www.youtube.com/ImpactXServices" target="_blank">Youtube</a>
+
+      <p>2023 ImpactX - Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+
 </html>
