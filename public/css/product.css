@@ -1,16 +1,6 @@
 body {
-    background-color: #1e34;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;    
     display: flex;
-    flex-direction: row;
-}
-
-article h1{
-    font-size: 100%;
-    font-weight: bold;
-}
-
-nav ul li article {
-    list-style-type: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;
 }
