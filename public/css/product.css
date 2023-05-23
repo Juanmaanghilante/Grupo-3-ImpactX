@@ -57,8 +57,7 @@ p {
     transition: color 0.5s ease-in-out;
 }
 
-/* Mobile Styles */
-@media (max-width: 767px) {
+@media (min-width:361px) {
 .cadaProducto {
     padding: 15px;
     margin: 10px;
@@ -69,8 +68,7 @@ p {
 }
 }
 
-/* Computer Styles */
-@media (min-width: 1366px) {
+@media (min-width: 768px) {
 .cadaProducto {
     padding: 30px;
     margin: 30px;
