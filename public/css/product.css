@@ -1,12 +1,12 @@
-body {
+.bodyProductos {
     font-family: 'Hanken Grotesk', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-image: url('/img/heroimg.jpg');
 }
 
 nav {
-    background-color: white;
+    background-image: url('/img/heroimg.jpg');
     padding: 20px;
 }
 
@@ -20,9 +20,9 @@ ul {
 }
 
 .cadaProducto {
-    background-color: #fff;
+    background-color: #FFF8DC;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     padding: 20px;
     text-align: center;
     margin: 20px;
@@ -40,71 +40,48 @@ ul {
     height: 100%;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-p {
-    margin: 10px 0;
+.bodyProduct p {
+    margin: 10px;
 }
 
-@media (max-width: 767px) {
-.cadaProducto:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
+@media (min-width:361px) {
+    .cadaProducto {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .nombreProducto {
+        font-size: 18px;
+    }
 }
 
-/*
+@media (min-width: 1361px) {
+    .cadaProducto {
+        padding: 30px;
+        margin: 30px;
+    }
+
+    .nombreProducto {
+        font-size: 30px;
+    }
+
+    .cadaProducto:hover {
+        transform: scale(1.05);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .nombreProducto:hover {
+        color: #185ABC;
+        transition: color 0.5s ease-in-out;
+    }
+
+    /*
 .picture:hover {
     transform: scale(1.05);
     transition: transform 0.5s ease-in-out;
 }
 */
-
-.nombreProducto:hover {
-    color: #185ABC;
-    transition: color 0.5s ease-in-out;
 }
-
-@media (min-width:361px) {
-.cadaProducto {
-    padding: 15px;
-    margin: 10px;
-}
-
-.nombreProducto {
-    font-size: 18px;
-}
-}
-
-@media (max-width: 1023px) {
-.cadaProducto {
-    padding: 20px;
-    margin: 15px;
-}
-
-.nombreProducto {
-    font-size: 22px;
-}
-}
-
-@media (max-width: 1365px) {
-.cadaProducto {
-    padding: 25px;
-    margin: 20px;
-}
-
-.nombreProducto {
-    font-size: 26px;
-}
-}
-
-@media (min-width: 1366px) {
-.cadaProducto {
-    padding: 30px;
-    margin: 30px;
-}
-
-.nombreProducto {
-    font-size: 30px;
-}
-}}
