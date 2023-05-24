@@ -47,11 +47,18 @@ p {
     margin: 10px;
 }
 
+.cadaProducto:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+
+/*
 .picture:hover {
     transform: scale(1.05);
     transition: transform 0.5s ease-in-out;
 }
-  
+*/
+
 .nombreProducto:hover {
     color: #185ABC;
     transition: color 0.5s ease-in-out;
