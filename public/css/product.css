@@ -48,6 +48,24 @@ p {
 }
 
 @media (max-width: 767px) {
+.cadaProducto:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+
+/*
+.picture:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+*/
+
+.nombreProducto:hover {
+    color: #185ABC;
+    transition: color 0.5s ease-in-out;
+}
+
+@media (min-width:361px) {
 .cadaProducto {
     padding: 15px;
     margin: 10px;
@@ -89,4 +107,4 @@ p {
 .nombreProducto {
     font-size: 30px;
 }
-}
+}}
