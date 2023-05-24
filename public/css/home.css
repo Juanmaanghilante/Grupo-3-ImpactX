@@ -7,18 +7,25 @@
     
   }  
 
-
   .heroSection {
     display: flex;
     flex-direction: column;
-    padding-bottom: 3.5rem;
     overflow: hidden;
   }
   .heroImg {
-    align-self: center;
-    object-fit: cover;
-    max-width: 100%;
-    height: auto;
+    z-index: -1;
+    height: 100vh; 
+    background-image: url('/img/heroimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
   }
   .contenedorInfoHero {
@@ -26,17 +33,17 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
   }
 
   .contenedorTexto {
-    text-align: center;
+    /* text-align: center; */
     margin-bottom: 1rem;
   }
 
   .subHeading{
     font-size: 1rem;
-    color: #869AB8;
+    color: #ffffff;
     line-height: 1.5;
     margin-bottom: 3rem;
     margin-top: 2.5rem;
@@ -51,10 +58,11 @@
   }
 
   .heroSection h1 {
-    color: #161C2D;
+    color: #ffffff;
+    font-size: 3.7rem;
   }
   .heroSection h2 {
-    color: #185ABC;
+    color: #ffffff;
   }
 
   .botonContactanos {
@@ -77,8 +85,8 @@
     color: #185ABC;
     font-weight: 500;
     text-decoration: none;
-    border: none;
-    background-color: rgba(24,90,188,0.1);
+    border: solid 1px #185ABC;
+    background-color: rgb(117, 172, 255);
     padding: 20px 18px;
 
     border-radius: 0.375rem;
@@ -88,43 +96,15 @@
   }
 
   .botonVerMas:hover {
+    color: white;
     box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.3);
   }
 
-  /* Seccion Quienes Somos */
-  .seccionQuienesSomos {
-    overflow: hidden;
-    padding: 1.5rem;
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
-  }
-
-  .imagenQuienesSomos {
-    width: 100%;
-    object-fit: cover;
-    border-radius: .5rem;
-    border-bottom-right-radius: 150px;
-  }
-
-  .containerTextoQuienesSomos {
-    margin-top: 1.5rem;
-  }
 
 
-  .containerTextoQuienesSomos h2 {
-    color: #185ABC;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  .containerTextoQuienesSomos p {
-    color: #869AB8;
-    line-height: 1.5;
-  }
+
+  
+
 
 
 
@@ -160,7 +140,7 @@
       background-color: white;
       box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.1);
       border-radius: 8px;
-      border-top: solid 3px #2fca9c;
+      border-top: solid 3px #2566c6;
       padding: 1.5rem;
 
       text-align: left;
@@ -198,6 +178,41 @@
 
 
 
+  /* Seccion Quienes Somos */
+  .seccionQuienesSomos {
+    overflow: hidden;
+    padding: 1.5rem;
+    width: 100%;
+    /* height: 50vh; */
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  }
+
+  .imagenQuienesSomos {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
+    border-bottom-right-radius: 150px;
+  }
+
+  .containerTextoQuienesSomos {
+    margin-top: 1.5rem;
+  }
+
+
+  .containerTextoQuienesSomos h2 {
+    color: #185ABC;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  .containerTextoQuienesSomos p {
+    color: #869AB8;
+    line-height: 1.5;
+  }
 
 
 
@@ -209,39 +224,37 @@
 
 
 
-/* seccion de quienes confiaron en nosotros */
-  .confiaron {
+  /* Seccion Quienes Confiaron */
+  .seccionConfiaron {
     text-align: center;
     padding: 20px;
     border: 2px solid black;
-    background-color: #161C2D;
+    
+    
   }
-  
-  .confiaron h2 {
-    margin-bottom: 20px;
-  }
-  
-  .confiaron .imagenes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  .confiaron img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    margin: 10px;
-  }
- 
+   
   .imagenes{
     display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  } 
+
+  .imagenes img {
+    margin-bottom: 3rem;
+  }
+
+  .imagenes img {
+    object-fit: cover;
   }
   
+  .seccionConfiaron h2 {
+    margin-bottom: 2rem;
+    color: #185ABC;
+  }
+
+  
+
 
 
 
@@ -319,28 +332,35 @@
 
     /* SECCION HERO IMAGEN PRINCIPAL */
     .heroSection {
-      display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-      height: 100vh;
+      width: 100%;
+    } 
+    .heroImg {
+      width: 100%;
     }
 
+    .contenedorInfoHero {
+      align-items: center;
+      justify-content: center;
+    }
+    
 
 
     .contenedorTexto {
-      text-align: left;
+      text-align: center;
+      margin-bottom: 5rem;
     }
 
+    .subHeading {
+      margin: auto;
+      font-size: 1rem;
+
+    }
     .contenedorTexto h1 {
-      font-size: 4rem;
+      font-size: 5rem;
     }
 
     .contenedorTexto h2 {
-      font-size: 4rem;
-    }
-
-    .heroImg {
-      width: 1000px;
+      font-size: 5rem;
     }
 
 
@@ -402,11 +422,6 @@
 @media (min-width: 361px) {
   /* Estilos para dispositivos con una resolución mínima de 361px */
 
-  /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
-  .confiaron {
-    padding: 30px;
-  }
-
   /* Estilos para el formulario de contacto */
   .formulario-contacto {
     padding: 30px;
@@ -419,32 +434,26 @@
 }
 
 @media (min-width: 768px) {
-  /* Estilos para dispositivos con una resolución mínima de 768px (tabletas y pantallas más grandes) */
-
-  /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
-  .confiaron {
-    padding: 40px;
-  }
-
   /* Estilos para el formulario de contacto */
   .formulario-contacto {
     padding: 40px;
   }
 
   /* Estilos para las imágenes en el contenedor "imagenes" */
-  .imagenes img {
-    width: 250px;
+  .seccionConfiaron .imagenes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .seccionConfiaron .imagenes img {
+    width: 200px;
+    margin-right: 1rem;
   }
 }
 
 @media (min-width: 1200px) {
   /* Estilos para dispositivos con una resolución mínima de 1200px (pantallas de escritorio más grandes) */
-
-  /* Estilos para la sección "¿Quiénes confiaron en nosotros?" */
-  .confiaron {
-    padding: 60px;
-  }
-
   /* Estilos para el formulario de contacto */
   .formulario-contacto {
     padding: 60px;
@@ -453,5 +462,87 @@
   /* Estilos para las imágenes en el contenedor "imagenes" */
   .imagenes img {
     width: 300px;
+  }
+}
+
+footer {
+  background-image: #f2f2f2;
+  width: 100%;
+  color: rgb(91, 80, 80);
+  font-size: 16px;
+  opacity: 75%;
+}
+
+footer .referencias {
+  width: 100%;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+
+}
+
+footer div ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer div ul li {
+  padding-bottom: 30px;
+  color: rgb(91, 80, 80);
+}
+
+.referencias a {
+  text-decoration: none;
+  color: rgb(91, 80, 80);;;
+}
+
+.head-redes {
+  text-align: center;
+  border-top: 1px solid rgb(91, 80, 80);;
+  padding-top:30px;
+  padding-bottom:20px
+}
+
+ul.links-redes {
+  text-align: center;
+  
+}
+
+ul.links-redes li a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(91, 80, 80);
+}
+
+.referencias ul li a:hover {
+  text-decoration: underline;
+  color: rgba(73, 73, 151, 0.649)
+}
+
+.redes ul li a:hover{
+  text-decoration: underline;
+  color: rgba(73, 73, 151, 0.649)
+}
+
+.copyright {
+  padding-top:10px
+}
+
+@media (min-width:361px) {
+  footer .referencias {
+      display: flex;
+      justify-content: space-around;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .links-redes {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      margin: auto;
   }
 }
