@@ -1,110 +1,68 @@
 .bodyProductos {
-    font-family: 'Hanken Grotesk', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-}
-
-.bodyProductos nav {
-    background-color: white;
-    padding: 20px;
-}
-
-.bodyProductos ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  font-family: 'Hanken Grotesk', sans-serif;
+  background-image: url('/img/heroimg.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cadaProducto {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    text-align: center;
-    margin: 20px;
-    max-width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #FFF8DC;
 }
 
 .nombreProducto {
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .picture {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  object-fit: cover;
 }
 
 .bodyProductos p {
-    margin: 10px 0;
+  margin: 20px;
 }
 
-@media (max-width: 767px) {
-.cadaProducto:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
-}
+@media (max-width: 768px) {
+  .bodyProductos {
+    flex-direction: column;
+    align-items: center;
+  }
 
-/*
-.picture:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
-}
-*/
-
-.nombreProducto:hover {
-    color: #185ABC;
-    transition: color 0.5s ease-in-out;
-}
-
-@media (min-width:361px) {
-.cadaProducto {
-    padding: 15px;
+  .cadaProducto {
+    text-align: center;
     margin: 10px;
+    padding: 10px;
+  }
 }
 
-.nombreProducto {
-    font-size: 18px;
-}
-}
-
-@media (max-width: 1023px) {
-.cadaProducto {
-    padding: 20px;
-    margin: 15px;
-}
-
-.nombreProducto {
-    font-size: 22px;
-}
-}
-
-@media (max-width: 1365px) {
-.cadaProducto {
-    padding: 25px;
-    margin: 20px;
-}
-
-.nombreProducto {
-    font-size: 26px;
-}
-}
-
-@media (min-width: 1366px) {
-.cadaProducto {
+@media (min-width: 769px) {
+  .cadaProducto {
     padding: 30px;
     margin: 30px;
-}
+  }
 
-.nombreProducto {
+  .nombreProducto {
     font-size: 30px;
+  }
+
+  .cadaProducto:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .nombreProducto:hover {
+    color: #185ABC;
+    transition: color 0.5s ease-in-out;
+  }
 }
-}}
