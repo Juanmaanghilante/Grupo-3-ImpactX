@@ -100,7 +100,7 @@
 /*  MENU  */
 
   nav.menu {
-    display: none;
+    display: block;
     position: fixed;
     width: 38%;
     right: -250px;
@@ -133,6 +133,6 @@
   header nav ul li a:active { text-decoration: none; color: #185ABC; }
 
   .burger-menu:focus ~ nav.menu{
-    display: block;
+    /* display: block; */
     transform: translateX(-250px);
     }
