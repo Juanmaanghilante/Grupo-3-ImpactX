@@ -6,11 +6,11 @@
 }
 
 nav {
-    background-color: white;
+    background-image: url('/img/heroimg.jpg');
     padding: 20px;
 }
 
-.bodyProductos ul {
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -43,26 +43,8 @@ nav {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-p {
-    margin: 10px 0;
-}
-
-@media (max-width: 767px) {
-.cadaProducto:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
-}
-
-/*
-.picture:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
-}
-*/
-
-.nombreProducto:hover {
-    color: #185ABC;
-    transition: color 0.5s ease-in-out;
+.bodyProduct p {
+    margin: 10px;
 }
 
 @media (min-width:361px) {
@@ -76,7 +58,7 @@ p {
     }
 }
 
-@media (min-width: 1361px) {
+@media (min-width: 1366px) {
     .cadaProducto {
         padding: 30px;
         margin: 30px;
