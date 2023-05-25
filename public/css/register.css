@@ -18,7 +18,7 @@
     margin-bottom: 20px;
   }
   
-  form {
+  .form {
     width: 300px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -43,7 +43,7 @@
   }
 
 
-  input{
+  .input{
     margin-bottom: 4px;
     border-radius: 4lvh;
     text-align: center;
