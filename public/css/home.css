@@ -242,6 +242,7 @@
 
   .imagenes img {
     object-fit: cover;
+    width: 100%;
   }
   
   .seccionConfiaron h2 {

@@ -139,19 +139,18 @@
 /* NUEVO HEADER */
 
 .logo {
-  width: 280px;
-  animation: aumentar 1s ease-in infinite alternate;
+  width: 100%;
 }
 
 .main-header {
   background-color: white;
   padding: 20px;
-
 }
 
 .copy-header {
   font-weight: 400;
   text-align: center;
+  font-size: 100%;
 }
 
 .hamburguer-buttom {
@@ -184,7 +183,10 @@
   font-size: 17px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 361px) {
+  .logo {
+    width: 30%;
+  }
   .main-header-top-bar {
     display: flex;
     justify-content: space-between;
@@ -203,37 +205,44 @@
   .main-navbar ul {
     display: flex;
   }
+  .main-navbar ul li a{
+    font-size: 8px;
+  }
   .main-navbar li {
     margin: 0 5px;
   }
 }
 
-@media(min-width: 1200px){
-  .logo{
-      width: 250px;
+@media (min-width: 769px) {
+  .logo {
+    width: 20%;
   }
-  .main-header-top-bar, .main-navbar{
-      max-width: 1200px;
-      margin: auto
+  .main-header-top-bar,
+  .main-navbar {
+    max-width: 1200px;
+    margin: auto;
   }
-  .main-header-top-bar{
-      align-items: center;
+  .main-header-top-bar {
+    align-items: center;
   }
-  .copy-header{
-      margin: 0;
-      max-width: none;
-      font-size: 22px;
-      font-weight: 400;
+  .copy-header {
+    margin: 0;
+    max-width: none;
+    font-size: 22px;
+    font-weight: 400;
+  }
+  .main-navbar {
+    margin-top: 40px;
+  }
+  .main-navbar li {
+    margin: 0 10px;
+  }
+  .main-navbar ul li a{
+    font-size: 19px;
   }  
-  .main-navbar{
-      margin-top: 40px;
-  }  
-  .main-navbar li{
-      margin: 0 10px;  
-  }   
-  .main-navbar a{
-      font-size: 19px;
-  }         
+  .main-navbar a {
+    font-size: 19px;
+  }
 }
 
 /* FIN NUEVO HEADER */
@@ -321,17 +330,6 @@ ul.links-redes li a {
 /* TERMINA FOOTER */
 
 /* FORMULARIO LOGIN Y REGISER */
-
-.bodySignUp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  font-family: "Arial", sans-serif;
-  background-color: #fff;
-  color: #fff;
-}
 
 .content {
   display: flex;
