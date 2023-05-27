@@ -35,3 +35,7 @@ app.get('/register', (req, res) => {
 app.get('/carrito', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/carrito.html'));
 });
+
+app.get('/detalle', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/detalle-prod.html'));
+});
