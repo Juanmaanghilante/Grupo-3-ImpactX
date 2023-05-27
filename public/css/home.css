@@ -274,6 +274,7 @@
   
   .formulario-contacto h2 {
     margin-bottom: 20px;
+    color: #ccc;
     
   }
   
@@ -313,9 +314,19 @@
     background-color: #45a049;
   }
   
-
-
-
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-image: url('/img/heroimg.jpg');
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #000;
+  }
+  
+  
+  
 
 
 
