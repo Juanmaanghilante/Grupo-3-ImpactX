@@ -3,6 +3,7 @@
 @import url("register.css");
 
 /* HEADER */
+/*
  header{
     z-index: 15;
     width: 100%;
@@ -12,7 +13,7 @@
     background-color: white;
   }
 
-/*  LOGO  */
+/*  LOGO 
 
   header div.logo a img{
     width: 100%;
@@ -25,7 +26,7 @@
     margin-top: 4vw;
   }
 
-  /*  SHOPPING CART  */
+  /*  SHOPPING CART  
   
   .shopping-cart i{
     font-size: 8vw;
@@ -47,7 +48,7 @@
   header .shopping-cart:hover{ text-decoration: none; color: #161C2D;}
   header .shopping-cart:active{ text-decoration: none; color: #161C2D;}
 
-  /*  BURGER MENU  */
+  /*  BURGER MENU  
   .burger-menu{
     z-index: 17;
     position: fixed;
@@ -94,7 +95,7 @@
   }
   
 
-/*  MENU  */
+/*  MENU  
 
   nav.menu {
     display: block;
@@ -124,111 +125,204 @@
     background-color: #a1bee1 ;
     }
 
+    
   header nav ul li a:link { text-decoration: none; color: #185ABC; }
   header nav ul li a:visited { text-decoration: none; color: #185ABC; }
   header nav ul li a:hover { text-decoration: none; background-color: #185ABC; color: #a1bee1; }
-  header nav ul li a:active { text-decoration: none; color: #185ABC; }
+  header nav ul li a:active { text-decoration: none; color: #185ABC; } 
 
   .burger-menu:focus ~ nav.menu{
-    /* display: block; */
     transform: translateX(-250px);
     }
 /* TERMINA HEADER */
 
+/* NUEVO HEADER */
 
-
-
-
-
-/* FOOTER */
-footer {
-    background-image: #f2f2f2;
-    width: 100%;
-    color: rgb(91, 80, 80);
-    font-size: 16px;
-    opacity: 75%;
+.logo {
+  width: 280px;
+  animation: aumentar 1s ease-in infinite alternate;
 }
 
-footer .referencias {
-    width: 100%;
-    padding-bottom: 0px;
-    margin-bottom: 20px;
-    padding-top: 20px;
+.main-header {
+  background-color: white;
+  padding: 20px;
 
 }
 
-footer div ul {
-    list-style-type: none;
-    text-align: center;
-    padding: 0px;
-    margin: 0px;
+.copy-header {
+  font-weight: 400;
+  text-align: center;
 }
 
-footer div ul li {
-    padding-bottom: 30px;
-    color: rgb(91, 80, 80);
+.hamburguer-buttom {
+  background-color: #03264c;
+  color: #fff;
+  display: block;
+  max-width: 50px;
+  padding: 15px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 18px;
+  margin: auto;
 }
 
-.referencias a {
-    text-decoration: none;
-    color: rgb(91, 80, 80);
+.main-navbar {
+  display: none;
 }
 
-.head-redes {
-    text-align: center;
-    border-top: 1px solid rgb(91, 80, 80);;
-    padding-top:30px;
-    padding-bottom:20px
+.main-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-ul.links-redes {
-    text-align: center;
-    
-}
-
-ul.links-redes li a {
-    padding: 10px;
-    text-decoration: none;
-    color: rgb(91, 80, 80);
-}
-
-.referencias ul li a:hover {
-    text-decoration: underline;
-    color: rgba(73, 73, 151, 0.649)
-}
-
-.redes ul li a:hover{
-    text-decoration: underline;
-    color: rgba(73, 73, 151, 0.649)
-}
-
-.copyright {
-    padding-top:10px
-}
-
-@media (min-width:361px) {
-    footer .referencias {
-        display: flex;
-        justify-content: space-around;
-    }
-    
+.main-navbar a {
+  text-decoration: none;
+  color: #222222;
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 17px;
 }
 
 @media (min-width: 768px) {
-    .links-redes {
-        display: flex;
-        justify-content: space-around;
-        width: 80%;
-        margin: auto;
-    }
+  .main-header-top-bar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .copy-header {
+    max-width: 350px;
+    text-align: right;
+  }
+  .hamburguer-buttom {
+    display: none;
+  }
+  .main-navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .main-navbar ul {
+    display: flex;
+  }
+  .main-navbar li {
+    margin: 0 5px;
+  }
+}
+
+@media(min-width: 1200px){
+  .logo{
+      width: 250px;
+  }
+  .main-header-top-bar, .main-navbar{
+      max-width: 1200px;
+      margin: auto
+  }
+  .main-header-top-bar{
+      align-items: center;
+  }
+  .copy-header{
+      margin: 0;
+      max-width: none;
+      font-size: 22px;
+      font-weight: 400;
+  }  
+  .main-navbar{
+      margin-top: 40px;
+  }  
+  .main-navbar li{
+      margin: 0 10px;  
+  }   
+  .main-navbar a{
+      font-size: 19px;
+  }         
+}
+
+/* FIN NUEVO HEADER */
+
+/* FOOTER */
+footer {
+  background-image: #f2f2f2;
+  width: 100%;
+  color: rgb(91, 80, 80);
+  font-size: 16px;
+  opacity: 75%;
+}
+
+footer .referencias {
+  width: 100%;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+footer div ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+footer div ul li {
+  padding-bottom: 30px;
+  color: rgb(91, 80, 80);
+}
+
+.referencias a {
+  text-decoration: none;
+  color: rgb(91, 80, 80);
+}
+
+.head-redes {
+  text-align: center;
+  border-top: 1px solid rgb(91, 80, 80);
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+ul.links-redes {
+  text-align: center;
+}
+
+ul.links-redes li a {
+  padding: 10px;
+  text-decoration: none;
+  color: rgb(91, 80, 80);
+}
+
+.referencias ul li a:hover {
+  text-decoration: underline;
+  color: rgba(73, 73, 151, 0.649);
+}
+
+.redes ul li a:hover {
+  text-decoration: underline;
+  color: rgba(73, 73, 151, 0.649);
+}
+
+.copyright {
+  padding-top: 10px;
+}
+
+@media (min-width: 361px) {
+  footer .referencias {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 768px) {
+  .links-redes {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+  }
 }
 
 /* TERMINA FOOTER */
 
-
 /* FORMULARIO LOGIN Y REGISER */
 
-.bodySignUp{
+.bodySignUp {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,22 +386,21 @@ ul.links-redes li a {
   color: black;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Hanken Grotesk', sans-serif;
+  font-family: "Hanken Grotesk", sans-serif;
 }
-
 
 @media (min-width: 361px) {
   .titulo-registrar-usuario {
     font-size: 20px;
-  }  
-  .boton-formulario{
+  }
+  .boton-formulario {
     font-size: 18px;
   }
 }
 
 @media (min-width: 769px) {
   .content {
-    padding: 100px; 
+    padding: 100px;
   }
   .control {
     font-size: 16px;
@@ -317,13 +410,10 @@ ul.links-redes li a {
   }
   .titulo-registrar-usuario {
     font-size: 22px;
-  }   
-  .boton-formulario{
+  }
+  .boton-formulario {
     font-size: 20px;
-  }  
+  }
 }
 
-
 /* TERMINA FORMULARIO LOGIN Y REGISER */
-
-

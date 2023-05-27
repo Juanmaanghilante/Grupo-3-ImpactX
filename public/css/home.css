@@ -283,6 +283,10 @@
   .formulario-contacto label {
     display: block;
     margin-bottom: 5px;
+    color: white;
+    text-align: right;
+    margin-top: 10px;
+    align-items: start;
   }
   
   .formulario-contacto input,
@@ -292,14 +296,14 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 50%;
-  max-width: 300px;
-  margin: 0 auto;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
   
   .formulario-contacto button {
     padding: 10px 20px;
-    background-color: #4caf50;
+    background-color: #185ABC;
     color: white;
     border: none;
     border-radius: 5px;
