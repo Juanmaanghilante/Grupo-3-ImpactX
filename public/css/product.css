@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #FFF8DC;
+  background-color: white;
 }
 
 .nombreProducto {
@@ -25,7 +25,7 @@
   width: 100%;
   height: auto;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
   object-fit: cover;
 }
 
