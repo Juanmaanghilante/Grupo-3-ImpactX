@@ -24,8 +24,8 @@ app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '/views/login.html'));
 });
 
-app.get('/product', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/product.html'));
+app.get('/listado', (req, res) => {
+  res.sendFile(path.join(__dirname, '/views/listado.html'));
 });
 
 app.get('/register', (req, res) => {
@@ -37,5 +37,5 @@ app.get('/carrito', (req, res) => {
 });
 
 app.get('/detalle', (req, res) => {
-  res.sendFile(path.join(__dirname, '/views/detalle-prod.html'));
+  res.sendFile(path.join(__dirname, '/views/producto.html'));
 });
