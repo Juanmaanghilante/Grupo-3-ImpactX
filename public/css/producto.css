@@ -1,17 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.detalleProducto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;  
-    background-color: #f9f9f9;
-}
 
 .container {
     display: flex;
@@ -52,7 +38,7 @@
     margin: 10px 0;
 }
 
-img {
+.imagen-detalle {
     width: 90%;
     height: 150px;
 }
@@ -87,7 +73,7 @@ img {
 }
 
 .first:hover .tarjeta {
-    height:550px;
+    height:700px;
 }
 
 .first:hover .descripcionProducto {
@@ -159,7 +145,7 @@ img {
         position: relative;
     }
     .first:hover .tarjeta {
-        height:350px;
+        height:450px;
         align-items: flex-start;
     }
     .tarjeta .detalles {
@@ -181,9 +167,6 @@ img {
 
     .first:hover .imagen {
         margin-top: 25px;
-    }
-    img {
-        width:70%;
     }
     .compras {
         position:absolute;
