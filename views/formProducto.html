@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <form class="form" action="#" method="post">
+    <div>
+      <input
+        required
+        name="nombreProducto"
+        id="nombreProducto"
+        type="text"
+        placeholder="Nombre Producto"
+        maxlength="40"
+      />
+    </div>
+    <div>
+      <input
+        required
+        name="descripcion"
+        id="descripcionProducto"
+        type="text"
+        placeholder="Descripción"
+        maxlength="40"
+      />
+    </div>
+    <div class="contenedorPerfilRegistro">
+      <label for="profilePic">Agregar Imagen</label>
+      <input
+        type="file"
+        name="imagenProducto"
+        id="imagenProducto"
+        accept=".jpg"
+        multiple
+      />
+    </div>
+    <div>
+      <input      
+        required
+        type="text"
+        id="precio"
+        name="precio"
+        placeholder="Precio producto"
+        maxlength="10"
+      />
+    </div>
+    <input type="submit" value="Registrarme">
+    </input>
+  </form>
+
+ </div>
+</body>
+</html>
