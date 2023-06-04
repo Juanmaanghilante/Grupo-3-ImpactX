@@ -4,7 +4,7 @@
   "description": "Nuestra nueva start-up se dedica al desarrollo de software de ventas, páginas web y marketing. Nuestros productos y servicios están diseñados para satisfacer las necesidades específicas de cada cliente, el segmento al que apuntamos son pequeñas y medianas empresas que necesiten innovar en software y marketing, con soluciones personalizables y fáciles de usar.",
   "main": "app.js",
   "scripts": {
-    "test": "nodemon app.js"
+    "test": "nodemon ./src/app.js"
   },
   "repository": {
     "type": "git",
