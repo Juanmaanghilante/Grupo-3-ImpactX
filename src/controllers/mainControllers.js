@@ -1,20 +1,13 @@
-
-
-
-
-
-
-
 const path=require("path")
 
 
 module.exports= {
 
-home:(req, res) => {
-    res.sendFile(path.resolve('./views/home.html'));
+  index:(req, res) => {
+    res.sendFile(path.resolve('./views/index.html'));
   },
 
-  registro:  (req, res) => {
+  signup:  (req, res) => {
     res.sendFile(path.resolve('./views/signup.html'));
   },
 
@@ -26,18 +19,16 @@ home:(req, res) => {
     res.sendFile(path.resolve('./views/listado.html'));
   },
 
-  carrito: (req, res) => {
-    res.sendFile(path.resolve('./views/carrito.html'));
+  cart: (req, res) => {
+    res.sendFile(path.resolve('./views/cart.html'));
   },
 
- detalleProducto:  (req, res) => {
-    res.sendFile(path.resolve('./views/producto.html'));
+  product: (req, res) => {
+    res.sendFile(path.resolve('./views/product.html'));
   },
   
-
-formProducto: (req, res) => {
-    res.sendFile(path.resolve('./views/formProducto.html'));
+  formProduct: (req, res) => {
+    res.sendFile(path.resolve('./views/formProduct.html'));
   },
-
 
 }
