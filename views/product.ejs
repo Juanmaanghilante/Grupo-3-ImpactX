@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head', {title:"home"})%>
+  <body class="detalleProducto">
+    <%- include('./partials/header')%>
+
+    <main>
+      <div class="container">
+        <div class="first">
+          <div class="tarjeta">
+            <div class="imagen">
+              <img
+                class="imagen-detalle"
+                src="/img/descarga.jpg"
+                alt="prueba"
+              />
+            </div>
+            <div class="detalles">
+              <h3 class="nombreProducto">Titulo de producto</h3>
+              <p class="precio">Precio</p>
+              <p class="descripcionProducto">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Impedit aspernatur, eaque repellat labore harum earum natus
+                autem similiq
+              </p>
+            </div>
+            <div class="compras">
+              <p class="parrafos">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis repudiandae
+              </p>
+              <p class="parrafos">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corporis repudiandae
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="form-prod" action="#" method="GET">
+        <div class="button-prod">
+          <button type="submit">Agregar al carrito</button>
+        </div>
+      </form>
+    </main>
+    <%- include('./partials/footer')%>
+  </body>
+</html>

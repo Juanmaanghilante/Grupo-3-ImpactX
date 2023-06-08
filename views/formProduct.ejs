@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
-  <title>Document</title>
-</head>
+  <%- include('./partials/head', {title:"home"})%>
 <body>
-
+  <%- include('./partials/header')%>
   <form class="form" action="#" method="post">
     <div>
       <input
@@ -53,7 +47,7 @@
     <input type="submit" value="Registrarme">
     </input>
   </form>
-
+  <%- include('./partials/footer')%>
  </div>
 </body>
 </html>

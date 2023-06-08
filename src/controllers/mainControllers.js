@@ -4,31 +4,32 @@ const path=require("path")
 module.exports= {
 
   index:(req, res) => {
-    res.sendFile(path.resolve('./views/index.html'));
+    return res.render('index')
   },
 
   signup:  (req, res) => {
-    res.sendFile(path.resolve('./views/signup.html'));
+    return res.render('signup')
   },
 
   login: (req, res) => {
-    res.sendFile(path.resolve('./views/login.html'));
+    return res.render('login')
   },  
 
   listado: (req, res) => {
-    res.sendFile(path.resolve('./views/listado.html'));
+    return res.render('listado')
   },
 
   cart: (req, res) => {
-    res.sendFile(path.resolve('./views/cart.html'));
+    return res.render('cart')
   },
 
   product: (req, res) => {
-    res.sendFile(path.resolve('./views/product.html'));
+    return res.render('product')
   },
   
   formProduct: (req, res) => {
-    res.sendFile(path.resolve('./views/formProduct.html'));
+    
+    return res.render('formProduct')
   },
 
 }
