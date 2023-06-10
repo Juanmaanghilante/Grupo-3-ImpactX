@@ -4,12 +4,13 @@
 
   <body class="bodySignUp">
     <%- include('./partials/header')%>
+   <main>
     <div class="content">
       <div>
         <h2 class="titulo-registrar-usuario">Registrar usuario</h2>
         <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
       </div>
-      <div>
+      <div class="caja-form-login">
         <form action="/registrar-usuario" method="POST" class="create-form">
           <div class="control-formulario">
             <input
@@ -53,5 +54,6 @@
     </div>
 
     <%- include('./partials/footer')%>
+  
   </body>
 </html>

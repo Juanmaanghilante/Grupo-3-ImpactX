@@ -3,6 +3,7 @@
 @import url("carrito.css");
 @import url("producto.css");
 @import url("header.css");
+@import url("formProduct.css");
 
 /* HEADER */
 /*
@@ -337,14 +338,25 @@ ul.links-redes li a {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
+  /* gap: 20px; */
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  padding-right: 50px;
-  background-color: #f2f2f2;
+  /* padding-right: 50px; */
+  /* background-color: #f2f2f2; */
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 22px 30px rgba(0, 0, 0, 0.2);
+  padding-top: 100px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  border: solid 2px rgb(39, 48, 132);
+
+
+}
+
+
+main {
+  margin-top: 5rem;
 }
 
 .image-sign-up {
@@ -356,9 +368,24 @@ ul.links-redes li a {
 .create-form {
   width: 100%;
 }
+/* agrego estilo a caja form-login para los pedidos de luca */
+
+.caja-form-login {
+  border-left: solid 3px blue;
+  padding-left: 25px;
+  width: 70%;
+
+}
+
+
+
+
+
 
 .control-formulario {
   margin-bottom: 15px;
+  
+  
 }
 
 .control {
@@ -368,6 +395,7 @@ ul.links-redes li a {
   border: 1px solid #ced4da;
   border-radius: 8px;
   font-family: "Arial", sans-serif;
+
 }
 
 .boton-formulario {
@@ -400,7 +428,9 @@ ul.links-redes li a {
 
 @media (min-width: 769px) {
   .content {
-    padding: 100px;
+    /* padding: 100px; */
+  
+    
   }
   .control {
     font-size: 16px;

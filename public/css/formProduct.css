@@ -1,0 +1,92 @@
+.formulario-new-producto{
+    border: solid 2px rgb(39, 48, 132);
+    box-shadow: 0 22px 30px rgba(0, 0, 0, 0.2); 
+    background-color: rgb(244, 244, 244);
+    margin-top: 205px;
+    width: 60vw;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: auto;
+   margin-top: 200px;
+   margin-bottom: 100px;
+}
+
+.form{
+     display: flex;
+    flex-direction: column;
+    gap:20px;
+    text-align: center;
+    align-items: center;
+    
+  
+    
+    
+  
+}
+.formulario-new-producto form div input {
+    border: solid 2px rgb(39, 48, 132);
+     
+    border-radius: 5px ;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+#descripcionProducto{
+    border: solid 2px rgb(39, 48, 132);
+     
+    border-radius: 5px ;
+    text-align: center;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+
+
+
+
+#imagenProducto{
+    display: none;
+}
+
+.contenedorPerfilRegistro{
+    border: solid 2px rgb(39, 48, 132);
+     
+    border-radius: 5px ;
+  
+    padding-top: 4px;
+    padding-bottom: 5px;
+    background-color: white;
+    width:200px;
+   align-self: center;
+ 
+   
+    
+
+
+}
+
+.contenedorPerfilRegistro i{
+    margin-right: 10px;
+    color: darkblue;
+
+}
+ .sesion-admin{
+  text-align: center;
+  margin-bottom: 3px;
+}
+
+.imagen-formp{
+    padding-top: 25px;
+    position: absolute;
+    display: none;
+}
+
+@media (min-width:481px) {
+    .imagen-formp{
+        display: block;
+    }
+    
+}
