@@ -28,7 +28,6 @@ module.exports= {
   },
   
   formProduct: (req, res) => {
-    
     return res.render('formProduct')
   },
 
