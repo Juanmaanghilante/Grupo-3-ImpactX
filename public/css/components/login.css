@@ -1,108 +1,64 @@
  .content {
+   height: 60vh;
    display: flex;
-   justify-content: space-around;
+   flex-direction: column;
+   justify-content: center;
    align-items: center;
-   /* gap: 20px; */
-   max-width: 600px;
    margin: 0 auto;
-   padding: 20px;
-   /* padding-right: 50px; */
-   /* background-color: #f2f2f2; */
-   border-radius: 8px;
-   box-shadow: 0 22px 30px rgba(0, 0, 0, 0.2);
-   padding-top: 100px;
-   margin-top: 100px;
-   margin-bottom: 80px;
-   border: solid 2px rgb(39, 48, 132);
+
+   padding: 2rem;
  }
 
-
- main {
-   margin-top: 5rem;
+ .content div {
+   width: 100%;
  }
 
  .image-sign-up {
-   width: 100%;
-   max-width: 200px;
-   margin-bottom: 10px;
+   display: none;
  }
-
- .create-form {
-   width: 100%;
- }
-
- /* agrego estilo a caja form-login para los pedidos de luca */
 
  .caja-form-login {
-   border-left: solid 3px blue;
    padding-left: 25px;
    width: 70%;
-
- }
-
-
- .control-formulario {
-   margin-bottom: 15px;
-
-
  }
 
  .control {
-   font-size: 11px;
+   font-size: 14px;
+   border-radius: 3px;
    width: 100%;
-   padding: 8px;
-   border: 1px solid #ced4da;
-   border-radius: 8px;
-   font-family: "Arial", sans-serif;
+   padding: 10px;
+   margin-bottom: .5rem;
+   border: 1px solid #bdd7ff;
 
  }
 
- .boton-formulario {
-   display: block;
-   margin: 0 auto;
-   background: #000;
-   border: none;
-   font-size: 16px;
-   color: #fff;
-   padding: 5px 10px;
-   border-radius: 8px;
-   cursor: pointer;
+ .control::placeholder {
+   color: #185ABC;
+   opacity: .5;
+ }
+
+ .content button {
+   margin-top: 1rem;
  }
 
  .titulo-registrar-usuario {
-   color: black;
-   font-size: 18px;
-   font-weight: bold;
-   font-family: "Hanken Grotesk", sans-serif;
- }
-
- @media (min-width: 361px) {
-   .titulo-registrar-usuario {
-     font-size: 20px;
-   }
-
-   .boton-formulario {
-     font-size: 18px;
-   }
+   color: #185ABC;
+   font-weight: 300;
+   font-size: 2rem;
+   margin-bottom: 2rem;
  }
 
  @media (min-width: 768px) {
 
-   .control {
-     font-size: 16px;
-   }
-
    .image-sign-up {
-     max-width: 25vw;
+     display: block;
+     width: 200px;
    }
 
-   .titulo-registrar-usuario {
-     font-size: 22px;
+   .content {
+     flex-direction: row;
+     max-width: 768px;
+     height: 80vh;
    }
 
-   .boton-formulario {
-     font-size: 20px;
-   }
  }
-
- /* TERMINA FORMULARIO LOGIN Y REGISER */
