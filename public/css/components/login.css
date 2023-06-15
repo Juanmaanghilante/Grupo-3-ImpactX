@@ -1,0 +1,108 @@
+ .content {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   /* gap: 20px; */
+   max-width: 600px;
+   margin: 0 auto;
+   padding: 20px;
+   /* padding-right: 50px; */
+   /* background-color: #f2f2f2; */
+   border-radius: 8px;
+   box-shadow: 0 22px 30px rgba(0, 0, 0, 0.2);
+   padding-top: 100px;
+   margin-top: 100px;
+   margin-bottom: 80px;
+   border: solid 2px rgb(39, 48, 132);
+ }
+
+
+ main {
+   margin-top: 5rem;
+ }
+
+ .image-sign-up {
+   width: 100%;
+   max-width: 200px;
+   margin-bottom: 10px;
+ }
+
+ .create-form {
+   width: 100%;
+ }
+
+ /* agrego estilo a caja form-login para los pedidos de luca */
+
+ .caja-form-login {
+   border-left: solid 3px blue;
+   padding-left: 25px;
+   width: 70%;
+
+ }
+
+
+ .control-formulario {
+   margin-bottom: 15px;
+
+
+ }
+
+ .control {
+   font-size: 11px;
+   width: 100%;
+   padding: 8px;
+   border: 1px solid #ced4da;
+   border-radius: 8px;
+   font-family: "Arial", sans-serif;
+
+ }
+
+ .boton-formulario {
+   display: block;
+   margin: 0 auto;
+   background: #000;
+   border: none;
+   font-size: 16px;
+   color: #fff;
+   padding: 5px 10px;
+   border-radius: 8px;
+   cursor: pointer;
+ }
+
+ .titulo-registrar-usuario {
+   color: black;
+   font-size: 18px;
+   font-weight: bold;
+   font-family: "Hanken Grotesk", sans-serif;
+ }
+
+ @media (min-width: 361px) {
+   .titulo-registrar-usuario {
+     font-size: 20px;
+   }
+
+   .boton-formulario {
+     font-size: 18px;
+   }
+ }
+
+ @media (min-width: 768px) {
+
+   .control {
+     font-size: 16px;
+   }
+
+   .image-sign-up {
+     max-width: 25vw;
+   }
+
+   .titulo-registrar-usuario {
+     font-size: 22px;
+   }
+
+   .boton-formulario {
+     font-size: 20px;
+   }
+ }
+
+ /* TERMINA FORMULARIO LOGIN Y REGISER */

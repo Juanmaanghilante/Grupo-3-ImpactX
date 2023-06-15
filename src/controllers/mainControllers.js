@@ -1,34 +1,32 @@
-const path=require("path")
+const path = require("path")
 
 
-module.exports= {
+module.exports = {
 
-  index:(req, res) => {
+  index: (req, res) => {
     return res.render('index')
-  },
-
-  signup:  (req, res) => {
-    return res.render('signup')
   },
 
   login: (req, res) => {
     return res.render('login')
-  },  
+  },
 
-  listado: (req, res) => {
-    return res.render('listado')
+  signup: (req, res) => {
+    return res.render('signup')
+  },
+
+  createProduct: (req, res) => {
+    return res.render('createProduct')
+  },
+
+  products: (req, res) => {
+    return res.render('products')
   },
 
   cart: (req, res) => {
     return res.render('cart')
   },
 
-  product: (req, res) => {
-    return res.render('product')
-  },
-  
-  formProduct: (req, res) => {
-    return res.render('formProduct')
-  },
+
 
 }
