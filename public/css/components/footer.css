@@ -1,6 +1,7 @@
 /* FOOTER */
 footer {
-  background-color: #091f3d;
+  background-color: #13396e;
+  opacity: .9;
   width: 100%;
   font-size: 16px;
   padding: 1rem;
@@ -79,7 +80,7 @@ footer .referencias {
 
 .copyright {
   padding: 20px;
-  background-color: #071932;
+  background-color: #0c2c59;
 }
 
 .copyright p {

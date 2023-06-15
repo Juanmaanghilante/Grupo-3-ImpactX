@@ -136,7 +136,8 @@
     overflow: hidden;
     padding: 3rem 1rem;
     width: 100%;
-    background-color: #091f3d;
+    background-color: #113d7b;
+    opacity: .9;
 
     display: flex;
     flex-wrap: wrap;
