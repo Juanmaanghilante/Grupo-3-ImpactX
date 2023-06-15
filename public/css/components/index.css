@@ -1,11 +1,9 @@
   .heroSection {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
   }
 
   .heroImg {
-    z-index: -1;
     height: 100vh;
     background-image: url('/img/heroimg.jpg');
     background-size: cover;
@@ -26,7 +24,6 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
   }
 
   .contenedorTexto {
@@ -44,54 +41,84 @@
   }
 
 
-  .heroSection h1,
-  .heroSection h2 {
-    font-size: 2.25rem;
-    font-weight: 300;
-  }
-
   .heroSection h1 {
     color: #ffffff;
-    font-size: 3.7rem;
+    font-size: 3rem;
+    font-weight: 300;
+    overflow: hidden;
   }
 
   .heroSection h2 {
     color: #ffffff;
+    font-weight: 300;
+    font-size: 2rem;
   }
 
   .botonContactanos {
     color: white;
-    font-weight: 500;
     text-decoration: none;
-    border: none;
     background-color: #185ABC;
-    padding: 20px 18px;
-
-    border-radius: 0.375rem;
+    border: 1px solid #185ABC;
+    padding: 1.1rem 1.5rem;
+    border-radius: 5px;
     transition: .15s;
+
+    margin: 0 auto;
   }
 
   .botonContactanos:hover {
-    box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.6);
+    color: #185ABC;
+    background-color: white;
   }
+
 
   .botonVerMas {
     color: #185ABC;
-    font-weight: 500;
-    text-decoration: none;
-    border: solid 1px #185ABC;
-    background-color: rgb(117, 172, 255);
-    padding: 20px 18px;
-
-    border-radius: 0.375rem;
-    margin-left: 1rem;
-
+    background-color: white;
+    border: 1px solid #185ABC;
+    padding: 1.1rem 1.5rem;
+    border-radius: 5px;
     transition: .15s;
+    text-decoration: none;
   }
 
   .botonVerMas:hover {
     color: white;
-    box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.3);
+    background-color: #185ABC;
+  }
+
+
+
+
+
+
+  /* SECCION QUIENES CONFIARON EN NOSOTROS */
+
+  .seccionConfiaron {
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  }
+
+  .imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .imagenes img {
+    margin-bottom: 3rem;
+    width: 150px;
+  }
+
+
+  .seccionConfiaron h2 {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    color: #185ABC;
   }
 
 
@@ -103,7 +130,128 @@
 
 
 
-  /* Sección Servicios Productos */
+  /* SECCION QUIENES SOMOS */
+
+  .seccionQuienesSomos {
+    overflow: hidden;
+    padding: 3rem 1rem;
+    width: 100%;
+    background-color: #091f3d;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+
+
+  }
+
+  .imagenQuienesSomos {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .containerTextoQuienesSomos {
+
+    margin-bottom: 4rem;
+  }
+
+
+  .containerTextoQuienesSomos h2 {
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .containerTextoQuienesSomos p {
+    color: white;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+
+
+
+
+
+
+
+
+  /* SECCION CONTACTANOS */
+
+  .formulario-contacto {
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+    border-radius: 5px;
+
+  }
+
+  .formulario-contacto h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #185ABC;
+
+  }
+
+  .formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formulario-contacto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #185ABC;
+    margin-top: 10px;
+  }
+
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+
+
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  /* Estilos para el formulario de contacto */
+  .formulario-contacto {
+    padding: 30px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* SECCION SERVICIOS PRODUCTOS */
+
   .seccionServiciosProductos {
     background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
     padding-top: 3rem;
@@ -173,168 +321,28 @@
 
 
 
-  /* Seccion Quienes Somos */
-  .seccionQuienesSomos {
-    overflow: hidden;
-    padding: 1.5rem;
-    width: 100%;
-    /* height: 50vh; */
 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 
-    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+
+  @media (min-width: 768px) {
+
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 40px;
+    }
+
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .seccionConfiaron .imagenes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .seccionConfiaron .imagenes img {
+      width: 100px;
+      margin-right: 1rem;
+    }
   }
-
-  .imagenQuienesSomos {
-    width: 100%;
-    object-fit: cover;
-    border-radius: .5rem;
-    border-bottom-right-radius: 150px;
-  }
-
-  .containerTextoQuienesSomos {
-    margin-top: 1.5rem;
-  }
-
-
-  .containerTextoQuienesSomos h2 {
-    color: #185ABC;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-
-  .containerTextoQuienesSomos p {
-    color: #869AB8;
-    line-height: 1.5;
-  }
-
-
-
-
-
-
-
-
-
-
-
-  /* Seccion Quienes Confiaron */
-  .seccionConfiaron {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid black;
-
-
-  }
-
-  .imagenes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .imagenes img {
-    margin-bottom: 3rem;
-  }
-
-  .imagenes img {
-    object-fit: cover;
-    width: 100%;
-  }
-
-  .seccionConfiaron h2 {
-    margin-bottom: 2rem;
-    color: #185ABC;
-  }
-
-
-
-
-
-
-
-
-
-
-
-  /* seccion de contactanos */
-  .formulario-contacto {
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-
-  }
-
-  .formulario-contacto h2 {
-    margin-bottom: 20px;
-    color: #ccc;
-
-  }
-
-  .formulario-contacto form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .formulario-contacto label {
-    display: block;
-    margin-bottom: 5px;
-    color: white;
-    text-align: right;
-    margin-top: 10px;
-    align-items: start;
-  }
-
-  .formulario-contacto input,
-  .formulario-contacto textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    max-width: 300px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-  }
-
-  .formulario-contacto button {
-    padding: 10px 20px;
-    background-color: #185ABC;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .formulario-contacto button:hover {
-    background-color: #45a049;
-  }
-
-  .formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-image: url('/img/heroimg.jpg');
-    border: 1px solid #000;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #000;
-  }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -388,7 +396,6 @@
       justify-content: space-evenly;
       padding-top: 3rem;
 
-      margin-bottom: 2rem;
     }
 
     .imagenQuienesSomos {
@@ -398,6 +405,7 @@
 
     .containerTextoQuienesSomos {
       max-width: 500px;
+      margin-bottom: 0px;
     }
 
 
@@ -428,49 +436,7 @@
     .containerTextoProductos {
       margin-top: 0px;
     }
-  }
 
-
-
-  /* Media queries para dispositivos de pantalla más grande */
-
-  @media (min-width: 361px) {
-    /* Estilos para dispositivos con una resolución mínima de 361px */
-
-    /* Estilos para el formulario de contacto */
-    .formulario-contacto {
-      padding: 30px;
-    }
-
-    /* Estilos para las imágenes en el contenedor "imagenes" */
-    .imagenes img {
-      width: 220px;
-    }
-  }
-
-  @media (min-width: 768px) {
-
-    /* Estilos para el formulario de contacto */
-    .formulario-contacto {
-      padding: 40px;
-    }
-
-    /* Estilos para las imágenes en el contenedor "imagenes" */
-    .seccionConfiaron .imagenes {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-
-    .seccionConfiaron .imagenes img {
-      width: 200px;
-      margin-right: 1rem;
-    }
-  }
-
-  @media (min-width: 1200px) {
-
-    /* Estilos para dispositivos con una resolución mínima de 1200px (pantallas de escritorio más grandes) */
     /* Estilos para el formulario de contacto */
     .formulario-contacto {
       padding: 60px;
