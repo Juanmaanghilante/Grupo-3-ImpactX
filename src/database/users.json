@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "user": "JohnDoe1",
+    "name": "John",
+    "lastName": "Doe",
+    "mail": "johndoe@hotmail.com",
+    "categoria": "admin/cliente",
+    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "password": "User123!",
+    "isDeleted": false
+  }
+]

@@ -13,12 +13,18 @@
           <div>
             <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
             <div class="control-formulario">
-              <input type="text" name="email" class="control" placeholder="Email" required />
               <input type="text" name="usuario" class="control" placeholder="Usuario" required />
-            </div>
-            <div class="control-formulario">
-              <input type="password" name="password" class="control" placeholder="Contraseña" required />
-              <input type="password" name="passwordRepeat" class="control" placeholder="Repetir Contraseña" required />
+              <input type="text" name="nombre" class="control" placeholder="Nombre" required />
+              <input type="text" name="apellido" class="control" placeholder="Apellido" required />
+              <input type="text" name="correo" class="control" placeholder="Email" required />
+              <select class="control" name="category" id="">
+                <option value="">Admin</option>
+                <option value="">Cliente</option>
+              </select>
+              <input class="control" type="file" name="img">
+              <input type="password" name="contrasenia" class="control" placeholder="Contraseña" required />
+              <input type="password" name="contraseniaRepetir" class="control" placeholder="Repetir Contraseña"
+                required />
             </div>
             <button type="submit" class="botonContactanos">Registrarse</input>
           </div>
