@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/head', {title:"Login"})%>
+<%- include('../partials/head', {title:"home"})%>
 
   <body class="bodySignUp">
-    <%- include('./partials/header')%>
+    <%- include('../partials/header')%>
       <form action="/ingresar-usuario" method="POST" class="create-form">
         <div class="content">
           <div>
@@ -11,18 +11,22 @@
             <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
           </div>
           <div>
-            <h2 class="titulo-registrar-usuario">¡Ingresá a tu usuario!</h2>
+            <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
             <div class="control-formulario">
+              <input type="text" name="email" class="control" placeholder="Email" required />
               <input type="text" name="usuario" class="control" placeholder="Usuario" required />
             </div>
             <div class="control-formulario">
               <input type="password" name="password" class="control" placeholder="Contraseña" required />
+              <input type="password" name="passwordRepeat" class="control" placeholder="Repetir Contraseña" required />
             </div>
-            <button type="submit" class="botonContactanos">Ingresar</input>
+            <button type="submit" class="botonContactanos">Registrarse</input>
           </div>
         </div>
       </form>
-      <%- include('./partials/footer')%>
+
+      <%- include('../partials/footer')%>
+
   </body>
 
 </html>

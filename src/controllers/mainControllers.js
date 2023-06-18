@@ -7,33 +7,35 @@ module.exports = {
     return res.render('index')
   },
 
+
+
+
+
   login: (req, res) => {
-    return res.render('login')
+    return res.render('users/login')
   },
 
   signup: (req, res) => {
-    return res.render('signup')
+    return res.render('users/signup')
   },
 
-  createProduct: (req, res) => {
-    return res.render('createProduct')
+
+
+
+  cart: (req, res) => {
+    return res.render('products/cart')
   },
 
   products: (req, res) => {
-    return res.render('products')
+    return res.render('products/detalleProductos')
   },
-
-  cart: (req, res) => {
-    return res.render('cart')
-  },
-
 
   edit: (req, res) => {
-    return res.render('formEdit')
+    return res.render('products/formEdit')
   },
 
   create: (req, res) => {
-    return res.render('formCreate')
+    return res.render('products/formCreate')
   }
 
 
