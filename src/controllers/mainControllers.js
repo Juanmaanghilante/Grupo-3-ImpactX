@@ -28,5 +28,14 @@ module.exports = {
   },
 
 
+  edit: (req, res) => {
+    return res.render('formEdit')
+  },
+
+  create: (req, res) => {
+    return res.render('formCreate')
+  }
+
+
 
 }

@@ -10,5 +10,11 @@ router.get('/createProduct', mainControler.createProduct)
 router.get('/products', mainControler.products)
 router.get('/cart', mainControler.cart)
 
+// EDIT
+router.get('/edit', mainControler.edit)
+
+// CREATE
+router.get('/create', mainControler.create)
+
 
 module.exports = router

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head', {title:"Login"})%>
+
+  <body class="bodySignUp">
+    <%- include('./partials/header')%>
+      <form action="/ingresar-usuario" method="POST" class="create-form">
+        <div class="content">
+          <div>
+            <h2 class="titulo-registrar-usuario">Editar Producto</h2>
+            <div class="control-formulario">
+              <input type="text" name="product" class="control" placeholder="Nombre" required />
+              <input type="text" name="desc" class="control" placeholder="Descripción" required />
+              <input type="number" name="price" class="control" placeholder="Precio" required />
+            </div>
+            <button type="submit" class="botonContactanos">Editar</input>
+          </div>
+        </div>
+      </form>
+      <%- include('./partials/footer')%>
+  </body>
+
+</html>
