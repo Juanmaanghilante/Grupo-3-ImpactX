@@ -1,9 +1,18 @@
 [
   {
     "id": 1,
-    "categoria": "Producto/Sevicio",
-    "product": "Marketing Online",
-    "descripcion": "Paquete marketing, branding, SEO etc",
+    "categoria": "Sevicio",
+    "product": "SEO",
+    "descripcion": "Optimización de motores de búsqueda",
+    "precio": 100000,
+    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "isDeleted": false
+  },
+  {
+    "id": 2,
+    "categoria": "Servicio",
+    "product": "Redes Sociales",
+    "descripcion": "Paquete de redes sociales, contenido semanal",
     "precio": 100000,
     "imagen": "/img/img-cafetera-moulinex.jpg",
     "isDeleted": false
