@@ -19,24 +19,10 @@ module.exports = {
     return res.render('users/signup')
   },
 
-
-
-
-  cart: (req, res) => {
-    return res.render('products/cart')
-  },
-
-  products: (req, res) => {
-    return res.render('products/detalleProductos')
-  },
-
   edit: (req, res) => {
-    return res.render('products/formEdit')
+    return res.render('users/edicionUsuario')
   },
 
-  create: (req, res) => {
-    return res.render('products/formCreate')
-  }
 
 
 
