@@ -22,7 +22,7 @@ app.listen(3003, () => console.log('Servidor en puerto 3003'));
 
 
 
-app.use('/users', userRouter);
+app.use(userRouter);
 app.use(productRouter);
 
 
