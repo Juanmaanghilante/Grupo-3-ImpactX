@@ -13,7 +13,7 @@ router.get('/cart', productControler.cart)
 // router.get('/edit', productControler.edit)
 
 // CREATE
-router.get('/create', productControler.create)
+router.get('/productos/create', productControler.create)
 
 
 module.exports = router
