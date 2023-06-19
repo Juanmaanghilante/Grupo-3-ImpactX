@@ -9,7 +9,7 @@ module.exports = {
   },
 
   products: (req, res) => {
-    return res.render('products/detalleProductos')
+    return res.render('products/alexProd')
   },
 
   edit: (req, res) => {
