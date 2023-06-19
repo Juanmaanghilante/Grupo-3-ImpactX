@@ -1,0 +1,64 @@
+ .content {
+   height: 60vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+
+   padding: 2rem;
+ }
+
+ .content div {
+   width: 100%;
+ }
+
+ .image-sign-up {
+   display: none;
+ }
+
+ .caja-form-login {
+   padding-left: 25px;
+   width: 70%;
+ }
+
+ .control {
+   font-size: 14px;
+   border-radius: 3px;
+   width: 100%;
+   padding: 10px;
+   margin-bottom: .5rem;
+   border: 1px solid #bdd7ff;
+
+ }
+
+ .control::placeholder {
+   color: #185ABC;
+   opacity: .5;
+ }
+
+ .content button {
+   margin-top: 1rem;
+ }
+
+ .titulo-registrar-usuario {
+   color: #185ABC;
+   font-weight: 300;
+   font-size: 2rem;
+   margin-bottom: 2rem;
+ }
+
+ @media (min-width: 768px) {
+
+   .image-sign-up {
+     display: block;
+     width: 200px;
+   }
+
+   .content {
+     flex-direction: row;
+     max-width: 768px;
+     height: 80vh;
+   }
+
+ }

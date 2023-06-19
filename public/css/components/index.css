@@ -1,0 +1,450 @@
+  .heroSection {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .heroImg {
+    height: 100vh;
+    background-image: url('/img/heroimg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .contenedorInfoHero {
+    padding: 1.5rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenedorTexto {
+    /* text-align: center; */
+    margin-bottom: 1rem;
+  }
+
+  .subHeading {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    max-width: 520px;
+  }
+
+
+  .heroSection h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 300;
+    overflow: hidden;
+  }
+
+  .heroSection h2 {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 2rem;
+  }
+
+  .botonContactanos {
+    color: white;
+    text-decoration: none;
+    background-color: #185ABC;
+    border: 1px solid #185ABC;
+    padding: 1.1rem 1.5rem;
+    border-radius: 5px;
+    transition: .15s;
+
+    margin: 0 auto;
+  }
+
+  .botonContactanos:hover {
+    color: #185ABC;
+    background-color: white;
+  }
+
+
+  .botonVerMas {
+    color: #185ABC;
+    background-color: white;
+    border: 1px solid #185ABC;
+    padding: 1.1rem 1.5rem;
+    border-radius: 5px;
+    transition: .15s;
+    text-decoration: none;
+  }
+
+  .botonVerMas:hover {
+    color: white;
+    background-color: #185ABC;
+  }
+
+
+
+
+
+
+  /* SECCION QUIENES CONFIARON EN NOSOTROS */
+
+  .seccionConfiaron {
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  }
+
+  .imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .imagenes img {
+    margin-bottom: 3rem;
+    width: 150px;
+  }
+
+
+  .seccionConfiaron h2 {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    color: #185ABC;
+  }
+
+
+
+
+
+
+
+
+
+
+  /* SECCION QUIENES SOMOS */
+
+  .seccionQuienesSomos {
+    overflow: hidden;
+    padding: 3rem 1rem;
+    width: 100%;
+    background-color: #113d7b;
+    opacity: .9;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+
+
+
+  }
+
+  .imagenQuienesSomos {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  .containerTextoQuienesSomos {
+
+    margin-bottom: 4rem;
+  }
+
+
+  .containerTextoQuienesSomos h2 {
+    color: white;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  .containerTextoQuienesSomos p {
+    color: white;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+
+
+
+
+
+
+
+
+  /* SECCION CONTACTANOS */
+
+  .formulario-contacto {
+    text-align: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+    border-radius: 5px;
+
+  }
+
+  .formulario-contacto h2 {
+    margin-bottom: 20px;
+    font-weight: 300;
+    color: #185ABC;
+
+  }
+
+  .formulario-contacto form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .formulario-contacto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #185ABC;
+    margin-top: 10px;
+  }
+
+  .formulario-contacto input,
+  .formulario-contacto textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+
+
+  .formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  /* Estilos para el formulario de contacto */
+  .formulario-contacto {
+    padding: 30px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* SECCION SERVICIOS PRODUCTOS */
+
+  .seccionServiciosProductos {
+    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+
+  }
+
+  .containerTextoServicios {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .containerTextoServicios h2 {
+    color: #161C2D;
+    font-weight: 500;
+    margin-bottom: .8rem;
+  }
+
+  .containerTextoServicios p {
+    color: #869AB8;
+  }
+
+
+  .tarjetasServiciosProductos {
+
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.1);
+    border-radius: 8px;
+    border-top: solid 3px #2566c6;
+    padding: 1.5rem;
+
+    text-align: left;
+
+    transition: .2s;
+  }
+
+  .tarjetasServiciosProductos:hover {
+    box-shadow: 0px 0px 10px rgba(36, 36, 36, 0.2);
+  }
+
+  .tarjetasServiciosProductos article {
+
+    border-bottom: solid 1px #e9e9e9;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  .tarjetasServiciosProductos article h3 {
+    color: #161C2D;
+    font-weight: 400;
+    margin-bottom: .8rem;
+  }
+
+  .tarjetasServiciosProductos article p {
+    color: #869AB8;
+  }
+
+  .containerTextoProductos {
+    margin-top: 4rem;
+  }
+
+
+
+
+
+
+
+
+
+  @media (min-width: 768px) {
+
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 40px;
+    }
+
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .seccionConfiaron .imagenes {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .seccionConfiaron .imagenes img {
+      width: 100px;
+      margin-right: 1rem;
+    }
+  }
+
+
+
+
+
+  @media (min-width: 1200px) {
+
+    /* SECCION HERO IMAGEN PRINCIPAL */
+    .heroSection {
+      width: 100%;
+    }
+
+    .heroImg {
+      width: 100%;
+    }
+
+    .contenedorInfoHero {
+      align-items: center;
+      justify-content: center;
+    }
+
+
+
+    .contenedorTexto {
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+
+    .subHeading {
+      margin: auto;
+      font-size: 1rem;
+
+    }
+
+    .contenedorTexto h1 {
+      font-size: 5rem;
+    }
+
+    .contenedorTexto h2 {
+      font-size: 5rem;
+    }
+
+
+
+    /* SECCION QUIENES SOMOS EN HOME */
+    .seccionQuienesSomos {
+      display: flex;
+      flex-direction: row;
+      height: 50vh;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-top: 3rem;
+
+    }
+
+    .imagenQuienesSomos {
+      width: 500px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .containerTextoQuienesSomos {
+      max-width: 500px;
+      margin-bottom: 0px;
+    }
+
+
+
+
+
+    /* SECCIÓN PRODUCTOS Y SERVICIOS EN HOME */
+    .seccionServiciosProductos {
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+    }
+
+    .tarjetasServiciosProductos {
+      margin-top: 0px;
+      padding-bottom: 5rem;
+    }
+
+    .tarjetasServiciosProductos article:nth-child(4) {
+      border-bottom: none;
+    }
+
+    .tarjetasServiciosProductos:first-of-type article:nth-child(2) {
+      border-bottom: none;
+    }
+
+    .containerTextoProductos {
+      margin-top: 0px;
+    }
+
+    /* Estilos para el formulario de contacto */
+    .formulario-contacto {
+      padding: 60px;
+    }
+
+    /* Estilos para las imágenes en el contenedor "imagenes" */
+    .imagenes img {
+      width: 300px;
+    }
+  }

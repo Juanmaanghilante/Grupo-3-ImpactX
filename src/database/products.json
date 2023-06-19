@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "categoria": "Producto/Sevicio",
+    "product": "Marketing Online",
+    "descripcion": "Paquete marketing, branding, SEO etc",
+    "precio": 100000,
+    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "isDeleted": false
+  }
+]
