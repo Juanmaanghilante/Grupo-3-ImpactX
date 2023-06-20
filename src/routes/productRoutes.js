@@ -17,6 +17,6 @@ router.get('/productos/edit/:id', productControler.productsEdit)
 router.put("/productos/:id", productControler.productsEditProcess)
 
 // DELETE
-router.delete("/productos/:id", productControler.productsDeleteProcess)
+router.delete("/productos/delete/:id", productControler.productsDeleteProcess)
 
 module.exports = router

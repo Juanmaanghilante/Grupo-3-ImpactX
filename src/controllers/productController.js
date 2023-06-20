@@ -12,7 +12,8 @@ module.exports = {
   },
 
   productsDetail: (req, res) => {
-    return res.render('products/detalleProductos', { productos: productos });
+    const productosHabilitados = productos.filter(row => row.isDeleted == false)
+    return res.render('products/detalleProductos', { productos: productosHabilitados });
   },
 
   productsCreate: (req, res) => {
@@ -32,7 +33,12 @@ module.exports = {
   },
 
   productsDeleteProcess: (req, res) => {
+    const productoEliminado = productos.find(row => row.id = req.params.id)
 
+    productoEliminado.isDeleted = true
+
+    fs.writeFileSync(rutaBase, JSON.stringify(productos, null, 2),"utf-8")
+    return res.redirect("/productos")
   },
 
 
