@@ -1,5 +1,8 @@
+const fs = require('fs');
 const path = require("path")
 
+const rutaBase = path.resolve('./src/database/products.json')
+const productos = JSON.parse(fs.readFileSync(rutaBase));
 
 module.exports = {
 
@@ -9,7 +12,7 @@ module.exports = {
   },
 
   productsDetail: (req, res) => {
-    return res.render('products/alexProd')
+    return res.render('products/detalleProductos', { productos: productos });
   },
 
   productsCreate: (req, res) => {
@@ -17,7 +20,7 @@ module.exports = {
   },
 
   productsCreateProcess: (req, res) => {
-    
+
   },
 
   productsEdit: (req, res) => {
@@ -25,11 +28,11 @@ module.exports = {
   },
 
   productsEditProcess: (req, res) => {
-    
+
   },
 
   productsDeleteProcess: (req, res) => {
-    
+
   },
 
 

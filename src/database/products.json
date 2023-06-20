@@ -2,19 +2,10 @@
   {
     "id": 1,
     "categoria": "Sevicio",
-    "product": "SEO",
+    "nombre": "SEO",
     "descripcion": "Optimización de motores de búsqueda",
     "precio": 100000,
-    "imagen": "/img/img-cafetera-moulinex.jpg",
-    "isDeleted": false
-  },
-  {
-    "id": 2,
-    "categoria": "Servicio",
-    "product": "Redes Sociales",
-    "descripcion": "Paquete de redes sociales, contenido semanal",
-    "precio": 100000,
-    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "imagen": "/img/productImage.jpg",
     "isDeleted": false
   }
 ]
