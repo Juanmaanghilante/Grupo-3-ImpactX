@@ -4,22 +4,33 @@ const path = require("path")
 module.exports = {
 
 
-  cart: (req, res) => {
+  productsCart: (req, res) => {
     return res.render('products/cart')
   },
 
-  products: (req, res) => {
+  productsDetail: (req, res) => {
     return res.render('products/alexProd')
   },
 
-  edit: (req, res) => {
+  productsCreate: (req, res) => {
+    return res.render('products/formCreate')
+  },
+
+  productsCreateProcess: (req, res) => {
+    
+  },
+
+  productsEdit: (req, res) => {
     return res.render('products/formEdit')
   },
 
-  create: (req, res) => {
-    return res.render('products/formCreate')
-  }
+  productsEditProcess: (req, res) => {
+    
+  },
 
+  productsDeleteProcess: (req, res) => {
+    
+  },
 
 
 }

@@ -4,15 +4,19 @@ const productControler = require('../controllers/productController');
 
 
 
-
-router.get('/productos', productControler.products)
-router.get('/cart', productControler.cart)
-
-// EDIT
-// router.get('/edit', productControler.edit)
+// PRODUCTS / CART
+router.get('/productos', productControler.productsDetail)
+router.get('/cart', productControler.productsCart)
 
 // CREATE
-router.get('/productos/create', productControler.create)
+router.get('/productos/create', productControler.productsCreate)
+router.post("/productos", productControler.productsCreateProcess)
 
+// EDIT
+router.get('/productos/edit/:id', productControler.productsEdit)
+router.put("/productos/:id", productControler.productsEditProcess)
+
+// DELETE
+router.delete("/productos/:id", productControler.productsDeleteProcess)
 
 module.exports = router
