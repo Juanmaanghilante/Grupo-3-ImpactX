@@ -5,19 +5,19 @@
 
   <body class="bodySignUp">
     <%- include('../partials/header')%>
-      <form action="/ingresar-usuario" method="POST" class="create-form">
+      <form action="/productos/create" method="post" class="create-form" enctype="multipart/form-data">
         <div class="content">
           <div>
             <h2 class="titulo-registrar-usuario">Crear Nuevo Producto</h2>
             <div class="control-formulario">
               <select class="control" name="category" id="">
-                <option value="">Producto</option>
-                <option value="">Servicio</option>
+                <option value="producto" name="category">Producto</option>
+                <option value="servicio" name="category">Servicio</option>
               </select>
               <input type="text" name="product" class="control" placeholder="Nombre" required />
               <input type="text" name="desc" class="control" placeholder="Descripción" required />
               <input type="number" name="price" class="control" placeholder="Precio" required />
-              <input type="file" name="img" class="control" />
+              <input type="file" name="image" class="control"/>
             </div>
             <button type="submit" class="botonContactanos">Agregar Producto</input>
           </div>

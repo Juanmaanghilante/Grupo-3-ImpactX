@@ -9,7 +9,8 @@
           <% productos.forEach(producto=> { %>
             <article class="tarjetaProductos">
               <div class="containerImagenProductos">
-                <img class="productoImagen" src="<%= producto.imagen %>" alt="imagen producto <%= producto.nombre %>">
+                <img class="productoImagen" src="/img/<%= producto.imagen %>"
+                  alt="imagen producto <%= producto.nombre %>">
               </div>
               <div class="containerInfoProductos">
                 <h2>
@@ -25,7 +26,7 @@
                   <a class="botonProductos" href="">ADD TO CART</a>
                   <a class="botonProductos" href="">COMPRAR AHORA</a>
                   <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                      <button type="sumbit" class="botonProductos">ELIMINAR</button>
+                    <button type="sumbit" class="botonProductos">ELIMINAR</button>
                   </form>
                 </div>
               </div>
