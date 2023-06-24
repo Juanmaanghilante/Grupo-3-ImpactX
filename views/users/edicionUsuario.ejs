@@ -3,20 +3,40 @@
 <%- include('../partials/head', {title:"Login"})%>
 
   <body class="bodySignUp">
+
     <%- include('../partials/header')%>
-      <form action="/ingresar-usuario" method="POST" class="create-form">
+
+      <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
         <div class="content">
           <div>
-
             <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
           </div>
+
           <div>
             <h2 class="titulo-registrar-usuario">Editar Usuario</h2>
+
             <div class="control-formulario">
-              <input type="text" name="usuario" class="control" placeholder="Usuario" required />
+              <label for="user"> Usuario: </label>
+              <input class="control" type="text" name="usuario" id="user" placeholder="Usuario" value="<%= usuario.user %>" />
+            </div>
+
+            <div class="control-formulario">
+              <label for="name"> Nombre/s: </label>
+              <input class="control" type="text" placeholder="Nombre" name="name" id="name" value="<%= usuario.name %>">
+            </div>
+
+            <div class="control-formulario">
+              <label for="lastName"> Apellido/s: </label>
+              <input class="control" type="text" name="lastName" id="lastName" placeholder="Apellido/s" value="<%= usuario.lastName %>" />
+            </div>
+
+            <div class="control-formulario">
+              <label for="email"> Correo </label>
+              <input class="control" type="email" name="email" id="email" placeholder="Correo" value="<%= usuario.mail %>" />
             </div>
             <div class="control-formulario">
-              <input type="password" name="password" class="control" placeholder="Contraseña" required />
+              <label for="fotoPerfil">Foto de usuario</label>
+              <input class="control" type="file" name="imagen" id="fotoPerfil">
             </div>
           
             <button type="submit" class="botonContactanos">Editar</button>
