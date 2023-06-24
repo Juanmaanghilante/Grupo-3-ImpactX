@@ -13,7 +13,11 @@ module.exports = {
   },
 
   userEdit: (req, res) => {
-    return res.render('users/edicionUsuario')
+    const usuarioEditar= datos.find(usuario=> usuario.id == req.params.id ) 
+console.log(req.params.id);
+console.log(datos[0]);
+console.log(usuarioEditar);
+    return res.render('users/edicionUsuario',{usuario:usuarioEditar})
   },
 
   userEditProcess: (req, res) => {
@@ -25,6 +29,8 @@ module.exports = {
 
   userCreate: (req, res) => {
     let usuarioCrear = {
+
+      id:Date.now(),
       usuario:req.body.usuario,
       nombre:req.body.nombre,
       apellido: req.body.apellido,
@@ -32,11 +38,12 @@ module.exports = {
       // categoria:req.body.
       contraseña:req.body.contrasenia,
       repetircontraseña:req.body.contaseniarepetir,
+      isDelete:false
     }
     
     fs.writeFileSync(path.resolve(__dirname,'../database/user.json'),JSON.stringify([...datos,usuarioCrear],null,2))
     console.log(req.body);
-    res.redirect("/")
+    
 
     res.redirect("/")
     
@@ -46,10 +53,7 @@ module.exports = {
 
 
 
-  userCreateProcess: (req, res) => {
-    
-   
-  },
+
 
 
 
@@ -57,6 +61,9 @@ module.exports = {
 
 
   userDeleteProcess: (req, res) => {
-    
+    const usuarioBorrar= datos.find(usuario=>usuario.id == req.params.id) 
+    usuarioBorrar.isDelete = true
+    fs.writeFileSync(path.resolve(__dirname,'../database/user.json'),JSON.stringify(datos,null,2))
+    res.redirect('/')
   },
 }

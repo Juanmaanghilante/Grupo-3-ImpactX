@@ -8,20 +8,24 @@
     "categoria": "admin/cliente",
     "imagen": "/img/img-cafetera-moulinex.jpg",
     "password": "User123!",
-    "isDeleted": false
+    "isDelete": false
   },
   {
-    "usuario": "Juan Martin",
-    "nombre": "Anghilante",
-    "apellido": "Anghilante",
+    "id": 1687621621046,
+    "usuario": "homero",
+    "nombre": "homero",
+    "apellido": "simpson",
+    "email": "elhomer@gmial",
+    "contraseña": "hola",
+    "isDelete": true
+  },
+  {
+    "id": 1687621747758,
+    "usuario": "el rodri 123",
+    "nombre": "desarrollo web html y css 2/2",
+    "apellido": "aaa",
     "email": "juanma@juanma.com",
-    "contraseña": "asd"
-  },
-  {
-    "usuario": "juanma",
-    "nombre": "probando si funciona",
-    "apellido": "asdadadasdas",
-    "email": "asdasdada@gmial,coma.",
-    "contraseña": "8537637574734745"
+    "contraseña": "ssss",
+    "isDelete": false
   }
 ]

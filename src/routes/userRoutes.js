@@ -7,11 +7,11 @@ router.get('/user/login', userControler.userLogin)
 router.get('/user/signup', userControler.userSignup)
 
 // CREATE
-router.post('/user/create', userControler.userCreate)
-router.get("/user", userControler.userCreateProcess)
+router.post('/user/signup', userControler.userCreate)
+
 
 // EDIT
-router.get('/user/edit/id', userControler.userEdit)
+router.get('/user/edit/:id', userControler.userEdit)
 router.put("/user/:id", userControler.userEditProcess)
 
 // DELETE

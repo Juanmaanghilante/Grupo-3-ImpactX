@@ -18,10 +18,19 @@
             <div class="control-formulario">
               <input type="password" name="password" class="control" placeholder="Contraseña" required />
             </div>
-            <button type="submit" class="botonContactanos">Editar</input>
-          </div>
+          
+            <button type="submit" class="botonContactanos">Editar</button>
+         <label class="botonContactanos" for="botonBorrar">BORRAR</label>
+            </div>
         </div>
       </form>
+<form   class="create-form" method="post" action="/user/<%=usuario.id %>/?_method=delete">
+
+  <button hidden type="submit" id="botonBorrar">Eliminar usuario </button>
+
+</form>
+
+
       <%- include('../partials/footer')%>
   </body>
 
