@@ -19,11 +19,11 @@
   },
   {
     "id": 3,
-    "categoria": "servicio",
-    "nombre": "servicio",
-    "descripcion": "descripcion servicio",
-    "precio": "500",
-    "imagen": "1687485782933.jpg",
-    "isDeleted": false
+    "imagen": "1687629999280.jpg",
+    "isDeleted": false,
+    "nombre": "hosting web ",
+    "descripcion": " almacenamos tu web     ",
+    "precio": "1500000000",
+    "categoria": "servicios"
   }
 ]

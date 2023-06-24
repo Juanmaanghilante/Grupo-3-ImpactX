@@ -29,7 +29,8 @@ router.post("/productos/create", fileUpload.single("image"), productControler.pr
 
 // EDIT
 router.get('/productos/edit/:id', productControler.productsEdit)
-router.put("/productos/:id", productControler.productsEditProcess)
+
+router.put("/productos/:id",fileUpload.single("nuevaImagen"), productControler.productsEditProcess)
 
 // DELETE
 router.delete("/productos/delete/:id", productControler.productsDeleteProcess)
