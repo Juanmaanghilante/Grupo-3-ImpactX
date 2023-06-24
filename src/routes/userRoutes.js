@@ -7,8 +7,8 @@ router.get('/user/login', userControler.userLogin)
 router.get('/user/signup', userControler.userSignup)
 
 // CREATE
-router.get('/user/create', userControler.userCreate)
-router.post("/user", userControler.userCreateProcess)
+router.post('/user/create', userControler.userCreate)
+router.get("/user", userControler.userCreateProcess)
 
 // EDIT
 router.get('/user/edit/id', userControler.userEdit)

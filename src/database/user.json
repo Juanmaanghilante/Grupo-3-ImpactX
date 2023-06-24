@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "user": "JohnDoe1",
+    "name": "John",
+    "lastName": "Doe",
+    "mail": "johndoe@hotmail.com",
+    "categoria": "admin/cliente",
+    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "password": "User123!",
+    "isDeleted": false
+  },
+  {
+    "usuario": "Juan Martin",
+    "nombre": "Anghilante",
+    "apellido": "Anghilante",
+    "email": "juanma@juanma.com",
+    "contraseña": "asd"
+  },
+  {
+    "usuario": "juanma",
+    "nombre": "probando si funciona",
+    "apellido": "asdadadasdas",
+    "email": "asdasdada@gmial,coma.",
+    "contraseña": "8537637574734745"
+  }
+]
