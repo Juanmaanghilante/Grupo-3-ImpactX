@@ -13,15 +13,22 @@ module.exports = {
   },
 
   userEdit: (req, res) => {
-    const usuarioEditar= datos.find(usuario=> usuario.id == req.params.id ) 
-console.log(req.params.id);
-console.log(datos[0]);
-console.log(usuarioEditar);
+    if (req.params.id) {
+    const usuarioEditar = datos.find(usuario => usuario.id == req.params.id ) 
     return res.render('users/edicionUsuario',{usuario:usuarioEditar})
+    } else return res.send("ERROR 404 NOT FOUND")
   },
 
   userEditProcess: (req, res) => {
-    
+    const usuarioEditar = datos.find(usuario => usuario.id == req.params.id)
+    console.log(req.body);
+    usuarioEditar.user = req.body.user
+    usuarioEditar.name = req.body.name
+    usuarioEditar.lastName = req.body.lastName
+    usuarioEditar.email = req.body.email
+    usuarioEditar.imagen = req.body.imagen
+    fs.writeFileSync(path.resolve(__dirname,'../database/user.json'),JSON.stringify(datos, null, 2));
+    return res.redirect('edit/' + usuarioEditar.id)
   },
 
 

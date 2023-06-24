@@ -6,7 +6,7 @@
 
     <%- include('../partials/header')%>
 
-      <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
+      <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form">
         <div class="content">
           <div>
             <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
@@ -17,7 +17,7 @@
 
             <div class="control-formulario">
               <label for="user"> Usuario: </label>
-              <input class="control" type="text" name="usuario" id="user" placeholder="Usuario" value="<%= usuario.user %>" />
+              <input class="control" type="text" name="user" id="user" placeholder="Usuario" value="<%= usuario.user %>" />
             </div>
 
             <div class="control-formulario">
@@ -32,7 +32,7 @@
 
             <div class="control-formulario">
               <label for="email"> Correo </label>
-              <input class="control" type="email" name="email" id="email" placeholder="Correo" value="<%= usuario.mail %>" />
+              <input class="control" type="email" name="email" id="email" placeholder="Correo" value="<%= usuario.email %>" />
             </div>
             <div class="control-formulario">
               <label for="fotoPerfil">Foto de usuario</label>
