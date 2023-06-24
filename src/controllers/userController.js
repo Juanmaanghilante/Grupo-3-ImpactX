@@ -1,22 +1,33 @@
 const path = require("path")
 
-
 module.exports = {
 
 
-  login: (req, res) => {
+  userLogin: (req, res) => {
     return res.render('users/login')
   },
 
-  signup: (req, res) => {
+  userSignup: (req, res) => {
     return res.render('users/signup')
   },
 
-  edit: (req, res) => {
+  userEdit: (req, res) => {
     return res.render('users/edicionUsuario')
   },
 
+  userEditProcess: (req, res) => {
+    
+  },
 
+  userCreate: (req, res) => {
+    
+  },
 
+  userCreateProcess: (req, res) => {
+    
+  },
 
+  userDeleteProcess: (req, res) => {
+    
+  },
 }

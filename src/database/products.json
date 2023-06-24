@@ -1,11 +1,29 @@
 [
   {
-    "id": 1,
-    "categoria": "Producto/Sevicio",
-    "product": "Marketing Online",
-    "descripcion": "Paquete marketing, branding, SEO etc",
+    "id": "1",
+    "categoria": "sevicio",
+    "nombre": "SEO",
+    "descripcion": "Optimización de motores de búsqueda",
     "precio": 100000,
-    "imagen": "/img/img-cafetera-moulinex.jpg",
+    "imagen": "1687485486061.jpg",
+    "isDeleted": false
+  },
+  {
+    "id": 2,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "500",
+    "imagen": "1687485748131.png",
+    "isDeleted": false
+  },
+  {
+    "id": 3,
+    "categoria": "servicio",
+    "nombre": "servicio",
+    "descripcion": "descripcion servicio",
+    "precio": "500",
+    "imagen": "1687485782933.jpg",
     "isDeleted": false
   }
 ]

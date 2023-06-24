@@ -1,11 +1,16 @@
 .mainProducts {
-  height: 100vh;
+  margin-top: 100px;
+  gap: 30px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
   padding: 2rem;
+
+}
+
+.bgProductos {
 
   background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
 }
@@ -42,6 +47,7 @@
 }
 
 .containerInfoProductos {
+  border-top: 1px solid #d0e4ff;
   padding: .7rem;
 }
 
@@ -89,9 +95,19 @@
     align-items: center;
   }
 
+  .containerInfoProductos {
+    border-top: none;
+    border-left: 1px solid #d0e4ff;
+  }
+
   .containerInfoProductos div {
     justify-content: left
   }
+
+  .containerImagenProductos {
+    height: 100px;
+  }
+
 
   .botonProductos {
     margin-right: .5rem;

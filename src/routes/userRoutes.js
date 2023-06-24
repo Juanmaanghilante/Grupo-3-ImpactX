@@ -3,12 +3,18 @@ const router = express.Router();
 const userControler = require('../controllers/userController');
 
 
-router.get('/user/login', userControler.login)
-router.get('/user/signup', userControler.signup)
+router.get('/user/login', userControler.userLogin)
+router.get('/user/signup', userControler.userSignup)
+
+// CREATE
+router.get('/user/create', userControler.userCreate)
+router.post("/user", userControler.userCreateProcess)
 
 // EDIT
-router.get('/user/edit', userControler.edit)
+router.get('/user/edit/id', userControler.userEdit)
+router.put("/user/:id", userControler.userEditProcess)
 
-
+// DELETE
+router.delete("/user/:id", userControler.userDeleteProcess)
 
 module.exports = router

@@ -4,25 +4,36 @@
 
   <body>
     <%- include('../partials/header')%>
-
-      <main class="mainProducts">
-        <article class="tarjetaProductos">
-          <div class="containerImagenProductos">
-            <img class="productoImagen" src="/img/imgProduct.png" alt="imagen producto">
-          </div>
-          <div class="containerInfoProductos">
-            <h2>Sistemas Personalizados</h2>
-            <p>$10.000</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, minima!</p>
-            <div>
-              <a class="botonProductos" href="">ADD TO CART</a>
-              <a class="botonProductos" href="">COMPRAR AHORA</a>
-            </div>
-          </div>
-        </article>
-
-      </main>
-
+      <div class="bgProductos">
+        <main class="mainProducts">
+          <% productos.forEach(producto=> { %>
+            <article class="tarjetaProductos">
+              <div class="containerImagenProductos">
+                <img class="productoImagen" src="/img/<%= producto.imagen %>"
+                  alt="imagen producto <%= producto.nombre %>">
+              </div>
+              <div class="containerInfoProductos">
+                <h2>
+                  <%= producto.nombre %>
+                </h2>
+                <p>
+                  <%= producto.precio %>
+                </p>
+                <p>
+                  <%= producto.descripcion %>
+                </p>
+                <div>
+                  <a class="botonProductos" href="">ADD TO CART</a>
+                  <a class="botonProductos" href="">COMPRAR AHORA</a>
+                  <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                    <button type="sumbit" class="botonProductos">ELIMINAR</button>
+                  </form>
+                </div>
+              </div>
+            </article>
+            <% }) %>
+        </main>
+      </div>
       <%- include('../partials/footer')%>
   </body>
 
