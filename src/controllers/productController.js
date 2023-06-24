@@ -22,7 +22,7 @@ module.exports = {
 
   productsCreateProcess: (req, res) => {
     console.log('hola');
-    const product = {
+    const nuevoProduct = {
       "id": productos.length+1,
       "categoria": req.body.category,
       "nombre": req.body.product,
@@ -31,7 +31,10 @@ module.exports = {
       "imagen": req.file.filename,
       "isDeleted": false
     };
-    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify([...productos, product], null, 2));
+
+    productos.push(nuevoProduct)
+
+    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(productos, null, 2), 'utf-8');
     return res.redirect('/');
   },
 
