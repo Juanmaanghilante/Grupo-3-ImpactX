@@ -51,5 +51,38 @@
     "password": "jr123",
     "repeatPassword": "jr123",
     "isDelete": false
+  },
+  {
+    "id": 1687733987232,
+    "user": "tomas",
+    "name": "tomas a.",
+    "lastName": "Garcia T.",
+    "email": "tagt@gmail.com",
+    "category": "",
+    "password": "asd123",
+    "repeatPassword": "asd123",
+    "isDelete": false
+  },
+  {
+    "id": 1687734050063,
+    "user": "qwe",
+    "name": "qwe",
+    "lastName": "qwe",
+    "email": "qwe",
+    "category": "Cliente",
+    "password": "qwe",
+    "repeatPassword": "qwe",
+    "isDelete": false
+  },
+  {
+    "id": 1687734080669,
+    "user": "admin",
+    "name": "admin",
+    "lastName": "admin",
+    "email": "admin@admin.admin",
+    "category": "Admin",
+    "password": "admin",
+    "repeatPassword": "admin",
+    "isDelete": false
   }
 ]

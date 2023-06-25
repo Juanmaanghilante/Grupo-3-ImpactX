@@ -40,7 +40,7 @@ module.exports = {
       name: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
-      // categoria:req.body.
+      category:req.body.category,
       password: req.body.password,
       repeatPassword: req.body.repeatPassword,
       isDelete: false
