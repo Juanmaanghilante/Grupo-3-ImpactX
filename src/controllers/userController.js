@@ -35,7 +35,7 @@ module.exports = {
 
   userCreate: (req, res) => {
     let usuarioCrear = {
-      id: Date.now(),
+      id: datos.length + 1,
       user: req.body.user,
       name: req.body.name,
       lastName: req.body.lastName,

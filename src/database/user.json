@@ -95,5 +95,15 @@
     "password": "asdasda",
     "repeatPassword": "asdasdsd",
     "isDelete": false
+  },
+  {
+    "id": 11,
+    "user": "nico",
+    "name": "nico",
+    "lastName": "prados",
+    "email": "elnico@gmail.com",
+    "category": "Admin",
+    "password": "nico123",
+    "isDelete": false
   }
 ]
