@@ -4,7 +4,7 @@ header {
   width: 100%;
   position: fixed;
   display: flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   background-color: white;
   top: 0;
 
@@ -27,8 +27,8 @@ header div.logo {
   display: flex;
   width: 25vw;
   max-width: 210px;
-  margin-left: 5vw;
-  margin-top: 4vw;
+  margin-left: 4vw;
+  margin-top: 3.5vw;
 }
 
 /*  SHOPPING CART  */
@@ -218,16 +218,16 @@ header nav ul li a:active {
     background-color: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
 
-    margin-left: 7rem;
+    margin-left: 3vw;
   }
 
   nav.menu ul li.ingresar {
     position: absolute;
-    right: 15vw;
+    right: 25vw;
     padding: .7rem .3rem;
     border-radius: 6px;
     background-color: white;
-    margin-top: -3px;
+    margin-top: -10px;
     box-shadow: 0px 0px 4px -1px #185ABC;
 
     transition: all 300ms;
@@ -235,11 +235,11 @@ header nav ul li a:active {
 
   nav.menu ul li.registrarse {
     position: absolute;
-    right: 15vw;
+    right: 10vw;
     padding: .7rem .3rem;
     border-radius: 6px;
     background-color: white;
-    margin-top: -3px;
+    margin-top: -10px;
     box-shadow: 0px 0px 4px -1px #185ABC;
     transition: all .2s;
   }
@@ -283,7 +283,7 @@ header nav ul li a:active {
   .shopping-cart {
     max-width: 50px;
     margin: 25px 0 0 0;
-    /* right: 30px; */
+    right: 5px;
   }
 
   .shopping-cart i {
@@ -303,15 +303,15 @@ header nav ul li a:active {
 @media (min-width: 1200px) {
   nav.menu ul li.registrarse {
     right: 11vw;
-    top: -10px;
+    /* top: -10px; */
   }
 
   nav.menu ul li.ingresar {
-    right: 18vw;
-    top: -10px;
+    right: 20.5vw;
+    /* top: -10px; */
   }
 
   .shopping-cart {
-    right: 15px;
+    right: 5px;
   }
 }
