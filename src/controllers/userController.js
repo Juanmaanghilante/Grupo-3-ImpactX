@@ -36,13 +36,13 @@ module.exports = {
   userCreate: (req, res) => {
     let usuarioCrear = {
       id: Date.now(),
-      usuario: req.body.usuario,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      email: req.body.correo,
+      user: req.body.user,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      email: req.body.email,
       // categoria:req.body.
-      contraseña: req.body.contrasenia,
-      repetircontraseña: req.body.contaseniarepetir,
+      password: req.body.password,
+      repeatPassword: req.body.repeatPassword,
       isDelete: false
     }
 

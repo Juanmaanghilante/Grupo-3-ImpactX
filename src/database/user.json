@@ -28,5 +28,28 @@
     "password": "ssss",
     "isDelete": false,
     "imagen": ""
+  },
+  {
+    "id": 1687732094848,
+    "user": "as",
+    "name": "as",
+    "lastName": "as",
+    "email": "as",
+    "password": "as",
+    "isDelete": false
+  },
+  {
+    "id": 1687732214039,
+    "isDelete": false
+  },
+  {
+    "id": 1687732377905,
+    "user": "pepe",
+    "name": "Juan",
+    "lastName": "Ramirez",
+    "email": "JR@gmail.com",
+    "password": "jr123",
+    "repeatPassword": "jr123",
+    "isDelete": false
   }
 ]
