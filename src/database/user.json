@@ -84,5 +84,16 @@
     "password": "admin",
     "repeatPassword": "admin",
     "isDelete": false
+  },
+  {
+    "id": 1687735851084,
+    "user": "felipe ",
+    "name": "felipe",
+    "lastName": "leon",
+    "email": "elfeli@gmial.com",
+    "category": "Admin",
+    "password": "asdasda",
+    "repeatPassword": "asdasdsd",
+    "isDelete": false
   }
 ]
