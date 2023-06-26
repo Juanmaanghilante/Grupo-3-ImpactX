@@ -35,7 +35,7 @@ module.exports = {
     productos.push(nuevoProduct)
 
     fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(productos, null, 2), 'utf-8');
-    return res.redirect('/');
+    return res.redirect('/productos');
   },
 
 
@@ -69,7 +69,7 @@ module.exports = {
       fs.unlinkSync(path.resolve(__dirname,"../../public/img/"+ productoEditar.imagen))
      productoEditar.imagen=req.file.filename
     }
-    
+
     fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), JSON.stringify(productos, null, 2))
     console.log(req.body);
 

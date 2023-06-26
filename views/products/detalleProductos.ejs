@@ -4,6 +4,8 @@
 
   <body class="bgProductos">
     <%- include('../partials/header')%>
+
+
         <main class="mainProducts">
           <% productos.forEach(producto=> { %>
             <article class="tarjetaProductos">
@@ -34,6 +36,10 @@
               </div>
             </article>
             <% }) %>
+            <div class="nuevoProducto">
+              <a href="/productos/create">+</a>
+              <p>Agregar Nuevo Producto</p>
+            </div>
         </main>
       <%- include('../partials/footer')%>
   </body>
