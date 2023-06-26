@@ -41,8 +41,8 @@ module.exports = {
       lastName: req.body.lastName,
       email: req.body.email,
       category:req.body.category,
+      img : req.body.img,
       password: req.body.password,
-   
       isDelete: false
     }
 
