@@ -70,6 +70,8 @@
   justify-content: space-around;
 }
 
+
+
 .botonProductos {
   text-decoration: none;
   color: white;
@@ -78,6 +80,7 @@
   border-radius: 3px;
   padding: .5rem .8rem;
   border: 1px solid #0c2b56;
+  margin-top: .5rem;
 
   transition: .2s;
 }
@@ -88,11 +91,18 @@
 }
 
 
+.contenedorBotonesProductos {
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+}
+
+
 
 @media (min-width: 768px) {
   .tarjetaProductos {
-    flex-direction: row;
-    align-items: center;
+    overflow: hidden;
+    max-width: 300px;
   }
 
   .containerInfoProductos {
@@ -103,11 +113,6 @@
   .containerInfoProductos div {
     justify-content: left
   }
-
-  .containerImagenProductos {
-    height: 100px;
-  }
-
 
   .botonProductos {
     margin-right: .5rem;

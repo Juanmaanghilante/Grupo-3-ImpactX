@@ -46,10 +46,6 @@ module.exports = {
 
   productsEdit: (req, res) => {
     const productoEditar = productos.find(row => row.id == req.params.id)
-
-
-
-
     return res.render('products/formEdit', { productoEditar: productoEditar })
   },
 
@@ -68,12 +64,12 @@ module.exports = {
     productoEditar.descripcion = req.body.desc
     productoEditar.precio = req.body.price
     productoEditar.categoria = req.body.categoria
+
     if (req.file) {
       fs.unlinkSync(path.resolve(__dirname,"../../public/img/"+ productoEditar.imagen))
      productoEditar.imagen=req.file.filename
-
-      
     }
+    
     fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), JSON.stringify(productos, null, 2))
     console.log(req.body);
 

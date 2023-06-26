@@ -2,9 +2,8 @@
 <html lang="en">
 <%- include('../partials/head', {title:"Impact X | Productos"})%>
 
-  <body>
+  <body class="bgProductos">
     <%- include('../partials/header')%>
-      <div class="bgProductos">
         <main class="mainProducts">
           <% productos.forEach(producto=> { %>
             <article class="tarjetaProductos">
@@ -17,26 +16,25 @@
                   <%= producto.nombre %>
                 </h2>
                 <p>
-                  <%= producto.precio %>
+                  <%= producto.precio %> $
                 </p>
                 <p>
                   <%= producto.descripcion %>
                 </p>
-                <div>
-                  <a href="/productos/edit/<%=producto.id %>">Editar</a>
+                <div class="contenedorBotonesProductos">
                   <a class="botonProductos" href="">ADD TO CART</a>
                   <a class="botonProductos" href="">COMPRAR AHORA</a>
-                  <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="sumbit" class="botonProductos">ELIMINAR</button>
-                    
-                  
-                  </form>
+                  <div>
+                    <a class="botonProductos" href="/productos/edit/<%=producto.id %>">EDITAR</a>
+                    <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                      <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                    </form>
+                  </div>
                 </div>
               </div>
             </article>
             <% }) %>
         </main>
-      </div>
       <%- include('../partials/footer')%>
   </body>
 
