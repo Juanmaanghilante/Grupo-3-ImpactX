@@ -1,6 +1,7 @@
 const path = require("path")
 const fs = require('fs');
-const datos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/user.json')))
+const rutaBase = path.resolve('./src/database/user.json')
+const datos = JSON.parse(fs.readFileSync(rutaBase));
 module.exports = {
 
 
@@ -10,6 +11,10 @@ module.exports = {
 
   userSignup: (req, res) => {
     return res.render('users/signup')
+  },
+  userList: (req, res) => {
+    const usersHabilitados = datos.filter(row => row.isDelete == false)
+    return res.render('users/usuariosListado', { usuarios: usersHabilitados })
   },
 
   userEdit: (req, res) => {
@@ -55,7 +60,8 @@ module.exports = {
   userDeleteProcess: (req, res) => {
     const usuarioBorrar = datos.find(usuario => usuario.id == req.params.id)
     usuarioBorrar.isDelete = true
-    fs.writeFileSync(path.resolve(__dirname, '../database/user.json'), JSON.stringify(datos, null, 2))
-    res.redirect('/')
+
+    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
+    return res.redirect('/user/list')
   },
 }

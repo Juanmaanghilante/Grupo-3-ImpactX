@@ -5,6 +5,7 @@ const userControler = require('../controllers/userController');
 
 router.get('/user/login', userControler.userLogin)
 router.get('/user/signup', userControler.userSignup)
+router.get('/user/list', userControler.userList)
 
 // CREATE
 router.post('/user/signup', userControler.userCreate)
@@ -15,6 +16,6 @@ router.get('/user/edit/:id', userControler.userEdit)
 router.put("/user/:id", userControler.userEditProcess)
 
 // DELETE
-router.delete("/user/:id", userControler.userDeleteProcess)
+router.delete("/user/delete/:id", userControler.userDeleteProcess)
 
 module.exports = router
