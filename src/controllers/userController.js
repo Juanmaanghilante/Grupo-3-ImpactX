@@ -57,7 +57,7 @@ module.exports = {
 
         errors: resultValidation.mapped(),
         oldData: req.body
-        
+
       });
     }
 
@@ -69,7 +69,7 @@ module.exports = {
       lastName: req.body.lastName,
       email: req.body.email,
       categoria: req.body.category,
-      // imagen: req.file.filename,
+      imagen: req.file.filename,
       password: req.body.password,
       isDelete: false
     }
