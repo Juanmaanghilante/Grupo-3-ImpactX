@@ -21,9 +21,9 @@
     "id": 3,
     "categoria": "Servicio",
     "nombre": "Hosting",
-    "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.   ",
+    "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.     ",
     "precio": "10000",
-    "imagen": "1687808865874.png",
-    "isDeleted": false
+    "imagen": "1687809806153Hosting-PNG-Pic.png",
+    "isDeleted": true
   }
 ]
