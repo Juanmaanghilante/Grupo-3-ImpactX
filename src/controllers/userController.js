@@ -53,7 +53,12 @@ module.exports = {
     const resultValidation = validationResult(req);
     if(resultValidation.errors.length > 0) {
       // mapped() convierte el objeto literal en un array
-      return res.render('users/signup', { errors: resultValidation.mapped() });
+      return res.render('users/signup', { 
+
+        errors: resultValidation.mapped(),
+        oldData: req.body
+        
+      });
     }
 
 

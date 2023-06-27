@@ -12,51 +12,115 @@
             <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
               <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
               <div class="control-formulario">
-                <input type="text" name="user" class="control" placeholder="Usuario"  />
+                
+
+                <!-- COMO HAGO PARA QUE QUEDE EL PLACEHOLDER ASÍ NO AGREGO LABEL? -->
+
+                <!-- USER NAME -->
                 <div class="erroresForm">
                   <% if (locals.errors && errors.user) { %>
                     <%= errors.user.msg %>
                   <% } %>
                 </div>
+                <input 
+                  type="text" 
+                  name="user" 
+                  placeholder="Usuario"
+                  value=" <%= locals.oldData ? oldData.user : null %> " 
+                  class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"  />
 
-                <input type="text" name="name" class="control" placeholder="Nombre"  />
+
+
+                <!-- FIRST NAME -->
                 <div class="erroresForm">
                   <% if (locals.errors && errors.name) { %>
                     <%= errors.name.msg %>
                   <% } %>
                 </div>
+                <input 
+                  type="text"
+                  name="name" 
+                  class="control <%= locals.errors && errors.name ? 'invalidError' : null %>" 
+                  placeholder="Nombre"  />
 
-                <input type="text" name="lastName" class="control" placeholder="Apellido"  />
+
+
+                <!-- LAST NAME -->
                 <div class="erroresForm">
                   <% if (locals.errors && errors.lastName) { %>
                     <%= errors.lastName.msg %>
                   <% } %>
                 </div>
+                <input 
+                  type="text" 
+                  name="lastName" 
+                  class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" 
+                  placeholder="Apellido"  />
 
-                <input type="text" name="email" class="control" placeholder="Email"  />
+
+
+                <!-- EMAIL -->
                 <div class="erroresForm">
                   <% if (locals.errors && errors.email) { %>
                     <%= errors.email.msg %>
                   <% } %>
                 </div>
+                <input 
+                  type="text" 
+                  name="email" 
+                  class="control <%= locals.errors && errors.email ? 'invalidError' : null %>" 
+                  placeholder="Email"  />
 
-                <select class="control" name="category" id="category">
-                  <option value="Admin">Admin</option>
-                  <option value="Cliente">Cliente</option>
-                </select>
+
+
+                <!-- CATEGORY -->
                 <div class="erroresForm">
                   <% if (locals.errors && errors.category) { %>
                     <%= errors.category.msg %>
                   <% } %>
                 </div>
+                <select 
+                  name="category" 
+                  class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" 
+                  id="category">
+                  <option value="">Tipo de Usuario</option>
 
-                <input class="control" type="file" name="profilePic">
-                <input type="password" name="password" class="control" placeholder="Contraseña"  />
+                  <% let tipoUsuario = ['Admin', 'Cliente'] %>
+
+                  <% for( const unUsuario of tipoUsuario ) { %>
+                    <option 
+                      value="<%= unUsuario %>"
+                      <%= locals.oldData && (unUsuario == oldData.category) ? 'selected' : null %>
+                      > <%= unUsuario %> </option>
+                  <% } %>
+
+                </select>
+
+                <!-- PROFILE PICTURE -->
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.profilePic) { %>
+                    <%= errors.profilePic.msg %>
+                  <% } %>
+                </div>
+                <input
+                 class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" 
+                 type="file" 
+                 name="profilePic">
+                
+
+
+                <!-- PASSWORD --> 
                 <div class="erroresForm">
                   <% if (locals.errors && errors.password) { %>
                     <%= errors.password.msg %>
                   <% } %>
                 </div>
+                <input 
+                  type="password" 
+                  name="password" 
+                  class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
+                  placeholder="Contraseña"  />
+
 
                 <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
               </div>
