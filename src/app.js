@@ -9,6 +9,8 @@ const productRouter = require('./routes/productRoutes')
 const methodOverride = require("method-override")
 
 
+
+
 app.use(express.static("public"));
 app.use('/products', express.static(path.join(__dirname, '../views/products')));
 app.use('/users', express.static(path.join(__dirname, '../views/users')));
@@ -23,6 +25,9 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 app.listen(3003, () => console.log('Servidor en puerto 3003'));
+
+
+
 
 
 

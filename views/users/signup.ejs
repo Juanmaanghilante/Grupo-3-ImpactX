@@ -12,24 +12,59 @@
             <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
               <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
               <div class="control-formulario">
-                <input type="text" name="user" class="control" placeholder="Usuario" required />
-                <input type="text" name="name" class="control" placeholder="Nombre" required />
-                <input type="text" name="lastName" class="control" placeholder="Apellido" required />
-                <input type="text" name="email" class="control" placeholder="Email" required />
+                <input type="text" name="user" class="control" placeholder="Usuario"  />
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.user) { %>
+                    <%= errors.user.msg %>
+                  <% } %>
+                </div>
+
+                <input type="text" name="name" class="control" placeholder="Nombre"  />
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.name) { %>
+                    <%= errors.name.msg %>
+                  <% } %>
+                </div>
+
+                <input type="text" name="lastName" class="control" placeholder="Apellido"  />
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.lastName) { %>
+                    <%= errors.lastName.msg %>
+                  <% } %>
+                </div>
+
+                <input type="text" name="email" class="control" placeholder="Email"  />
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.email) { %>
+                    <%= errors.email.msg %>
+                  <% } %>
+                </div>
+
                 <select class="control" name="category" id="category">
                   <option value="Admin">Admin</option>
                   <option value="Cliente">Cliente</option>
                 </select>
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.category) { %>
+                    <%= errors.category.msg %>
+                  <% } %>
+                </div>
+
                 <input class="control" type="file" name="profilePic">
-                <input type="password" name="password" class="control" placeholder="Contraseña" required />
-                <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña"
-                  required />
+                <input type="password" name="password" class="control" placeholder="Contraseña"  />
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.password) { %>
+                    <%= errors.password.msg %>
+                  <% } %>
+                </div>
+
+                <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
               </div>
               <div>
                 <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
               </div>
             </form>
-        </div>
+      </div>
 
       <%- include('../partials/footer')%>
 

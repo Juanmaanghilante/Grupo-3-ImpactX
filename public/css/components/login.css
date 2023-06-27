@@ -1,5 +1,5 @@
  .content {
-   height: 60vh;
+   height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -9,9 +9,6 @@
    padding: 2rem;
  }
 
- .content div {
-   width: 100%;
- }
 
  .image-sign-up {
    display: none;
@@ -48,11 +45,21 @@
    margin-bottom: 2rem;
  }
 
+
+ .erroresForm {
+  color: rgb(177, 0, 0);
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+ }
+
+ 
+
  @media (min-width: 768px) {
 
    .image-sign-up {
      display: block;
      width: 200px;
+     margin-right: 7rem;
    }
 
    .content {

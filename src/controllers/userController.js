@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator')
 const path = require("path")
 const fs = require('fs');
 const rutaBase = path.resolve('./src/database/user.json')
@@ -16,6 +17,10 @@ module.exports = {
     const usersHabilitados = datos.filter(row => row.isDelete == false)
     return res.render('users/usuariosListado', { usuarios: usersHabilitados })
   },
+
+
+
+
 
   userEdit: (req, res) => {
     const usuarioEditar = datos.find(usuario => usuario.id == req.params.id)
@@ -38,24 +43,46 @@ module.exports = {
   },
 
 
+
+
+
+
+
   userCreateProcess: (req, res) => {
+
+    const resultValidation = validationResult(req);
+    if(resultValidation.errors.length > 0) {
+      // mapped() convierte el objeto literal en un array
+      return res.render('users/signup', { errors: resultValidation.mapped() });
+    }
+
+
     let usuarioCrear = {
       id: datos.length + 1,
       user: req.body.user,
       name: req.body.name,
       lastName: req.body.lastName,
       email: req.body.email,
-      category:req.body.category,
-      profilePic: req.body.profilePic,
+      categoria: req.body.category,
+      // imagen: req.file.filename,
       password: req.body.password,
       isDelete: false
     }
 
-    fs.writeFileSync(path.resolve(__dirname, '../database/user.json'), JSON.stringify([...datos, usuarioCrear], null, 2))
-    console.log(req.body);
+    datos.push(usuarioCrear)
 
-    res.redirect("/")
+
+    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
+
+    res.redirect("/user/list")
   },
+
+
+
+
+
+
+
 
   userDeleteProcess: (req, res) => {
     const usuarioBorrar = datos.find(usuario => usuario.id == req.params.id)
