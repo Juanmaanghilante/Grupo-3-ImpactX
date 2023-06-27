@@ -38,7 +38,7 @@ module.exports = {
   },
 
 
-  userCreate: (req, res) => {
+  userCreateProcess: (req, res) => {
     let usuarioCrear = {
       id: datos.length + 1,
       user: req.body.user,
@@ -46,7 +46,7 @@ module.exports = {
       lastName: req.body.lastName,
       email: req.body.email,
       category:req.body.category,
-      img : req.body.img,
+      profilePic: req.body.profilePic,
       password: req.body.password,
       isDelete: false
     }

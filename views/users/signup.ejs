@@ -4,32 +4,32 @@
 
   <body class="bodySignUp">
     <%- include('../partials/header')%>
-      <form action="/user/signup" method="POST" class="create-form">
         <div class="content">
-          <div>
+              <div>
+                <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
+              </div>
 
-            <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
-          </div>
-          <div>
-            <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
-            <div class="control-formulario">
-              <input type="text" name="user" class="control" placeholder="Usuario" required />
-              <input type="text" name="name" class="control" placeholder="Nombre" required />
-              <input type="text" name="lastName" class="control" placeholder="Apellido" required />
-              <input type="text" name="email" class="control" placeholder="Email" required />
-              <select class="control" name="category" id="category">
-                <option value="Admin">Admin</option>
-                <option value="Cliente">Cliente</option>
-              </select>
-              <input class="control" type="file" name="img">
-              <input type="password" name="password" class="control" placeholder="Contraseña" required />
-              <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña"
-                required />
-            </div>
-            <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
-          </div>
+            <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
+              <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
+              <div class="control-formulario">
+                <input type="text" name="user" class="control" placeholder="Usuario" required />
+                <input type="text" name="name" class="control" placeholder="Nombre" required />
+                <input type="text" name="lastName" class="control" placeholder="Apellido" required />
+                <input type="text" name="email" class="control" placeholder="Email" required />
+                <select class="control" name="category" id="category">
+                  <option value="Admin">Admin</option>
+                  <option value="Cliente">Cliente</option>
+                </select>
+                <input class="control" type="file" name="profilePic">
+                <input type="password" name="password" class="control" placeholder="Contraseña" required />
+                <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña"
+                  required />
+              </div>
+              <div>
+                <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
+              </div>
+            </form>
         </div>
-      </form>
 
       <%- include('../partials/footer')%>
 
