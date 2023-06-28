@@ -1,47 +1,38 @@
 [
   {
-    "id": "1",
-    "categoria": "sevicio",
+    "id": 1,
+    "categoria": "Servicio",
     "nombre": "Desarrollo de sitios web",
-    "descripcion": "las empresas necesitan una presencia en línea sólida y atractiva  pero en el back-end  funcional y optimizada , te ayudamos a desarrollar tu página web en base a tus requerimientos. Gestión de redes sociales: creamos y administramos tus redes sociales eficientizando tu tiempo y recursos creamos contenido relevante, interactuamos con tu audiencia, y realizamos análisis de resultados para ajustar la estrategia de ser necesario. ",
-    "precio": "858585858",
-    "imagen": "1687735715222.png",
+    "descripcion": "Back-end funcional y optimizado. Desarrollo de tu página web en base a tus requerimientos.  ",
+    "precio": "120000",
+    "imagen": "1687808857703.png",
     "isDeleted": false
   },
   {
     "id": 2,
-    "categoria": "producto",
-    "nombre": "producto",
-    "descripcion": "producto",
-    "precio": "500",
-    "imagen": "1687485748131.png",
-    "isDeleted": true
+    "categoria": "Producto",
+    "nombre": "Sistemas para comercios",
+    "descripcion": "Inventarios, ventas, compras, facturación, seguimiento de clientes y generación de informes.     ",
+    "precio": "520",
+    "imagen": "1687808861945.png",
+    "isDeleted": false
   },
   {
     "id": 3,
-    "imagen": "1687629999280.jpg",
-    "isDeleted": true,
-    "nombre": "hosting web ",
-    "descripcion": " almacenamos tu web     ",
-    "precio": "1500000000",
-    "categoria": "servicios"
+    "categoria": "Servicio",
+    "nombre": "Hosting",
+    "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.     ",
+    "precio": "10000",
+    "imagen": "1687809806153Hosting-PNG-Pic.png",
+    "isDeleted": true
   },
   {
     "id": 4,
     "categoria": "producto",
-    "nombre": "Sistemas de administración para comercios:",
-    "descripcion": "nuestro servicio de creación de sistemas a medida para comercios / empresas está diseñado para simplificar, optimizar y ordenar la gestión de tu negocio, desarrollamos soluciones a medida para tu industria que te permiten tener un control completo sobre tus operaciónes comerciales abarcando tareas como inventarios, ventas, compras,facturación,seguimiento de clientes y generación de informes a través de kpís escogidos en conjunto",
-    "precio": "520",
-    "imagen": "1687734755104.png",
+    "nombre": "producto",
+    "descripcion": "producto   ",
+    "precio": "2",
+    "imagen": "product-default.png",
     "isDeleted": true
-  },
-  {
-    "id": 5,
-    "categoria": "producto",
-    "nombre": "Hosting de tu sistema/pagina web:",
-    "descripcion": "proporcionamos los recursos necesarios para alojar y hacer accesibles sitios web en internet. como proveedores de hosting ofrecemos almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.",
-    "precio": "5520",
-    "imagen": "1687735100670.png",
-    "isDeleted": false
   }
 ]

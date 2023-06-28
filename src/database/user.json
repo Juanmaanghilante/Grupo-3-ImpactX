@@ -1,109 +1,79 @@
 [
   {
     "id": 1,
-    "user": "eugebiio",
-    "name": "Juanaaaaaa",
-    "lastName": "Gomezsssss",
+    "user": "JuanGomez1",
+    "name": "Juan",
+    "lastName": "Gomez",
     "email": "juangomez@hotmail.com",
     "categoria": "admin/cliente",
-    "imagen": "Captura de pantalla (271).png",
+    "imagen": "1687629999280.jpg",
     "password": "User123!",
-    "isDelete": true
+    "isDelete": false
   },
   {
-    "id": 1687621621046,
-    "user": "homero",
-    "name": "homero",
-    "lastName": "simpson",
-    "email": "elhomer@gmial",
-    "password": "hola",
-    "isDelete": true
+    "id": 2,
+    "user": "Felipe_cabj10",
+    "name": "Felipe",
+    "lastName": "Leon",
+    "email": "felipeleon@hotmail.com",
+    "categoria": "Admin",
+    "imagen": "1687629999280.jpg",
+    "password": "Felipe123!",
+    "isDelete": false
   },
   {
-    "id": 1687621747758,
-    "user": "el jonny123",
-    "name": "desarrollo web html y css 2/2",
-    "lastName": "Aguilar",
-    "email": "juanma@juanma.com",
-    "password": "ssss",
+    "id": 3,
+    "user": "Nico10_",
+    "name": "Nico",
+    "lastName": "Prados",
+    "email": "nicoprad@hotmail.com",
+    "categoria": "Admin",
+    "imagen": "1687629999280.jpg",
+    "password": "Nico123!",
+    "isDelete": false
+  },
+  {
+    "id": 4,
+    "user": "elAles11",
+    "name": "Alex",
+    "lastName": "Cho",
+    "email": "alexcho@hotmail.com",
+    "categoria": "Admin",
+    "imagen": "1687629999280.jpg",
+    "password": "Alex123!",
+    "isDelete": false
+  },
+  {
+    "id": 5,
+    "user": "TomiBud4",
+    "name": "Tomas",
+    "lastName": "Tarantino",
+    "email": "tomitarantino@hotmail.com",
+    "categoria": "Admin",
+    "imagen": "1687629999280.jpg",
+    "password": "Tomas123!",
+    "isDelete": false
+  },
+  {
+    "id": 6,
+    "user": "richard15",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richardmazo@hotmail.com",
+    "categoria": "Admin",
+    "password": "Ricardo123!",
     "isDelete": false,
-    "imagen": ""
+    "imagen": "1687915948439800026290.jpg"
   },
   {
-    "id": 1687732094848,
-    "user": "as",
-    "name": "as",
-    "lastName": "as",
-    "email": "as",
-    "password": "as",
-    "isDelete": false
-  },
-  {
-    "id": 1687732214039,
-    "isDelete": false
-  },
-  {
-    "id": 1687732377905,
-    "user": "pepe",
-    "name": "Juan",
-    "lastName": "Ramirez",
-    "email": "JR@gmail.com",
-    "password": "jr123",
-    "repeatPassword": "jr123",
-    "isDelete": false
-  },
-  {
-    "id": 1687733987232,
-    "user": "tomas",
-    "name": "tomas a.",
-    "lastName": "Garcia T.",
-    "email": "tagt@gmail.com",
-    "category": "",
-    "password": "asd123",
-    "repeatPassword": "asd123",
-    "isDelete": false
-  },
-  {
-    "id": 1687734050063,
-    "user": "qwe",
-    "name": "qwe",
-    "lastName": "qwe",
-    "email": "qwe",
-    "category": "Cliente",
-    "password": "qwe",
-    "repeatPassword": "qwe",
-    "isDelete": false
-  },
-  {
-    "id": 1687734080669,
-    "user": "admin",
-    "name": "admin",
-    "lastName": "admin",
-    "email": "admin@admin.admin",
-    "category": "Admin",
-    "password": "admin",
-    "repeatPassword": "admin",
-    "isDelete": false
-  },
-  {
-    "id": 1687735851084,
-    "user": "felipe ",
-    "name": "felipe",
-    "lastName": "leon",
-    "email": "elfeli@gmial.com",
-    "category": "Admin",
-    "password": "asdasda",
-    "repeatPassword": "asdasdsd",
-    "isDelete": false
-  },
-  {
-    "id": 11,
-    "user": "nico",
-    "name": "nico",
-    "lastName": "prados",
-    "email": "elnico@gmail.com",
-    "category": "Admin",
-    "password": "nico123",
+    "id": 7,
+    "user": "elVitor_crak",
+    "name": "Victor",
+    "lastName": "Ojeda",
+    "email": "victorojeda@hotmail.com",
+    "categoria": "Admin",
+    "imagen": "1687629999280.jpg",
+    "password": "Victor123!",
     "isDelete": false
   }
 ]

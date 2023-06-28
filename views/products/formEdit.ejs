@@ -4,25 +4,44 @@
 <%- include('../partials/head', {title:"Login"})%>
 
   <body class="bodySignUp">
+
     <%- include('../partials/header')%>
-      <form enctype="multipart/form-data" action="/productos/<%=productoEditar.id %>/?_method=put" method="POST" class="create-form">
+
+    <% if (productoEditar) { %>
+
+      <form enctype="multipart/form-data" action="/productos/<%=productoEditar.id %>/?_method=put" method="POST"
+        class="create-form">
         <div class="content">
           <div>
             <h2 class="titulo-registrar-usuario">Editar Producto</h2>
             <div class="control-formulario">
-              <input value="<%=productoEditar.nombre %>" type="text" name="name" class="control" placeholder="Nombre" required />
-              <input value="<%=productoEditar.descripcion %> "type="text" name="desc" class="control" placeholder="Descripción" required />
-              <input value="<%=productoEditar.precio %>" type="number" name="price" class="control" placeholder="Precio" required />
-              <input value="<%=productoEditar.categoria %>" type="text" name="categoria" class="control" placeholder="categoria" required />
+              <input value="<%=productoEditar.nombre %>" type="text" name="name" class="control" placeholder="Nombre"
+                required />
+              <input value="<%=productoEditar.descripcion %> " type="text" name="desc" class="control"
+                placeholder="Descripción" required />
+              <input value="<%=productoEditar.precio %>" type="number" name="price" class="control" placeholder="Precio"
+                required />
+              <input value="<%=productoEditar.categoria %>" type="text" name="categoria" class="control"
+                placeholder="categoria" required />
               <!-- <img class="productoImagen" src="/img/<%= productoEditar.imagen %>"> -->
-           <label for="nuevaImagen">reemplaza tu imagen actual</label>
+              <label for="nuevaImagen">reemplaza tu imagen actual</label>
               <input type="file" name="nuevaImagen" id="nuevaImagen">
             </div>
             <button type="submit" class="botonContactanos">Editar</input>
           </div>
         </div>
       </form>
+
+      <% } else { %>
+
+        <div class="content">
+          <h2 class="titulo-registrar-usuario"> 404 Producto no encontrado! </h2>
+        </div>
+
+        <% } %>      
+
       <%- include('../partials/footer')%>
+
   </body>
 
 </html>

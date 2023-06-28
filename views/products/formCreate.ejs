@@ -4,7 +4,9 @@
 <%- include('../partials/head', {title:"Login"})%>
 
   <body class="bodySignUp">
+
     <%- include('../partials/header')%>
+
       <form action="/productos/create" method="post" class="create-form" enctype="multipart/form-data">
         <div class="content">
           <div>
@@ -17,13 +19,15 @@
               <input type="text" name="product" class="control" placeholder="Nombre" required />
               <input type="text" name="desc" class="control" placeholder="Descripción" required />
               <input type="number" name="price" class="control" placeholder="Precio" required />
-              <input type="file" name="image" class="control"/>
+              <input type="file" name="image" class="control" />
             </div>
             <button type="submit" class="botonContactanos">Agregar Producto</input>
           </div>
         </div>
       </form>
+
       <%- include('../partials/footer')%>
+
   </body>
 
 </html>

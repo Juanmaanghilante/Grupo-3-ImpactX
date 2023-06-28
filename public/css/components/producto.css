@@ -11,7 +11,6 @@
 }
 
 .bgProductos {
-
   background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
 }
 
@@ -70,6 +69,8 @@
   justify-content: space-around;
 }
 
+
+
 .botonProductos {
   text-decoration: none;
   color: white;
@@ -78,6 +79,7 @@
   border-radius: 3px;
   padding: .5rem .8rem;
   border: 1px solid #0c2b56;
+  margin-top: .5rem;
 
   transition: .2s;
 }
@@ -88,26 +90,48 @@
 }
 
 
+.contenedorBotonesProductos {
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+}
+
+
+.nuevoProducto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, .2);
+  transition: .2s;
+
+}
+
+.nuevoProducto a {
+  text-decoration: none;
+  color: #0c2b56;
+  font-size:4rem;
+  transition: .2s;
+}
+
+.nuevoProducto a:hover {
+  color: #758eb4;
+}
+
+
 
 @media (min-width: 768px) {
   .tarjetaProductos {
-    flex-direction: row;
-    align-items: center;
+    overflow: hidden;
+    max-width: 300px;
   }
 
-  .containerInfoProductos {
-    border-top: none;
-    border-left: 1px solid #d0e4ff;
-  }
 
   .containerInfoProductos div {
     justify-content: left
   }
-
-  .containerImagenProductos {
-    height: 100px;
-  }
-
 
   .botonProductos {
     margin-right: .5rem;

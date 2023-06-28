@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {title:"Impact X | Productos"})%>
+
+  <body class="bgProductos">
+
+    <%- include('../partials/header')%>
+
+      <main class="mainProducts">
+
+        <% usuarios.forEach(usuario=> { %>
+
+          <article class="tarjetaProductos">
+            <div class="containerImagenProductos">
+              <img class="productoImagen" src="/img/<%= usuario.imagen %>" alt="imagen usuario <%= usuario.user %>">
+            </div>
+            <div class="containerInfoProductos">
+              <h2>
+                <%= usuario.name + ' ' + usuario.lastName %>
+              </h2>
+              <p>
+                <%= usuario.user %>
+              </p>
+              <p>
+                <%= usuario.categoria %>
+              </p>
+              <div class="contenedorBotonesProductos">
+                <div>
+                  <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
+                  <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
+                    <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <% }) %>
+
+            <div iv class="nuevoProducto">
+              <a href="/user/signup">+</a>
+              <p>Agregar Nuevo Usuario</p>
+            </div>
+      </main>
+
+      <%- include('../partials/footer')%>
+
+  </body>
+
+</html>

@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <%- include('../partials/head', {title:"Impact X | Productos"})%>
 
-  <body>
+  <body class="bgProductos">
+
     <%- include('../partials/header')%>
-      <div class="bgProductos">
-        <main class="mainProducts">
-          <% productos.forEach(producto=> { %>
-            <article class="tarjetaProductos">
-              <div class="containerImagenProductos">
-                <img class="productoImagen" src="/img/<%= producto.imagen %>"
-                  alt="imagen producto <%= producto.nombre %>">
-              </div>
-              <div class="containerInfoProductos">
-                <h2>
-                  <%= producto.nombre %>
-                </h2>
-                <p>
-                  <%= producto.precio %>
-                </p>
-                <p>
-                  <%= producto.descripcion %>
-                </p>
+
+      <main class="mainProducts">
+        <% productos.forEach(producto=> { %>
+          <article class="tarjetaProductos">
+            <div class="containerImagenProductos">
+              <img class="productoImagen" src="/img/<%= producto.imagen %>"
+                alt="imagen producto <%= producto.nombre %>">
+            </div>
+            <div class="containerInfoProductos">
+              <h2>
+                <%= producto.nombre %>
+              </h2>
+              <p>
+                <%= producto.precio %> $
+              </p>
+              <p>
+                <%= producto.descripcion %>
+              </p>
+              <div class="contenedorBotonesProductos">
+                <a class="botonProductos" href="">ADD TO CART</a>
+                <a class="botonProductos" href="">COMPRAR AHORA</a>
                 <div>
-                  <a href="/productos/edit/<%=producto.id %>">Editar</a>
-                  <a class="botonProductos" href="">ADD TO CART</a>
-                  <a class="botonProductos" href="">COMPRAR AHORA</a>
+                  <a class="botonProductos" href="/productos/edit/<%=producto.id %>">EDITAR</a>
                   <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                    <button type="sumbit" class="botonProductos">ELIMINAR</button>
-                    
-                  
+                    <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
                   </form>
                 </div>
               </div>
-            </article>
-            <% }) %>
-        </main>
-      </div>
+            </div>
+          </article>
+
+          <% }) %>
+
+            <div iv class="nuevoProducto">
+              <a href="/productos/create">+</a>
+              <p>Agregar Nuevo Producto</p>
+            </div>
+      </main>
+
       <%- include('../partials/footer')%>
+
   </body>
 
 </html>
