@@ -39,7 +39,8 @@ module.exports = {
 
   productsEdit: (req, res) => {
     const productoEditar = productos.find(row => row.id == req.params.id)
-    return res.render('products/formEdit', { productoEditar: productoEditar })
+    if (productoEditar && productoEditar.isDeleted==false) return res.render('products/formEdit', { productoEditar: productoEditar })
+    else return res.send("ERROR 404 NOT FOUND")
   },
 
   productsEditProcess: (req, res) => {
