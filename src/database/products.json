@@ -34,5 +34,77 @@
     "precio": "2",
     "imagen": "product-default.png",
     "isDeleted": true
+  },
+  {
+    "id": 5,
+    "categoria": "producto",
+    "nombre": "Hosting de tu sistema/pagina web:",
+    "descripcion": "proporcionamos los recursos necesarios para alojar y hacer accesibles sitios web en internet. ",
+    "precio": "1450",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 6,
+    "categoria": "producto",
+    "nombre": "Diseño gráfico:",
+    "descripcion": "ofrecemos soluciones creativas y visualmente atractivas con un estudio de tus consumidores para la realización de satisfacer necesidades de comunicación visual de nuestros clientes",
+    "precio": "2000",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 7,
+    "categoria": "producto",
+    "nombre": "Mantención de tus páginas web/ sistemas de gestión",
+    "descripcion": "os encargamos de garantizar que tu sitio web este siempre actualizado, funcione sin problemas y que puedas brindar una visita user-friendly a tus usuarios gestionamos plugins y herramientas, nos encargamos de copias de seguridad regulares de tu base de datos y ofrecemos soporte técnico ",
+    "precio": "2650",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 8,
+    "categoria": "producto",
+    "nombre": "community magagment",
+    "descripcion": "gestión profesional de la presencia en línea de una empresa, marca o persona en las redes sociales. nos encargamos  de crear, administrar y optimizar estrategias de comunicación en plataformas como Facebook, Twitter, Instagram, entre otras, con el objetivo de aumentar el alcance, la visibilidad y el compromiso de la audiencia",
+    "precio": "40000",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 9,
+    "categoria": "producto",
+    "nombre": "Email marketing",
+    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas.",
+    "precio": "350",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 10,
+    "categoria": "producto",
+    "nombre": "Desarrollo de aplicaciones móviles:",
+    "descripcion": "Creación de aplicaciones para dispositivos móviles, tanto para plataformas iOS como Android, utilizando tecnologías como Swift, Objective-C, Java o Kotlin.",
+    "precio": "98850",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 11,
+    "categoria": "producto",
+    "nombre": "Branding",
+    "descripcion": "Creación y gestión de la identidad de marca, incluyendo diseño de logotipos, eslogan, colores, etc.",
+    "precio": "7895",
+    "imagen": "product-default.png",
+    "isDeleted": false
+  },
+  {
+    "id": 12,
+    "categoria": "producto",
+    "nombre": "Investigación de mercado",
+    "descripcion": "Realización de investigaciones para comprender el mercado objetivo, analizar la competencia y identificar oportunidades.",
+    "precio": "10000",
+    "imagen": "product-default.png",
+    "isDeleted": false
   }
 ]

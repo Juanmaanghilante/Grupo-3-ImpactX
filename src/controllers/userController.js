@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator')
+const { validationResult } =require('express-validator')
 const path = require("path")
 const fs = require('fs');
 const rutaBase = path.resolve('./src/database/user.json')
