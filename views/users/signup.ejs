@@ -4,130 +4,99 @@
 
   <body class="bodySignUp">
     <%- include('../partials/header')%>
-        <div class="content">
-              <div>
-                <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
-              </div>
+      <div class="content">
+        <div>
+          <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
+        </div>
 
-            <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
-              <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
-              <div class="control-formulario">
-                
+        <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
+          <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
+          <div class="control-formulario">
 
-                <!-- COMO HAGO PARA QUE QUEDE EL PLACEHOLDER ASÍ NO AGREGO LABEL? -->
+            <!-- COMO HAGO PARA QUE QUEDE EL PLACEHOLDER ASÍ NO AGREGO LABEL? -->
 
-                <!-- USER NAME -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.user) { %>
-                    <%= errors.user.msg %>
+            <!-- USER NAME -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.user) { %>
+                <%= errors.user.msg %>
                   <% } %>
-                </div>
-                <input 
-                  type="text" 
-                  name="user" 
-                  placeholder="Usuario"
-                  value=" <%= locals.oldData ? oldData.user : null %> " 
-                  class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"  />
+            </div>
+            <input type="text" name="user" placeholder="Usuario" value=" <%= locals.oldData ? oldData.user : null %> "
+              class="control <%= locals.errors && errors.user ? 'invalidError' : null %>" />
 
-
-
-                <!-- FIRST NAME -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.name) { %>
-                    <%= errors.name.msg %>
+            <!-- FIRST NAME -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.name) { %>
+                <%= errors.name.msg %>
                   <% } %>
-                </div>
-                <input 
-                  type="text"
-                  name="name" 
-                  class="control <%= locals.errors && errors.name ? 'invalidError' : null %>" 
-                  placeholder="Nombre"  />
+            </div>
+            <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
+              placeholder="Nombre" />
 
-
-
-                <!-- LAST NAME -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.lastName) { %>
-                    <%= errors.lastName.msg %>
+            <!-- LAST NAME -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.lastName) { %>
+                <%= errors.lastName.msg %>
                   <% } %>
-                </div>
-                <input 
-                  type="text" 
-                  name="lastName" 
-                  class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" 
-                  placeholder="Apellido"  />
+            </div>
+            <input type="text" name="lastName"
+              class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido" />
 
-
-
-                <!-- EMAIL -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.email) { %>
-                    <%= errors.email.msg %>
+            <!-- EMAIL -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.email) { %>
+                <%= errors.email.msg %>
                   <% } %>
-                </div>
-                <input 
-                  type="text" 
-                  name="email" 
-                  class="control <%= locals.errors && errors.email ? 'invalidError' : null %>" 
-                  placeholder="Email"  />
+            </div>
+            <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
+              placeholder="Email" />
 
-
-
-                <!-- CATEGORY -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.category) { %>
-                    <%= errors.category.msg %>
+            <!-- CATEGORY -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.category) { %>
+                <%= errors.category.msg %>
                   <% } %>
-                </div>
-                <select 
-                  name="category" 
-                  class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" 
-                  id="category">
-                  <option value="">Tipo de Usuario</option>
+            </div>
+            <select name="category" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
+              id="category">
+              <option value="">Tipo de Usuario</option>
 
-                  <% let tipoUsuario = ['Admin', 'Cliente'] %>
+              <% let tipoUsuario=['Admin', 'Cliente' ] %>
 
-                  <% for( const unUsuario of tipoUsuario ) { %>
-                    <option 
-                      value="<%= unUsuario %>"
-                      <%= locals.oldData && (unUsuario == oldData.category) ? 'selected' : null %>
-                      > <%= unUsuario %> </option>
+                <% for( const unUsuario of tipoUsuario ) { %>
+                  <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
+                    null %>
+                    > <%= unUsuario %>
+                  </option>
                   <% } %>
 
-                </select>
+            </select>
 
-                <!-- PROFILE PICTURE -->
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.profilePic) { %>
-                    <%= errors.profilePic.msg %>
+            <!-- PROFILE PICTURE -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.profilePic) { %>
+                <%= errors.profilePic.msg %>
                   <% } %>
-                </div>
-                <input
-                 class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" 
-                 type="file" 
-                 name="profilePic">
-                
+            </div>
+            <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" type="file"
+              name="profilePic">
 
-
-                <!-- PASSWORD --> 
-                <div class="erroresForm">
-                  <% if (locals.errors && errors.password) { %>
-                    <%= errors.password.msg %>
+            <!-- PASSWORD -->
+            <div class="erroresForm">
+              <% if (locals.errors && errors.password) { %>
+                <%= errors.password.msg %>
                   <% } %>
-                </div>
-                <input 
-                  type="password" 
-                  name="password" 
-                  class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
-                  placeholder="Contraseña"  />
+            </div>
+            <input type="password" name="password"
+              class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
+              placeholder="Contraseña" />
 
-
-                <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
-              </div>
-              <div>
-                <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
-              </div>
-            </form>
+            <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
+          </div>
+          <div>
+            <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
+          </div>
+        </form>
       </div>
 
       <%- include('../partials/footer')%>

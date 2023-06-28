@@ -18,7 +18,6 @@ const fileUpload = multer({
     storage: multerDiskStorage
 });
 
-
 // PRODUCTS / CART
 router.get('/productos', productControler.productsDetail)
 router.get('/cart', productControler.productsCart)

@@ -5,7 +5,6 @@ const rutaBase = path.resolve('./src/database/user.json')
 const datos = JSON.parse(fs.readFileSync(rutaBase));
 module.exports = {
 
-
   userLogin: (req, res) => {
     return res.render('users/login')
   },
@@ -17,10 +16,6 @@ module.exports = {
     const usersHabilitados = datos.filter(row => row.isDelete == false)
     return res.render('users/usuariosListado', { usuarios: usersHabilitados })
   },
-
-
-
-
 
   userEdit: (req, res) => {
     const usuarioEditar = datos.find(usuario => usuario.id == req.params.id)
@@ -38,29 +33,19 @@ module.exports = {
     usuarioEditar.lastName = req.body.lastName
     usuarioEditar.email = req.body.email
     usuarioEditar.imagen = req.body.imagen
-    fs.writeFileSync(path.resolve(__dirname,'../database/user.json'),JSON.stringify(datos, null, 2));
+    fs.writeFileSync(path.resolve(__dirname, '../database/user.json'), JSON.stringify(datos, null, 2));
     return res.redirect('edit/' + usuarioEditar.id)
   },
 
-
-
-
-
-
-
   userCreateProcess: (req, res) => {
-
     const resultValidation = validationResult(req);
-    if(resultValidation.errors.length > 0) {
+    if (resultValidation.errors.length > 0) {
       // mapped() convierte el objeto literal en un array
-      return res.render('users/signup', { 
-
+      return res.render('users/signup', {
         errors: resultValidation.mapped(),
         oldData: req.body
-
       });
     }
-
 
     let usuarioCrear = {
       id: datos.length + 1,
@@ -76,18 +61,10 @@ module.exports = {
 
     datos.push(usuarioCrear)
 
-
     fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
 
     res.redirect("/user/list")
   },
-
-
-
-
-
-
-
 
   userDeleteProcess: (req, res) => {
     const usuarioBorrar = datos.find(usuario => usuario.id == req.params.id)
