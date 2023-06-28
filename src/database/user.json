@@ -56,14 +56,14 @@
   },
   {
     "id": 6,
-    "user": "richBad13_",
+    "user": "rich15",
     "name": "Richard",
     "lastName": "Mazo",
     "email": "richardmazo@hotmail.com",
     "categoria": "Admin",
-    "imagen": "282563499_5124018244349297_8774551712225905442_n.jpg",
     "password": "Ricardo123!",
-    "isDelete": false
+    "isDelete": false,
+    "imagen": "1687915948439800026290.jpg"
   },
   {
     "id": 7,

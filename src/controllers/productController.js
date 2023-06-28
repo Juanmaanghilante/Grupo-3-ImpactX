@@ -19,15 +19,14 @@ module.exports = {
     return res.render('products/formCreate')
   },
 
-  productsCreateProcess: (req, res) => {
-    console.log('hola');
+  productsCreateProcess: (req, res) => {  
     const nuevoProduct = {
       "id": productos.length + 1,
       "categoria": req.body.category,
       "nombre": req.body.product,
       "descripcion": req.body.desc,
       "precio": req.body.price,
-      "imagen": req.file.filename,
+      "imagen": req.file ? req.file.filename : "product-default.png",
       "isDeleted": false
     };
 
@@ -38,9 +37,8 @@ module.exports = {
   },
 
   productsEdit: (req, res) => {
-    const productoEditar = productos.find(row => row.id == req.params.id)
-    if (productoEditar && productoEditar.isDeleted==false) return res.render('products/formEdit', { productoEditar: productoEditar })
-    else return res.send("ERROR 404 NOT FOUND")
+    const productoEditar = productos.find(row => row.id == req.params.id && row.isDeleted == false)
+    return res.render('products/formEdit', { productoEditar: productoEditar })
   },
 
   productsEditProcess: (req, res) => {

@@ -26,13 +26,16 @@ module.exports = {
   },
 
   userEditProcess: (req, res) => {
-    const usuarioEditar = datos.find(usuario => usuario.id == req.params.id)
+    const usuarioEditar = datos.find(usuario => usuario.id == req.params.id && usuario.isDelete == false);
     console.log(req.body);
     usuarioEditar.user = req.body.user
     usuarioEditar.name = req.body.name
     usuarioEditar.lastName = req.body.lastName
     usuarioEditar.email = req.body.email
-    usuarioEditar.imagen = req.body.imagen
+    if (req.file) {
+      fs.unlinkSync(path.resolve(__dirname, "../../public/img/" + usuarioEditar.imagen))
+      usuarioEditar.imagen = req.file.filename
+    }
     fs.writeFileSync(path.resolve(__dirname, '../database/user.json'), JSON.stringify(datos, null, 2));
     return res.redirect('edit/' + usuarioEditar.id)
   },

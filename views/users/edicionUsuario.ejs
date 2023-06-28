@@ -9,7 +9,7 @@
 
       <% if (usuario) { %>
 
-        <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form">
+        <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
           <div class="content">
             <div>
               <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
@@ -43,7 +43,7 @@
               </div>
               <div class="control-formulario">
                 <label for="fotoPerfil">Foto de usuario</label>
-                <input class="control" type="file" name="imagen" id="fotoPerfil">
+                <input class="control" type="file" name="profilePic" id="profilePic">
               </div>
 
               <button type="submit" class="botonProductos">Editar</button>
@@ -60,7 +60,7 @@
         <% } else { %>
 
           <div class="content">
-            <h2 class="titulo-registrar-usuario"> Usuario no encontrado! </h2>
+            <h2 class="titulo-registrar-usuario"> 404 Usuario no encontrado! </h2>
           </div>
 
           <% } %>

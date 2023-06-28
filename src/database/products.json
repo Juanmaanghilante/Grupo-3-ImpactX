@@ -12,7 +12,7 @@
     "id": 2,
     "categoria": "Producto",
     "nombre": "Sistemas para comercios",
-    "descripcion": "Inventarios, ventas, compras, facturación, seguimiento de clientes y generación de informes.   ",
+    "descripcion": "Inventarios, ventas, compras, facturación, seguimiento de clientes y generación de informes.    ",
     "precio": "520",
     "imagen": "1687808861945.png",
     "isDeleted": false
@@ -24,6 +24,15 @@
     "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.     ",
     "precio": "10000",
     "imagen": "1687809806153Hosting-PNG-Pic.png",
+    "isDeleted": true
+  },
+  {
+    "id": 4,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto   ",
+    "precio": "2",
+    "imagen": "product-default.png",
     "isDeleted": true
   }
 ]
