@@ -21,8 +21,8 @@
                 <%= errors.user.msg %>
                   <% } %>
             </div>
-            <input type="text" name="user" placeholder="Usuario" value=" <%= locals.oldData ? oldData.user : null %> "
-              class="control <%= locals.errors && errors.user ? 'invalidError' : null %>" />
+            <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"  
+            placeholder="Usuario"/>
 
             <!-- FIRST NAME -->
             <div class="erroresForm">
