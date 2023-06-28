@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "user": "JuanGomez1",
-    "name": "Juan",
-    "lastName": "Gomez",
+    "user": "eugebiio",
+    "name": "Juanaaaaaa",
+    "lastName": "Gomezsssss",
     "email": "juangomez@hotmail.com",
     "categoria": "admin/cliente",
-    "imagen": "1687629999280.jpg",
+    "imagen": "Captura de pantalla (271).png",
     "password": "User123!",
-    "isDelete": false
+    "isDelete": true
   },
   {
     "id": 1687621621046,
