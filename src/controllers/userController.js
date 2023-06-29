@@ -1,8 +1,11 @@
 const { validationResult } =require('express-validator')
 const path = require("path")
 const fs = require('fs');
+const bcrypt = require("bcryptjs")
 const rutaBase = path.resolve('./src/database/user.json')
 const datos = JSON.parse(fs.readFileSync(rutaBase));
+
+
 module.exports = {
 
   userLogin: (req, res) => {
@@ -58,7 +61,7 @@ module.exports = {
       email: req.body.email,
       categoria: req.body.category,
       imagen: req.file.filename,
-      password: req.body.password,
+      password: bcrypt.hashSync(req.body.password),
       isDelete: false
     }
 
