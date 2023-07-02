@@ -7,7 +7,7 @@
 
     <%- include('../partials/header')%>
 
-      <form action="/ingresar-usuario" method="POST" class="create-form">
+      <form action="/user/login" method="POST" class="create-form">
         <div class="content">
           <div>
 
@@ -16,7 +16,13 @@
           <div>
             <h2 class="titulo-registrar-usuario">¡Ingresá a tu usuario!</h2>
             <div class="control-formulario">
-              <input type="text" name="usuario" class="control" placeholder="Usuario" required />
+              <div class="erroresForm">
+                <% if (locals.errors && errors.user) { %>
+                  <%= errors.user.msg %>
+                    <% } %>
+              </div>
+              <input type="text" name="user" class="control" placeholder="Usuario" required />
+
             </div>
             <div class="control-formulario">
               <input type="password" name="password" class="control" placeholder="Contraseña" required />
