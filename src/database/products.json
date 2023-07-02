@@ -24,7 +24,7 @@
     "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.     ",
     "precio": "10000",
     "imagen": "1687809806153Hosting-PNG-Pic.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 4,
@@ -105,6 +105,15 @@
     "descripcion": "Realización de investigaciones para comprender el mercado objetivo, analizar la competencia y identificar oportunidades.",
     "precio": "10000",
     "imagen": "product-default.png",
-    "isDeleted": false
+    "isDeleted": true
+  },
+  {
+    "id": 13,
+    "categoria": "producto",
+    "nombre": "oiwejqweo",
+    "descripcion": "oqijweqwo",
+    "precio": "19191",
+    "imagen": "product-default.png",
+    "isDeleted": true
   }
 ]

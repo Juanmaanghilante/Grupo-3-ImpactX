@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const path = require('path');
 
@@ -7,6 +8,14 @@ const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
 
 const methodOverride = require("method-override")
+
+
+
+app.use(session({
+  secret: 'This is a Secret',
+  resave: false,
+  saveUninitialized: false
+}))
 
 app.use(express.static("public"));
 app.use('/products', express.static(path.join(__dirname, '../views/products')));

@@ -1,16 +1,52 @@
-const { validationResult } =require('express-validator')
-const path = require("path")
+const path = require('path');
 const fs = require('fs');
-const bcrypt = require("bcryptjs")
-const rutaBase = path.resolve('./src/database/user.json')
+const bcrypt = require('bcryptjs');
+
+const { validationResult, body } =require('express-validator');
+const rutaBase = path.resolve('./src/database/user.json');
 const datos = JSON.parse(fs.readFileSync(rutaBase));
 
+const User = require('../models/User');
 
 module.exports = {
 
   userLogin: (req, res) => {
     return res.render('users/login')
   },
+
+  loginProcess: (req, res) => {
+    let userToLogin = User.findByField('user', req.body.user);
+    if(userToLogin) {
+      let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
+      if (passwordOk) {
+        return res.redirect('/user/profile')
+      } else {
+        return res.render('users/login', {
+          errors: {
+            user: {
+              msg: 'Las credenciales son inválidas'
+            }
+          }
+        })
+      }
+
+    }
+
+    return res.render('users/login', {
+      errors: {
+        user: {
+          msg: 'No se encuentra este usuario en la base de datos'
+        }
+      }
+    })
+  },
+
+
+  userProfile: (req, res) => {
+    
+    return res.render('users/profile', {});
+  },
+
 
   userSignup: (req, res) => {
     return res.render('users/signup')
@@ -27,6 +63,11 @@ module.exports = {
     console.log(usuarioEditar);
     return res.render('users/edicionUsuario', { usuario: usuarioEditar })
   },
+
+
+
+
+
 
   userEditProcess: (req, res) => {
     const usuarioEditar = datos.find(usuario => usuario.id == req.params.id && usuario.isDelete == false);
@@ -53,23 +94,35 @@ module.exports = {
       });
     }
 
-    let usuarioCrear = {
-      id: datos.length + 1,
-      user: req.body.user,
-      name: req.body.name,
-      lastName: req.body.lastName,
-      email: req.body.email,
-      categoria: req.body.category,
-      imagen: req.file.filename,
-      password: bcrypt.hashSync(req.body.password),
-      isDelete: false
+
+
+    let userInDb = User.findByField('user', req.body.user)
+    if(userInDb) {
+      return res.render('users/signup', {
+        errors: {
+          user: {
+            msg: 'Este usuario ya se encuentra está registrado',
+          }
+        },
+        oldData: req.body
+      });
     }
 
-    datos.push(usuarioCrear)
 
-    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
 
-    res.redirect("/user/list")
+    let userToCreate = {
+      ...req.body,
+      imagen: req.file.filename,
+      password: bcrypt.hashSync(req.body.password, 10),
+      isDelete: false
+    }
+    User.create(userToCreate);
+
+    // datos.push(usuarioCrear)
+
+    // fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
+
+    res.redirect("/user/login")
   },
 
   userDeleteProcess: (req, res) => {
