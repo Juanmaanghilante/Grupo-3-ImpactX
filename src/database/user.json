@@ -19,7 +19,7 @@
     "categoria": "Admin",
     "imagen": "1687629999280.jpg",
     "password": "Felipe123!",
-    "isDelete": false
+    "isDelete": true
   },
   {
     "id": 3,
@@ -75,5 +75,18 @@
     "imagen": "1687629999280.jpg",
     "password": "Victor123!",
     "isDelete": false
+  },
+  {
+    "id": 8,
+    "user": "felipe1",
+    "name": "Felipe",
+    "lastName": "Leon",
+    "email": "pipe.leon@hotmail.com",
+    "categoria": "Cliente",
+    "password": "$2a$10$hSf/DBpRPDnWwbsiS64qFOLvPQUTQyXiv4zz7pvS2VWUgehbnzQee",
+    "repeatPassword": "felipe123",
+    "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
+    "isDelete": false,
+    "category": "Cliente"
   }
 ]

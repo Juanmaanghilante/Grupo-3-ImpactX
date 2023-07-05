@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 
-const { validationResult, body } =require('express-validator');
+const { validationResult } =require('express-validator');
 const rutaBase = path.resolve('./src/database/user.json');
 const datos = JSON.parse(fs.readFileSync(rutaBase));
 
@@ -16,16 +16,20 @@ module.exports = {
 
   loginProcess: (req, res) => {
     let userToLogin = User.findByField('user', req.body.user);
+
+    // si, hay alguien tratando de loggearse
     if(userToLogin) {
+      // comparame la clave encriptada y lo que puso el que se quiere loguear
       let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
-      if (passwordOk) {
-        return res.redirect('/user/profile')
-      } else {
-        return res.render('users/login', {
-          errors: {
-            user: {
-              msg: 'Las credenciales son inválidas'
-            }
+        // si true la comparación
+            if (passwordOk) {
+              return res.redirect('/user/profile')
+            } else {
+              return res.render('users/login', {
+                errors: {
+                  user: {
+                    msg: 'Las credenciales son inválidas'
+                  }
           }
         })
       }
@@ -43,7 +47,6 @@ module.exports = {
 
 
   userProfile: (req, res) => {
-    
     return res.render('users/profile', {});
   },
 
@@ -58,9 +61,6 @@ module.exports = {
 
   userEdit: (req, res) => {
     const usuarioEditar = datos.find(usuario => usuario.id == req.params.id)
-    console.log(req.params.id);
-    console.log(datos[0]);
-    console.log(usuarioEditar);
     return res.render('users/edicionUsuario', { usuario: usuarioEditar })
   },
 
@@ -71,10 +71,10 @@ module.exports = {
 
   userEditProcess: (req, res) => {
     const usuarioEditar = datos.find(usuario => usuario.id == req.params.id && usuario.isDelete == false);
-    console.log(req.body);
     usuarioEditar.user = req.body.user
     usuarioEditar.name = req.body.name
     usuarioEditar.lastName = req.body.lastName
+    usuarioEditar.categoria = req.body.categoria
     usuarioEditar.email = req.body.email
     if (req.file) {
       fs.unlinkSync(path.resolve(__dirname, "../../public/img/" + usuarioEditar.imagen))

@@ -41,6 +41,22 @@
                 <input class="control" type="email" name="email" id="email" placeholder="Correo"
                   value="<%= usuario.email %>" />
               </div>
+
+              <label for="category"> Categoría </label>
+              <select name="categoria" class="control" id="category">
+                <option value="">Tipo de Usuario</option>
+  
+                <% let tipoUsuario=['Admin', 'Cliente' ] %>
+  
+                  <% for( const unUsuario of tipoUsuario ) { %>
+                    <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
+                      null %>
+                      > <%= unUsuario %>
+                    </option>
+                    <% } %>
+  
+              </select>
+
               <div class="control-formulario">
                 <label for="fotoPerfil">Foto de usuario</label>
                 <input class="control" type="file" name="profilePic" id="profilePic">
