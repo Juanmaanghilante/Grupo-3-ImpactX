@@ -179,7 +179,7 @@ header nav ul li a:hover {
 
 header nav ul li a:active {
   text-decoration: none;
-  color: #185ABC;
+  color: #18bc6d;
 }
 
 .burger-menu:focus~nav.menu {
@@ -223,47 +223,26 @@ header nav ul li a:active {
 
   nav.menu ul li.ingresar {
     position: absolute;
-    right: 25vw;
     padding: .7rem .3rem;
-    border-radius: 6px;
-    background-color: white;
     margin-top: -10px;
-    box-shadow: 0px 0px 4px -1px #185ABC;
-
+    right: 20vw;
     transition: all 300ms;
   }
 
   nav.menu ul li.registrarse {
     position: absolute;
-    right: 10vw;
     padding: .7rem .3rem;
-    border-radius: 6px;
     background-color: white;
     margin-top: -10px;
-    box-shadow: 0px 0px 4px -1px #185ABC;
     transition: all .2s;
+    right: 10vw;
   }
-
-  nav.menu ul li.registrarse a {
-    color: #185ABC;
-  }
-
-  header nav ul li.registrarse:hover {
-    transform: scale(105%);
-  }
-
-  nav.menu ul li.ingresar a {
-    color: #185ABC;
-  }
-
-  header nav ul li.ingresar:hover {
-    transform: scale(105%);
-  }
+  
 
   nav.menu ul li a {
     background-color: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0 10px;
   }
 
@@ -302,16 +281,28 @@ header nav ul li a:active {
 
 @media (min-width: 1200px) {
   nav.menu ul li.registrarse {
-    right: 11vw;
+    right: 10vw;
     /* top: -10px; */
   }
 
   nav.menu ul li.ingresar {
-    right: 20.5vw;
+    right: 18vw;
     /* top: -10px; */
   }
 
   .shopping-cart {
     right: 5px;
   }
+}
+@media (min-width: 1300px) {
+  nav.menu ul li.registrarse {
+    right: 10vw;
+    /* top: -10px; */
+  }
+
+  nav.menu ul li.ingresar {
+    right: 15vw;
+    /* top: -10px; */
+  }
+
 }

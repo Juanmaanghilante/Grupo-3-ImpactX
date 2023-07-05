@@ -1,6 +1,6 @@
 /* FOOTER */
 footer {
-  background-color: #13396e;
+  background-color: #0c2c59;
   opacity: .9;
   width: 100%;
   font-size: 16px;
@@ -18,10 +18,15 @@ footer div ul {
 }
 
 footer div ul li {
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
-
+.redes {
+  border-bottom: 1px solid  #13396e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .head-redes {
   text-align: center;
@@ -35,34 +40,48 @@ footer div ul li {
   font-size: 18px;
 }
 
-ul.links-redes {
-  text-align: center;
-}
 
-ul.links-redes li a {
-  padding: 10px;
-  text-decoration: underline;
-  color: white;
-
-  font-weight: 300;
-}
 
 footer .referencias {
   width: 100%;
-  padding-top: 20px;
+  padding-top: 40px;
 
   border-top: 1px solid #0c2b56;
 
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
+
 
 .referencias a {
   text-decoration: none;
   color: white;
   font-weight: 300;
   font-size: 13px;
+}
+
+.referenciasWrap {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.logoFooter {
+  width: 300px;
+}
+
+.logoFooterTop {
+  width: 50px;
+  opacity: .7;
+
+  transform: .02s;
+}
+
+.logoFooterTop:hover {
+  opacity: .9;
 }
 
 
@@ -90,10 +109,18 @@ footer .referencias {
 @media (min-width: 768px) {
   .links-redes {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    justify-content: center;
     margin: auto;
+    align-items: center;
   }
+
+  .links-redes li {
+    margin-right: 20px;
+  }
+.footer-izq {
+  margin-right: 2rem;
+}
+
 }
 
 /* TERMINA FOOTER */
