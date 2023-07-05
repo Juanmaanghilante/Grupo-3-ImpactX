@@ -21,7 +21,7 @@
     "id": 3,
     "categoria": "Servicio",
     "nombre": "Hosting",
-    "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.     ",
+    "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.      ",
     "precio": "10000",
     "imagen": "1687809806153Hosting-PNG-Pic.png",
     "isDeleted": false
@@ -96,7 +96,7 @@
     "descripcion": "Creación y gestión de la identidad de marca, incluyendo diseño de logotipos, eslogan, colores, etc.",
     "precio": "7895",
     "imagen": "product-default.png",
-    "isDeleted": false
+    "isDeleted": true
   },
   {
     "id": 12,

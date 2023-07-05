@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {title:"Impact X | Profile"})%>
+
+  <body class="bgProductos">
+
+    <%- include('../partials/header')%>
+
+      <main class="mainProfile">
+        <div class="wrapperProfile">
+          <img src="../img/<%= user.imagen %>" alt="">
+          <h2>Hola, <%= user.name %> <%= user.lastName %></h2>
+          <div>
+              <p>Usuario: <%= user.user %></p>
+              <p>Tipo: <%= user.categoria %></p>
+          </div>
+        </div>
+
+
+      </main>
+
+      <%- include('../partials/footer')%>
+
+  </body>
+
+</html>

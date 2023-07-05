@@ -5,9 +5,9 @@ const userControler = require('../controllers/userController');
 // MIDDLEWARES
 const fileUpload = require('../middlewares/multer');
 const validations = require('../middlewares/validateRegister');
+const guestMiddlware = require('../middlewares/guestMiddleware');
 
-
-router.get('/user/login', userControler.userLogin)
+router.get('/user/login', guestMiddlware,userControler.userLogin)
 router.post('/user/login', userControler.loginProcess)
 
 router.get('/user/list', userControler.userList)
@@ -15,7 +15,7 @@ router.get('/user/profile', userControler.userProfile)
 
 
 // CREATE
-router.get('/user/signup', userControler.userSignup)
+router.get('/user/signup', guestMiddlware, userControler.userSignup)
 router.post('/user/signup', fileUpload.single("profilePic"), validations, userControler.userCreateProcess)
 
 // EDIT

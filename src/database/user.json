@@ -1,92 +1,14 @@
 [
   {
     "id": 1,
-    "user": "JuanGomez1",
-    "name": "Juan",
-    "lastName": "Gomez",
-    "email": "juangomez@hotmail.com",
-    "categoria": "admin/cliente",
-    "imagen": "1687629999280.jpg",
-    "password": "User123!",
-    "isDelete": false
-  },
-  {
-    "id": 2,
-    "user": "Felipe_cabj10",
-    "name": "Felipe",
-    "lastName": "Leon",
-    "email": "felipeleon@hotmail.com",
-    "categoria": "Admin",
-    "imagen": "1687629999280.jpg",
-    "password": "Felipe123!",
-    "isDelete": true
-  },
-  {
-    "id": 3,
-    "user": "Nico10_",
-    "name": "Nico",
-    "lastName": "Prados",
-    "email": "nicoprad@hotmail.com",
-    "categoria": "Admin",
-    "imagen": "1687629999280.jpg",
-    "password": "Nico123!",
-    "isDelete": false
-  },
-  {
-    "id": 4,
-    "user": "elAles11",
-    "name": "Alex",
-    "lastName": "Cho",
-    "email": "alexcho@hotmail.com",
-    "categoria": "Admin",
-    "imagen": "1687629999280.jpg",
-    "password": "Alex123!",
-    "isDelete": false
-  },
-  {
-    "id": 5,
-    "user": "TomiBud4",
-    "name": "Tomas",
-    "lastName": "Tarantino",
-    "email": "tomitarantino@hotmail.com",
-    "categoria": "Admin",
-    "imagen": "1687629999280.jpg",
-    "password": "Tomas123!",
-    "isDelete": false
-  },
-  {
-    "id": 6,
-    "user": "richard15",
-    "name": "Richard",
-    "lastName": "Mazo",
-    "email": "richardmazo@hotmail.com",
-    "categoria": "Admin",
-    "password": "Ricardo123!",
-    "isDelete": false,
-    "imagen": "1687915948439800026290.jpg"
-  },
-  {
-    "id": 7,
-    "user": "elVitor_crak",
-    "name": "Victor",
-    "lastName": "Ojeda",
-    "email": "victorojeda@hotmail.com",
-    "categoria": "Admin",
-    "imagen": "1687629999280.jpg",
-    "password": "Victor123!",
-    "isDelete": false
-  },
-  {
-    "id": 8,
     "user": "felipe1",
     "name": "Felipe",
     "lastName": "Leon",
     "email": "pipe.leon@hotmail.com",
-    "categoria": "Cliente",
+    "categoria": "Admin",
     "password": "$2a$10$hSf/DBpRPDnWwbsiS64qFOLvPQUTQyXiv4zz7pvS2VWUgehbnzQee",
     "repeatPassword": "felipe123",
     "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
-    "isDelete": false,
-    "category": "Cliente"
+    "isDelete": false
   }
 ]

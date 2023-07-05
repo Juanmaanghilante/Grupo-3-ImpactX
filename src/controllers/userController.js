@@ -23,6 +23,11 @@ module.exports = {
       let passwordOk = bcrypt.compareSync(req.body.password, userToLogin.password)
         // si true la comparación
             if (passwordOk) {
+
+              // eliminamos el pasword, que nos viene por req.body, así no se ve 
+              delete userToLogin.password;
+              // loggeamos a la persona  
+              req.session.userLogged = userToLogin
               return res.redirect('/user/profile')
             } else {
               return res.render('users/login', {
@@ -47,7 +52,7 @@ module.exports = {
 
 
   userProfile: (req, res) => {
-    return res.render('users/profile', {});
+    return res.render('users/profile', { user : req.session.userLogged });
   },
 
 
