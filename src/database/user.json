@@ -10,5 +10,17 @@
     "repeatPassword": "felipe123",
     "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
     "isDelete": false
+  },
+  {
+    "id": 2,
+    "user": "Juanmaz",
+    "name": "Juan Martin",
+    "lastName": "Anghilante",
+    "email": "curne_juan@hotmail.com",
+    "category": "Admin",
+    "password": "$2a$10$r34GkxcwEhoRHEiv8270COkTFqPj6P0UFT8kVAe4WKb8/LKSCh9bO",
+    "repeatPassword": "PAPAFRITA",
+    "imagen": "1688761881385_77303564.png",
+    "isDelete": false
   }
 ]
