@@ -9,7 +9,7 @@ const productRouter = require('./routes/productRoutes')
 
 const methodOverride = require("method-override")
 
-
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 
 
@@ -19,6 +19,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }))
+
+
+
 app.use(express.static("public"));
 app.use('/products', express.static(path.join(__dirname, '../views/products')));
 app.use('/users', express.static(path.join(__dirname, '../views/users')));
@@ -26,13 +29,13 @@ app.use('/users', express.static(path.join(__dirname, '../views/users')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use(userLoggedMiddleware);
 
 
 
 
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
-
 app.listen(3003, () => console.log('Servidor en puerto 3003'));
 
 

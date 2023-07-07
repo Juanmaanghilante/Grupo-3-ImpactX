@@ -276,7 +276,6 @@ header nav ul li a:active {
   header div.logo a:hover {
     transform: scale(105%);
   }
-
 }
 
 @media (min-width: 1200px) {

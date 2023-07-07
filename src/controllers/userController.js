@@ -51,8 +51,15 @@ module.exports = {
   },
 
 
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.redirect('/')
+  } 
+
+  ,
+
   userProfile: (req, res) => {
-    return res.render('users/profile', { user : req.session.userLogged });
+    return res.render('users/profile', { user: req.session.userLogged });
   },
 
 
