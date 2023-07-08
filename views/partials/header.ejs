@@ -18,9 +18,9 @@
           <li><a href="/productos">Producto</a></li>
           <li><a href="/#contacto">Contacto</a></li>
           <li><a href="/user/list">Usuarios</a></li>
-          <li class="ingresar"><a href="/user/profile">Mi Perfil</a></li>
+          <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
+          <li class="ingresar"><a href="/user/profile"> Hola, <%= locals.userLogged.name %> </a></li>
           <li class="registrarse"><a href="/user/logout">Cerrar Sesión</a></li>
-
         </ul>
       </nav>
 </header>

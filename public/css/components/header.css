@@ -218,6 +218,7 @@ header nav ul li a:active {
     background-color: rgba(0, 0, 0, 0);
     border: rgba(0, 0, 0, 0);
 
+    align-items: center;
     margin-left: 3vw;
   }
 
@@ -225,8 +226,19 @@ header nav ul li a:active {
     position: absolute;
     padding: .7rem .3rem;
     margin-top: -10px;
-    right: 20vw;
+    right: 25vw;
     transition: all 300ms;
+  }
+
+  .perfilPic {
+    position: absolute;
+    margin-top: -10px;
+    right: 26vw;
+
+
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
   }
 
   nav.menu ul li.registrarse {
@@ -276,6 +288,7 @@ header nav ul li a:active {
   header div.logo a:hover {
     transform: scale(105%);
   }
+
 }
 
 @media (min-width: 1200px) {
@@ -285,12 +298,18 @@ header nav ul li a:active {
   }
 
   nav.menu ul li.ingresar {
-    right: 18vw;
+    right: 19vw;
     /* top: -10px; */
   }
 
   .shopping-cart {
     right: 5px;
+  }
+
+  
+  .perfilPic {
+    right: 27vw;
+
   }
 }
 @media (min-width: 1300px) {
@@ -302,6 +321,11 @@ header nav ul li a:active {
   nav.menu ul li.ingresar {
     right: 16vw;
     /* top: -10px; */
+  }
+
+  .perfilPic {
+    right: 21vw;
+
   }
 
 }
