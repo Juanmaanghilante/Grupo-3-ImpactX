@@ -23,5 +23,17 @@
     "imagen": "1688761881385_77303564.png",
     "isDelete": false,
     "categoria": "Admin"
+  },
+  {
+    "id": 3,
+    "user": "elgau",
+    "name": "chito",
+    "lastName": "gil",
+    "email": "persistencaidedatos@gmail.com",
+    "category": "Cliente",
+    "password": "$2a$10$D74pCJXeqfms.6u/9i3BGeATAqWC4M/tr.4RAhTBs800ZQbk1H9qe",
+    "repeatPassword": "localesdefrituras.jpg",
+    "imagen": "1688851506525_77303564.png",
+    "isDelete": false
   }
 ]

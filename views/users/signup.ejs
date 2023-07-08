@@ -21,8 +21,11 @@
                 <%= errors.user.msg %>
                   <% } %>
             </div>
-            <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"  
-            placeholder="Usuario"/>
+            <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"
+            placeholder="Usuario"
+            value="<%= locals.oldData?oldData.user:null %>"
+            />
+           
 
             <!-- FIRST NAME -->
             <div class="erroresForm">
@@ -31,7 +34,8 @@
                   <% } %>
             </div>
             <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
-              placeholder="Nombre" />
+              placeholder="Nombre"
+              value="<%= locals.oldData?oldData.name:null %>" />
 
             <!-- LAST NAME -->
             <div class="erroresForm">
@@ -40,7 +44,8 @@
                   <% } %>
             </div>
             <input type="text" name="lastName"
-              class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido" />
+              class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido"
+              value="<%= locals.oldData?oldData.lastName:null %>" />
 
             <!-- EMAIL -->
             <div class="erroresForm">
@@ -49,7 +54,9 @@
                   <% } %>
             </div>
             <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
-              placeholder="Email" />
+              placeholder="Email" 
+              value="<%= locals.oldData?oldData.email:null %>"
+              />
 
             <!-- CATEGORY -->
             <div class="erroresForm">
@@ -66,7 +73,9 @@
                 <% for( const unUsuario of tipoUsuario ) { %>
                   <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
                     null %>
-                    > <%= unUsuario %>
+                  <%= locals.oldData && (unUsuario===oldData.tipoUsuario)?"selected":null %>
+                   
+                   > <%= unUsuario %>
                   </option>
                   <% } %>
 
