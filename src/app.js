@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const path = require('path');
-
+const cookie =require('cookie-parser')
 const mainRouter = require('./routes/mainRoutes')
 const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
@@ -30,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(userLoggedMiddleware);
+app.use(cookie());
 
 
 

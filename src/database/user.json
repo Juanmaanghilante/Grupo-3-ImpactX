@@ -37,14 +37,26 @@
     "isDelete": false
   },
   {
+    "id": 4,
+    "user": "felipe ",
+    "name": "ferrari testarrosa",
+    "lastName": "Anghilante",
+    "email": "curne_juan@hotmail.com",
+    "category": "Admin",
+    "password": "$2a$10$6MXBj7awcmNGGdLGBsAEtuL..Hqxe.TsOC6qQjxa98SaEXEeQYLiq",
+    "repeatPassword": "sds",
+    "imagen": "1688946948383_77303564.png",
+    "isDelete": true
+  },
+  {
     "user": "richardmazo",
     "name": "Richard",
     "lastName": "Mazo",
     "email": "richardmazo@hotmail.com",
     "category": "Admin",
-    "password": "$2a$10$OA/rfBBF0zLX5XnUp3KpcOkSfpYvkGiRkolwi6TZMQT9fu2ecitAK",
+    "password": "$2a$10$zPoXX3DPByvzSmt6VVqCCuKq9ojzyvDt6uq1D/RkOX74ZUqHZlkv6",
     "repeatPassword": "1qaZ2wsX3edC4r*",
-    "imagen": "1689034416139_800026290.jpg",
+    "imagen": "1689035232659_800026290.jpg",
     "isDelete": false
   }
 ]
