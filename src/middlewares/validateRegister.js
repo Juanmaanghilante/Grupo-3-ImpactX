@@ -10,7 +10,7 @@ module.exports = [
     .notEmpty().withMessage('Debe completar el campo con su email').bail()
     .isEmail().withMessage('Debes escribir un formato de correo válido'),
 
-  body('category').notEmpty().withMessage('Debe elegir una categoría'),
+  //body('category').notEmpty().withMessage('Debe elegir una categoría'),
   body('password').notEmpty().withMessage('Debe completar el campo con su contraseña'),
 
   body('profilePic').custom((value, { req }) => {

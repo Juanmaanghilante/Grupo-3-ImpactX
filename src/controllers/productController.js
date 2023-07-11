@@ -12,7 +12,7 @@ module.exports = {
 
   productsDetail: (req, res) => {
     const productosHabilitados = productos.filter(row => row.isDeleted == false)
-    return res.render('products/detalleProductos', { productos: productosHabilitados });
+    return res.render('products/detalleProductos', { productos: productosHabilitados});
   },
 
   productsCreate: (req, res) => {

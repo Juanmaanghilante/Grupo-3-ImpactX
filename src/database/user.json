@@ -46,7 +46,7 @@
     "password": "$2a$10$6MXBj7awcmNGGdLGBsAEtuL..Hqxe.TsOC6qQjxa98SaEXEeQYLiq",
     "repeatPassword": "sds",
     "imagen": "1688946948383_77303564.png",
-    "isDelete": true
+    "isDelete": false
   },
   {
     "user": "richardmazo",
@@ -57,6 +57,17 @@
     "password": "$2a$10$zPoXX3DPByvzSmt6VVqCCuKq9ojzyvDt6uq1D/RkOX74ZUqHZlkv6",
     "repeatPassword": "1qaZ2wsX3edC4r*",
     "imagen": "1689035232659_800026290.jpg",
+    "isDelete": false
+  },
+  {
+    "user": "richardcliente",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richardcliente@hotmail.com",
+    "category": "Cliente",
+    "password": "$2a$10$w3PW3tSHJZkBbmOHuJ05deBGnIHKz026FSFv1m9nR262CgJMaZ7hi",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "imagen": "1689035920564_800160944.jpg",
     "isDelete": false
   }
 ]

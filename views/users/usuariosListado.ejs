@@ -25,23 +25,30 @@
               <p>
                 <%= usuario.category %>
               </p>
-              <div class="contenedorBotonesProductos">
-                <div>
-                  <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
-                  <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
-                    <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
-                  </form>
-                </div>
-              </div>
+              <% if (locals.isLogged) { %>
+                <% if (locals.userLogged.category=="Admin" ) { %>
+                  <div class="contenedorBotonesProductos">
+                    <div>
+                      <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
+                      <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
+                        <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                      </form>
+                    </div>
+                  </div>
+                  <% } %>
+                    <% } %>
             </div>
           </article>
 
           <% }) %>
-
-            <div iv class="nuevoProducto">
-              <a href="/user/signup">+</a>
-              <p>Agregar Nuevo Usuario</p>
-            </div>
+            <% if (locals.isLogged) { %>
+              <% if (locals.userLogged.category=="Admin" ) { %>
+                <div iv class="nuevoProducto">
+                  <a href="/user/signup">+</a>
+                  <p>Agregar Nuevo Usuario</p>
+                </div>
+              <% } %>
+            <% } %>
       </main>
 
       <%- include('../partials/footer')%>
