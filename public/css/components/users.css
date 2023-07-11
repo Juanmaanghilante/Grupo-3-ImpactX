@@ -4,7 +4,24 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  height: 98vh;
   padding: 2rem;
+  margin-top:60px;
+
+}
+
+@media (min-width: 768px) {
+  .tarjetaProductos {
+    overflow: hidden;
+    max-width: 250px;
+  }
+
+
+  .containerImagenProductos div {
+    justify-content: left
+  }
+
+  .botonProductos {
+    margin-right: .5rem;
+  }
 
 }
