@@ -15,7 +15,7 @@ module.exports = {
 
   loginProcess: (req, res) => {
     let userToLogin = User.findByField("user", req.body.user);
-
+    console.log(userToLogin);
     // si, hay alguien tratando de loggearse
     if (userToLogin) {
       // comparame la clave encriptada y lo que puso el que se quiere loguear
@@ -28,6 +28,7 @@ module.exports = {
         // eliminamos el pasword, que nos viene por req.body, así no se ve
         delete userToLogin.password;
         // loggeamos a la persona
+        console.log(userToLogin);
         req.session.userLogged = userToLogin;
 
         if (req.body.rememberUser) {
@@ -61,6 +62,7 @@ module.exports = {
   },
 
   userProfile: (req, res) => {
+    //console.log(req.session.userLogged);
     return res.render("users/profile", { user: req.session.userLogged });
   },
 
@@ -125,7 +127,9 @@ module.exports = {
     }
 
     let userToCreate = {
+      id: datos.length + 1,
       ...req.body,
+      category: "Cliente",
       imagen: req.file.filename,
       password: bcrypt.hashSync(req.body.password, 10),
       isDelete: false,

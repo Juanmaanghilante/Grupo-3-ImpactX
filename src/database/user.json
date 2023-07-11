@@ -49,25 +49,27 @@
     "isDelete": false
   },
   {
-    "user": "richardmazo",
-    "name": "Richard",
-    "lastName": "Mazo",
-    "email": "richardmazo@hotmail.com",
-    "category": "Admin",
-    "password": "$2a$10$zPoXX3DPByvzSmt6VVqCCuKq9ojzyvDt6uq1D/RkOX74ZUqHZlkv6",
-    "repeatPassword": "1qaZ2wsX3edC4r*",
-    "imagen": "1689035232659_800026290.jpg",
-    "isDelete": false
-  },
-  {
+    "id": 5,
     "user": "richardcliente",
     "name": "Richard",
     "lastName": "Mazo",
-    "email": "richardcliente@hotmail.com",
+    "email": "richard.mazo.97@hotmail.com",
     "category": "Cliente",
-    "password": "$2a$10$w3PW3tSHJZkBbmOHuJ05deBGnIHKz026FSFv1m9nR262CgJMaZ7hi",
+    "password": "$2a$10$drS8seXOyQVvZcA0KyQfgOSBL6k3WKiXtuntsfOmjm.I/I.4mHQZm",
     "repeatPassword": "1qaZ2wsX3edC4r*",
-    "imagen": "1689035920564_800160944.jpg",
+    "imagen": "1689119020586_800160944.jpg",
+    "isDelete": false
+  },
+  {
+    "id": 6,
+    "user": "richardmazo",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "category": "Admin",
+    "password": "$2a$10$/0s4N7fjE7SdDAymr6d9QeO2Me8x05HWRiyC6JOUhwL/a8xE9Dv4q",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "imagen": "1689119207027_800026290.jpg",
     "isDelete": false
   }
 ]
