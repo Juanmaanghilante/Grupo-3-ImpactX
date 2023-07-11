@@ -16,6 +16,7 @@ module.exports = [
   body('profilePic').custom((value, { req }) => {
     let file = req.file;
     let extensionesPermitidas = ['.jpg', '.png', '.gif'];
+   
     if (!file) {
       throw new Error('Debe seleccionar una imagen de perfil')
     } else {

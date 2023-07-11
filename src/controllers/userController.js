@@ -11,10 +11,12 @@ const User = require('../models/User');
 module.exports = {
 
   userLogin: (req, res) => {
+
     return res.render('users/login')
   },
 
   loginProcess: (req, res) => {
+  
     let userToLogin = User.findByField('user', req.body.user);
 
     // si, hay alguien tratando de loggearse
@@ -28,6 +30,11 @@ module.exports = {
               delete userToLogin.password;
               // loggeamos a la persona  
               req.session.userLogged = userToLogin
+
+if(req.body.rememberUser){
+  res.cookie('userEmail',req.body.user ,{ maxAge:(1000 * 50)*2 })
+}
+
               return res.redirect('/user/profile')
             } else {
               return res.render('users/login', {
@@ -64,6 +71,7 @@ module.exports = {
 
 
   userSignup: (req, res) => {
+    res.cookie('testing','hola mundo',{maxAge:1000*30})
     return res.render('users/signup')
   },
   userList: (req, res) => {
@@ -104,7 +112,7 @@ module.exports = {
  oldData: req.body
       });
     }
-return res.send("haz introducido bien todos los campos requeridos")
+// return res.send("haz introducido bien todos los campos requeridos")
 
 
     let userInDb = User.findByField('user', req.body.user)
@@ -113,11 +121,19 @@ return res.send("haz introducido bien todos los campos requeridos")
         errors: {
           user: {
             msg: 'Este usuario ya se encuentra está registrado',
-          }
+           
+          },email:{msg: 'este email esta en uso'} ,
+        
+         
+         
+          
         },
         oldData: req.body
-      });
+      
+      })
     }
+   
+    
 
 
 
