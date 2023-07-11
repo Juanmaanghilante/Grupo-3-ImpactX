@@ -78,7 +78,7 @@
     "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas.",
     "precio": "350",
     "imagen": "product-default.png",
-    "isDeleted": false
+    "isDeleted": true
   },
   {
     "id": 10,

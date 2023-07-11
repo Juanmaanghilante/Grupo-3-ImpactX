@@ -1,52 +1,32 @@
-<% if (locals.isLogged) { %>   
 <header>
-      <div class="logo">
-        <a href="/"><img src="/img/logo-impactx.png" alt="Logo ImpactX" /></a>
-      </div>
-      <a class="shopping-cart" href="/cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-      <a class="burger-menu" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      
-      <nav class="menu">
-        <ul>
-          <li><a href="/#nosotros">Nosotros</a></li>
-          <li><a href="/productos">Producto</a></li>
-          <li><a href="/#contacto">Contacto</a></li>
-          <li><a href="/user/list">Usuarios</a></li>
-          <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
-          <li class="ingresar"><a href="/user/profile"> Hola, <%= locals.userLogged.name %> </a></li>
-          <li class="registrarse"><a href="/user/logout">Cerrar Sesión</a></li>
-        </ul>
-      </nav>
+  <div class="logo">
+    <a href="/"><img src="/img/logo-impactx.png" alt="Logo ImpactX" /></a>
+  </div>
+  <a class="shopping-cart" href="/cart">
+    <i class="fas fa-shopping-cart"></i>
+  </a>
+  <a class="burger-menu" href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+  
+  <nav class="menu">
+    <ul>
+      <li><a href="/#nosotros">Nosotros</a></li>
+      <li><a href="/#contacto">Contacto</a></li>  
+      <li><a href="/productos">Productos</a></li>
+    <% if (locals.isLogged) { %>
+      <% if (locals.userLogged.category=="Admin" ) { %>   
+      <li><a href="/user/list">Usuarios</a></li>  
+      <% } %>        
+      <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
+      <li class="ingresar"><a href="/user/profile"> Hola, <%= locals.userLogged.name %> </a></li>
+      <li class="registrarse"><a href="/user/logout">Cerrar Sesión</a></li>
+    <% } else  { %>
+        <li class="ingresar"><a href="/user/login">Ingresar</a></li>
+        <li class="registrarse"><a href="/user/signup">Registrarse</a></li>
+    <% } %>
+    </ul>
+  </nav>
 </header>
-
-<% } else  { %>
-    <header>
-      <div class="logo">
-        <a href="/"><img src="/img/logo-impactx.png" alt="Logo ImpactX" /></a>
-      </div>
-      <a class="shopping-cart" href="/cart">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-      <a class="burger-menu" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      
-      <nav class="menu">
-        <ul>
-          <li><a href="/#nosotros">Nosotros</a></li>
-          <li><a href="/productos">Producto</a></li>
-          <li><a href="/#contacto">Contacto</a></li>
-          <li class="ingresar"><a href="/user/login">Ingresar</a></li>
-          <li class="registrarse"><a href="/user/signup">Registrarse</a></li>
-        </ul>
-      </nav>
-    </header>
-<% } %>
