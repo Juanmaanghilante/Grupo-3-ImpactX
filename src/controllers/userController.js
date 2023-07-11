@@ -104,7 +104,7 @@ module.exports = {
  oldData: req.body
       });
     }
-return res.send("haz introducido bien todos los campos requeridos")
+//return res.send("haz introducido bien todos los campos requeridos")
 
 
     let userInDb = User.findByField('user', req.body.user)
@@ -127,11 +127,11 @@ return res.send("haz introducido bien todos los campos requeridos")
       password: bcrypt.hashSync(req.body.password, 10),
       isDelete: false
     }
-    User.create(userToCreate);
+    //User.create(userToCreate);
 
-    // datos.push(usuarioCrear)
+    datos.push(userToCreate)
 
-    // fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
+    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(datos, null, 2), 'utf-8');
 
     res.redirect("/user/login")
   },

@@ -87,7 +87,7 @@
     "descripcion": "Creación de aplicaciones para dispositivos móviles, tanto para plataformas iOS como Android, utilizando tecnologías como Swift, Objective-C, Java o Kotlin.",
     "precio": "98850",
     "imagen": "product-default.png",
-    "isDeleted": false
+    "isDeleted": true
   },
   {
     "id": 11,

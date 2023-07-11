@@ -5,7 +5,7 @@
     "name": "Felipe",
     "lastName": "Leon",
     "email": "pipe.leon@hotmail.com",
-    "categoria": "Admin",
+    "category": "Admin",
     "password": "$2a$10$hSf/DBpRPDnWwbsiS64qFOLvPQUTQyXiv4zz7pvS2VWUgehbnzQee",
     "repeatPassword": "felipe123",
     "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
@@ -34,6 +34,17 @@
     "password": "$2a$10$D74pCJXeqfms.6u/9i3BGeATAqWC4M/tr.4RAhTBs800ZQbk1H9qe",
     "repeatPassword": "localesdefrituras.jpg",
     "imagen": "1688851506525_77303564.png",
+    "isDelete": false
+  },
+  {
+    "user": "richardmazo",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richardmazo@hotmail.com",
+    "category": "Admin",
+    "password": "$2a$10$OA/rfBBF0zLX5XnUp3KpcOkSfpYvkGiRkolwi6TZMQT9fu2ecitAK",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "imagen": "1689034416139_800026290.jpg",
     "isDelete": false
   }
 ]
