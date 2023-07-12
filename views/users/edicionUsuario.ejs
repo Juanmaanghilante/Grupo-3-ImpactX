@@ -50,9 +50,8 @@
                 <% let tipoUsuario=['Admin', 'Cliente' ] %>
   
                   <% for( const unUsuario of tipoUsuario ) { %>
-                    <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
-                      null %>
-                      > <%= unUsuario %>
+                    <option value="<%= unUsuario %>" <% if (unUsuario == usuario.category) { %>selected<% } %>>
+                      <%= unUsuario %>
                     </option>
                     <% } %>
   
@@ -63,6 +62,11 @@
                 <label for="fotoPerfil">Foto de usuario</label>
                 <input class="control" type="file" name="profilePic" id="profilePic">
               </div>
+
+            <!-- PASSWORD -->
+            <input type="password" name="password" class="control" placeholder="Contraseña" />
+
+            <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />              
 
               <button type="submit" class="botonProductos">Actualizar</button>
               <a class="botonProductos" href="/user/list">Volver al listado</a>

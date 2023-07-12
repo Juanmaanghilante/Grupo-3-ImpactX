@@ -15,7 +15,6 @@ module.exports = {
 
   loginProcess: (req, res) => {
     let userToLogin = User.findByField("user", req.body.user);
-    console.log(userToLogin);
     // si, hay alguien tratando de loggearse
     if (userToLogin) {
       // comparame la clave encriptada y lo que puso el que se quiere loguear
@@ -61,7 +60,6 @@ module.exports = {
   },
 
   userProfile: (req, res) => {
-    //console.log(req.session.userLogged);
     return res.render("users/profile", { user: req.session.userLogged });
   },
 
@@ -86,7 +84,9 @@ module.exports = {
     usuarioEditar.user = req.body.user;
     usuarioEditar.name = req.body.name;
     usuarioEditar.lastName = req.body.lastName;
-    usuarioEditar.categoria = req.body.categoria;
+    if(req.body.categoria){
+      usuarioEditar.category = req.body.categoria;
+    }
     usuarioEditar.email = req.body.email;
     if (req.file) {
       fs.unlinkSync(
@@ -94,6 +94,9 @@ module.exports = {
       );
       usuarioEditar.imagen = req.file.filename;
     }
+    if(req.body.password){
+      usuarioEditar.password = bcrypt.hashSync(req.body.password, 10);
+    }    
     fs.writeFileSync(
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
