@@ -10,7 +10,7 @@
       <main class="mainUser">
 
         <% usuarios.forEach(usuario=> { %>
-
+          <% if (locals.userLogged.id!=usuario.id ) { %>
           <article class="tarjetaProductos">
             <div class="containerImagenProductos">
               <img class="productoImagen" src="/img/<%= usuario.imagen %>" alt="imagen usuario <%= usuario.user %>">
@@ -39,7 +39,7 @@
                     <% } %>
             </div>
           </article>
-
+          <% } %>
           <% }) %>
             <% if (locals.isLogged) { %>
               <% if (locals.userLogged.category=="Admin" ) { %>

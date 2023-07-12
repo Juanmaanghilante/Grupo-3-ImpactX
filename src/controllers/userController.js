@@ -28,7 +28,6 @@ module.exports = {
         // eliminamos el pasword, que nos viene por req.body, así no se ve
         delete userToLogin.password;
         // loggeamos a la persona
-        console.log(userToLogin);
         req.session.userLogged = userToLogin;
 
         if (req.body.rememberUser) {
@@ -99,7 +98,9 @@ module.exports = {
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
     );
-    return res.redirect("edit/" + usuarioEditar.id);
+    delete usuarioEditar.password;
+    req.session.userLogged = usuarioEditar;
+    return res.redirect("profile");
   },
 
   userCreateProcess: (req, res) => {
