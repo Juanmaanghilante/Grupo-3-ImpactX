@@ -17,3 +17,26 @@
   width: 200px;
   height: 200px;
 }
+
+.usuario-tipo {
+  margin: 25px;
+}
+
+.cont-but {
+  display:flex;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  text-align: left;
+  width:250px;
+}
+.input-error {
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.errorPass {
+  max-width: none;
+}

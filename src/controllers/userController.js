@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/user.json");
 const datos = JSON.parse(fs.readFileSync(rutaBase));
+const userPass = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../database/passwords.json")));
 
 const User = require("../models/User");
 
@@ -161,5 +162,33 @@ module.exports = {
       "utf-8"
     );
     return res.redirect("/user/list");
+  },
+
+  passwordChange: (req, res) => {
+
+    const usuarioCambiarPass = req.session.userLogged
+        
+    return res.render("users/passwordChange", {usuario:usuarioCambiarPass})
+
+  },
+
+  passwordChangeProcess: (req, res) => {
+    
+    const datosUsuarioSinPass = datos.find(row => row.user == req.session.userLogged.user)
+
+
+    const usuarioPassVieja = {
+        "user": datosUsuarioSinPass.user,
+        "password": datosUsuarioSinPass.password
+    }
+
+    fs.writeFileSync(path.resolve(__dirname, "../database/passwords.json"), JSON.stringify([...userPass, usuarioPassVieja], null, 2), "utf-8")
+
+    datosUsuarioSinPass.password = bcrypt.hashSync(req.body.contraseniaNueva, 10)
+
+    fs.writeFileSync(path.resolve(__dirname, "../database/user.json"), JSON.stringify(datos, null, 2), "utf-8")
+    res.redirect("/")
+    
+
   },
 };

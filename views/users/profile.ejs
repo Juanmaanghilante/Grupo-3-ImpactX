@@ -12,15 +12,20 @@
           <img src="../img/<%= user.imagen %>" alt="">
           <h2>Hola, <%= user.name %> <%= user.lastName %></h2>
           <div>
-              <p>Usuario: <%= user.user %></p>
-              <p>Tipo: <%= user.category %></p>
+              <p class="usuario-tipo">Usuario: <%= user.user %></p>
+              <p class="usuario-tipo">Tipo: <%= user.category %></p>
           </div>
-          <div>
+          
+
+          <div class="cont-but">
+            <div>
+              <a class="botonProductos" href="/user/edit/<%=user.id %>">EDITAR MI PERFIL</a>
+            </div>
+            <div>
+              <a class="botonProductos" href="/user/edit/<%=user.id %>/changepassword">CAMBIAR CONTRASEÑA</a>
+            </div>  
+          </div>
             
-          </div>
-          <div>
-            <a class="botonProductos" href="/user/edit/<%=user.id %>">EDITAR MI PERFIL</a>
-          </div>                     
         </div>
 
 

@@ -7,6 +7,8 @@ const fileUpload = require('../middlewares/multer');
 const validations = require('../middlewares/validateRegister');
 const guestMiddlware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const valChangePassword1 = require("../middlewares/passwordValidation1");
+const valChangePassword2 = require("../middlewares/passwordValidation2");
 
 router.get('/user/login', guestMiddlware,userControler.userLogin)
 router.post('/user/login', userControler.loginProcess)
@@ -26,5 +28,9 @@ router.put("/user/:id", fileUpload.single("profilePic"), validations, userContro
 
 // DELETE
 router.delete("/user/delete/:id", userControler.userDeleteProcess)
+
+// CHANGE PASSWORD
+router.get("/user/edit/:id/changepassword", userControler.passwordChange)
+router.put("/user/edit/changepassword", valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
 
 module.exports = router

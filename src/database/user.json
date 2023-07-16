@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "user": "felipe1",
+    "user": "felipe12",
     "name": "Felipe",
     "lastName": "Leon",
     "email": "pipe.leon@hotmail.com",
@@ -18,8 +18,8 @@
     "lastName": "Anghilante",
     "email": "curne_juan@hotmail.com",
     "category": "Admin",
-    "password": "$2a$10$r34GkxcwEhoRHEiv8270COkTFqPj6P0UFT8kVAe4WKb8/LKSCh9bO",
-    "repeatPassword": "PAPAFRITA",
+    "password": "$2a$10$Z5n4YvojNCYl4O4E.mQyvODDcFTpe0Sivua.I9tmyuOdbSBPeWeT2",
+    "repeatPassword": "PAPAFRITAS",
     "imagen": "1688761881385_77303564.png",
     "isDelete": false,
     "categoria": "Admin"

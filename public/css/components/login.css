@@ -67,7 +67,7 @@
    .content {
      flex-direction: row;
      max-width: 768px;
-     height: 80vh;
+     height: 100vh;
    }
 
  }
