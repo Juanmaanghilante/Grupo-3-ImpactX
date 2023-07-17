@@ -19,7 +19,7 @@ router.get('/user/logout', userControler.logout)
 
 
 // CREATE
-router.get('/user/signup', guestMiddlware, userControler.userSignup)
+router.get('/user/signup', userControler.userSignup)
 router.post('/user/signup', fileUpload.single("profilePic"), validations, userControler.userCreateProcess)
 
 // EDIT

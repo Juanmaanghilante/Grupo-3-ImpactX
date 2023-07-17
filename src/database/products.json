@@ -60,7 +60,7 @@
     "descripcion": "os encargamos de garantizar que tu sitio web este siempre actualizado, funcione sin problemas y que puedas brindar una visita user-friendly a tus usuarios gestionamos plugins y herramientas, nos encargamos de copias de seguridad regulares de tu base de datos y ofrecemos soporte técnico ",
     "precio": "2650",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 8,
@@ -69,16 +69,16 @@
     "descripcion": "gestión profesional de la presencia en línea de una empresa, marca o persona en las redes sociales. nos encargamos  de crear, administrar y optimizar estrategias de comunicación en plataformas como Facebook, Twitter, Instagram, entre otras, con el objetivo de aumentar el alcance, la visibilidad y el compromiso de la audiencia",
     "precio": "40000",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 9,
     "categoria": "producto",
     "nombre": "Email marketing",
-    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas.",
-    "precio": "350",
+    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas. ",
+    "precio": "355",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "descripcion": "Creación de aplicaciones para dispositivos móviles, tanto para plataformas iOS como Android, utilizando tecnologías como Swift, Objective-C, Java o Kotlin.",
     "precio": "98850",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "descripcion": "Creación y gestión de la identidad de marca, incluyendo diseño de logotipos, eslogan, colores, etc.",
     "precio": "7895",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 12,
@@ -141,6 +141,33 @@
     "descripcion": "producto",
     "precio": "123",
     "imagen": "1689554586200_800106948.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 17,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "12345",
+    "imagen": "1689623055995_800160944.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 18,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "124567",
+    "imagen": "1689624311161_magazine-unlock-01-2.3.6652-_16B8A0D3FB89FB82D0377FAD67A94F94.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 19,
+    "categoria": "producto",
+    "nombre": "producto 1234",
+    "descripcion": "producto 1234 ",
+    "precio": "12345",
+    "imagen": "1689626544589_800160944.jpg",
     "isDeleted": true
   }
 ]
