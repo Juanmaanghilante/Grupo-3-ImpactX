@@ -23,14 +23,14 @@ router.get('/user/signup', guestMiddlware, userControler.userSignup)
 router.post('/user/signup', fileUpload.single("profilePic"), validations, userControler.userCreateProcess)
 
 // EDIT
-router.get('/user/edit/:id', userControler.userEdit)
+router.get('/user/edit/:id', authMiddleware, userControler.userEdit)
 router.put("/user/:id", fileUpload.single("profilePic"), validations, userControler.userEditProcess)
 
 // DELETE
-router.delete("/user/delete/:id", userControler.userDeleteProcess)
+router.delete("/user/delete/:id", authMiddleware, userControler.userDeleteProcess)
 
 // CHANGE PASSWORD
-router.get("/user/edit/:id/changepassword", userControler.passwordChange)
+router.get("/user/edit/:id/changepassword", authMiddleware, userControler.passwordChange)
 router.put("/user/edit/changepassword", valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
 
 module.exports = router

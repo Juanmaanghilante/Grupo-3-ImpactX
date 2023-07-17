@@ -7,8 +7,6 @@
 
     <%- include('../partials/header')%>
 
-    <% if (productoEditar) { %>
-
       <form enctype="multipart/form-data" action="/productos/<%=productoEditar.id %>/?_method=put" method="POST"
         class="create-form">
         <div class="content">
@@ -30,15 +28,7 @@
             <button type="submit" class="botonContactanos">Editar</input>
           </div>
         </div>
-      </form>
-
-      <% } else { %>
-
-        <div class="content">
-          <h2 class="titulo-registrar-usuario"> 404 Producto no encontrado! </h2>
-        </div>
-
-        <% } %>      
+      </form>    
 
       <%- include('../partials/footer')%>
 

@@ -75,7 +75,12 @@ module.exports = {
 
   userEdit: (req, res) => {
     const usuarioEditar = datos.find((usuario) => usuario.id == req.params.id);
-    return res.render("users/edicionUsuario", { usuario: usuarioEditar });
+    if(usuarioEditar){
+      return res.render("users/edicionUsuario", { usuario: usuarioEditar });
+    }else{
+      return res.render('error404');
+    }
+    
   },
 
   userEditProcess: (req, res) => {
@@ -94,10 +99,7 @@ module.exports = {
         path.resolve(__dirname, "../../public/img/" + usuarioEditar.imagen)
       );
       usuarioEditar.imagen = req.file.filename;
-    }
-    if(req.body.password){
-      usuarioEditar.password = bcrypt.hashSync(req.body.password, 10);
-    }    
+    }   
     fs.writeFileSync(
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
@@ -167,7 +169,6 @@ module.exports = {
   passwordChange: (req, res) => {
 
     const usuarioCambiarPass = req.session.userLogged
-        
     return res.render("users/passwordChange", {usuario:usuarioCambiarPass})
 
   },
