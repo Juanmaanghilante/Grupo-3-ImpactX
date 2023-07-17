@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productControler = require('../controllers/mainController');
+const authMiddleware = require('../middlewares/authMiddleware');
 const { body } = require('express-validator');
 
 const validations = [
@@ -16,6 +17,7 @@ router.get('/', productControler.index);
 router.post('/contactenos/create', validations, productControler.createContactenos);
 
 //Gestionar requests
-router.get('/request/edit', productControler.request);
+router.get('/request/edit', authMiddleware, productControler.request);
+router.put('/request/:id', productControler.sendAnswer);
 
 module.exports = router

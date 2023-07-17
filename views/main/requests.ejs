@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"Login"})%>
+<%- include('../partials/head', {title:"Requests"})%>
 
-  <body class="bodySignUp">
 
-    <%- include('../partials/header')%>
+
+  <%- include('../partials/header')%>
+
+    <body class="bodySignUp"></body>
     <% requesthabilitados.forEach(request=> { %>
-        <form action="/request/<%= request.id %>?_method=PUT" method="POST" class="create-form">
-          <div class="content">
+      <form action="/request/<%= request.id %>?_method=PUT" method="POST" class="create-form">
+        <div class="content">
 
+          <div>
             <div>
               <h2 class="titulo-registrar-usuario">Gestionar request</h2>
-
-              <div class="control-formulario">
-                <label for="user"> Nombre: </label>
-                <input class="control" type="text" name="nombre"
-                  value="<%= request.nombre %>" disabled/>
-              </div>
-
-              <div class="control-formulario">
-                <label for="name"> Apellido: </label>
-                <input class="control" type="text" name="apellido" value="<%= request.apellido %>" disabled/>
-              </div>
-
-              <div class="control-formulario">
-                <label for="lastName"> Correo </label>
-                <input class="control" type="text" value="<%= request.email %>" disabled/>
-              </div>
-
-              <textarea class="control" rows="5" name="mensaje" disabled
-                ><%=request.mensaje%></textarea>
-
-                <label>¡Dejanos tu mensaje!</label>
-  
-                <textarea class="control" rows="5" name="mensaje"></textarea>              
-
-              <button type="submit" class="botonProductos">Enviar correo</button>
             </div>
-          </div>
-        </form>
-        <% }) %>
-     <%- include('../partials/footer')%>
+            <div class="control-formulario">
+              <label for="user"> Nombre: </label>
+              <input class="control" type="text" name="nombre" value="<%= request.nombre %>" disabled />
+            </div>
 
-  </body>
+            <div class="control-formulario">
+              <label for="name"> Apellido: </label>
+              <input class="control" type="text" name="apellido" value="<%= request.apellido %>" disabled />
+            </div>
+
+            <div class="control-formulario">
+              <label for="lastName"> Correo </label>
+              <input class="control" type="text" value="<%= request.email %>" name="email" />
+            </div>
+
+            <label>Inquietud radicada</label>
+            <textarea class="control" rows="5" name="mensaje" disabled><%=request.mensaje%></textarea>
+
+            <label>Respuesta</label>
+            <textarea class="control" rows="5" name="mensaje"></textarea>
+
+            <button type="submit" class="botonProductos">Enviar correo</button>
+          </div>
+        </div>
+      </form>
+
+      <% }) %>
+        </body>
+        <%- include('../partials/footer')%>
 
 </html>
