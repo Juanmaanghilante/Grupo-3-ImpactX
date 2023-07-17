@@ -18,7 +18,8 @@
       <li><a href="/productos">Productos</a></li>
     <% if (locals.isLogged) { %>
       <% if (locals.userLogged.category=="Admin" ) { %>   
-      <li><a href="/user/list">Usuarios</a></li>  
+      <li><a href="/user/list">Usuarios</a></li> 
+      <li><a href="/request/edit">Tickets</a></li> 
       <% } %>        
       <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
       <li class="ingresar"><a href="/user/profile"> Hola, <%= locals.userLogged.name %> </a></li>
