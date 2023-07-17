@@ -83,5 +83,17 @@
     "category": "Cliente",
     "imagen": "1689598078514_26731171_1788457631177836_2615187125890747613_n.jpg",
     "isDelete": true
+  },
+  {
+    "id": 8,
+    "user": "test",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "password": "$2a$10$Tg5NhiyYvzoylVoHIuHt.O4rIuSXvCVjp8lZfgrb.bYQ3g6GNRXEC",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "category": "Cliente",
+    "imagen": "1689633491286_800026290.jpg",
+    "isDelete": true
   }
 ]

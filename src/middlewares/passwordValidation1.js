@@ -28,7 +28,8 @@ module.exports = [
 		}),
 
 	body("contraseniaNueva")
-		.notEmpty().withMessage('Debe ingresar su contraseña nueva').bail(),
+		.notEmpty().withMessage('Debe ingresar su contraseña nueva').bail()
+		.isStrongPassword({ minLength: 6, minUppercase: 1, minLowercase: 1, minSymbols: 1 }).withMessage('La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo ').bail(),
 
 	body('contraseniaNuevaRepetir')
 		.notEmpty().withMessage('Debe repetir su contraseña nueva').bail()

@@ -75,8 +75,8 @@
     "id": 9,
     "categoria": "producto",
     "nombre": "Email marketing",
-    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas.",
-    "precio": "350",
+    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas. ",
+    "precio": "355",
     "imagen": "product-default.png",
     "isDeleted": false
   },
@@ -141,6 +141,33 @@
     "descripcion": "producto",
     "precio": "123",
     "imagen": "1689554586200_800106948.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 17,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "12345",
+    "imagen": "1689623055995_800160944.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 18,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "124567",
+    "imagen": "1689624311161_magazine-unlock-01-2.3.6652-_16B8A0D3FB89FB82D0377FAD67A94F94.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 19,
+    "categoria": "producto",
+    "nombre": "producto 1234",
+    "descripcion": "producto 1234 ",
+    "precio": "12345",
+    "imagen": "1689626544589_800160944.jpg",
     "isDeleted": true
   }
 ]
