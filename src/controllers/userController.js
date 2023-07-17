@@ -99,10 +99,7 @@ module.exports = {
         path.resolve(__dirname, "../../public/img/" + usuarioEditar.imagen)
       );
       usuarioEditar.imagen = req.file.filename;
-    }
-    if(req.body.password){
-      usuarioEditar.password = bcrypt.hashSync(req.body.password, 10);
-    }    
+    }   
     fs.writeFileSync(
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
