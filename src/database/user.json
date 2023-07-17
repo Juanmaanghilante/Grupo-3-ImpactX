@@ -71,5 +71,17 @@
     "repeatPassword": "1qaZ2wsX3edC4r*",
     "imagen": "1689124554204_800160944.jpg",
     "isDelete": false
+  },
+  {
+    "id": 7,
+    "user": "richardmazo2",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "password": "$2a$10$iLcVCHFzSfMIJ/Nv/aRj2OaNItp5bn.F3HExseRqpozuGVyNXxk3G",
+    "repeatPassword": "12345",
+    "category": "Cliente",
+    "imagen": "1689598078514_26731171_1788457631177836_2615187125890747613_n.jpg",
+    "isDelete": true
   }
 ]

@@ -11,7 +11,9 @@ module.exports = [
     .isEmail().withMessage('Debes escribir un formato de correo válido'),
 
   //body('category').notEmpty().withMessage('Debe elegir una categoría'),
-  body('password').notEmpty().withMessage('Debe completar el campo con su contraseña'),
+  body('password')
+    .notEmpty().withMessage('Debe completar el campo con su contraseña').bail()
+    .isStrongPassword({ minLength: 6, minUppercase: 1, minLowercase: 1, minSymbols: 1 }).withMessage('La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo '),
 
   body('profilePic').custom((value, { req }) => {
     let file = req.file;
