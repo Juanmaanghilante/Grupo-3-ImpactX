@@ -6,6 +6,7 @@ const cookie =require('cookie-parser')
 const mainRouter = require('./routes/mainRoutes')
 const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
+const error404Middleware = require('./middlewares/error404Middleware')
 
 const methodOverride = require("method-override")
 
@@ -47,3 +48,4 @@ app.listen(3003, () => console.log('Servidor en puerto 3003'));
 app.use(mainRouter);
 app.use(userRouter);
 app.use(productRouter);
+app.use(error404Middleware)
