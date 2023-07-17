@@ -7,8 +7,6 @@
 
     <%- include('../partials/header')%>
 
-      <% if (usuario) { %>
-
         <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
           <div class="content">
             <div>
@@ -78,17 +76,6 @@
           <button hidden type="submit" id="botonBorrar">Eliminar usuario </button>
 
         </form>
-
-        <% } else { %>
-
-          <div class="content">
-            <h2 class="titulo-registrar-usuario"> 404 Usuario no encontrado! </h2>
-          </div>
-          <form action="/user/profile" method="GET">
-            <button type="sumbit" class="botonProductos eliminar">VOLVER</button>
-          </form>
-
-          <% } %>
 
             <%- include('../partials/footer')%>
 

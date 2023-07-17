@@ -38,7 +38,11 @@ module.exports = {
 
   productsEdit: (req, res) => {
     const productoEditar = productos.find(row => row.id == req.params.id && row.isDeleted == false)
-    return res.render('products/formEdit', { productoEditar: productoEditar })
+    if(productoEditar){
+      return res.render('products/formEdit', { productoEditar: productoEditar });
+    }else{
+      return res.render('error404');
+    }
   },
 
   productsEditProcess: (req, res) => {

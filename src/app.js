@@ -48,4 +48,4 @@ app.listen(3003, () => console.log('Servidor en puerto 3003'));
 app.use(mainRouter);
 app.use(userRouter);
 app.use(productRouter);
-app.use(error404Middleware)
+app.use(error404Middleware);
