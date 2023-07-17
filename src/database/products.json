@@ -133,5 +133,14 @@
     "precio": "1234",
     "imagen": "1689126558539800008325.jpg",
     "isDeleted": true
+  },
+  {
+    "id": 16,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "123",
+    "imagen": "1689554586200_800106948.jpg",
+    "isDeleted": true
   }
 ]
