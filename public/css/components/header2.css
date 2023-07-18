@@ -1,0 +1,78 @@
+header {
+  z-index: 999;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px;
+  height: 60px;
+  background-color: white;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+header nav a {
+  width: 0px;
+  height: 0px;
+}
+
+.logoHeader {
+  margin-top: 0.9rem;
+  width: 110px;
+}
+
+
+.svgContainer {
+  display: flex;
+  align-items: center;
+}
+
+
+.svgProfile, .svgCart{
+  margin-right: 10px;
+}
+
+.svgCart {
+  margin-top: 5px;
+}
+
+
+
+.menu {
+  display: none;
+}
+
+
+
+
+
+
+@media (min-width: 768px) {
+  .svgMenu {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menu ul {
+    display: flex;
+   }
+
+}
+
+@media (min-width: 1200px) {
+}
+@media (min-width: 1300px) {
+
+}

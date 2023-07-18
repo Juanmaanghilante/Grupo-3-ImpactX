@@ -136,8 +136,7 @@
     overflow: hidden;
     padding: 3rem 1rem;
     width: 100%;
-    background-color: #113d7b;
-    opacity: .9;
+    /* background-color: #0c2c59; */
 
     display: flex;
     flex-wrap: wrap;
@@ -151,7 +150,7 @@
   .imagenQuienesSomos {
     width: 100%;
     object-fit: cover;
-    border-radius: 2px;
+    border-radius: 8px;
   }
 
   .containerTextoQuienesSomos {
@@ -163,14 +162,17 @@
   .containerTextoQuienesSomos h2 {
     color: white;
     font-weight: 700;
-    text-align: left;
+    font-size: 2rem;
     margin-bottom: 1rem;
+    
+    text-align: center;
   }
 
   .containerTextoQuienesSomos p {
     color: white;
     font-weight: 300;
     line-height: 1.7;
+    text-align: center;
   }
 
 
@@ -343,6 +345,7 @@
       width: 100px;
       margin-right: 1rem;
     }
+
   }
 
 
@@ -407,44 +410,5 @@
     .containerTextoQuienesSomos {
       max-width: 500px;
       margin-bottom: 0px;
-    }
-
-
-
-
-
-    /* SECCIÓN PRODUCTOS Y SERVICIOS EN HOME */
-    .seccionServiciosProductos {
-
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-evenly;
-    }
-
-    .tarjetasServiciosProductos {
-      margin-top: 0px;
-      padding-bottom: 5rem;
-    }
-
-    .tarjetasServiciosProductos article:nth-child(4) {
-      border-bottom: none;
-    }
-
-    .tarjetasServiciosProductos:first-of-type article:nth-child(2) {
-      border-bottom: none;
-    }
-
-    .containerTextoProductos {
-      margin-top: 0px;
-    }
-
-    /* Estilos para el formulario de contacto */
-    .formulario-contacto {
-      padding: 60px;
-    }
-
-    /* Estilos para las imágenes en el contenedor "imagenes" */
-    .imagenes img {
-      width: 300px;
     }
   }
