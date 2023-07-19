@@ -11,6 +11,11 @@
         <div class="wrapperProfile">
           <img src="../img/<%= user.imagen %>" alt="">
           <h2>Hola, <%= user.name %> <%= user.lastName %></h2>
+          <nav class="contenedorNavDos">
+            <ul>
+                        <li><a href="/user/logout">Cerrar Sesión</a></li>   
+            </ul>   
+        </nav>
           <div>
               <p class="usuario-tipo">Usuario: <%= user.user %></p>
               <p class="usuario-tipo">Tipo: <%= user.category %></p>

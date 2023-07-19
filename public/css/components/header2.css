@@ -18,10 +18,6 @@ header {
   
 }
 
-nav {
-  display: flex;
-  align-items: center;
-}
 
 header nav a {
   width: 0px;
@@ -82,6 +78,11 @@ header nav a {
   list-style-type: none;
 } 
 
+.contenedorNavDos ul li a {
+  color: #02337d;
+  font-size: 14px;
+}
+
 .logoHeader {
   margin-top: 0.9rem;
   width: 110px;
@@ -94,17 +95,21 @@ header nav a {
 }
 
 
-.svgProfile, .svgCart{
+.svgProfile{
   margin-right: 10px;
+  margin-top: 7px;
 }
 
 .svgCart {
+  margin-right: 10px;
   margin-top: 5px;
 }
 
+.svgCart:hover {
+  cursor: pointer;
+}
 
-
-.menu {
+.menu { 
   display: none;
 }
 
@@ -112,10 +117,20 @@ header nav a {
   transform: translateX(0) !important;
 }
 
+.perfilPic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: .8rem;
+  margin-left: .8rem;
+  margin-top: 5px;
+  box-shadow: 0 0px 8px rgba(32, 100, 173, 0.6);
+}
 
 
-
-
+.perfilPic:hover {
+  box-shadow: 0 0 8px rgba(32, 100, 173, 1);
+}
 
 @media (min-width: 768px) {
 
@@ -130,6 +145,7 @@ header nav a {
 }
 
 @media (min-width: 1200px) {
+
 
   .svgMenu {
     display: none;
