@@ -1,5 +1,5 @@
 header {
-  z-index: 999;
+  z-index: 10;
 
   position: fixed;
   top: 0;
@@ -10,20 +10,77 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px;
+  padding: 35px;
   height: 60px;
   background-color: white;
+  
+  box-shadow: 0 4px 10px rgba(135, 135, 135, 0.1);
+  
 }
 
 nav {
   display: flex;
-  flex-direction: column;
+  align-items: center;
 }
 
 header nav a {
   width: 0px;
   height: 0px;
 }
+
+.heroSection {
+  padding-top: 9.5rem;
+}
+
+.contenedorIzq nav{
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  background-color: white;
+  width: 50%;
+  z-index: 999;
+  text-transform: uppercase;
+  transform: translateX(100%);
+  transition: transform .5s ease-in-out;
+
+  box-shadow: 0 4px 10px rgba(26, 77, 132, 0.5);
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0;
+  margin-top: 1rem;
+  margin-right: 1rem;
+
+  width: 2em;
+   opacity: .8;
+
+}
+
+.contenedorIzq nav ul li a {
+  text-decoration: none;
+  color: #02337d;
+}
+.contenedorIzq nav ul li{
+  padding: .75em 2em;
+  display: block;
+  width: 100%;
+}
+.contenedorIzq nav ul li:hover {
+  background: rgb(231, 239, 255);
+}
+
+.contenedorIzq nav ul{
+  list-style-type: none;
+  margin-top: 8rem;
+}
+
+
+
+.contenedorNavDos ul li{
+  list-style-type: none;
+} 
 
 .logoHeader {
   margin-top: 0.9rem;
@@ -51,15 +108,16 @@ header nav a {
   display: none;
 }
 
+.open-nav {
+  transform: translateX(0) !important;
+}
+
 
 
 
 
 
 @media (min-width: 768px) {
-  .svgMenu {
-    display: none;
-  }
 
   .menu {
     display: block;
@@ -72,7 +130,58 @@ header nav a {
 }
 
 @media (min-width: 1200px) {
-}
-@media (min-width: 1300px) {
 
+  .svgMenu {
+    display: none;
+  }
+
+  .contenedorIzq nav {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background:none;
+
+    box-shadow: none;
+  }
+
+  .contenedorIzq nav ul {
+    display: flex;
+    margin: 0;
+
+  }
+
+  .contenedorIzq nav ul li {
+    padding: 0px;
+  }
+
+  .contenedorIzq nav ul li a {
+    text-transform: none;
+    margin-left: 2rem;
+  }
+
+  .contenedorIzq nav ul li:hover {
+    opacity: .5;
+    background: none;
+  }
+
+  .closeBtn {
+    display: none;
+  }
+
+  .contenedorIzq {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
+
+@media (min-width: 1300px) {
+  header {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
 }
