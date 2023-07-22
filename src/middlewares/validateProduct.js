@@ -12,7 +12,7 @@ module.exports = [
     let extensionesPermitidas = ['.jpg', '.png', '.gif'];
    
     if (!file) {
-      throw new Error('Debe seleccionar una imagen de perfil')
+      throw new Error('Debe seleccionar una imagen del producto/servicio')
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
