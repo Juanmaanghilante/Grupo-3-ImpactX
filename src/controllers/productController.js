@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require("path")
 
+const { validationResult } = require("express-validator");
 const rutaBase = path.resolve('./src/database/products.json')
 const productos = JSON.parse(fs.readFileSync(rutaBase));
 
@@ -20,6 +21,13 @@ module.exports = {
   },
 
   productsCreateProcess: (req, res) => {  
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("products/formCreate", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }    
     const nuevoProduct = {
       "id": productos.length + 1,
       "categoria": req.body.category,

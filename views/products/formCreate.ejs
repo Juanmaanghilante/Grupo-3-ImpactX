@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"Login"})%>
+<%- include('../partials/head', {title:"Create Product"})%>
 
   <body class="bodySignUp">
 
@@ -16,9 +16,9 @@
                 <option value="producto" name="category">Producto</option>
                 <option value="servicio" name="category">Servicio</option>
               </select>
-              <input type="text" name="product" class="control" placeholder="Nombre" required />
-              <input type="text" name="desc" class="control" placeholder="Descripción" required />
-              <input type="number" name="price" class="control" placeholder="Precio" required />
+              <input type="text" name="product" class="control" placeholder="Nombre" />
+              <textarea type="text" name="desc" class="control" placeholder="Descripción" ></textarea>
+              <input type="number" name="price" class="control" placeholder="Precio" />
               <input type="file" name="image" class="control" />
             </div>
             <button type="submit" class="botonContactanos">Agregar Producto</input>

@@ -66,7 +66,6 @@ module.exports = {
   },
 
   userSignup: (req, res) => {
-    res.cookie("testing", "hola mundo", { maxAge: 1000 * 30 });
     return res.render("users/signup");
   },
   userList: (req, res) => {
