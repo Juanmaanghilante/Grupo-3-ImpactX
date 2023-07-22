@@ -55,9 +55,11 @@
   },
   {
     "id": 7,
-    "descripcion": "os encargamos de garantizar que tu sitio web este siempre actualizado, funcione sin problemas y que puedas brindar una visita user-friendly a tus usuarios gestionamos plugins y herramientas, nos encargamos de copias de seguridad regulares de tu base de datos y ofrecemos soporte técnico  ",
+    "categoria": "producto",
+    "nombre": "Mantención de tus páginas web/ sistemas de gestión",
+    "descripcion": "os encargamos de garantizar que tu sitio web este siempre actualizado, funcione sin problemas y que puedas brindar una visita user-friendly a tus usuarios gestionamos plugins y herramientas, nos encargamos de copias de seguridad regulares de tu base de datos y ofrecemos soporte técnico ",
     "precio": "2650",
-    "imagen": "1690059167172_800106948.jpg",
+    "imagen": "product-default.png",
     "isDeleted": false
   },
   {
@@ -194,14 +196,5 @@
     "precio": "500",
     "imagen": "1690044834673_26731171_1788457631177836_2615187125890747613_n.jpg",
     "isDeleted": true
-  },
-  {
-    "id": 23,
-    "descripcion": "dasd",
-    "precio": "4141",
-    "imagen": "1690063539324_800160944.jpg",
-    "isDeleted": false,
-    "nombre": "producto",
-    "categoria": "servicio"
   }
 ]
