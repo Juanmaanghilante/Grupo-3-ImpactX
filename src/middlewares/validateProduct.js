@@ -7,10 +7,6 @@ module.exports = [
   body('desc').notEmpty().withMessage('Debe completar el campo con la descripción del producto/servicio'),
   body('price').notEmpty().withMessage('Debe ingresar el precio del producto/servicio'),
 
-  body('email')
-    .notEmpty().withMessage('Debe completar el campo con su email').bail()
-    .isEmail().withMessage('Debes escribir un formato de correo válido'),
-
   body('image').custom((value, { req }) => {
     let file = req.file;
     let extensionesPermitidas = ['.jpg', '.png', '.gif'];
