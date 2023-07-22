@@ -104,8 +104,7 @@ module.exports = {
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
     );
-    delete usuarioEditar.password;
-    req.session.userLogged = usuarioEditar;
+
     return res.redirect("profile");
   },
 

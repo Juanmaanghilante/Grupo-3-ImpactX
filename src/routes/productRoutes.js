@@ -5,6 +5,7 @@ const productControler = require('../controllers/productController');
 // MIDDLEWARES
 const fileUpload = require('../middlewares/multer');
 const validationsProduct = require('../middlewares/validateProduct');
+const validationsProductEdit = require('../middlewares/validateProductEdit');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 // PRODUCTS / CART
@@ -18,7 +19,7 @@ router.post("/productos/create", fileUpload.single("image"), validationsProduct,
 // EDIT
 router.get('/productos/edit/:id', authMiddleware, productControler.productsEdit)
 
-router.put("/productos/:id",fileUpload.single("nuevaImagen"), productControler.productsEditProcess)
+router.put("/productos/:id", fileUpload.single("image"), validationsProductEdit, productControler.productsEditProcess)
 
 // DELETE
 router.delete("/productos/delete/:id", authMiddleware, productControler.productsDeleteProcess)

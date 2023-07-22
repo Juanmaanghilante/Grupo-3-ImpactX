@@ -16,7 +16,7 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.category) { %>
                   <%= errors.category.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
                 id="">
@@ -27,14 +27,14 @@
                       null %>
                       <%= locals.oldData && (servicio===oldData.tipoUsuario) ? "selected" : null %> > <%= servicio %>
                     </option>
-                    <% } %>
+                  <% } %>
               </select>
 
 
               <div class="erroresForm">
                 <% if (locals.errors && errors.product) { %>
                   <%= errors.product.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <input type="text" name="product"
                 class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Nombre"
