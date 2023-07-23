@@ -6,15 +6,25 @@ const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/requests.json");
 const requests = JSON.parse(fs.readFileSync(rutaBase));
 
+const config = {
+  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: "richard.mazo.15.11@gmail.com",
+    pass: "richipaisa1597*"
+  }
+}
 
-    // Configuración del transportador de correo
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: "impactxgrupo3@gmail.com",
-        pass: "ImpactXGrupo3",
-      },
-    });
+// Configuración del transportador de correo
+const transporter = nodemailer.createTransport({
+  service: "hotmail",
+  auth: {
+    user: "richard.mazo.97@hotmail.com",
+    pass: "richipaisa1597*",
+  },
+});
 
 module.exports = {
   index: (req, res) => {
@@ -60,28 +70,39 @@ module.exports = {
     });
   },
   sendAnswer: (req, res) => {
-    console.log(req.body);
     // Detalles del correo electrónico
     const mailOptions = {
-      from: "impactxgrupo3@gmail.com",
-      to: "richard.mazo.15.11@gmail.com",//req.body.email,
+      from: "richard.mazo.15.11@gmail.com",
+      to: "impactxgrupo3@gmail.com", 
       subject: "Resolución dudas - Impact X",
       text: req.body.mensaje,
     };
 
-    console.log(mailOptions);
+    const data = {
+      "from": "richard.mazo.15.11@gmail.com",
+      "to": "impactxgrupo3@gmail.com",
+      "subject": "Thank you, recipient, for subscribing!",
+      "text": "Dear Recipient, thank you for subcribing. Sincerely, Sender"
+    }
 
-    // Envío del correo electrónico
-    transporter.sendMail(mailOptions, (error, info) => {
-      console.log("Holaa");
+    transporter.verify(function(error, success) {
       if (error) {
-        console.log(error);
-        res.send("Error al enviar el correo electrónico");
+            console.log(error);
       } else {
-        console.log("Correo electrónico enviado: " + info.response);
-        res.send("Correo electrónico enviado correctamente");
+            console.log('Server is ready to take our messages');
       }
     });
+
+    const transporter = nodemailer.createTransport(config);
+    transporter.sendMail(data, (err, info) => {
+      if(err){
+        console.log("hola");
+        console.log(err);
+      }else{
+        console.log("hola");
+        console.log(info.response);
+      }
+    })
 
     const request = requests.find(
       (request) => request.id == req.params.id && request.gestionado == false

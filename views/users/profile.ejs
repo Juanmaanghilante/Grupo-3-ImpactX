@@ -11,6 +11,11 @@
         <div class="wrapperProfile">
           <img src="../img/<%= user.imagen %>" alt="">
           <h2>Hola, <%= user.name %> <%= user.lastName %></h2>
+          <nav class="contenedorNavDos">
+            <ul>
+                        <li><a href="/user/logout">Cerrar Sesión</a></li>   
+            </ul>   
+        </nav>
           <div>
               <p class="usuario-tipo">Usuario: <%= user.user %></p>
               <p class="usuario-tipo">Tipo: <%= user.category %></p>
@@ -33,6 +38,19 @@
 
       <%- include('../partials/footer')%>
 
+      
+      <script>
+        const menu = document.querySelector('.svgMenu')
+        const close = document.querySelector('.closeBtn')
+        const nav = document.querySelector('#navPrincipal')
+
+        menu.addEventListener('click', () => {
+          nav.classList.add('open-nav')
+        })
+        close.addEventListener('click', () => {
+          nav.classList.remove('open-nav')
+        })
+      </script>
   </body>
 
 </html>

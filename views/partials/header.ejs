@@ -1,33 +1,62 @@
 <header>
-  <div class="logo">
-    <a href="/"><img src="/img/logo-impactx.png" alt="Logo ImpactX" /></a>
-  </div>
-  <a class="shopping-cart" href="/cart">
-    <i class="fas fa-shopping-cart"></i>
-  </a>
-  <a class="burger-menu" href="#">
-    <span></span>
-    <span></span>
-    <span></span>
-  </a>
-  
-  <nav class="menu">
-    <ul>
-      <li><a href="/#nosotros">Nosotros</a></li>
-      <li><a href="/#contacto">Contacto</a></li>  
-      <li><a href="/productos">Productos</a></li>
-    <% if (locals.isLogged) { %>
-      <% if (locals.userLogged.category=="Admin" ) { %>   
-      <li><a href="/user/list">Usuarios</a></li> 
-      <li><a href="/request/edit">Tickets</a></li> 
-      <% } %>        
-      <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
-      <li class="ingresar"><a href="/user/profile"> Hola, <%= locals.userLogged.name %> </a></li>
-      <li class="registrarse"><a href="/user/logout">Cerrar Sesión</a></li>
-    <% } else  { %>
-        <li class="ingresar"><a href="/user/login">Ingresar</a></li>
-        <li class="registrarse"><a href="/user/signup">Registrarse</a></li>
-    <% } %>
-    </ul>
-  </nav>
+    <div class="contenedorIzq">
+          <a href="/"><img src="/img/logo-impactx.png" class="logoHeader" alt="Logo ImpactX" /></a>
+          <nav id="navPrincipal" >
+                <svg class="closeBtn" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M39.596 0L22.624 16.968L5.656 0L0 5.656L16.968 22.624L0 39.592L5.656 45.248L22.624 28.28L39.596 45.248L45.252 39.592L28.284 22.624L45.252 5.656L39.596 0Z" fill="black"/>
+                </svg>
+              
+                <ul>
+                    <li><a href="/#nosotros">Nosotros</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>  
+                    <li><a href="/productos">Productos</a></li>
+
+                    <% if (locals.isLogged) { %>
+                        <% if (locals.userLogged.category=="Admin" ) { %>   
+                            <li><a href="/user/list">Usuarios</a></li>  
+                        <% } %>        
+                    <% } %>
+                </ul>
+          </nav>
+    </div>
+
+
+    <div class="svgContainer">
+          <nav class="contenedorNavDos">
+              <ul>
+                    <% if (!locals.isLogged) { %>
+                          <li><a href="/user/login">Log In</a></li>
+                    <% } else  { %>
+                          <li><a href="/user/profile">Hola, <%= locals.userLogged.name %> </a></li>
+                    <% } %>
+              </ul>   
+          </nav>
+
+
+
+       <% if (!locals.isLogged) { %>
+          <a href="/user/login">
+              <svg class="svgProfile" width="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 22H4V20C4 18.6739 4.52678 17.4021 5.46447 16.4645C6.40215 15.5268 7.67392 15 9 15H15C16.3261 15 17.5979 15.5268 18.5355 16.4645C19.4732 17.4021 20 18.6739 20 20V22ZM12 13C11.2121 13 10.4319 12.8448 9.7039 12.5433C8.97595 12.2417 8.31451 11.7998 7.75736 11.2426C7.20021 10.6855 6.75825 10.0241 6.45672 9.2961C6.15519 8.56815 6 7.78793 6 7C6 6.21207 6.15519 5.43185 6.45672 4.7039C6.75825 3.97595 7.20021 3.31451 7.75736 2.75736C8.31451 2.20021 8.97595 1.75825 9.7039 1.45672C10.4319 1.15519 11.2121 1 12 1C13.5913 1 15.1174 1.63214 16.2426 2.75736C17.3679 3.88258 18 5.4087 18 7C18 8.5913 17.3679 10.1174 16.2426 11.2426C15.1174 12.3679 13.5913 13 12 13Z" fill="black"/>
+              </svg>
+          </a>
+       
+        <% } else  { %>
+              <a href="/user/profile">
+                <img class="perfilPic" src="/img/<%= locals.userLogged.imagen %>" alt="">
+              </a>
+        <% } %> 
+        
+        <% if (locals.isLogged) { %>
+            <a href="/cart">
+                <svg class="svgCart" width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 40C10.9 40 9.958 39.608 9.174 38.824C8.39 38.04 7.99867 37.0987 8 36C8 34.9 8.392 33.958 9.176 33.174C9.96 32.39 10.9013 31.9987 12 32C13.1 32 14.042 32.392 14.826 33.176C15.61 33.96 16.0013 34.9013 16 36C16 37.1 15.608 38.042 14.824 38.826C14.04 39.61 13.0987 40.0013 12 40ZM32 40C30.9 40 29.958 39.608 29.174 38.824C28.39 38.04 27.9987 37.0987 28 36C28 34.9 28.392 33.958 29.176 33.174C29.96 32.39 30.9013 31.9987 32 32C33.1 32 34.042 32.392 34.826 33.176C35.61 33.96 36.0013 34.9013 36 36C36 37.1 35.608 38.042 34.824 38.826C34.04 39.61 33.0987 40.0013 32 40ZM8.4 4H37.9C38.6667 4 39.25 4.342 39.65 5.026C40.05 5.71 40.0667 6.40133 39.7 7.1L32.6 19.9C32.2333 20.5667 31.7413 21.0833 31.124 21.45C30.5067 21.8167 29.832 22 29.1 22H14.2L12 26H36V30H12C10.5 30 9.36667 29.3413 8.6 28.024C7.83333 26.7067 7.8 25.3987 8.5 24.1L11.2 19.2L4 4H0V0H6.5L8.4 4Z" fill="black"/>
+                </svg>
+            </a>
+        <% } %> 
+      
+        <svg class="svgMenu" width="31" viewBox="0 0 31 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 24.3733V20.3111H31V24.3733H0ZM0 14.2178V10.1556H31V14.2178H0ZM0 4.06222V0H31V4.06222H0Z" fill="black"/>
+        </svg> 
+    </div>
 </header>

@@ -18,6 +18,6 @@ router.post('/contactenos/create', validations, productControler.createContacten
 
 //Gestionar requests
 router.get('/request/edit', authMiddleware, productControler.request);
-router.put('/request/:id', productControler.sendAnswer);
+router.post('/request/:id', productControler.sendAnswer);
 
 module.exports = router
