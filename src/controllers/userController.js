@@ -84,6 +84,8 @@ module.exports = {
   },
 
   userEditProcess: (req, res) => {
+    console.log("entrada "+req.params.id);
+    console.log("session "+req.session.userLogged.id);
     const usuarioEditar = datos.find(
       (usuario) => usuario.id == req.params.id && usuario.isDelete == false
     );
@@ -105,6 +107,14 @@ module.exports = {
       JSON.stringify(datos, null, 2)
     );
 
+    if (req.params.id==req.session.userLogged.id) {
+      console.log(usuarioEditar);
+      res.clearCookie('userEmail');   
+      delete usuarioEditar.password;   
+      res.cookie("userEmail", req.body.user, { maxAge: 1000 * 60 * 60 });
+      req.session.userLogged = usuarioEditar; 
+    }
+    
     return res.redirect("profile");
   },
 
