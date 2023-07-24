@@ -5,7 +5,9 @@ const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/user.json");
 const datos = JSON.parse(fs.readFileSync(rutaBase));
-const userPass = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../database/passwords.json")));
+const userPass = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../database/passwords.json"))
+);
 
 const User = require("../models/User");
 
@@ -16,6 +18,7 @@ module.exports = {
 
   loginProcess: (req, res) => {
     let userToLogin = User.findByField("user", req.body.user);
+    console.log(userToLogin);
     // si, hay alguien tratando de loggearse
     if (userToLogin) {
       // comparame la clave encriptada y lo que puso el que se quiere loguear
@@ -23,6 +26,7 @@ module.exports = {
         req.body.password,
         userToLogin.password
       );
+      console.log("hola");
       // si true la comparación
       if (passwordOk) {
         // eliminamos el pasword, que nos viene por req.body, así no se ve
@@ -56,7 +60,7 @@ module.exports = {
   },
 
   logout: (req, res) => {
-    res.clearCookie('userEmail');
+    res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
   },
@@ -75,22 +79,29 @@ module.exports = {
 
   userEdit: (req, res) => {
     const usuarioEditar = datos.find((usuario) => usuario.id == req.params.id);
-    if(usuarioEditar){
+    if (usuarioEditar) {
       return res.render("users/edicionUsuario", { usuario: usuarioEditar });
-    }else{
-      return res.render('error404');
+    } else {
+      return res.render("error404");
     }
-    
   },
 
   userEditProcess: (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/edicionUsuario", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        id: req.params.id
+      });
+    }
     const usuarioEditar = datos.find(
       (usuario) => usuario.id == req.params.id && usuario.isDelete == false
     );
     usuarioEditar.user = req.body.user;
     usuarioEditar.name = req.body.name;
     usuarioEditar.lastName = req.body.lastName;
-    if(req.body.categoria){
+    if (req.body.categoria) {
       usuarioEditar.category = req.body.categoria;
     }
     usuarioEditar.email = req.body.email;
@@ -99,20 +110,20 @@ module.exports = {
         path.resolve(__dirname, "../../public/img/" + usuarioEditar.imagen)
       );
       usuarioEditar.imagen = req.file.filename;
-    }   
+    }
     fs.writeFileSync(
       path.resolve(__dirname, "../database/user.json"),
       JSON.stringify(datos, null, 2)
     );
 
-    if (req.params.id==req.session.userLogged.id) {
+    if (req.params.id == req.session.userLogged.id) {
       console.log(usuarioEditar);
-      res.clearCookie('userEmail');   
-      delete usuarioEditar.password;   
+      res.clearCookie("userEmail");
+      delete usuarioEditar.password;
       res.cookie("userEmail", req.body.user, { maxAge: 1000 * 60 * 60 });
-      req.session.userLogged = usuarioEditar; 
+      req.session.userLogged = usuarioEditar;
     }
-    
+
     return res.redirect("profile");
   },
 
@@ -125,7 +136,6 @@ module.exports = {
         oldData: req.body,
       });
     }
-    //return res.send("haz introducido bien todos los campos requeridos")
 
     let userInDb = User.findByField("user", req.body.user);
     if (userInDb) {
@@ -174,29 +184,36 @@ module.exports = {
   },
 
   passwordChange: (req, res) => {
-
-    const usuarioCambiarPass = req.session.userLogged
-    return res.render("users/passwordChange", {usuario:usuarioCambiarPass})
-
+    const usuarioCambiarPass = req.session.userLogged;
+    return res.render("users/passwordChange", { usuario: usuarioCambiarPass });
   },
 
   passwordChangeProcess: (req, res) => {
-    
-    const datosUsuarioSinPass = datos.find(row => row.user == req.session.userLogged.user)
-
+    const datosUsuarioSinPass = datos.find(
+      (row) => row.user == req.session.userLogged.user
+    );
 
     const usuarioPassVieja = {
-        "user": datosUsuarioSinPass.user,
-        "password": datosUsuarioSinPass.password
-    }
+      user: datosUsuarioSinPass.user,
+      password: datosUsuarioSinPass.password,
+    };
 
-    fs.writeFileSync(path.resolve(__dirname, "../database/passwords.json"), JSON.stringify([...userPass, usuarioPassVieja], null, 2), "utf-8")
+    fs.writeFileSync(
+      path.resolve(__dirname, "../database/passwords.json"),
+      JSON.stringify([...userPass, usuarioPassVieja], null, 2),
+      "utf-8"
+    );
 
-    datosUsuarioSinPass.password = bcrypt.hashSync(req.body.contraseniaNueva, 10)
+    datosUsuarioSinPass.password = bcrypt.hashSync(
+      req.body.contraseniaNueva,
+      10
+    );
 
-    fs.writeFileSync(path.resolve(__dirname, "../database/user.json"), JSON.stringify(datos, null, 2), "utf-8")
-    res.redirect("/")
-    
-
+    fs.writeFileSync(
+      path.resolve(__dirname, "../database/user.json"),
+      JSON.stringify(datos, null, 2),
+      "utf-8"
+    );
+    res.redirect("/");
   },
 };

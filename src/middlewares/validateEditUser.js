@@ -15,6 +15,17 @@ module.exports = [
     .isEmail()
     .withMessage("Debes escribir un formato de correo válido"),
 
+  body("category").custom((value, { req }) => {
+    let rol = req.session.userLogged.category;
+    let categoria = req.body.categoria;
+
+    if (rol == "Admin" && !categoria) {
+      console.log("No hay categoria");
+      throw new Error("Como Admin, debe seleccionar una categoria");
+    }
+    return true;
+  }),
+
   body("profilePic").custom((value, { req }) => {
     let file = req.file;
     let extensionesPermitidas = [".jpg", ".png", ".gif"];
