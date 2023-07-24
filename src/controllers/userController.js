@@ -84,8 +84,6 @@ module.exports = {
   },
 
   userEditProcess: (req, res) => {
-    console.log("entrada "+req.params.id);
-    console.log("session "+req.session.userLogged.id);
     const usuarioEditar = datos.find(
       (usuario) => usuario.id == req.params.id && usuario.isDelete == false
     );
