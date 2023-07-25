@@ -1,6 +1,7 @@
 .mainProfile {
   height: 98vh;
-  padding: 5rem;
+  padding: 2rem;
+  margin-top: 3rem;
 }
 
 .wrapperProfile {
@@ -9,7 +10,19 @@
   padding: 1.2rem;
   margin-top: 2rem;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0px 0px 10px rgba(100, 100, 100, .1);
+}
+
+.wrapperProfileTop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
 }
 
 .mainProfile img {
@@ -20,10 +33,6 @@
 
 .usuario-tipo {
   margin: 25px;
-}
-
-.cont-but {
-  display:flex;
 }
 
 .error {

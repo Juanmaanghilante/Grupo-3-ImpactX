@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "categoria": "Servicio",
+    "categoria": "producto",
     "nombre": "Desarrollo de sitios web",
     "descripcion": "Back-end funcional y optimizado. Desarrollo de tu página web en base a tus requerimientos.  ",
     "precio": "120000",

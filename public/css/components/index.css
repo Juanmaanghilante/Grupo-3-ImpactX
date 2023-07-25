@@ -68,7 +68,7 @@
     color: white;
     text-decoration: none;
     background-color: #185ABC;
-    border: 1px solid #003687;
+    border: 1px solid #185ABC;
     padding: 1rem 1.3rem;
     border-radius: 5px;
     transition: .15s;
@@ -251,6 +251,8 @@
 
 
 
+
+
   @media (min-width: 768px) {
       
     .contenedorInfoHero {
@@ -336,10 +338,6 @@
       fill:#0d3167;
     }
 
-    .botonContactanos {
-      border: none;
-      border-radius: 2px;
-    }
 
 
     /* SECCION QUIENES SOMOS EN HOME */

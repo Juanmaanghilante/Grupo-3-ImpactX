@@ -28,6 +28,22 @@ header nav a {
   padding-top: 9.5rem;
 }
 
+.botonLogin {
+  color: white;
+  text-decoration: none;
+  background-color: #185ABC;
+  border: 1px solid #185ABC;
+  padding: .6rem 1rem;
+  border-radius: 4px;
+  transition: .15s;
+  margin-right: 1.5rem;
+}
+
+.botonLogin:hover {
+  color: #185ABC;
+  background-color: white;
+}
+
 .contenedorIzq nav{
   position: fixed;
   right: 0;
@@ -78,10 +94,6 @@ header nav a {
   list-style-type: none;
 } 
 
-.contenedorNavDos ul li a {
-  color: #02337d;
-  font-size: 14px;
-}
 
 .logoHeader {
   margin-top: 0.9rem;
