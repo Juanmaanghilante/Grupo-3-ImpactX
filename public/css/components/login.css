@@ -1,73 +1,71 @@
- .content {
-   height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   margin: 0 auto;
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 
-   padding: 2rem;
- }
+  padding: 2rem;
+}
 
+.content > div {
+  flex-grow: 1;
+}
 
- .image-sign-up {
-   display: none;
- }
+.image-sign-up {
+  display: none;
+}
 
- .caja-form-login {
-   padding-left: 25px;
-   width: 70%;
- }
+.caja-form-login {
+  padding-left: 25px;
+  width: 70%;
+}
 
- .control {
-   font-size: 14px;
-   border-radius: 3px;
-   width: 100%;
-   padding: 10px;
-   margin-bottom: .5rem;
-   border: 1px solid #bdd7ff;
+.control {
+  font-size: 14px;
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 0.5rem;
+  border: 1px solid #bdd7ff;
+}
 
- }
+.control::placeholder {
+  color: #185abc;
+  opacity: 0.5;
+}
 
- .control::placeholder {
-   color: #185ABC;
-   opacity: .5;
- }
+.content button {
+  margin-top: 1rem;
+}
 
- .content button {
-   margin-top: 1rem;
- }
+.titulo-registrar-usuario {
+  color: #185abc;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
 
- .titulo-registrar-usuario {
-   color: #185ABC;
-   font-weight: 300;
-   font-size: 2rem;
-   margin-bottom: 2rem;
- }
-
-
- .erroresForm {
+.erroresForm {
   color: rgb(177, 0, 0);
   font-size: 12px;
- }
+}
 
- .invalidError {
+.invalidError {
   border: 1px solid rgb(177, 0, 0);
- }
- 
+}
 
- @media (min-width: 768px) {
+@media (min-width: 768px) {
+  .image-sign-up {
+    display: block;
+    width: 200px;
+    margin-right: 7rem;
+  }
 
-   .image-sign-up {
-     display: block;
-     width: 200px;
-     margin-right: 7rem;
-   }
-
-   .content {
-     flex-direction: row;
-     max-width: 768px;
-     height: 80vh;
-   }
-
- }
+  .content {
+    flex-direction: row;
+    max-width: 768px;
+    height: 100vh;
+  }
+}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"Login"})%>
+<%- include('../partials/head', {title:"Create Product"})%>
 
   <body class="bodySignUp">
 
@@ -12,14 +12,60 @@
           <div>
             <h2 class="titulo-registrar-usuario">Crear Nuevo Producto</h2>
             <div class="control-formulario">
-              <select class="control" name="category" id="">
-                <option value="producto" name="category">Producto</option>
-                <option value="servicio" name="category">Servicio</option>
+
+              <div class="erroresForm">
+                <% if (locals.errors && errors.category) { %>
+                  <%= errors.category.msg %>
+                <% } %>
+              </div>
+              <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
+                id="">
+                <option value="">Seleccione una opción</option>
+                <% let tipoServicio=['Producto', 'Servicio' ] %>
+                  <% for( const servicio of tipoServicio ) { %>
+                    <option value="<%= servicio %>" <%=locals.oldData && (servicio==oldData.category) ? 'selected' :
+                      null %>
+                      <%= locals.oldData && (servicio===oldData.tipoUsuario) ? "selected" : null %> > <%= servicio %>
+                    </option>
+                  <% } %>
               </select>
-              <input type="text" name="product" class="control" placeholder="Nombre" required />
-              <input type="text" name="desc" class="control" placeholder="Descripción" required />
-              <input type="number" name="price" class="control" placeholder="Precio" required />
-              <input type="file" name="image" class="control" />
+
+
+              <div class="erroresForm">
+                <% if (locals.errors && errors.product) { %>
+                  <%= errors.product.msg %>
+                <% } %>
+              </div>
+              <input type="text" name="product"
+                class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Nombre"
+                value="<%= locals.oldData ? oldData.product : null %>" />
+
+              <div class="erroresForm">
+                <% if (locals.errors && errors.desc) { %>
+                  <%= errors.desc.msg %>
+                    <% } %>
+              </div>
+              <textarea type="text" name="desc"
+                class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
+                placeholder="Descripción"><%= locals.oldData ? oldData.desc : null %></textarea>
+
+              <div class="erroresForm">
+                <% if (locals.errors && errors.price) { %>
+                  <%= errors.price.msg %>
+                    <% } %>
+              </div>
+              <input type="number" name="price"
+                class="control <%= locals.errors && errors.price ? 'invalidError' : null %>" placeholder="Precio"
+                value="<%= locals.oldData ? oldData.price : null %>" />
+
+
+              <div class="erroresForm">
+                <% if (locals.errors && errors.image) { %>
+                  <%= errors.image.msg %>
+                    <% } %>
+              </div>
+              <input type="file" name="image"
+                class="control <%= locals.errors && errors.image ? 'invalidError' : null %>" />
             </div>
             <button type="submit" class="botonContactanos">Agregar Producto</input>
           </div>
@@ -27,7 +73,6 @@
       </form>
 
       <%- include('../partials/footer')%>
-
   </body>
 
 </html>

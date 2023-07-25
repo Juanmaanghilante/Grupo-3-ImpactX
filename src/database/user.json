@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "user": "felipe1",
+    "user": "felipe12",
     "name": "Felipe",
     "lastName": "Leon",
     "email": "pipe.leon@hotmail.com",
-    "categoria": "Admin",
-    "password": "$2a$10$hSf/DBpRPDnWwbsiS64qFOLvPQUTQyXiv4zz7pvS2VWUgehbnzQee",
+    "category": "Admin",
+    "password": "$2a$10$n9br9wEhtsGbHxbuht2mHOXjOcke05t/oaR7KOmMepIFsmJCjoBVu",
     "repeatPassword": "felipe123",
     "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
     "isDelete": false
@@ -18,8 +18,8 @@
     "lastName": "Anghilante",
     "email": "curne_juan@hotmail.com",
     "category": "Admin",
-    "password": "$2a$10$r34GkxcwEhoRHEiv8270COkTFqPj6P0UFT8kVAe4WKb8/LKSCh9bO",
-    "repeatPassword": "PAPAFRITA",
+    "password": "$2a$10$Z5n4YvojNCYl4O4E.mQyvODDcFTpe0Sivua.I9tmyuOdbSBPeWeT2",
+    "repeatPassword": "PAPAFRITAS",
     "imagen": "1688761881385_77303564.png",
     "isDelete": false,
     "categoria": "Admin"
@@ -46,6 +46,54 @@
     "password": "$2a$10$6MXBj7awcmNGGdLGBsAEtuL..Hqxe.TsOC6qQjxa98SaEXEeQYLiq",
     "repeatPassword": "sds",
     "imagen": "1688946948383_77303564.png",
+    "isDelete": false
+  },
+  {
+    "id": 5,
+    "user": "richardcliente",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "category": "Cliente",
+    "password": "$2a$10$drS8seXOyQVvZcA0KyQfgOSBL6k3WKiXtuntsfOmjm.I/I.4mHQZm",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "imagen": "1689119967269_magazine-unlock-01-2.3.7292-_142B058804FCF3087D674C6286307A92.jpg",
+    "isDelete": false
+  },
+  {
+    "id": 7,
+    "user": "richardmazo2",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "password": "$2a$10$iLcVCHFzSfMIJ/Nv/aRj2OaNItp5bn.F3HExseRqpozuGVyNXxk3G",
+    "repeatPassword": "12345",
+    "category": "Cliente",
+    "imagen": "1689598078514_26731171_1788457631177836_2615187125890747613_n.jpg",
+    "isDelete": true
+  },
+  {
+    "id": 8,
+    "user": "richardmazo",
+    "name": "Richard",
+    "lastName": "Mazo",
+    "email": "richardmazo@hotmail.com",
+    "password": "$2a$10$tYTJK6dZBnIVVq0L/WH2QOdlxSWbGaOtKMdh0Mc/yGOBzwknLd5Ei",
+    "repeatPassword": "",
+    "category": "Admin",
+    "imagen": "1690231667304_800026290.jpg",
+    "isDelete": false
+  },
+  {
+    "id": 9,
+    "user": "prueba",
+    "name": "prueba",
+    "lastName": "prueba",
+    "email": "prueba@hotmail.com",
+    "password": "$2a$10$X38I9vGO90uM.oN4TNqbTum51ZzmtwWPVr0.bDTedfXQY1JdWr5SW",
+    "repeatPassword": "",
+    "category": "Cliente",
+    "imagen": "1690240714510_800160944.jpg",
     "isDelete": false
   }
 ]

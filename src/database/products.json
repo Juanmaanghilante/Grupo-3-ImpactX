@@ -75,8 +75,8 @@
     "id": 9,
     "categoria": "producto",
     "nombre": "Email marketing",
-    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas.",
-    "precio": "350",
+    "descripcion": "Creación y envío de campañas de correo electrónico dirigidas a audiencias específicas. ",
+    "precio": "355",
     "imagen": "product-default.png",
     "isDeleted": false
   },
@@ -96,7 +96,7 @@
     "descripcion": "Creación y gestión de la identidad de marca, incluyendo diseño de logotipos, eslogan, colores, etc.",
     "precio": "7895",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 12,
@@ -114,6 +114,105 @@
     "descripcion": "oqijweqwo",
     "precio": "19191",
     "imagen": "product-default.png",
+    "isDeleted": true
+  },
+  {
+    "id": 14,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "123",
+    "imagen": "1689126266753magazine-unlock-01-2.3.6652-_16B8A0D3FB89FB82D0377FAD67A94F94.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 15,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "1234",
+    "imagen": "1689126558539800008325.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 16,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "123",
+    "imagen": "1689554586200_800106948.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 17,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "12345",
+    "imagen": "1689623055995_800160944.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 18,
+    "categoria": "producto",
+    "nombre": "producto",
+    "descripcion": "producto  ",
+    "precio": "124567",
+    "imagen": "1689624311161_magazine-unlock-01-2.3.6652-_16B8A0D3FB89FB82D0377FAD67A94F94.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 19,
+    "categoria": "producto",
+    "nombre": "producto 1234",
+    "descripcion": "producto 1234 ",
+    "precio": "12345",
+    "imagen": "1689626544589_800160944.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 20,
+    "categoria": "producto",
+    "nombre": "",
+    "descripcion": "",
+    "precio": "",
+    "imagen": "product-default.png",
+    "isDeleted": true
+  },
+  {
+    "id": 21,
+    "categoria": "Producto",
+    "nombre": "producto",
+    "descripcion": "desc",
+    "precio": "500",
+    "imagen": "1690044795524_800160944.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 22,
+    "categoria": "Producto",
+    "nombre": "producto",
+    "descripcion": "des",
+    "precio": "500",
+    "imagen": "1690044834673_26731171_1788457631177836_2615187125890747613_n.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 23,
+    "categoria": "Producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "155",
+    "imagen": "1690067541431_magazine-unlock-01-2.3.6652-_0FA7709631AB046EDB2FEB7479F43C85.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 24,
+    "categoria": "servicio",
+    "nombre": "producto",
+    "descripcion": "dw2",
+    "precio": "500",
+    "imagen": "1690067689288_magazine-unlock-01-2.3.6652-_1A7ACC1C58DB6916C6F9AA03750A0977.jpg",
     "isDeleted": true
   }
 ]

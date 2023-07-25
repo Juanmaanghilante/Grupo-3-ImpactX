@@ -10,7 +10,7 @@
         </div>
 
         <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
-          <h2 class="titulo-registrar-usuario">¡Registrate!</h2>
+          <h2 class="titulo-registrar-usuario">¡Crear usuario!</h2>
           <div class="control-formulario">
 
             <!-- COMO HAGO PARA QUE QUEDE EL PLACEHOLDER ASÍ NO AGREGO LABEL? -->
@@ -58,7 +58,8 @@
               value="<%= locals.oldData?oldData.email:null %>"
               />
 
-            <!-- CATEGORY -->
+            <!-- CATEGORY 
+             
             <div class="erroresForm">
               <% if (locals.errors && errors.category) { %>
                 <%= errors.category.msg %>
@@ -80,7 +81,7 @@
                   <% } %>
 
             </select>
-
+          -->
             <!-- PROFILE PICTURE -->
             <div class="erroresForm">
               <% if (locals.errors && errors.profilePic) { %>
@@ -103,13 +104,26 @@
             <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
           </div>
           <div>
-            <button type="submit" value="ENVIAR" class="botonContactanos">Registrarse</input>
+            <button type="submit" value="ENVIAR" class="botonContactanos">Crear</input>
           </div>
         </form>
       </div>
 
       <%- include('../partials/footer')%>
 
+      
+      <script>
+        const menu = document.querySelector('.svgMenu')
+        const close = document.querySelector('.closeBtn')
+        const nav = document.querySelector('#navPrincipal')
+
+        menu.addEventListener('click', () => {
+          nav.classList.add('open-nav')
+        })
+        close.addEventListener('click', () => {
+          nav.classList.remove('open-nav')
+        })
+      </script>
   </body>
 
 </html>

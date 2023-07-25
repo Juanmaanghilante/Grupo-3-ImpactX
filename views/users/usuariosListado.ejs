@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"Impact X | Productos"})%>
+<%- include('../partials/head', {title:"Impact X | Usuarios"})%>
 
   <body class="bgProductos">
 
@@ -10,7 +10,7 @@
       <main class="mainUser">
 
         <% usuarios.forEach(usuario=> { %>
-
+          <% if (locals.userLogged.id!=usuario.id ) { %>
           <article class="tarjetaProductos">
             <div class="containerImagenProductos">
               <img class="productoImagen" src="/img/<%= usuario.imagen %>" alt="imagen usuario <%= usuario.user %>">
@@ -23,29 +23,48 @@
                 <%= usuario.user %>
               </p>
               <p>
-                <%= usuario.categoria %>
+                <%= usuario.category %>
               </p>
-              <div class="contenedorBotonesProductos">
-                <div>
-                  <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
-                  <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
-                    <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
-                  </form>
-                </div>
-              </div>
+              <% if (locals.isLogged) { %>
+                <% if (locals.userLogged.category=="Admin" ) { %>
+                  <div class="contenedorBotonesProductos">
+                    <div>
+                      <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
+                      <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
+                        <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                      </form>
+                    </div>
+                  </div>
+                  <% } %>
+                    <% } %>
             </div>
           </article>
-
+          <% } %>
           <% }) %>
-
-            <div iv class="nuevoProducto">
-              <a href="/user/signup">+</a>
-              <p>Agregar Nuevo Usuario</p>
-            </div>
+            <% if (locals.isLogged) { %>
+              <% if (locals.userLogged.category=="Admin" ) { %>
+                <div iv class="nuevoProducto">
+                  <a href="/user/signup">+</a>
+                  <p>Agregar Nuevo Usuario</p>
+                </div>
+              <% } %>
+            <% } %>
       </main>
 
       <%- include('../partials/footer')%>
+      
+      <script>
+        const menu = document.querySelector('.svgMenu')
+        const close = document.querySelector('.closeBtn')
+        const nav = document.querySelector('#navPrincipal')
 
+        menu.addEventListener('click', () => {
+          nav.classList.add('open-nav')
+        })
+        close.addEventListener('click', () => {
+          nav.classList.remove('open-nav')
+        })
+      </script>
   </body>
 
 </html>

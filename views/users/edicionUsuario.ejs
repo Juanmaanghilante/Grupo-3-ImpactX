@@ -1,88 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {title:"Login"})%>
+<%- include('../partials/head', {title:"Editar usuario"})%>
 
   <body class="bodySignUp">
 
     <%- include('../partials/header')%>
 
-      <% if (usuario) { %>
+      <form action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>?_method=PUT" method="POST"
+        class="create-form" enctype="multipart/form-data">
+        <div class="content">
+          <div>
+            <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
+          </div>
 
-        <form action="/user/<%= usuario.id %>?_method=PUT" method="POST" class="create-form" enctype="multipart/form-data">
-          <div class="content">
-            <div>
-              <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
-            </div>
+          <div>
+            <h2 class="titulo-registrar-usuario">Editar Usuario</h2>
 
-            <div>
-              <h2 class="titulo-registrar-usuario">Editar Usuario</h2>
 
-              <div class="control-formulario">
-                <label for="user"> Usuario: </label>
-                <input class="control" type="text" name="user" id="user" placeholder="Usuario"
-                  value="<%= usuario.user %>" />
-              </div>
-
-              <div class="control-formulario">
-                <label for="name"> Nombre/s: </label>
-                <input class="control" type="text" placeholder="Nombre" name="name" id="name"
-                  value="<%= usuario.name %>">
-              </div>
-
-              <div class="control-formulario">
-                <label for="lastName"> Apellido/s: </label>
-                <input class="control" type="text" name="lastName" id="lastName" placeholder="Apellido/s"
-                  value="<%= usuario.lastName %>" />
-              </div>
-
-              <div class="control-formulario">
-                <label for="email"> Correo </label>
-                <input class="control" type="email" name="email" id="email" placeholder="Correo"
-                  value="<%= usuario.email %>" />
-              </div>
-
-              <label for="category"> Categoría </label>
-              <select name="categoria" class="control" id="category">
-                <option value="">Tipo de Usuario</option>
-  
-                <% let tipoUsuario=['Admin', 'Cliente' ] %>
-  
-                  <% for( const unUsuario of tipoUsuario ) { %>
-                    <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
-                      null %>
-                      > <%= unUsuario %>
-                    </option>
+            <div class="control-formulario">
+              <label for="user"> Usuario: </label>
+              <div class="erroresForm">
+                <% if (locals.errors && errors.user) { %>
+                  <%= errors.user.msg %>
                     <% } %>
-  
-              </select>
-
-              <div class="control-formulario">
-                <label for="fotoPerfil">Foto de usuario</label>
-                <input class="control" type="file" name="profilePic" id="profilePic">
               </div>
-
-              <button type="submit" class="botonProductos">Actualizar</button>
-              <a class="botonProductos" href="/user/list">Volver al listado</a>
+              <input class="control <%= locals.errors && errors.user ? 'invalidError' : null %>" type="text" name="user"
+                id="user" placeholder="Usuario"
+                value="<%= locals.usuario ? usuario.user : locals.oldData ? oldData.user : null %>" />
             </div>
+
+            <div class="control-formulario">
+              <label for="name"> Nombre/s: </label>
+              <div class="erroresForm">
+                <% if (locals.errors && errors.name) { %>
+                  <%= errors.name.msg %>
+                    <% } %>
+              </div>
+              <input class="control <%= locals.errors && errors.name ? 'invalidError' : null %>" type="text"
+                placeholder="Nombre" name="name" id="name"
+                value="<%= locals.usuario ? usuario.name : locals.oldData ? oldData.name : null %>">
+            </div>
+
+            <div class="control-formulario">
+              <label for="lastName"> Apellido/s: </label>
+              <div class="erroresForm">
+                <% if (locals.errors && errors.lastName) { %>
+                  <%= errors.lastName.msg %>
+                    <% } %>
+              </div>
+              <input class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" type="text"
+                name="lastName" id="lastName" placeholder="Apellido/s"
+                value="<%= locals.usuario ? usuario.lastName : locals.oldData ? oldData.lastName : null %>" />
+            </div>
+
+            <div class="control-formulario">
+              <label for="email"> Correo </label>
+              <div class="erroresForm">
+                <% if (locals.errors && errors.email) { %>
+                  <%= errors.email.msg %>
+                    <% } %>
+              </div>
+              <input class="control <%= locals.errors && errors.email ? 'invalidError' : null %>" type="email"
+                name="email" id="email" placeholder="Correo"
+                value="<%= locals.usuario ? usuario.email : locals.oldData ? oldData.email : null %>" />
+            </div>
+
+            <% if (locals.isLogged) { %>
+              <% if (locals.userLogged.category=="Admin" ) { %>
+                <label for="category"> Categoría </label>
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.category) { %>
+                    <%= errors.category.msg %>
+                      <% } %>
+                </div>
+                <select name="categoria" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
+                  id="category">
+                  <option value="">Tipo de Usuario</option>
+
+                  <% let tipoUsuario=['Admin', 'Cliente' ] %>
+                    <% for( const rol of tipoUsuario ) { %>
+                      <option value="<%= rol %>" <% if (locals.usuario) { %>
+                        <%= rol===usuario.category ? 'selected' : null %>
+                          <% } else if (locals.oldData) { %>
+                            <%= rol===oldData.categoria ? 'selected' : null %>
+                              <% } %>
+                                >
+                                <%= rol %>
+                      </option>
+                      <% } %>
+
+                </select>
+                <% } %>
+                  <% } %>
+
+                    <div class="control-formulario">
+                      <label for="fotoPerfil">Foto de usuario</label>
+                      <div class="erroresForm">
+                        <% if (locals.errors && errors.profilePic) { %>
+                          <%= errors.profilePic.msg %>
+                            <% } %>
+                      </div>
+                      <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>"
+                        type="file" name="profilePic" id="profilePic">
+                    </div>
+
+                    <button type="submit" class="botonProductos">Actualizar</button>
+                    <a class="botonProductos" href="/user/list">Volver al listado</a>
           </div>
-        </form>
-        <form class="create-form" method="post" action="/user/<%=usuario.id %>/?_method=delete">
+        </div>
+      </form>
+      <form class="create-form" method="post"
+        action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>/?_method=delete">
 
-          <button hidden type="submit" id="botonBorrar">Eliminar usuario </button>
+        <button hidden type="submit" id="botonBorrar">Eliminar usuario </button>
 
-        </form>
+      </form>
 
-        <% } else { %>
+      <%- include('../partials/footer')%>
 
-          <div class="content">
-            <h2 class="titulo-registrar-usuario"> 404 Usuario no encontrado! </h2>
-          </div>
 
-          <% } %>
+        <script>
+          const menu = document.querySelector('.svgMenu')
+          const close = document.querySelector('.closeBtn')
+          const nav = document.querySelector('#navPrincipal')
 
-            <%- include('../partials/footer')%>
-
+          menu.addEventListener('click', () => {
+            nav.classList.add('open-nav')
+          })
+          close.addEventListener('click', () => {
+            nav.classList.remove('open-nav')
+          })
+        </script>
   </body>
 
 </html>
