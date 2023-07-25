@@ -10,6 +10,7 @@ const userPass = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../database
 const User = require("../models/User");
 
 module.exports = {
+  
   userLogin: (req, res) => {
     return res.render("users/login");
   },

@@ -33,7 +33,7 @@
     "descripcion": "producto   ",
     "precio": "2",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 5,
@@ -105,7 +105,7 @@
     "descripcion": "Realización de investigaciones para comprender el mercado objetivo, analizar la competencia y identificar oportunidades.",
     "precio": "10000",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 13,

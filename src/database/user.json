@@ -82,7 +82,7 @@
     "repeatPassword": "12345",
     "category": "Cliente",
     "imagen": "1689598078514_26731171_1788457631177836_2615187125890747613_n.jpg",
-    "isDelete": true
+    "isDelete": false
   },
   {
     "id": 8,
@@ -94,6 +94,6 @@
     "repeatPassword": "1qaZ2wsX3edC4r*",
     "category": "Cliente",
     "imagen": "1689633491286_800026290.jpg",
-    "isDelete": true
+    "isDelete": false
   }
 ]
