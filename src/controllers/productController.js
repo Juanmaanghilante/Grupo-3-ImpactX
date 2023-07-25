@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require("path")
 
+const { validationResult } = require("express-validator");
 const rutaBase = path.resolve('./src/database/products.json')
 const productos = JSON.parse(fs.readFileSync(rutaBase));
 
@@ -20,6 +21,13 @@ module.exports = {
   },
 
   productsCreateProcess: (req, res) => {  
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("products/formCreate", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }    
     const nuevoProduct = {
       "id": productos.length + 1,
       "categoria": req.body.category,
@@ -46,11 +54,19 @@ module.exports = {
   },
 
   productsEditProcess: (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("products/formEdit", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        id: req.params.id
+      });
+    }       
     const productoEditar = productos.find(row => row.id == req.params.id)
-    productoEditar.nombre = req.body.name
+    productoEditar.nombre = req.body.product
     productoEditar.descripcion = req.body.desc
     productoEditar.precio = req.body.price
-    productoEditar.categoria = req.body.categoria
+    productoEditar.categoria = req.body.category
 
     if (req.file) {
       fs.unlinkSync(path.resolve(__dirname, "../../public/img/" + productoEditar.imagen))
@@ -58,7 +74,6 @@ module.exports = {
     }
 
     fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), JSON.stringify(productos, null, 2))
-    console.log(req.body);
 
     return res.redirect("/productos")
   },
