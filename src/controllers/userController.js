@@ -151,10 +151,13 @@ module.exports = {
     }
     let userToCreate = {
       id: datos.length + 1,
-      ...req.body,
+      user: req.body.user,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
       category: req.body.categoria ? req.body.categoria : "Cliente",
       imagen: req.file.filename,
-      password: bcrypt.hashSync(req.body.password, 10),
       isDelete: false,
     };
     //User.create(userToCreate);

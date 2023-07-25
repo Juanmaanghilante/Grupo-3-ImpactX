@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head', {title:"home"})%>
+<%- include('../partials/head', {title:"Create user"})%>
 
   <body class="bodySignUp">
     <%- include('../partials/header')%>
@@ -13,13 +13,11 @@
           <h2 class="titulo-registrar-usuario">¡Crear usuario!</h2>
           <div class="control-formulario">
 
-            <!-- COMO HAGO PARA QUE QUEDE EL PLACEHOLDER ASÍ NO AGREGO LABEL? -->
-
             <!-- USER NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.user) { %>
                 <%= errors.user.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"
             placeholder="Usuario"
@@ -31,7 +29,7 @@
             <div class="erroresForm">
               <% if (locals.errors && errors.name) { %>
                 <%= errors.name.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
               placeholder="Nombre"
@@ -41,7 +39,7 @@
             <div class="erroresForm">
               <% if (locals.errors && errors.lastName) { %>
                 <%= errors.lastName.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="lastName"
               class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido"

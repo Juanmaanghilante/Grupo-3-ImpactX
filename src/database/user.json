@@ -7,7 +7,6 @@
     "email": "pipe.leon@hotmail.com",
     "category": "Admin",
     "password": "$2a$10$n9br9wEhtsGbHxbuht2mHOXjOcke05t/oaR7KOmMepIFsmJCjoBVu",
-    "repeatPassword": "felipe123",
     "imagen": "1688524166617_pawel-czerwinski-prMn9KINLtI-unsplash.jpg",
     "isDelete": false
   },
@@ -19,7 +18,6 @@
     "email": "curne_juan@hotmail.com",
     "category": "Admin",
     "password": "$2a$10$Z5n4YvojNCYl4O4E.mQyvODDcFTpe0Sivua.I9tmyuOdbSBPeWeT2",
-    "repeatPassword": "PAPAFRITAS",
     "imagen": "1688761881385_77303564.png",
     "isDelete": false,
     "categoria": "Admin"
@@ -32,7 +30,6 @@
     "email": "persistencaidedatos@gmail.com",
     "category": "Cliente",
     "password": "$2a$10$D74pCJXeqfms.6u/9i3BGeATAqWC4M/tr.4RAhTBs800ZQbk1H9qe",
-    "repeatPassword": "localesdefrituras.jpg",
     "imagen": "1688851506525_77303564.png",
     "isDelete": false
   },
@@ -44,7 +41,6 @@
     "email": "curne_juan@hotmail.com",
     "category": "Admin",
     "password": "$2a$10$6MXBj7awcmNGGdLGBsAEtuL..Hqxe.TsOC6qQjxa98SaEXEeQYLiq",
-    "repeatPassword": "sds",
     "imagen": "1688946948383_77303564.png",
     "isDelete": false
   },
@@ -56,7 +52,6 @@
     "email": "richard.mazo.97@hotmail.com",
     "category": "Cliente",
     "password": "$2a$10$drS8seXOyQVvZcA0KyQfgOSBL6k3WKiXtuntsfOmjm.I/I.4mHQZm",
-    "repeatPassword": "1qaZ2wsX3edC4r*",
     "imagen": "1689119967269_magazine-unlock-01-2.3.7292-_142B058804FCF3087D674C6286307A92.jpg",
     "isDelete": false
   },
@@ -67,7 +62,6 @@
     "lastName": "Mazo",
     "email": "richard.mazo.97@hotmail.com",
     "password": "$2a$10$iLcVCHFzSfMIJ/Nv/aRj2OaNItp5bn.F3HExseRqpozuGVyNXxk3G",
-    "repeatPassword": "12345",
     "category": "Cliente",
     "imagen": "1689598078514_26731171_1788457631177836_2615187125890747613_n.jpg",
     "isDelete": true
@@ -79,7 +73,6 @@
     "lastName": "Mazo",
     "email": "richardmazo@hotmail.com",
     "password": "$2a$10$tYTJK6dZBnIVVq0L/WH2QOdlxSWbGaOtKMdh0Mc/yGOBzwknLd5Ei",
-    "repeatPassword": "",
     "category": "Admin",
     "imagen": "1690231667304_800026290.jpg",
     "isDelete": false
@@ -91,9 +84,19 @@
     "lastName": "test",
     "email": "test1@hotmail.com",
     "password": "$2a$10$XbKuxBUf4l43d51rd6lkBeyoGRLUrFH0YrvRa8c1SMJxP8nhJKn9.",
-    "repeatPassword": "1qaZ2wsX3edC4r*",
     "category": "Cliente",
     "imagen": "1690328335102_800007101.jpg",
+    "isDelete": false
+  },
+  {
+    "id": 9,
+    "user": "prueba",
+    "name": "prueba",
+    "lastName": "prueba",
+    "email": "prueba@hotmail.com",
+    "password": "$2a$10$DU1kmwrj./1uGmSH12wfeOx2R21WTCrmuPDOZWg1VnIBCuhPNVb9m",
+    "category": "Cliente",
+    "imagen": "1690328977118_magazine-unlock-01-2.3.6732-_C080272D7C8F2E102A100B4AF4072363.jpg",
     "isDelete": false
   }
 ]
