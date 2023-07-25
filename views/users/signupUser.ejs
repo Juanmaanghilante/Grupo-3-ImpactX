@@ -57,31 +57,34 @@
               placeholder="Email" 
               value="<%= locals.oldData?oldData.email:null %>"
               />
-
-            <!-- CATEGORY 
              
-            <div class="erroresForm">
-              <% if (locals.errors && errors.category) { %>
-                <%= errors.category.msg %>
-                  <% } %>
-            </div>
-            <select name="category" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
-              id="category">
-              <option value="">Tipo de Usuario</option>
+              <% if (locals.isLogged) { %>
+                <% if (locals.userLogged.category=="Admin" ) { %>
+                  <label for="category"> Categoría </label>
+                  <div class="erroresForm">
+                    <% if (locals.errors && errors.category) { %>
+                      <%= errors.category.msg %>
+                        <% } %>
+                  </div>
+                  <select name="categoria" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
+                    id="category">
+                    <option value="">Tipo de Usuario</option>
+  
+                    <% let tipoUsuario=['Admin', 'Cliente' ] %>
+                      <% for( const rol of tipoUsuario ) { %>
+                        <option value="<%= rol %>" <% if (locals.usuario) { %>
+                          <%= rol===usuario.category ? 'selected' : null %>
+                            <% } else if (locals.oldData) { %>
+                              <%= rol===oldData.categoria ? 'selected' : null %>
+                                <% } %>
+                                  >
+                                  <%= rol %>
+                        </option>
+                        <% } %>
+                      </select>
+                      <% } %>
+                        <% } %>                                   
 
-              <% let tipoUsuario=['Admin', 'Cliente' ] %>
-
-                <% for( const unUsuario of tipoUsuario ) { %>
-                  <option value="<%= unUsuario %>" <%=locals.oldData && (unUsuario==oldData.category) ? 'selected' :
-                    null %>
-                  <%= locals.oldData && (unUsuario===oldData.tipoUsuario)?"selected":null %>
-                   
-                   > <%= unUsuario %>
-                  </option>
-                  <% } %>
-
-            </select>
-          -->
             <!-- PROFILE PICTURE -->
             <div class="erroresForm">
               <% if (locals.errors && errors.profilePic) { %>
