@@ -104,7 +104,13 @@
               class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
               placeholder="Contraseña" />
 
-            <input type="password" name="repeatPassword" class="control" placeholder="Repetir Contraseña" />
+            <div class="erroresForm">
+                <% if (locals.errors && errors.repeatPassword) { %>
+                  <%= errors.repeatPassword.msg %>
+                    <% } %>
+            </div>              
+            <input type="password" name="repeatPassword" class="control <%= locals.errors && errors.repeatPassword ? 'invalidError' : null %>"
+             placeholder="Repetir Contraseña" />
           </div>
           <div>
             <button type="submit" value="ENVIAR" class="botonContactanos">Registrarme</input>

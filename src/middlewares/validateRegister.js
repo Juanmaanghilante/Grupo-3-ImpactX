@@ -37,6 +37,18 @@ module.exports = [
       "La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo "
     ),
 
+    body('repeatPassword')
+		.notEmpty().withMessage('Debe repetir su contraseña nueva').bail()
+		.custom((value, { req }) => {
+
+			if(req.body.password != req.body.repeatPassword) {
+				throw new Error('Las contraseñas nuevas no coinciden');
+			}
+
+			return true;
+
+		}).bail(),    
+
   body("profilePic").custom((value, { req }) => {
     let file = req.file;
     let extensionesPermitidas = [".jpg", ".png", ".gif"];

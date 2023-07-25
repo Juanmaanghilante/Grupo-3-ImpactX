@@ -83,5 +83,17 @@
     "category": "Admin",
     "imagen": "1690231667304_800026290.jpg",
     "isDelete": false
+  },
+  {
+    "id": 8,
+    "user": "test",
+    "name": "test",
+    "lastName": "test",
+    "email": "test1@hotmail.com",
+    "password": "$2a$10$XbKuxBUf4l43d51rd6lkBeyoGRLUrFH0YrvRa8c1SMJxP8nhJKn9.",
+    "repeatPassword": "1qaZ2wsX3edC4r*",
+    "category": "Cliente",
+    "imagen": "1690328335102_800007101.jpg",
+    "isDelete": false
   }
 ]

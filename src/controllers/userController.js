@@ -149,7 +149,6 @@ module.exports = {
         oldData: req.body,
       });
     }
-    console.log("categoria",req.body.categoria);
     let userToCreate = {
       id: datos.length + 1,
       ...req.body,
