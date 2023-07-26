@@ -91,7 +91,7 @@
   .seccionConfiaron {
     text-align: center;
     padding: 20px;
-    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+    /* background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%); */
   }
 
   .imagenes {
