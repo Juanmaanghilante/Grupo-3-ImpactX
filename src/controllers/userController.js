@@ -131,7 +131,6 @@ module.exports = {
   userCreateProcess: (req, res) => {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      // mapped() convierte el objeto literal en un array
       return res.render("users/signupUser", {
         errors: resultValidation.mapped(),
         oldData: req.body,
@@ -150,13 +149,15 @@ module.exports = {
         oldData: req.body,
       });
     }
-
     let userToCreate = {
       id: datos.length + 1,
-      ...req.body,
-      category: "Cliente",
-      imagen: req.file.filename,
+      user: req.body.user,
+      name: req.body.name,
+      lastName: req.body.lastName,
+      email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
+      category: req.body.categoria ? req.body.categoria : "Cliente",
+      imagen: req.file.filename,
       isDelete: false,
     };
     //User.create(userToCreate);

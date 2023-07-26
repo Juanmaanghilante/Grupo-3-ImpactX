@@ -32,6 +32,6 @@ router.delete("/user/delete/:id", authMiddleware, userControler.userDeleteProces
 
 // CHANGE PASSWORD
 router.get("/user/edit/:id/changepassword", authMiddleware, userControler.passwordChange)
-router.put("/user/edit/changepassword", valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
+router.put("/user/edit/changepassword", authMiddleware, valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
 
 module.exports = router
