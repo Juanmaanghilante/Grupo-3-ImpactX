@@ -9,35 +9,56 @@
 
       <main class="mainProfile">
         <div class="wrapperProfile">
-          <div class="wrapperProfileTop">
-            <img src="../img/<%= user.imagen %>" alt="">
-            <h2>Hey, <%= user.name %>
-            </h2>
-          </div>
-          <nav class="contenedorNavDos">
-            <ul>
-              <li><a href="/user/logout">Log Out</a></li>
-            </ul>
-          </nav>
-          <div>
-            <p class="usuario-tipo">Tipo: <%= user.category %>
-            </p>
-          </div>
-
-
-          <div class="cont-but">
-              <a class="botonLogin" href="/user/edit/<%=user.id %>">Edit Profile</a>
-              <a class="botonLogin" href="/user/edit/<%=user.id %>/changepassword">Change Password</a>
-          </div>
-
+          <section class="wrapperProfileTop">
+            <div>
+              <img src="../img/<%= user.imagen %>" alt="">
+              <h2><%= user.name %> <%= user.lastName %></h2>
+            </div>
+            <div>
+              <p class="usuario-tipo">Type: <%= user.category %> </p>
+              <a class="logoutButton" href="/user/logout">Log Out</a>
+            </div>
+          </section>
         </div>
 
 
+
+        <section class="wrapperProfileBottom">
+          <a href="/user/edit/<%=user.id %>">
+            <section>
+              <div>
+                <p>/</p>
+                <div>
+                  <h4>Edit Profile</h4>
+                  <h5>Modify your profile settings</h5>
+                </div>
+              </div>
+              <p>></p>
+            </section>
+          </a>
+
+
+          <a  href="/user/edit/<%=user.id %>/changepassword">
+            <section>
+              <div>
+                <p>/</p>
+                <div>
+                  <h4>Change Password</h4>
+                </div>
+              </div>
+              <p>></p>
+            </section>
+          </a>
+          
+
+        </section>
       </main>
 
+
+
+
+
       <%- include('../partials/footer')%>
-
-
         <script>
           const menu = document.querySelector('.svgMenu')
           const close = document.querySelector('.closeBtn')

@@ -7,13 +7,13 @@
                 </svg>
               
                 <ul>
-                    <li><a href="/#nosotros">Nosotros</a></li>
-                    <li><a href="/#contacto">Contacto</a></li>  
-                    <li><a href="/productos">Productos</a></li>
+                    <li><a href="/#nosotros">About Us</a></li>
+                    <li><a href="/#contacto">Contact</a></li>  
+                    <li><a href="/productos">Products</a></li>
 
                     <% if (locals.isLogged) { %>
                         <% if (locals.userLogged.category=="Admin" ) { %>   
-                            <li><a href="/user/list">Usuarios</a></li>  
+                            <li><a href="/user/list">Users</a></li>  
                         <% } %>        
                     <% } %>
                 </ul>
@@ -27,7 +27,7 @@
                     <% if (!locals.isLogged) { %>
                           <li><a class="botonLogin" href="/user/login">Log In</a></li>
                     <% } else  { %>
-                          <!-- <li><a href="/user/profile">Hola, <%= locals.userLogged.name %> </a></li> -->
+                          <li><a class="myprofileButton" href="/user/profile">My Profile</a></li>
                     <% } %>
               </ul>   
           </nav>
