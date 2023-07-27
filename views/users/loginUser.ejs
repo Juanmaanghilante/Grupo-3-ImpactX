@@ -19,13 +19,18 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.user) { %>
                   <%= errors.user.msg %>
-                    <% } %>
+                <% } %>
               </div>
-              <input type="text" name="user" class="control" placeholder="Usuario" required />
+              <input type="text" name="user" class="control" placeholder="Usuario" />
 
             </div>
             <div class="control-formulario">
-              <input type="password" name="password" class="control" placeholder="Contraseña" required />
+              <div class="erroresForm">
+                <% if (locals.errors && errors.password) { %>
+                  <%= errors.password.msg %>
+                <% } %>
+              </div>            
+              <input type="password" name="password" class="control" placeholder="Contraseña" />
             </div>
             <input type="checkbox" class="botonSesionIniciada" name="rememberUser"> Mantener sesión iniciada</input><br>
             <button type="submit" class="botonLogin">Log In</button>
