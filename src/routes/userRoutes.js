@@ -6,6 +6,7 @@ const userControler = require('../controllers/userController');
 const fileUpload = require('../middlewares/multer');
 const validations = require('../middlewares/validateRegister');
 const validationsEditUser = require('../middlewares/validateEditUser');
+const validationsLogin = require('../middlewares/validateLogin');
 const guestMiddlware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const valChangePassword1 = require("../middlewares/passwordValidation1");
