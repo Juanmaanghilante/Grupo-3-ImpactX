@@ -5,8 +5,8 @@
     "apellido": "Mazo",
     "email": "richard.mazo.97@hotmail.com",
     "mensaje": "Duda",
-    "respuesta": "",
-    "gestionado": false
+    "respuesta": "res",
+    "gestionado": true
   },
   {
     "id": 2,
@@ -16,5 +16,14 @@
     "mensaje": "duda",
     "respuesta": "",
     "gestionado": false
+  },
+  {
+    "id": 3,
+    "nombre": "Richard",
+    "apellido": "Mazo",
+    "email": "richard.mazo.97@hotmail.com",
+    "mensaje": "Hola tengo una inquietud con los precios de los productos",
+    "respuesta": "Hola estuvimos revisando tu inquietud y los precios son estos: xxxxxxxxxxxxx",
+    "gestionado": true
   }
 ]

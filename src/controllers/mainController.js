@@ -6,26 +6,6 @@ const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/requests.json");
 const requests = JSON.parse(fs.readFileSync(rutaBase));
 
-const config = {
-  service: "gmail",
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: "richard.mazo.15.11@gmail.com",
-    pass: "richipaisa1597*"
-  }
-}
-
-// Configuración del transportador de correo
-const transporter = nodemailer.createTransport({
-  service: "hotmail",
-  auth: {
-    user: "richard.mazo.97@hotmail.com",
-    pass: "richipaisa1597*",
-  },
-});
-
 module.exports = {
   index: (req, res) => {
     return res.render("index");
@@ -70,39 +50,54 @@ module.exports = {
     });
   },
   sendAnswer: (req, res) => {
-    // Detalles del correo electrónico
-    const mailOptions = {
-      from: "richard.mazo.15.11@gmail.com",
-      to: "impactxgrupo3@gmail.com", 
-      subject: "Resolución dudas - Impact X",
-      text: req.body.mensaje,
+    try {
+      
+
+    const config = {
+      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: "impactxgrupo3@gmail.com",
+        pass: "wlyf ynnm dmrl fexd",
+      },
     };
 
+    console.log(config)
+    
     const data = {
-      "from": "richard.mazo.15.11@gmail.com",
-      "to": "impactxgrupo3@gmail.com",
-      "subject": "Thank you, recipient, for subscribing!",
-      "text": "Dear Recipient, thank you for subcribing. Sincerely, Sender"
-    }
+      from: "impactxgrupo3@gmail.com",
+      to: "richard.mazo.15.11@gmail.com",
+      subject: "Respuesta a inquietud realizada a Impact X",
+      text: "Dear Recipient, thank you for subcribing. Sincerely, Sender",
+    };
 
-    transporter.verify(function(error, success) {
+    console.log(data)
+
+    const transporter = nodemailer.createTransport(config);
+
+    console.log(transporter)
+
+    transporter.verify(function (error, success) {
       if (error) {
-            console.log(error);
+        console.log(error);
+        console.log("hola malo");
       } else {
-            console.log('Server is ready to take our messages');
+        console.log("Server is ready to take our messages");
       }
     });
 
-    const transporter = nodemailer.createTransport(config);
     transporter.sendMail(data, (err, info) => {
-      if(err){
-        console.log("hola");
+      if (err) {
         console.log(err);
-      }else{
-        console.log("hola");
+      } else {
         console.log(info.response);
       }
-    })
+    });
+  } catch (error) {
+      console.log(error)
+  }
 
     const request = requests.find(
       (request) => request.id == req.params.id && request.gestionado == false
