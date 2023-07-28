@@ -11,7 +11,7 @@ function validateChangePassword(req, res, next) {
     const resultValidationPass = validationResult(req);
 
     if (resultValidationPass.errors.length > 0) {
-        return res.render("users/passwordChange", { errors: resultValidationPass.mapped()});
+        return res.render("users/changePassUser", { errors: resultValidationPass.mapped()});
     }
 
     next();

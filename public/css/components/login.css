@@ -56,6 +56,15 @@
   border: 1px solid rgb(177, 0, 0);
 }
 
+
+.registrateBoton {
+  color: #185abc;
+
+}
+.registrateBoton:hover {
+  opacity: .7;
+}
+
 @media (min-width: 768px) {
   .image-sign-up {
     display: block;

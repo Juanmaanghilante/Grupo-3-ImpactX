@@ -14,22 +14,27 @@
             <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
           </div>
           <div>
-            <h2 class="titulo-registrar-usuario">¡Ingresá a tu usuario!</h2>
+            <h2 class="titulo-registrar-usuario">¡Ingresá tu usuario!</h2>
             <div class="control-formulario">
               <div class="erroresForm">
                 <% if (locals.errors && errors.user) { %>
                   <%= errors.user.msg %>
-                    <% } %>
+                <% } %>
               </div>
-              <input type="text" name="user" class="control" placeholder="Usuario" required />
+              <input type="text" name="user" class="control" placeholder="Usuario" />
 
             </div>
             <div class="control-formulario">
-              <input type="password" name="password" class="control" placeholder="Contraseña" required />
+              <div class="erroresForm">
+                <% if (locals.errors && errors.password) { %>
+                  <%= errors.password.msg %>
+                <% } %>
+              </div>            
+              <input type="password" name="password" class="control" placeholder="Contraseña" />
             </div>
-            <a href="/user/signup">¿No tenes usuario? ¡Registrate!</a><br>
-            <button type="submit" class="botonContactanos">Ingresar</button>
-            <input type="checkbox" name="rememberUser" class="botonContactanos"> Mantener sesión iniciada</input>
+            <input type="checkbox" class="botonSesionIniciada" name="rememberUser"> Mantener sesión iniciada</input><br>
+            <button type="submit" class="botonLogin">Log In</button>
+            <a class="registrateBoton" href="/user/signup">¿No tenes usuario? ¡Registrate!</a>
           </div>
         </div>
       </form>

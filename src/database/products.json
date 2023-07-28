@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "categoria": "Servicio",
+    "categoria": "producto",
     "nombre": "Desarrollo de sitios web",
     "descripcion": "Back-end funcional y optimizado. Desarrollo de tu página web en base a tus requerimientos.  ",
     "precio": "120000",
@@ -33,7 +33,7 @@
     "descripcion": "producto   ",
     "precio": "2",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 5,
@@ -105,7 +105,7 @@
     "descripcion": "Realización de investigaciones para comprender el mercado objetivo, analizar la competencia y identificar oportunidades.",
     "precio": "10000",
     "imagen": "product-default.png",
-    "isDeleted": true
+    "isDeleted": false
   },
   {
     "id": 13,
@@ -195,6 +195,24 @@
     "descripcion": "des",
     "precio": "500",
     "imagen": "1690044834673_26731171_1788457631177836_2615187125890747613_n.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 23,
+    "categoria": "Producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "155",
+    "imagen": "1690067541431_magazine-unlock-01-2.3.6652-_0FA7709631AB046EDB2FEB7479F43C85.jpg",
+    "isDeleted": true
+  },
+  {
+    "id": 24,
+    "categoria": "servicio",
+    "nombre": "producto",
+    "descripcion": "dw2",
+    "precio": "500",
+    "imagen": "1690067689288_magazine-unlock-01-2.3.6652-_1A7ACC1C58DB6916C6F9AA03750A0977.jpg",
     "isDeleted": true
   }
 ]
