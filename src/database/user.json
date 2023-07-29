@@ -95,5 +95,17 @@
     "category": "Cliente",
     "imagen": "1690240714510_800160944.jpg",
     "isDelete": false
+  },
+  {
+    "id": 9,
+    "user": "lucasss",
+    "name": "lucas",
+    "lastName": "cambon",
+    "email": "lucas@gmail.com",
+    "password": "$2a$10$Qycnr2lK06/JIZMxipbkqOJMiBHRHE.csx3UF6yrQVkOt4plm5E9C",
+    "repeatPassword": "123456aA!",
+    "category": "Cliente",
+    "imagen": "1690249804987_343032032_775877343823955_3644420505048951505_n.jpg",
+    "isDelete": false
   }
 ]
