@@ -24,15 +24,13 @@ module.exports = {
       });
     }
     let userToLogin = User.findByField("user", req.body.user);
-    console.log(userToLogin);
     // si, hay alguien tratando de loggearse
     if (userToLogin) {
       // comparame la clave encriptada y lo que puso el que se quiere loguear
       let passwordOk = bcrypt.compareSync(
         req.body.password,
         userToLogin.password
-      );
-      console.log("hola");
+      );s
       // si true la comparación
       if (passwordOk) {
         // eliminamos el pasword, que nos viene por req.body, así no se ve

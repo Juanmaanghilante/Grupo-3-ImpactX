@@ -41,6 +41,20 @@
             </a>
           <% } %>
 
+          <% if (locals.userLogged && userLogged.category == 'Admin') { %>
+            <a href="/request/edit">
+              <section>
+                <div>
+                  <p>/</p>
+                  <div>
+                    <h4>Answer requests</h4>
+                    <h5>Answer user questions by email</h5>
+                  </div>
+                </div>
+                <p>></p>
+              </section>
+            </a>
+          <% } %>                  
 
           <a href="/user/edit/<%=user.id %>">
             <section>
@@ -53,7 +67,7 @@
               </div>
               <p>></p>
             </section>
-          </a>
+          </a>        
 
 
           <a  href="/user/edit/<%=user.id %>/changepassword">
