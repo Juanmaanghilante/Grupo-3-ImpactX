@@ -1,3 +1,31 @@
+.content-request {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+input[readonly],
+textarea[readonly] {
+  background-color: #f0f0f0; 
+  cursor: not-allowed; 
+  color: #777; 
+}
+
+input[readonly]::placeholder,
+textarea[readonly]::placeholder {
+  color: #ccc; 
+}
+
+input[readonly],
+textarea[readonly],
+select[disabled] {
+  border: 1px solid #ccc; 
+}
+
 .content {
   height: 100vh;
   display: flex;
@@ -5,8 +33,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
   padding: 2rem;
+}
+
+.form-request {
+  margin-bottom: 2rem; /* Puedes ajustar el valor según el espacio deseado entre formularios */
 }
 
 .content > div {
@@ -56,13 +87,27 @@
   border: 1px solid rgb(177, 0, 0);
 }
 
+
+.registrateBoton {
+  color: #185abc;
+
+}
+.registrateBoton:hover {
+  opacity: .7;
+}
+
 @media (min-width: 768px) {
   .image-sign-up {
     display: block;
     width: 200px;
     margin-right: 7rem;
   }
-
+  .content-request{
+    flex-direction: row;
+    max-width: 768px;
+    margin-top: 6rem;
+    height: 100vh;   
+  }
   .content {
     flex-direction: row;
     max-width: 768px;

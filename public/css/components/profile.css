@@ -1,30 +1,124 @@
 .mainProfile {
   height: 98vh;
-  padding: 5rem;
+  padding: 2rem;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
 }
 
 .wrapperProfile {
   width: 100%;
+  height: fit-content;
   background-color:#ffffff;
   padding: 1.2rem;
   margin-top: 2rem;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(100, 100, 100, .1);
+  align-items: center;
+  box-shadow: 0px 0px 6px rgba(106, 163, 255, 0.4);
+
+  border-left: 3px solid #b9d5ff;
 }
+
+.wrapperProfileTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wrapperProfileTop div {
+  display: flex;
+  align-items: center;
+}
+
+.wrapperProfileTop div:nth-child(2) {
+  flex-direction: column;
+  align-items: start;
+  margin-left: .8rem;
+}
+.wrapperProfileTop div:nth-child(2) p{
+  color: #185ABC;
+  font-size: 1rem;
+}
+
+.logoutButton {
+  margin-top: .3rem;
+  text-decoration: none;
+  color: white;
+  background-color: #185ABC;
+  padding: .6rem .5rem;
+  border-radius: 5px;
+  transition: .15;
+}
+
+.logoutButton:hover {
+  background-color: red;
+}
+
+
+.wrapperProfileTop h2 {
+  color: #23539a;
+  font-size: 1.5rem;
+}
+
 
 .mainProfile img {
   border-radius: 100%;
-  width: 200px;
-  height: 200px;
+  width: 50px;
+  height: 50px;
 }
 
-.usuario-tipo {
-  margin: 25px;
+
+.wrapperProfileBottom {
+  width: 100%;
+  height: fit-content;
+  background-color:#ffffff;
+  padding: 1.2rem;
+  margin-top: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(106, 163, 255, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
-.cont-but {
-  display:flex;
+
+
+.wrapperProfileBottom a {
+  text-decoration: none;
+  color: #185ABC;
+  transition: .2s;
+  margin-bottom: 1rem;
 }
+
+.wrapperProfileBottom section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapperProfileBottom section div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  
+}
+.wrapperProfileBottom section div:nth-child(2) {
+  margin-left: 1rem;
+
+}
+
+.wrapperProfileBottom h5 {
+    color: #a0bde9;
+}
+.wrapperProfileBottom p:nth-child(1) {
+ font-weight: bold;
+ font-size: 2rem;
+}
+.wrapperProfileBottom p:nth-child(2) {
+ font-weight: bold;
+}
+
 
 .error {
   font-size: 12px;
@@ -39,4 +133,20 @@
 
 .errorPass {
   max-width: none;
+}
+
+
+@media (min-width: 1200px) {
+  
+  .mainProfile {
+    align-items: center;
+  } 
+
+  .wrapperProfile {
+    width: 50%;
+  }
+
+  .wrapperProfileBottom {
+    width: 50%;
+  }
 }

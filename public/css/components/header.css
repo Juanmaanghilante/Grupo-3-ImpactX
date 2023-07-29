@@ -28,6 +28,22 @@ header nav a {
   padding-top: 9.5rem;
 }
 
+.botonLogin {
+  color: white;
+  text-decoration: none;
+  background-color: #185ABC;
+  border: 1px solid #185ABC;
+  padding: .6rem 1rem;
+  border-radius: 4px;
+  transition: .15s;
+  margin-right: 1.5rem;
+}
+
+.botonLogin:hover {
+  color: #185ABC;
+  background-color: white;
+}
+
 .contenedorIzq nav{
   position: fixed;
   right: 0;
@@ -61,7 +77,7 @@ header nav a {
 .contenedorIzq nav ul li{
   padding: .75em 2em;
   display: block;
-  width: 100%;
+  /* width: 100%; */
 }
 .contenedorIzq nav ul li:hover {
   background: rgb(231, 239, 255);
@@ -78,10 +94,6 @@ header nav a {
   list-style-type: none;
 } 
 
-.contenedorNavDos ul li a {
-  color: #02337d;
-  font-size: 14px;
-}
 
 .logoHeader {
   margin-top: 0.9rem;
@@ -130,6 +142,18 @@ header nav a {
 
 .perfilPic:hover {
   box-shadow: 0 0 8px rgba(32, 100, 173, 1);
+}
+
+.myprofileButton {
+  text-decoration: none;
+  color: #185ABC;
+  font-size: .8rem;
+
+  transition: .15s;
+}
+
+.myprofileButton:hover {
+  opacity: .5;
 }
 
 @media (min-width: 768px) {

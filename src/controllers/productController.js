@@ -8,22 +8,22 @@ const productos = JSON.parse(fs.readFileSync(rutaBase));
 module.exports = {
 
   productsCart: (req, res) => {
-    return res.render('products/cart')
+    return res.render('products/cartProduct')
   },
 
   productsDetail: (req, res) => {
     const productosHabilitados = productos.filter(row => row.isDeleted == false)
-    return res.render('products/detalleProductos', { productos: productosHabilitados});
+    return res.render('products/detailProduct', { productos: productosHabilitados});
   },
 
   productsCreate: (req, res) => {
-    return res.render('products/formCreate')
+    return res.render('products/createProduct')
   },
 
   productsCreateProcess: (req, res) => {  
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      return res.render("products/formCreate", {
+      return res.render("products/createProduct", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
@@ -47,7 +47,7 @@ module.exports = {
   productsEdit: (req, res) => {
     const productoEditar = productos.find(row => row.id == req.params.id && row.isDeleted == false)
     if(productoEditar){
-      return res.render('products/formEdit', { productoEditar: productoEditar });
+      return res.render('products/editProduct', { productoEditar: productoEditar });
     }else{
       return res.render('error404');
     }
@@ -56,7 +56,7 @@ module.exports = {
   productsEditProcess: (req, res) => {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
-      return res.render("products/formEdit", {
+      return res.render("products/editProduct", {
         errors: resultValidation.mapped(),
         oldData: req.body,
         id: req.params.id
