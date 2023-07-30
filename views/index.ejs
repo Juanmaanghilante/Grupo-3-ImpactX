@@ -8,21 +8,24 @@
     <%- include('./partials/header')%>
 
       <section class="heroSection">
-          <div class="heroImg"></div>
-          <div class="contenedorInfoHero">
-            <div class="contenedorTexto">
-              <h1><strong>Empower Your Business with Digital Excellence.</strong></h1>
-              <p class="subHeading">
-                We enable seamless integration of applications, data, and people, helping you achieve faster and more efficient digital transformation.
-              </p>
-            </div>
-            <div>
-              <a class="botonContactanos" href="/productos">Launch your Business</a>
-            </div>
-            <svg class="arrowDown" width="15" viewBox="0 0 41 466" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.630228 444.243C1.03453 443.845 1.58257 443.622 2.15398 443.622C2.72539 443.622 3.27343 443.845 3.67773 444.243L17.9665 458.325L16.9902 2.625C16.9902 2.06142 17.2174 1.52089 17.6218 1.12238C18.0262 0.723863 18.5746 0.500002 19.1465 0.500002C19.7184 0.500002 20.2668 0.723862 20.6712 1.12238C21.0756 1.52089 21.3027 2.06142 21.3027 2.625L22.279 458.325L36.5677 444.243C36.8313 443.963 37.1665 443.759 37.5381 443.651C37.9097 443.543 38.3039 443.536 38.6791 443.631C39.0544 443.726 39.3968 443.918 39.6704 444.188C39.9439 444.459 40.1384 444.797 40.2334 445.167C40.3294 445.536 40.3227 445.924 40.2139 446.29C40.1052 446.656 39.8984 446.986 39.6152 447.246L21.6465 464.955C21.2422 465.353 20.6941 465.576 20.1227 465.576C19.5513 465.576 19.0033 465.353 18.599 464.955L0.630228 447.246C0.226433 446.848 -0.00037171 446.308 -0.000371759 445.745C-0.000371809 445.182 0.226433 444.641 0.630228 444.243Z" fill="white"/>
-            </svg>
+        <div class="heroImg"></div>
+        <div class="contenedorInfoHero">
+          <div class="contenedorTexto">
+            <h1><strong>Empower Your Business with Digital Excellence.</strong></h1>
+            <p class="subHeading">
+              We enable seamless integration of applications, data, and people, helping you achieve faster and more
+              efficient digital transformation.
+            </p>
           </div>
+          <div>
+            <a class="botonContactanos" href="/productos">Launch your Business</a>
+          </div>
+          <svg class="arrowDown" width="15" viewBox="0 0 41 466" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M0.630228 444.243C1.03453 443.845 1.58257 443.622 2.15398 443.622C2.72539 443.622 3.27343 443.845 3.67773 444.243L17.9665 458.325L16.9902 2.625C16.9902 2.06142 17.2174 1.52089 17.6218 1.12238C18.0262 0.723863 18.5746 0.500002 19.1465 0.500002C19.7184 0.500002 20.2668 0.723862 20.6712 1.12238C21.0756 1.52089 21.3027 2.06142 21.3027 2.625L22.279 458.325L36.5677 444.243C36.8313 443.963 37.1665 443.759 37.5381 443.651C37.9097 443.543 38.3039 443.536 38.6791 443.631C39.0544 443.726 39.3968 443.918 39.6704 444.188C39.9439 444.459 40.1384 444.797 40.2334 445.167C40.3294 445.536 40.3227 445.924 40.2139 446.29C40.1052 446.656 39.8984 446.986 39.6152 447.246L21.6465 464.955C21.2422 465.353 20.6941 465.576 20.1227 465.576C19.5513 465.576 19.0033 465.353 18.599 464.955L0.630228 447.246C0.226433 446.848 -0.00037171 446.308 -0.000371759 445.745C-0.000371809 445.182 0.226433 444.641 0.630228 444.243Z"
+              fill="white" />
+          </svg>
+        </div>
       </section>
 
       <section class="seccionConfiaron">
@@ -50,60 +53,69 @@
       </section>
       <section class="formulario-contacto" id="contacto">
 
-        <h2>Contactanos</h2>       
+        <h2>Contactanos</h2>
         <form action="/contactenos/create" method="POST">
 
           <div class="erroresForm">
-          <% if(locals.errors && errors.nombre){ %>
-               <%= errors.nombre.msg %>
-          <% } %>
-          </div>           
-          <input type="text" placeholder="Nombre" maxlength="30" name="nombre"  class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
-          value="<%= locals.oldData?oldData.nombre:null %>"/>          
-          
+            <% if(locals.errors && errors.nombre){ %>
+              <%= errors.nombre.msg %>
+                <% } %>
+          </div>
+          <input type="text" placeholder="Nombre" maxlength="30" name="nombre"
+            class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
+            value="<%= locals.oldData?oldData.nombre:null %>" />
+
           <div class="erroresForm">
             <% if(locals.errors && errors.apellido){ %>
               <%= errors.apellido.msg %>
-            <% } %>
-          </div>          
-          <input type="text" placeholder="Apellido" maxlength="30" name="apellido"  class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>" 
-          value="<%= locals.oldData?oldData.apellido:null %>"/>
+                <% } %>
+          </div>
+          <input type="text" placeholder="Apellido" maxlength="30" name="apellido"
+            class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
+            value="<%= locals.oldData?oldData.apellido:null %>" />
 
           <div class="erroresForm">
             <% if(locals.errors && errors.correo){ %>
               <%= errors.correo.msg %>
-            <% } %>
-          </div>          
-          <input type="text" placeholder="Correo Electrónico" name="correo" maxlength="100"  class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>" 
-          value="<%= locals.oldData?oldData.correo:null %>"/>    
+                <% } %>
+          </div>
+          <input type="text" placeholder="Correo Electrónico" name="correo" maxlength="100"
+            class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>"
+            value="<%= locals.oldData?oldData.correo:null %>" />
 
           <label>¡Dejanos tu mensaje!</label>
           <div class="erroresForm">
             <% if(locals.errors && errors.mensaje){ %>
               <%= errors.mensaje.msg %>
-            <% } %>
-          </div>          
-          <textarea class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5" name="mensaje"
-            ><%= locals.oldData?oldData.mensaje:null %></textarea>
+                <% } %>
+          </div>
+          <textarea class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5"
+            name="mensaje"><%= locals.oldData?oldData.mensaje:null %></textarea>
 
           <button type="submit" class="botonContactanos">Enviar</button>
+
+          <div class="erroresForm">
+            <% if(locals.creado){ %>
+              <%= locals.creado %>
+            <% } %>
+          </div>          
         </form>
       </section>
 
       <%- include('./partials/footer')%>
 
-      <script>
-        const menu = document.querySelector('.svgMenu')
-        const close = document.querySelector('.closeBtn')
-        const nav = document.querySelector('#navPrincipal')
+        <script>
+          const menu = document.querySelector('.svgMenu')
+          const close = document.querySelector('.closeBtn')
+          const nav = document.querySelector('#navPrincipal')
 
-        menu.addEventListener('click', () => {
-          nav.classList.add('open-nav')
-        })
-        close.addEventListener('click', () => {
-          nav.classList.remove('open-nav')
-        })
-      </script>
+          menu.addEventListener('click', () => {
+            nav.classList.add('open-nav')
+          })
+          close.addEventListener('click', () => {
+            nav.classList.remove('open-nav')
+          })
+        </script>
   </body>
 
 </html>
