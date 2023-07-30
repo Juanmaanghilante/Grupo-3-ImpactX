@@ -6,13 +6,14 @@ const userControler = require('../controllers/userController');
 const fileUpload = require('../middlewares/multer');
 const validations = require('../middlewares/validateRegister');
 const validationsEditUser = require('../middlewares/validateEditUser');
+const validationsLogin = require('../middlewares/validateLogin');
 const guestMiddlware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const valChangePassword1 = require("../middlewares/passwordValidation1");
 const valChangePassword2 = require("../middlewares/passwordValidation2");
 
 router.get('/user/login', guestMiddlware,userControler.userLogin)
-router.post('/user/login', userControler.loginProcess)
+router.post('/user/login', validationsLogin, userControler.loginProcess)
 
 router.get('/user/list', authMiddleware, userControler.userList)
 router.get('/user/profile', authMiddleware, userControler.userProfile)

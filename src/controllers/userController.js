@@ -12,12 +12,17 @@ const userPass = JSON.parse(
 const User = require("../models/User");
 
 module.exports = {
-  
   userLogin: (req, res) => {
     return res.render("users/loginUser");
   },
 
   loginProcess: (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/loginUser", {
+        errors: resultValidation.mapped()
+      });
+    }
     let userToLogin = User.findByField("user", req.body.user);
     // si, hay alguien tratando de loggearse
     if (userToLogin) {
@@ -92,7 +97,7 @@ module.exports = {
       return res.render("users/editUser", {
         errors: resultValidation.mapped(),
         oldData: req.body,
-        id: req.params.id
+        id: req.params.id,
       });
     }
     const usuarioEditar = datos.find(

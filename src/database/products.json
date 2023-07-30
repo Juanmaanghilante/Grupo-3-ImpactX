@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "categoria": "Producto",
+    "categoria": "producto",
     "nombre": "Sistemas para comercios",
     "descripcion": "Inventarios, ventas, compras, facturación, seguimiento de clientes y generación de informes.     ",
     "precio": "520",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "categoria": "Servicio",
+    "categoria": "servicio",
     "nombre": "Hosting",
     "descripcion": "Almacenamiento de páginas, archivos, bases de datos, gestión de dominios y seguridad de tu sitio.      ",
     "precio": "10000",
@@ -181,7 +181,7 @@
   },
   {
     "id": 21,
-    "categoria": "Producto",
+    "categoria": "producto",
     "nombre": "producto",
     "descripcion": "desc",
     "precio": "500",
@@ -190,7 +190,7 @@
   },
   {
     "id": 22,
-    "categoria": "Producto",
+    "categoria": "producto",
     "nombre": "producto",
     "descripcion": "des",
     "precio": "500",
@@ -199,7 +199,7 @@
   },
   {
     "id": 23,
-    "categoria": "Producto",
+    "categoria": "producto",
     "nombre": "producto",
     "descripcion": "producto",
     "precio": "155",

@@ -35,8 +35,6 @@
           <img src="/img/accentureLogo.png" alt="sdsd" />
         </div>
       </section>
-
-
       <section class="seccionQuienesSomos" id="nosotros">
 
         <div class="containerTextoQuienesSomos" id="nosotros">
@@ -49,14 +47,45 @@
         <img class="imagenQuienesSomos" src="/img/quienesSomos.jpg" alt="Imagen de quienes somos" />
       </section>
       <section class="formulario-contacto" id="contacto">
-        <h2>Contactanos</h2>
-        <form action="#" method="POST">
-          <input type="text" placeholder="Nombre" maxlength="30" name="nombre" required />
-          <input type="text" placeholder="Apellido" maxlength="30" name="apellido" required />
-          <input type="email" placeholder="Correo Electrónico" name="correo" maxlength="100" required />
+      </section>
+      <section class="formulario-contacto" id="contacto">
+
+        <h2>Contactanos</h2>       
+        <form action="/contactenos/create" method="POST">
+
+          <div class="erroresForm">
+          <% if(locals.errors && errors.nombre){ %>
+               <%= errors.nombre.msg %>
+          <% } %>
+          </div>           
+          <input type="text" placeholder="Nombre" maxlength="30" name="nombre"  class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
+          value="<%= locals.oldData?oldData.nombre:null %>"/>          
+          
+          <div class="erroresForm">
+            <% if(locals.errors && errors.apellido){ %>
+              <%= errors.apellido.msg %>
+            <% } %>
+          </div>          
+          <input type="text" placeholder="Apellido" maxlength="30" name="apellido"  class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>" 
+          value="<%= locals.oldData?oldData.apellido:null %>"/>
+
+          <div class="erroresForm">
+            <% if(locals.errors && errors.correo){ %>
+              <%= errors.correo.msg %>
+            <% } %>
+          </div>          
+          <input type="text" placeholder="Correo Electrónico" name="correo" maxlength="100"  class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>" 
+          value="<%= locals.oldData?oldData.correo:null %>"/>    
 
           <label>¡Dejanos tu mensaje!</label>
-          <textarea class="form-control" rows="5" name="mensaje"></textarea>
+          <div class="erroresForm">
+            <% if(locals.errors && errors.mensaje){ %>
+              <%= errors.mensaje.msg %>
+            <% } %>
+          </div>          
+          <textarea class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5" name="mensaje"
+            ><%= locals.oldData?oldData.mensaje:null %></textarea>
+
           <button type="submit" class="botonContactanos">Enviar</button>
         </form>
       </section>
