@@ -5,8 +5,8 @@
     "apellido": "Mazo",
     "email": "richard.mazo.97@hotmail.com",
     "mensaje": "Duda",
-    "respuesta": "",
-    "gestionado": false
+    "respuesta": "res",
+    "gestionado": true
   },
   {
     "id": 2,
