@@ -30,7 +30,7 @@ module.exports = {
       let passwordOk = bcrypt.compareSync(
         req.body.password,
         userToLogin.password
-      );s
+      );
       // si true la comparación
       if (passwordOk) {
         // eliminamos el pasword, que nos viene por req.body, así no se ve
