@@ -98,5 +98,16 @@
     "category": "Cliente",
     "imagen": "1690328977118_magazine-unlock-01-2.3.6732-_C080272D7C8F2E102A100B4AF4072363.jpg",
     "isDelete": false
+  },
+  {
+    "id": 10,
+    "user": "juan12",
+    "name": "Juan",
+    "lastName": "Martin",
+    "email": "juanma12@hotmail.com",
+    "password": "$2a$10$5e3uZhbZEu8y5rjyLFtpquWst5CXl7dKc/AM0a4cPBnkyM77anfGu",
+    "category": "Admin",
+    "imagen": "1690854553593_Newton - copia.png",
+    "isDelete": false
   }
 ]

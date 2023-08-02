@@ -34,5 +34,23 @@
     "mensaje": "prueba",
     "respuesta": "",
     "gestionado": false
+  },
+  {
+    "id": 5,
+    "nombre": "Felipe",
+    "apellido": "Leon",
+    "email": "pipe.leon@hotmail.com",
+    "mensaje": "Hola !",
+    "respuesta": "holaaaa",
+    "gestionado": true
+  },
+  {
+    "id": 6,
+    "nombre": "Nico",
+    "apellido": "Prados",
+    "email": "nico_prados18@hotmail.com",
+    "mensaje": "hola!\r\n",
+    "respuesta": "hola nico",
+    "gestionado": true
   }
 ]
