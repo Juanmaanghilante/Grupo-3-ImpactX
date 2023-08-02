@@ -37,9 +37,8 @@ module.exports = {
       JSON.stringify(requests, null, 2),
       "utf-8"
     );
-    return res.send(
-      "Solicitud procesada, te estaremos dando respuesta en breve..."
-    );
+    const mensajeCreado = "Solicitud creada correctamente, pronto te estaremos respondiendo via email"
+    return res.render("index", { creado : mensajeCreado });
   },
   request: (req, res) => {
     const requesthabilitados = requests.filter(
