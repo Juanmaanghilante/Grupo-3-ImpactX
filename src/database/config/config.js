@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
+    "username": "322927",
+    "password": "Grupo3XImpact",
+    "database": "impactxgrupo3_impactx",
+    "host": "mysql-impactxgrupo3.alwaysdata.net",
     "dialect": "mysql"
   },
   "test": {
