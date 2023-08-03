@@ -1,6 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const nodemailer = require("nodemailer");
+require("dotenv").config()
 
 const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/requests.json");
@@ -57,8 +58,8 @@ module.exports = {
         port: 587,
         secure: false,
         auth: {
-          user: "impactxgrupo3@hotmail.com",
-          pass: "Grupo3XImpact",
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
         },
       };
 

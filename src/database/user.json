@@ -97,7 +97,7 @@
     "password": "$2a$10$DU1kmwrj./1uGmSH12wfeOx2R21WTCrmuPDOZWg1VnIBCuhPNVb9m",
     "category": "Cliente",
     "imagen": "1690328977118_magazine-unlock-01-2.3.6732-_C080272D7C8F2E102A100B4AF4072363.jpg",
-    "isDelete": false
+    "isDelete": true
   },
   {
     "id": 10,
