@@ -76,6 +76,7 @@ module.exports = {
   userSignup: (req, res) => {
     return res.render("users/signupUser");
   },
+  
   userList: (req, res) => {
     const usersHabilitados = datos.filter((row) => row.isDelete == false);
     return res.render("users/listUser", { usuarios: usersHabilitados });

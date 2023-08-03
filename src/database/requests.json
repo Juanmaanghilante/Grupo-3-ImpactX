@@ -14,8 +14,8 @@
     "apellido": "Mazo Osorio",
     "email": "richard.mazo.97@hotmail.com",
     "mensaje": "duda",
-    "respuesta": "",
-    "gestionado": false
+    "respuesta": "res",
+    "gestionado": true
   },
   {
     "id": 3,
@@ -32,15 +32,6 @@
     "apellido": "Mazo",
     "email": "richard.mazo.97@hotmail.com",
     "mensaje": "prueba",
-    "respuesta": "",
-    "gestionado": false
-  },
-  {
-    "id": 5,
-    "nombre": "Richard Leandro",
-    "apellido": "Mazo Osorio",
-    "email": "richard.mazo.97@hotmail.com",
-    "mensaje": "pregunta",
     "respuesta": "",
     "gestionado": false
   },
@@ -64,15 +55,6 @@
   },
   {
     "id": 8,
-    "nombre": "Richard Leandro",
-    "apellido": "Mazo Osorio",
-    "email": "richard.mazo.97@hotmail.com",
-    "mensaje": "pregunta",
-    "respuesta": "",
-    "gestionado": false
-  },
-  {
-    "id": 9,
     "nombre": "Richard Leandro",
     "apellido": "Mazo Osorio",
     "email": "richard.mazo.97@hotmail.com",
