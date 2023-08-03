@@ -1,9 +1,11 @@
+require("dotenv").config()
+
 module.exports = {
   "development": {
-    "username": "322927",
-    "password": "Grupo3XImpact",
-    "database": "impactxgrupo3_impactx",
-    "host": "mysql-impactxgrupo3.alwaysdata.net",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": process.env.DB_NAME,
+    "host": process.env.DB_HOST,
     "dialect": "mysql"
   },
   "test": {
