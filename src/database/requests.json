@@ -36,32 +36,6 @@
     "gestionado": false
   },
   {
-    "id": 5,
-<<<<<<< HEAD
-    "nombre": "Felipe",
-    "apellido": "Leon",
-    "email": "pipe.leon@hotmail.com",
-    "mensaje": "Hola !",
-    "respuesta": "holaaaa",
-    "gestionado": true
-  },
-  {
-    "id": 6,
-    "nombre": "Nico",
-    "apellido": "Prados",
-    "email": "nico_prados18@hotmail.com",
-    "mensaje": "hola!\r\n",
-    "respuesta": "hola nico",
-    "gestionado": true
-=======
-    "nombre": "Richard Leandro",
-    "apellido": "Mazo Osorio",
-    "email": "richard.mazo.97@hotmail.com",
-    "mensaje": "pregunta",
-    "respuesta": "",
-    "gestionado": false
-  },
-  {
     "id": 6,
     "nombre": "Richard Leandro",
     "apellido": "Mazo Osorio",
@@ -87,15 +61,5 @@
     "mensaje": "pregunta",
     "respuesta": "",
     "gestionado": false
-  },
-  {
-    "id": 9,
-    "nombre": "Richard Leandro",
-    "apellido": "Mazo Osorio",
-    "email": "richard.mazo.97@hotmail.com",
-    "mensaje": "pregunta",
-    "respuesta": "",
-    "gestionado": false
->>>>>>> 4d1118a25b8ae582b15b49bf9d6eebddfe6207c3
   }
 ]
