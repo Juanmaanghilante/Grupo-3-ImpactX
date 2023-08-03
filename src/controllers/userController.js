@@ -30,7 +30,7 @@ module.exports = {
       let passwordOk = bcrypt.compareSync(
         req.body.password,
         userToLogin.password
-      );s
+      );
       // si true la comparación
       if (passwordOk) {
         // eliminamos el pasword, que nos viene por req.body, así no se ve
@@ -76,6 +76,7 @@ module.exports = {
   userSignup: (req, res) => {
     return res.render("users/signupUser");
   },
+  
   userList: (req, res) => {
     const usersHabilitados = datos.filter((row) => row.isDelete == false);
     return res.render("users/listUser", { usuarios: usersHabilitados });

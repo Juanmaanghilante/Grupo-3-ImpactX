@@ -3,48 +3,62 @@
 
 <%- include('../partials/head', {title:"Impact X | Requests"})%>
 
-<%- include('../partials/header')%>
+    <%- include('../partials/header')%>
 
-<body class="bodySignUp">
+        <body class="bodySignUp">
 
-<% for (let i = 0; i < requesthabilitados.length; i++) {
-    const request = requesthabilitados[i];
-%>
-    <form action="/request/<%= request.id %>" method="POST" class="create-form form-request">>
-        <div class="content-request">
+            <% for (let i=0; i < requesthabilitados.length; i++) { const request=requesthabilitados[i]; %>
+                <form action="/request/<%= request.id %>" method="POST" class="create-form form-request">
+                    <div class="content-request">
 
-            <div>
-                <div>
-                    <h2 class="titulo-registrar-usuario">Pending questions to answer <%= i+1 %> / <%= requesthabilitados.length %></h2>
-                </div>
-                <div class="control-formulario">
-                    <label for="user"> Name: </label>
-                    <input class="control" type="text" name="nombre" value="<%= request.nombre %>" readonly />
-                </div>
+                        <div>
+                            <div>
+                                <h2 class="pending-questions">Pending questions to answer <%= i+1 %> / <%=
+                                            requesthabilitados.length %>
+                                </h2>
+                            </div>
+                            <div class="control-formulario">
+                                <label for="user"> Name: </label>
+                                <input class="control" type="text" name="nombre" value="<%= request.nombre %>"
+                                    readonly />
+                            </div>
 
-                <div class="control-formulario">
-                    <label for="name"> Lastname: </label>
-                    <input class="control" type="text" name="apellido" value="<%= request.apellido %>" readonly />
-                </div>
+                            <div class="control-formulario">
+                                <label for="name"> Lastname: </label>
+                                <input class="control" type="text" name="apellido" value="<%= request.apellido %>"
+                                    readonly />
+                            </div>
 
-                <div class="control-formulario">
-                    <label for="lastName"> Email </label>
-                    <input class="control" type="text" value="<%= request.email %>" name="email" readonly/>
-                </div>
+                            <div class="control-formulario">
+                                <label for="lastName"> Email </label>
+                                <input class="control" type="text" value="<%= request.email %>" name="email" readonly />
+                            </div>
 
-                <label>Question</label>
-                <textarea class="control" rows="5" name="mensaje" readonly><%=request.mensaje%></textarea>
+                            <label>Question</label>
+                            <textarea class="control" rows="5" name="mensaje" readonly><%=request.mensaje%></textarea>
 
-                <label>Answer</label>
-                <textarea class="control" rows="5" name="answer"></textarea>
+                            <label>Answer</label>
+                            <textarea class="control" rows="5" name="answer" required></textarea>
 
-                <button type="submit" class="botonProductos">Send email</button>
-            </div>
-        </div>
-    </form>
-<% } %>
+                            <button type="submit" class="botonProductos">Send email</button>
+                        </div>
+                    </div>
+                </form>
+                <% } %>
 
-</body>
-<%- include('../partials/footer')%>
+        </body>
+        <%- include('../partials/footer')%>
+            <script>
+                const menu = document.querySelector('.svgMenu')
+                const close = document.querySelector('.closeBtn')
+                const nav = document.querySelector('#navPrincipal')
+
+                menu.addEventListener('click', () => {
+                    nav.classList.add('open-nav')
+                })
+                close.addEventListener('click', () => {
+                    nav.classList.remove('open-nav')
+                })
+            </script>
 
 </html>

@@ -1,5 +1,5 @@
 .content-request {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +37,7 @@ select[disabled] {
 }
 
 .form-request {
-  margin-bottom: 2rem; /* Puedes ajustar el valor según el espacio deseado entre formularios */
+  margin-bottom: 2rem;
 }
 
 .content > div {
@@ -78,6 +78,14 @@ select[disabled] {
   margin-bottom: 2rem;
 }
 
+.pending-questions{
+  color: #185abc;
+  font-weight: 300;
+  font-size: 2rem;
+  margin-top: 2rem;  
+  margin-bottom: 2rem;
+}
+
 .erroresForm {
   color: rgb(177, 0, 0);
   font-size: 12px;
@@ -113,4 +121,18 @@ select[disabled] {
     max-width: 768px;
     height: 100vh;
   }
+  .titulo-registrar-usuario {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+  }
+  .input-container {
+    flex-basis: 50%;
+  } 
+  .pending-questions {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+  }
+  .input-container {
+    flex-basis: 50%;
+  }  
 }

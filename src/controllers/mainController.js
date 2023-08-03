@@ -37,9 +37,8 @@ module.exports = {
       JSON.stringify(requests, null, 2),
       "utf-8"
     );
-    return res.send(
-      "Solicitud procesada, te estaremos dando respuesta en breve..."
-    );
+    const mensajeCreado = "Solicitud creada correctamente, pronto te estaremos respondiendo via email"
+    return res.render("index", { creado : mensajeCreado });
   },
   request: (req, res) => {
     const requesthabilitados = requests.filter(
@@ -51,9 +50,6 @@ module.exports = {
   },
   sendAnswer: async (req, res) => {
     try {
-      //correo  = "richard.mazo.97@hotmail.com";
-      //console.log(typeof correo)
-      console.log(typeof req.body.mensaje);
       const correo = "" + req.body.email;
       const respuesta = "" + req.body.answer;
       const config = {
@@ -78,7 +74,6 @@ module.exports = {
       transporter.verify(function (error, success) {
         if (error) {
           console.log(error);
-          console.log("hola malo");
         } else {
           console.log("Server is ready to take our messages");
         }
@@ -96,7 +91,7 @@ module.exports = {
         );
 
         request.gestionado = true;
-        request.respuesta = req.body.mensaje;
+        request.respuesta = req.body.answer;
 
         fs.writeFileSync(
           path.resolve(__dirname, "../database/requests.json"),
