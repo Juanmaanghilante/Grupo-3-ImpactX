@@ -100,6 +100,17 @@
     "isDelete": true
   },
   {
+<<<<<<< HEAD
+    "id": 9,
+    "user": "lucasss",
+    "name": "lucas",
+    "lastName": "cambon",
+    "email": "lucas@gmail.com",
+    "password": "$2a$10$Qycnr2lK06/JIZMxipbkqOJMiBHRHE.csx3UF6yrQVkOt4plm5E9C",
+    "repeatPassword": "123456aA!",
+    "category": "Cliente",
+    "imagen": "1690249804987_343032032_775877343823955_3644420505048951505_n.jpg",
+=======
     "id": 10,
     "user": "juan12",
     "name": "Juan",
@@ -108,6 +119,7 @@
     "password": "$2a$10$5e3uZhbZEu8y5rjyLFtpquWst5CXl7dKc/AM0a4cPBnkyM77anfGu",
     "category": "Admin",
     "imagen": "1690854553593_Newton - copia.png",
+>>>>>>> ac26267ed4894b3d7ea1c9017453494935342b0a
     "isDelete": false
   }
 ]
