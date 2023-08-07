@@ -27,15 +27,20 @@ router.delete("/productos/delete/:id", authMiddleware, productControler.products
 
 
 
+
+
+
 // NUEVO ENRUTADOR
 // CREATE
-router.get('/productos/create', authMiddleware, product.add)
-router.post("/productos/create", fileUpload.single("image"), validationsProduct, product.create)
+// router.get('/productos/create', authMiddleware, product.add)
+// router.post("/productos/create", fileUpload.single("image"), validationsProduct, product.create)
 
+// // EDIT
+// router.get('/productos/edit/:id', authMiddleware, product.edit)
+// router.put("/productos/:id", fileUpload.single("image"), validationsProductEdit, product.update)
 
-
-// DELETE 
-router.get("/productos/delete/:id", authMiddleware, product.delete)
-router.delete("/productos/delete/:id", authMiddleware, product.destroy)
+// // DELETE 
+// router.get("/productos/delete/:id", authMiddleware, product.delete)
+// router.delete("/productos/delete/:id", authMiddleware, product.destroy)
 
 module.exports = router
