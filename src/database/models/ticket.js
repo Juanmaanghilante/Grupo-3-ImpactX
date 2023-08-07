@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
     updated_at: {
       type: dataTypes.DATE,
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "ticket",
@@ -53,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const ticket = sequelize.define(alias, cols, config);
+  const Ticket = sequelize.define(alias, cols, config);
 
-  return ticket;
+  return Ticket;
 };

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "old_password";
+  let alias = "OldPassword";
 
   let cols = {
     id: {
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
     updated_at: {
       type: dataTypes.DATE,
       allowNull: false,
-    },
+    }
   };
 
   let config = {
@@ -34,7 +34,7 @@ module.exports = (sequelize, dataTypes) => {
     deletedAt: false,
   };
 
-  const old_password = sequelize.define(alias, cols, config);
+  const OldPassword = sequelize.define(alias, cols, config);
 
-  return old_password;
+  return OldPassword;
 };

@@ -7,13 +7,13 @@ const Category = db.Category;
 
 module.exports = {
 
-  list: async (req, res) => {
+  'list': async (req, res) => {
     /*const productosHabilitados = productos.filter(row => row.isDeleted == false)
     return res.render('products/productList', { products: productosHabilitados});*/
     const productosHabilitados = await Product.findAll();
     return res.render('products/productList', { products: productosHabilitados});
   },  
-  productsCreate: async(req, res) => {
+  add: async(req, res) => {
     const categories = await Category.findAll(); 
     return res.render('products/createProduct', {categories: categories})
   },  

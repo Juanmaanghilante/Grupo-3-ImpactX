@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
     updated_at: {
       type: dataTypes.DATE,
       allowNull: false,
-    },
+    }
   };
 
   let config = {

@@ -35,14 +35,14 @@ module.exports = (sequelize, dataTypes) => {
     confirm_password: {
       type: dataTypes.STRING(255),
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "users",
     deletedAt: false,
   };
 
-  const users = sequelize.define(alias, cols, config);
+  const Users = sequelize.define(alias, cols, config);
 
-  return users;
+  return Users;
 };

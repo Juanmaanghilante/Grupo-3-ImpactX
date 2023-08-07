@@ -17,7 +17,7 @@ router.get('/cart', authMiddleware, productControler.productsCart)
 // CREATE
 //router.get('/productos/create', authMiddleware, productControler.productsCreate)
 //router.post("/productos/create", fileUpload.single("image"), validationsProduct, productControler.productsCreateProcess)
-router.get('/productos/create', authMiddleware, product.productsCreate)
+router.get('/productos/create', authMiddleware, product.add)
 router.post("/productos/create", fileUpload.single("image"), validationsProduct, product.create)
 
 // EDIT

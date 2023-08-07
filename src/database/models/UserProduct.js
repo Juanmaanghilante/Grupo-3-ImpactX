@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "User_product";
+  let alias = "UserProduct";
 
   let cols = {
     id: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     status: {
       type: dataTypes.STRING(255),
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "user_product",
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
     deletedAt: false,
   };
 
-  const user_products = sequelize.define(alias, cols, config);
+  const UserProducts = sequelize.define(alias, cols, config);
 
-  return user_products;
+  return UserProducts;
 };

@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
     updated_at: {
       type: dataTypes.DATE,
       allowNull: false,
-    },
+    }
   };
   let config = {
     tableName: "profiles",
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const profiles = sequelize.define(alias, cols, config);
+  const Profiles = sequelize.define(alias, cols, config);
 
-  return profiles;
+  return Profiles;
 };
