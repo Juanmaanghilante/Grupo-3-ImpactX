@@ -214,5 +214,14 @@
     "precio": "500",
     "imagen": "1690067689288_magazine-unlock-01-2.3.6652-_1A7ACC1C58DB6916C6F9AA03750A0977.jpg",
     "isDeleted": true
+  },
+  {
+    "id": 25,
+    "categoria": "Producto",
+    "nombre": "producto",
+    "descripcion": "producto",
+    "precio": "500",
+    "imagen": "1691443357991_282563499_5124018244349297_8774551712225905442_n.jpg",
+    "isDeleted": false
   }
 ]

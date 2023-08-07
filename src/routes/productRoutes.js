@@ -10,12 +10,15 @@ const validationsProductEdit = require('../middlewares/validateProductEdit');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 // PRODUCTS / CART
-router.get('/productos', productControler.productsDetail)
+//router.get('/productos', productControler.productsDetail)
+router.get('/productos', product.list);
 router.get('/cart', authMiddleware, productControler.productsCart)
 
 // CREATE
-router.get('/productos/create', authMiddleware, productControler.productsCreate)
-router.post("/productos/create", fileUpload.single("image"), validationsProduct, productControler.productsCreateProcess)
+//router.get('/productos/create', authMiddleware, productControler.productsCreate)
+//router.post("/productos/create", fileUpload.single("image"), validationsProduct, productControler.productsCreateProcess)
+router.get('/productos/create', authMiddleware, product.productsCreate)
+router.post("/productos/create", fileUpload.single("image"), validationsProduct, product.create)
 
 // EDIT
 router.get('/productos/edit/:id', authMiddleware, productControler.productsEdit)
@@ -31,6 +34,7 @@ router.delete("/productos/delete/:id", authMiddleware, productControler.products
 
 
 // NUEVO ENRUTADOR
+
 // CREATE
 // router.get('/productos/create', authMiddleware, product.add)
 // router.post("/productos/create", fileUpload.single("image"), validationsProduct, product.create)

@@ -21,11 +21,10 @@
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
                 id="">
                 <option value="">Seleccione una opción</option>
-                <% let tipoServicio=['Producto', 'Servicio' ] %>
-                  <% for( const servicio of tipoServicio ) { %>
-                    <option value="<%= servicio %>" <%=locals.oldData && (servicio==oldData.category) ? 'selected' :
+                  <% for( const servicio of categories ) { %>
+                    <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.category) ? 'selected' :
                       null %>
-                      <%= locals.oldData && (servicio===oldData.tipoUsuario) ? "selected" : null %> > <%= servicio %>
+                      <%= locals.oldData && (servicio.id===oldData.category) ? "selected" : null %> > <%= servicio.name %>
                     </option>
                   <% } %>
               </select>
@@ -43,7 +42,7 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.desc) { %>
                   <%= errors.desc.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <textarea type="text" name="desc"
                 class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"

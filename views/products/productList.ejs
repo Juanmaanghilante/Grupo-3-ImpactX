@@ -11,18 +11,18 @@
         <% products.forEach(producto=> { %>
           <article class="tarjetaProductos">
             <div class="containerImagenProductos">
-              <img class="productoImagen" src="/img/<%= producto.imagen %>"
-                alt="imagen producto <%= producto.nombre %>">
+              <img class="productoImagen" src="/img/<%= producto.image %>"
+                alt="imagen producto <%= producto.name %>">
             </div>
             <div class="containerInfoProductos">
               <h2>
-                <%= producto.nombre %>
+                <%= producto.name %>
               </h2>
               <p>
-                <%= producto.precio %> $
+                <%= producto.price %> $
               </p>
               <p>
-                <%= producto.descripcion %>
+                <%= producto.description %>
               </p>
               <div class="contenedorBotonesProductos">
                 <a class="botonProductos" href="">ADD TO CART</a>
@@ -36,7 +36,7 @@
                       </form>
                     </div>
                     <% } %>
-                      <% } %>
+                <% } %>
               </div>
             </div>
           </article>
@@ -48,25 +48,25 @@
                   <a href="/productos/create">+</a>
                   <p>Agregar Nuevo Producto</p>
                 </div>
-              <% } %>
-            <% } %>
+                <% } %>
+                  <% } %>
       </main>
 
       <%- include('../partials/footer')%>
 
-      
-      <script>
-        const menu = document.querySelector('.svgMenu')
-        const close = document.querySelector('.closeBtn')
-        const nav = document.querySelector('#navPrincipal')
 
-        menu.addEventListener('click', () => {
-          nav.classList.add('open-nav')
-        })
-        close.addEventListener('click', () => {
-          nav.classList.remove('open-nav')
-        })
-      </script>
+        <script>
+          const menu = document.querySelector('.svgMenu')
+          const close = document.querySelector('.closeBtn')
+          const nav = document.querySelector('#navPrincipal')
+
+          menu.addEventListener('click', () => {
+            nav.classList.add('open-nav')
+          })
+          close.addEventListener('click', () => {
+            nav.classList.remove('open-nav')
+          })
+        </script>
   </body>
 
 </html>
