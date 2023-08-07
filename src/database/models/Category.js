@@ -1,31 +1,39 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = 'Category'
+  let alias = "Category";
+  
   let cols = {
     id: {
       type: dataTypes.BIGINT(10).UNSIGNED,
       primaryKey: true,
       allowNull: false,
-      autoIncrement: true
+      autoIncrement: true,
     },
     name: {
       type: dataTypes.STRING(255),
-      allowNull: false
+      allowNull: false,
     },
 
     created_at: dataTypes.DATE,
-    updated_at: dataTypes.DATE
-
-  }
+    updated_at: dataTypes.DATE,
+  };
 
   let config = {
-    tableName: 'categories',
+    tableName: "categories",
     timestamps: true,
-    createdAt: 'created_at',
-    updatedAt: 'updated_at',
-    deletedAt: false
-  }
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: false,
+  };
 
   const Category = sequelize.define(alias, cols, config);
-  return Category
 
-}
+  Category.associate = (models) => {
+    Category.belongsToMany(models.Product, {
+      through: "Actor_Movie",
+      foreignKey: "movie_id",
+      otherKey: "actor_id",
+    });
+  };
+
+  return Category;
+};

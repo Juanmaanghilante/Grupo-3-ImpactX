@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-  let alias = "Ticket";
+  let alias = "OldPassword";
 
   let cols = {
     id: {
@@ -10,34 +10,13 @@ module.exports = (sequelize, dataTypes) => {
     },
     user_id: {
       type: dataTypes.BIGINT(20).UNSIGNED,
-
       allowNull: false,
     },
-    date: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },
-    adress: {
+    old_password: {
       type: dataTypes.STRING(255),
       allowNull: false,
     },
-    city: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    province: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    country: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    total: {
-      type: dataTypes.BIGINT(20).UNSIGNED,
-      allowNull: true,
-    },
-    create_at: {
+    created_at: {
       type: dataTypes.DATE,
       allowNull: false,
     },
@@ -46,14 +25,16 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     }
   };
+
   let config = {
-    tableName: "ticket",
+    tableName: "old_passwords",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const Ticket = sequelize.define(alias, cols, config);
 
-  return Ticket;
+  const OldPassword = sequelize.define(alias, cols, config);
+
+  return OldPassword;
 };
