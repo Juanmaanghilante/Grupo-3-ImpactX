@@ -13,14 +13,9 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255),
       allowNull: false,
     },
-    created_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },
-    updated_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    }
+    created_at: dataTypes.DATE,
+    updated_at: dataTypes.DATE
+
   };
   let config = {
     tableName: "profiles",

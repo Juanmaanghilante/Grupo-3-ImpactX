@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
   let cols = {
     id: {
-      type: dataTypes.BIGINT(10).UNSIGNED,
+      type: dataTypes.BIGINT(20).UNSIGNED,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
@@ -28,14 +28,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255),
       allowNull: false,
     },
-    created_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },
-    updated_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    }
+    created_at: dataTypes.DATE,
+    updated_at: dataTypes.DATE,
+    deleted_at: dataTypes.DATE
+
   };
 
   let config = {
@@ -43,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
-    deletedAt: false,
+    deletedAt: "deleted_at"
   };
 
   const Products = sequelize.define(alias, cols, config);

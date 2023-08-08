@@ -10,7 +10,6 @@ module.exports = (sequelize, dataTypes) => {
     },
     user_id: {
       type: dataTypes.BIGINT(20).UNSIGNED,
-
       allowNull: false,
     },
     date: {
@@ -37,14 +36,9 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.BIGINT(20).UNSIGNED,
       allowNull: true,
     },
-    create_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },
-    updated_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    }
+    created_at: dataTypes.DATE,
+    updated_at: dataTypes.DATE
+
   };
   let config = {
     tableName: "ticket",
