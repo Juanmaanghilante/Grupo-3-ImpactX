@@ -35,14 +35,30 @@ module.exports = (sequelize, dataTypes) => {
     confirm_password: {
       type: dataTypes.STRING(255),
       allowNull: false,
+    },
+    created_at: {
+      type: dataTypes.DATE,
+      allowNull: false,
+    },
+    updated_at: {
+      type: dataTypes.DATE,
+      allowNull: false,
     }
   };
   let config = {
     tableName: "users",
-    deletedAt: false,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
   };
 
   const Users = sequelize.define(alias, cols, config);
+
+  Users.associate = (models) => {
+    Users.belongsTo(models.Profile, {
+      as: "perfiles",
+      foreignKey: "profile_id",
+    });
+  };
 
   return Users;
 };

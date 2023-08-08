@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const userControler = require('../controllers/userController');
+const user = require('../controllers/user');
 
 // MIDDLEWARES
 const fileUpload = require('../middlewares/multer');
@@ -21,8 +22,10 @@ router.get('/user/logout', userControler.logout)
 
 
 // CREATE
-router.get('/user/signup', userControler.userSignup)
-router.post('/user/signup', fileUpload.single("profilePic"), validations, userControler.userCreateProcess)
+//router.get('/user/signup', userControler.userSignup)
+//router.post('/user/signup', fileUpload.single("profilePic"), validations, userControler.userCreateProcess);
+router.get('/user/signup', user.userSignup);
+router.post('/user/signup', fileUpload.single("profilePic"), validations, user.userCreateProcess);
 
 // EDIT
 router.get('/user/edit/:id', authMiddleware, userControler.userEdit)

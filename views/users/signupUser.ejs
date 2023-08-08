@@ -17,29 +17,26 @@
             <div class="erroresForm">
               <% if (locals.errors && errors.user) { %>
                 <%= errors.user.msg %>
-              <% } %>
+                  <% } %>
             </div>
             <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"
-            placeholder="Usuario"
-            value="<%= locals.oldData?oldData.user:null %>"
-            />
-           
+              placeholder="Usuario" value="<%= locals.oldData?oldData.user:null %>" />
+
 
             <!-- FIRST NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.name) { %>
                 <%= errors.name.msg %>
-              <% } %>
+                  <% } %>
             </div>
             <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
-              placeholder="Nombre"
-              value="<%= locals.oldData?oldData.name:null %>" />
+              placeholder="Nombre" value="<%= locals.oldData?oldData.name:null %>" />
 
             <!-- LAST NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.lastName) { %>
                 <%= errors.lastName.msg %>
-              <% } %>
+                  <% } %>
             </div>
             <input type="text" name="lastName"
               class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido"
@@ -52,85 +49,78 @@
                   <% } %>
             </div>
             <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
-              placeholder="Email" 
-              value="<%= locals.oldData?oldData.email:null %>"
-              />
-             
-              <% if (locals.isLogged) { %>
-                <% if (locals.userLogged.category=="Admin" ) { %>
-                  <label for="category"> Categoría </label>
-                  <div class="erroresForm">
-                    <% if (locals.errors && errors.category) { %>
-                      <%= errors.category.msg %>
-                        <% } %>
-                  </div>
-                  <select name="categoria" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
-                    id="category">
-                    <option value="">Tipo de Usuario</option>
-  
-                    <% let tipoUsuario=['Admin', 'Cliente' ] %>
-                      <% for( const rol of tipoUsuario ) { %>
-                        <option value="<%= rol %>" <% if (locals.usuario) { %>
-                          <%= rol===usuario.category ? 'selected' : null %>
-                            <% } else if (locals.oldData) { %>
-                              <%= rol===oldData.categoria ? 'selected' : null %>
-                                <% } %>
-                                  >
-                                  <%= rol %>
-                        </option>
-                        <% } %>
-                      </select>
+              placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
+
+            <% if (locals.isLogged) { %>
+              <% if (locals.userLogged.category=="Admin" ) { %>
+                <div class="erroresForm">
+                  <% if (locals.errors && errors.category) { %>
+                    <%= errors.category.msg %>
                       <% } %>
-                        <% } %>                                   
-
-            <!-- PROFILE PICTURE -->
-            <div class="erroresForm">
-              <% if (locals.errors && errors.profilePic) { %>
-                <%= errors.profilePic.msg %>
-                  <% } %>
-            </div>
-            <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" type="file"
-              name="profilePic">
-
-            <!-- PASSWORD -->
-            <div class="erroresForm">
-              <% if (locals.errors && errors.password) { %>
-                <%= errors.password.msg %>
-                  <% } %>
-            </div>
-            <input type="password" name="password"
-              class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
-              placeholder="Contraseña" />
-
-            <div class="erroresForm">
-                <% if (locals.errors && errors.repeatPassword) { %>
-                  <%= errors.repeatPassword.msg %>
+                </div>
+                <select name="categoria" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
+                  id="category">
+                  <option value="">Seleccione una opción</option>
+                  <% for( const servicio of perfiles ) { %>
+                    <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.categoria)
+                      ? 'selected' : null %>
+                      <%= locals.oldData && (servicio.id===oldData.categoria) ? "selected" : null %> > <%= servicio.name
+                          %>
+                    </option>
                     <% } %>
-            </div>              
-            <input type="password" name="repeatPassword" class="control <%= locals.errors && errors.repeatPassword ? 'invalidError' : null %>"
-             placeholder="Repetir Contraseña" />
+                </select>
+                <% } %>
+                  <% } %>
+
+                    <!-- PROFILE PICTURE -->
+                    <div class="erroresForm">
+                      <% if (locals.errors && errors.profilePic) { %>
+                        <%= errors.profilePic.msg %>
+                          <% } %>
+                    </div>
+                    <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" type="file"
+                      name="profilePic">
+
+                    <!-- PASSWORD -->
+                    <div class="erroresForm">
+                      <% if (locals.errors && errors.password) { %>
+                        <%= errors.password.msg %>
+                          <% } %>
+                    </div>
+                    <input type="password" name="password"
+                      class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
+                      placeholder="Contraseña" />
+
+                    <div class="erroresForm">
+                      <% if (locals.errors && errors.repeatPassword) { %>
+                        <%= errors.repeatPassword.msg %>
+                          <% } %>
+                    </div>
+                    <input type="password" name="repeatPassword"
+                      class="control <%= locals.errors && errors.repeatPassword ? 'invalidError' : null %>"
+                      placeholder="Repetir Contraseña" />
           </div>
           <div>
-            <button type="submit" value="ENVIAR" class="botonContactanos">Registrarme</input>
+            <button type="submit" value="ENVIAR" class="botonContactanos">Register</input>
           </div>
         </form>
       </div>
 
       <%- include('../partials/footer')%>
 
-      
-      <script>
-        const menu = document.querySelector('.svgMenu')
-        const close = document.querySelector('.closeBtn')
-        const nav = document.querySelector('#navPrincipal')
 
-        menu.addEventListener('click', () => {
-          nav.classList.add('open-nav')
-        })
-        close.addEventListener('click', () => {
-          nav.classList.remove('open-nav')
-        })
-      </script>
+        <script>
+          const menu = document.querySelector('.svgMenu')
+          const close = document.querySelector('.closeBtn')
+          const nav = document.querySelector('#navPrincipal')
+
+          menu.addEventListener('click', () => {
+            nav.classList.add('open-nav')
+          })
+          close.addEventListener('click', () => {
+            nav.classList.remove('open-nav')
+          })
+        </script>
   </body>
 
 </html>
