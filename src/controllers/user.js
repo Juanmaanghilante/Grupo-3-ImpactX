@@ -17,7 +17,6 @@ module.exports = {
       });
     }
     try {
-      console.log(req.body.user);
       const userToLogin = await User.findOne({
         where: {
           user_name: req.body.user,
@@ -25,7 +24,6 @@ module.exports = {
         include: [{ association: "perfiles" }],
       });
       // si, hay alguien tratando de loggearse
-      console.log(userToLogin);
       if (userToLogin) {
         // comparame la clave encriptada y lo que puso el que se quiere loguear
         let passwordOk = bcrypt.compareSync(
@@ -103,8 +101,6 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
-    console.log(req.body.categoria)
-    console.log(req.body.categoria ? req.body.categoria : "5")
     try {
       const userToCreate = await User.create({
         name: req.body.name,
@@ -122,7 +118,6 @@ module.exports = {
     }
   },
   userProfile: (req, res) => {
-    console.log(req.session.userLogged);
     return res.render("users/profileUser", { user: req.session.userLogged });
   },  
   logout: (req, res) => {

@@ -12,7 +12,6 @@ module.exports = async (req, res, next) => {
       },
       include: [{ association: "perfiles" }],
     });
-    console.log(userFromCookie);
     if (userFromCookie) {
       req.session.userLogged = userFromCookie;
     }
@@ -21,11 +20,8 @@ module.exports = async (req, res, next) => {
       res.locals.isLogged = true;
       res.locals.userLogged = req.session.userLogged;
     }
-    //console.log("From cookie");
-    //console.log(res.locals.userLogged);
     next();
   } catch (error) {
-    //console.log("error");
     next();
   }
 };
