@@ -26,13 +26,13 @@
               </p>
               <div class="contenedorBotonesProductos">
                 <a class="botonProductos" href="">ADD TO CART</a>
-                <a class="botonProductos" href="">COMPRAR AHORA</a>
+                <a class="botonProductos" href="">BUY NOW</a>
                 <% if (locals.isLogged) { %>
-                  <% if (locals.userLogged.category=="Admin" ) { %>
+                  <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                     <div>
-                      <a class="botonProductos" href="/productos/edit/<%=producto.id %>">EDITAR</a>
+                      <a class="botonProductos" href="/productos/edit/<%=producto.id %>">Edit</a>
                       <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                        <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                        <button type="sumbit" class="botonProductos eliminar">Delete</button>
                       </form>
                     </div>
                     <% } %>
@@ -43,10 +43,10 @@
 
           <% }) %>
             <% if (locals.isLogged) { %>
-              <% if (locals.userLogged.category=="Admin" ) { %>
+              <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                 <div iv class="nuevoProducto">
                   <a href="/productos/create">+</a>
-                  <p>Agregar Nuevo Producto</p>
+                  <p>Add new product</p>
                 </div>
                 <% } %>
                   <% } %>

@@ -36,13 +36,19 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255),
       allowNull: false,
     },
+    image: {
+      type: dataTypes.STRING(255),
+      allowNull: false,
+    },    
     created_at: {
       type: dataTypes.DATE,
       allowNull: false,
     },
     updated_at: {
-      type: dataTypes.DATE,
-      allowNull: false,
+      type: dataTypes.DATE
+    },
+    deleted_at: {
+      type: dataTypes.DATE
     }
   };
   let config = {

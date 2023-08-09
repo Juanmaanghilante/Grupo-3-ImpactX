@@ -26,12 +26,12 @@
                 <%= usuario.category %>
               </p>
               <% if (locals.isLogged) { %>
-                <% if (locals.userLogged.category=="Admin" ) { %>
+                <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                   <div class="contenedorBotonesProductos">
                     <div>
-                      <a class="botonProductos" href="/user/edit/<%=usuario.id %>">EDITAR</a>
+                      <a class="botonProductos" href="/user/edit/<%=usuario.id %>">Edit</a>
                       <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
-                        <button type="sumbit" class="botonProductos eliminar">ELIMINAR</button>
+                        <button type="sumbit" class="botonProductos eliminar">Delete</button>
                       </form>
                     </div>
                   </div>
@@ -42,10 +42,10 @@
           <% } %>
           <% }) %>
             <% if (locals.isLogged) { %>
-              <% if (locals.userLogged.category=="Admin" ) { %>
+              <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                 <div iv class="nuevoProducto">
                   <a href="/user/signup">+</a>
-                  <p>Agregar Nuevo Usuario</p>
+                  <p>Add new user</p>
                 </div>
               <% } %>
             <% } %>

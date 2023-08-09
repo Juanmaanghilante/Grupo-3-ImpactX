@@ -15,7 +15,7 @@
           </div>
 
           <div>
-            <h2 class="titulo-registrar-usuario">Editar Usuario</h2>
+            <h2 class="titulo-registrar-usuario">Edit user</h2>
 
 
             <div class="control-formulario">
@@ -67,7 +67,7 @@
             </div>
 
             <% if (locals.isLogged) { %>
-              <% if (locals.userLogged.category=="Admin" ) { %>
+              <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                 <label for="category"> Categoría </label>
                 <div class="erroresForm">
                   <% if (locals.errors && errors.category) { %>
@@ -105,15 +105,15 @@
                         type="file" name="profilePic" id="profilePic">
                     </div>
 
-                    <button type="submit" class="botonProductos">Actualizar</button>
-                    <a class="botonProductos" href="/user/list">Volver al listado</a>
+                    <button type="submit" class="botonProductos">Update</button>
+                    <a class="botonProductos" href="/user/list">Go back</a>
           </div>
         </div>
       </form>
       <form class="create-form" method="post"
         action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>/?_method=delete">
 
-        <button hidden type="submit" id="botonBorrar">Eliminar usuario </button>
+        <button hidden type="submit" id="botonBorrar">Delete user </button>
 
       </form>
 

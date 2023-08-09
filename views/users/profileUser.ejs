@@ -11,10 +11,10 @@
         <div class="wrapperProfile">
           <section class="wrapperProfileTop">
             <div>
-              <img src="../img/<%= user.imagen %>" alt="">
+              <img src="../img/<%= user.image %>" alt="">
               <div>
-                <h2><%= user.name %> <%= user.lastName %></h2>
-                <p class="usuario-tipo"><%= user.category %> </p>
+                <h2><%= user.name %> <%= user.lastname %></h2>
+                <p class="usuario-tipo"><%= user.perfiles.name %> </p>
               </div>
             </div>
               <a class="logoutButton" href="/user/logout">Log Out</a>
@@ -26,7 +26,7 @@
 
         <section class="wrapperProfileBottom">
 
-          <% if (locals.userLogged && userLogged.category == 'Admin') { %>
+          <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
             <a href="/user/list">
               <section>
                 <div>
@@ -41,7 +41,7 @@
             </a>
           <% } %>
 
-          <% if (locals.userLogged && userLogged.category == 'Admin') { %>
+          <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
             <a href="/request/edit">
               <section>
                 <div>

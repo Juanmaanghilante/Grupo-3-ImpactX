@@ -52,7 +52,7 @@
               placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
 
             <% if (locals.isLogged) { %>
-              <% if (locals.userLogged.category=="Admin" ) { %>
+              <% if (locals.userLogged.perfiles.name =="Admin" ) { %>
                 <div class="erroresForm">
                   <% if (locals.errors && errors.category) { %>
                     <%= errors.category.msg %>

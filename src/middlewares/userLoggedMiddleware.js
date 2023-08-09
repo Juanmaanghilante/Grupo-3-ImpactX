@@ -1,21 +1,31 @@
-const path = require("path");
-const fs = require("fs");
+const db = require("../database/models");
+const User = db.User;
 
-const datos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/user.json')));
+module.exports = async (req, res, next) => {
+  try {
+    res.locals.isLogged = false;
 
-module.exports = (req, res, next) => {
-  
-  res.locals.isLogged = false;
+    //const userFromCookie = datos.find(row => row.user == req.cookies.userEmail);
+    const userFromCookie = await User.findOne({
+      where: {
+        user_name: req.cookies.userEmail,
+      },
+      include: [{ association: "perfiles" }],
+    });
+    console.log(userFromCookie);
+    if (userFromCookie) {
+      req.session.userLogged = userFromCookie;
+    }
 
-  const userFromCookie = datos.find(row => row.user == req.cookies.userEmail);
-
-  if(userFromCookie){
-    req.session.userLogged = userFromCookie;
+    if (req.session.userLogged) {
+      res.locals.isLogged = true;
+      res.locals.userLogged = req.session.userLogged;
+    }
+    //console.log("From cookie");
+    //console.log(res.locals.userLogged);
+    next();
+  } catch (error) {
+    //console.log("error");
+    next();
   }
-
-  if (req.session.userLogged) {
-    res.locals.isLogged = true;
-    res.locals.userLogged = req.session.userLogged;
-  }
-  next();
 };

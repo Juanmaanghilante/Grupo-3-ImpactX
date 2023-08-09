@@ -13,12 +13,16 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const valChangePassword1 = require("../middlewares/passwordValidation1");
 const valChangePassword2 = require("../middlewares/passwordValidation2");
 
-router.get('/user/login', guestMiddlware,userControler.userLogin)
-router.post('/user/login', validationsLogin, userControler.loginProcess)
+//router.get('/user/login', guestMiddlware,userControler.userLogin)
+//router.post('/user/login', validationsLogin, userControler.loginProcess)
+router.get('/user/login', guestMiddlware,user.userLogin)
+router.post('/user/login', validationsLogin, user.loginProcess)
 
+//router.get('/user/profile', authMiddleware, userControler.userProfile)
+//router.get('/user/logout', userControler.logout)
 router.get('/user/list', authMiddleware, userControler.userList)
-router.get('/user/profile', authMiddleware, userControler.userProfile)
-router.get('/user/logout', userControler.logout)
+router.get('/user/profile', authMiddleware, user.userProfile)
+router.get('/user/logout', user.logout)
 
 
 // CREATE
