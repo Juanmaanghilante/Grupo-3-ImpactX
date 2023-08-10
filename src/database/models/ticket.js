@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.DATE,
       allowNull: false,
     },
-    adress: dataTypes.STRING(255),
+    address: dataTypes.STRING(255),
     city: dataTypes.STRING(255),
     province: dataTypes.STRING(255),
     country: dataTypes.STRING(255),
