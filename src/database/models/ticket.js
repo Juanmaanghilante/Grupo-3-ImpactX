@@ -16,22 +16,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.DATE,
       allowNull: false,
     },
-    adress: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    city: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    province: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
-    country: {
-      type: dataTypes.STRING(255),
-      allowNull: false,
-    },
+    address: dataTypes.STRING(255),
+    city: dataTypes.STRING(255),
+    province: dataTypes.STRING(255),
+    country: dataTypes.STRING(255),
     total: {
       type: dataTypes.BIGINT(20).UNSIGNED,
       allowNull: true,
