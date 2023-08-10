@@ -36,9 +36,7 @@ module.exports = {
         description: req.body.desc,
         image: req.file ? req.file.filename : "product-default.png",
       });
-      console.log(productoCreado);
       return res.redirect("/productos");
-      console.log(req.body.category);
     } catch (error) {
       console.log(error);
     }

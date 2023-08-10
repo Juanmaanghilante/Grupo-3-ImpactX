@@ -107,7 +107,7 @@ module.exports = {
         lastname: req.body.lastName,
         user_name: req.body.user,
         email: req.body.email,
-        profile_id: req.body.categoria ? req.body.categoria : "5",
+        profile_id: req.body.categoria ? req.body.categoria : "2",
         password: bcrypt.hashSync(req.body.password, 10),
         confirm_password: bcrypt.hashSync(req.body.repeatPassword, 10),
         image: req.file.filename,

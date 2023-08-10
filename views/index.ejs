@@ -58,24 +58,6 @@
             <h2>Contactanos</h2>
             <form action="/contactenos/create" method="POST">
 
-              <div class="erroresForm">
-                <% if(locals.errors && errors.nombre){ %>
-                  <%= errors.nombre.msg %>
-                <% } %>
-              </div>
-              <input type="text" placeholder="Nombre" maxlength="30" name="nombre"
-                class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
-                value="<%= locals.oldData?oldData.nombre:null %>" />
-
-              <div class="erroresForm">
-                <% if(locals.errors && errors.apellido){ %>
-                  <%= errors.apellido.msg %>
-                <% } %>
-              </div>
-              <input type="text" placeholder="Apellido" maxlength="30" name="apellido"
-                class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
-                value="<%= locals.oldData?oldData.apellido:null %>" />
-
               <label>¡Dejanos tu mensaje!</label>
               <div class="erroresForm">
                 <% if(locals.errors && errors.mensaje){ %>
