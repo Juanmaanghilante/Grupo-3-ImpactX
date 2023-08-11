@@ -19,26 +19,31 @@
                             </div>
                             <div class="control-formulario">
                                 <label for="user"> Name: </label>
-                                <input class="control" type="text" name="nombre" value="<%= request.nombre %>"
+                                <input class="control" type="text" name="nombre" value="<%= request.contactmessage.name %>"
                                     readonly />
                             </div>
 
                             <div class="control-formulario">
                                 <label for="name"> Lastname: </label>
-                                <input class="control" type="text" name="apellido" value="<%= request.apellido %>"
+                                <input class="control" type="text" name="apellido" value="<%= request.contactmessage.lastname %>"
                                     readonly />
                             </div>
 
                             <div class="control-formulario">
                                 <label for="lastName"> Email </label>
-                                <input class="control" type="text" value="<%= request.email %>" name="email" readonly />
+                                <input class="control" type="text" value="<%= request.contactmessage.email %>" name="email" readonly />
                             </div>
 
                             <label>Question</label>
-                            <textarea class="control" rows="5" name="mensaje" readonly><%=request.mensaje%></textarea>
-
+                            <textarea class="control" rows="5" name="mensaje" readonly><%=request.message%></textarea>
+                          
                             <label>Answer</label>
-                            <textarea class="control" rows="5" name="answer" required></textarea>
+                            <div class="erroresForm">
+                                <% if (locals.errors && errors.answer && idError && idError==request.id) { %>
+                                  <%= errors.answer.msg %>
+                                <% } %>
+                            </div>                              
+                            <textarea class="control" rows="5" name="answer"></textarea>
 
                             <button type="submit" class="botonProductos">Send email</button>
                         </div>
