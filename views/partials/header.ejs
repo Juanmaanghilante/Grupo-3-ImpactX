@@ -9,7 +9,9 @@
                 <ul>
                     <li><a href="/#nosotros">About Us</a></li>
                     <% if (locals.isLogged) { %>
+                        <% if (locals.userLogged.perfiles.name=="Cliente" ) { %>
                         <li><a href="/#contacto">Contact</a></li>  
+                        <% } %>
                     <% } %>
                     <li><a href="/productos">Products</a></li>
                 </ul>
