@@ -2,7 +2,34 @@ const searchInput = document.getElementById("search-input");
 const articlesContainer = document.querySelector(".mainProducts");
 const newProductContainer = document.querySelector(".nuevoProducto");
 const popupCerrarButton = document.querySelector(".popupCerrarButton");
+const popupProducto = document.querySelector(".popupProducto");
 
+// Función para abrir el popup con la información del producto
+function openPopup(tarjeta) {
+  const productoImagen = tarjeta.querySelector(".productoImagen");
+  const productoNombre = tarjeta.querySelector("h2");
+  const productoPrecio = tarjeta.querySelector("p:nth-child(2)");
+  const productoDescripcion = tarjeta.querySelector("p:nth-child(3)");
+
+  const popupImagen = popupProducto.querySelector(".popupImagen img");
+  const popupNombre = popupProducto.querySelector("h2");
+  const popupPrecio = popupProducto.querySelector("p:nth-child(2)");
+  const popupDescripcion = popupProducto.querySelector("p:nth-child(3)");
+
+  popupImagen.src = productoImagen.src;
+  popupNombre.textContent = productoNombre.textContent;
+  popupPrecio.textContent = productoPrecio.textContent;
+  popupDescripcion.textContent = productoDescripcion.textContent;
+
+  popupProducto.style.display = "block";
+}
+
+// Función para cerrar el popup
+function closePopup() {
+  popupProducto.style.display = "none";
+}
+
+// Evento de filtro
 searchInput.addEventListener("input", function () {
   const searchTerm = searchInput.value.toLowerCase().trim();
 
@@ -30,38 +57,35 @@ searchInput.addEventListener("input", function () {
       newArticles.forEach((newArticle) => {
         articlesContainer.insertBefore(newArticle, newProductContainer);
       });
+
+      // Reasignar el evento click a las nuevas tarjetas
+      articlesContainer.querySelectorAll(".tarjetaProductos").forEach((tarjeta) => {
+        tarjeta.addEventListener("click", (event) => {
+          event.stopPropagation();
+          // Solo abrir el popup si el ancho es mayor a 768 píxeles
+          if (window.innerWidth > 768) {
+            openPopup(tarjeta);
+          }
+        });
+      });
     })
     .catch((error) => {
       console.error("There was a problem with the fetch operation:", error);
     });
 });
 
-if (window.innerWidth > 768) {
-  const tarjetaProductos = document.querySelectorAll(".tarjetaProductos");
-  const popupProducto = document.querySelector(".popupProducto");
+// Evento para abrir el popup al hacer clic en la tarjeta
+articlesContainer.addEventListener("click", (event) => {
+  const tarjeta = event.target.closest(".tarjetaProductos");
+  if (tarjeta) {
+    // Solo abrir el popup si el ancho es mayor a 768 píxeles
+    if (window.innerWidth > 768) {
+      openPopup(tarjeta);
+    }
+  }
+});
 
-  tarjetaProductos.forEach((tarjeta) => {
-    tarjeta.addEventListener("click", (event) => {
-      const productoImagen = tarjeta.querySelector(".productoImagen");
-      const productoNombre = tarjeta.querySelector("h2");
-      const productoPrecio = tarjeta.querySelector("p:nth-child(2)");
-      const productoDescripcion = tarjeta.querySelector("p:nth-child(3)");
-
-      const popupImagen = popupProducto.querySelector(".popupImagen img");
-      const popupNombre = popupProducto.querySelector("h2");
-      const popupPrecio = popupProducto.querySelector("p:nth-child(2)");
-      const popupDescripcion = popupProducto.querySelector("p:nth-child(3)");
-
-      popupImagen.src = productoImagen.src;
-      popupNombre.textContent = productoNombre.textContent;
-      popupPrecio.textContent = productoPrecio.textContent;
-      popupDescripcion.textContent = productoDescripcion.textContent;
-
-      popupProducto.style.display = "block";
-    });
-
-    popupCerrarButton.addEventListener("click", () => {
-      popupProducto.style.display = "none";
-    });
-  });
-}
+// Evento para cerrar el popup
+popupCerrarButton.addEventListener("click", () => {
+  closePopup();
+});
