@@ -9,12 +9,11 @@
       <main class="mainProducts">
         <div class="search-container">
           <input type="text" id="search-input" placeholder="Search">
-        </div>        
+        </div>
         <% products.forEach(producto=> { %>
           <article class="tarjetaProductos">
             <div class="containerImagenProductos">
-              <img class="productoImagen" src="/img/<%= producto.image %>"
-                alt="imagen producto <%= producto.name %>">
+              <img class="productoImagen" src="/img/<%= producto.image %>" alt="imagen producto <%= producto.name %>">
             </div>
             <div class="containerInfoProductos">
               <h2>
@@ -38,7 +37,31 @@
                       </form>
                     </div>
                     <% } %>
-                <% } %>
+                      <% } %>
+              </div>
+            </div>
+          </article>
+
+          <!-- HTML for the popup -->
+          <article class="popupProducto">
+            <div class="popupContenido">
+              
+              <div class="popupImagen">
+                <img src="/img/<%= producto.image %>" alt="imagen producto <%= producto.name %>">
+              </div>
+              <div class="popupInfo">
+                <h2>
+                  <%= producto.name %>
+                </h2>
+                <p>
+                  <%= producto.price %> $
+                </p>
+                <p>
+                  <%= producto.description %>
+                </p>
+                <p>
+                  <button class="popupCerrarButton">Cerrar</button>
+                </p>
               </div>
             </div>
           </article>
@@ -50,12 +73,12 @@
                   <a href="/productos/create">+</a>
                   <p>Add new product</p>
                 </div>
-              <% } %>
-            <% } %>
+                <% } %>
+                  <% } %>
       </main>
 
       <%- include('../partials/footer')%>
-      <script src="/js/filterByWord.js"></script>
+        <script src="/js/filterByWord.js"></script>
   </body>
 
 </html>

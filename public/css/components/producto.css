@@ -1,5 +1,3 @@
-
-
 .mainProducts {
   margin-top: 100px;
   gap: 30px;
@@ -8,9 +6,12 @@
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  position: relative; /* Añade posición relativa para la alineación absoluta de la barra de búsqueda */
+  position: relative;
 }
 
+.popupProducto {
+  display: none;
+}
 .search-container {
   position: absolute;
   top: 0;
@@ -19,8 +20,8 @@
   width: 40%;
   text-align: center;
   margin-bottom: 100px;
-  background-color: #ffffff; /* Puedes ajustar el color de fondo si lo deseas */
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Agrego una sombra suave */
+  background-color: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 #search-input {
@@ -35,15 +36,11 @@
 
 #search-input::placeholder {
   color: #aaa;
-  text-align: center; 
-
+  text-align: center;
 }
 
-
-
-
 .bgProductos {
-  background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
+  background-image: linear-gradient(to bottom, #f9fbfd 0%, #fff 100%);
 }
 
 .tarjetaProductos {
@@ -51,18 +48,13 @@
   flex-direction: column;
   border-radius: 5px;
   width: 350px;
-  box-shadow: 0px 0px 10px rgba(100, 100, 100, .2);
-  transition: .2s;
-
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.2);
+  transition: 0.2s;
 }
 
 .tarjetaProductos:hover {
   box-shadow: 0px 0px 10px rgba(138, 165, 206, 0.6);
 }
-
-
-
-
 
 .productoImagen {
   height: 200px;
@@ -79,7 +71,7 @@
 
 .containerInfoProductos {
   border-top: 1px solid #d0e4ff;
-  padding: .7rem;
+  padding: 0.7rem;
 }
 
 .containerInfoProductos h2 {
@@ -101,19 +93,18 @@
   justify-content: space-around;
 }
 
-
-
 .botonProductos {
+  display: block;
   text-decoration: none;
   color: white;
   font-size: 14px;
   background-color: #0c2b56;
   border-radius: 3px;
-  padding: .5rem .8rem;
+  padding: 0.5rem 0.8rem;
   border: 1px solid #0c2b56;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .botonProductos:hover {
@@ -121,38 +112,33 @@
   color: #0c2b56;
 }
 
-
 .contenedorBotonesProductos {
   display: flex;
   flex-direction: column;
   gap: 10;
 }
 
-
 .nuevoProducto {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 3px;
-  box-shadow: 0px 0px 10px rgba(100, 100, 100, .2);
-  transition: .2s;
-
+  box-shadow: 0px 0px 10px rgba(100, 100, 100, 0.2);
+  transition: 0.2s;
 }
 
 .nuevoProducto a {
   text-decoration: none;
   color: #0c2b56;
-  font-size:4rem;
-  transition: .2s;
+  font-size: 4rem;
+  transition: 0.2s;
 }
 
 .nuevoProducto a:hover {
   color: #758eb4;
 }
-
-
 
 @media (min-width: 768px) {
   .tarjetaProductos {
@@ -160,13 +146,57 @@
     max-width: 250px;
   }
 
-
   .containerInfoProductos div {
-    justify-content: left
+    justify-content: left;
   }
 
   .botonProductos {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 
+  .popupProducto {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(138, 165, 206, 0.6);
+    border-radius: 5px;
+    width: 500px;
+    z-index: 1000;
+  }
+
+  .popupContenido {
+    position: relative;
+    padding: 20px;
+  }
+
+  .popupCerrarButton {
+    background-color: #0c2b56;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .popupCerrarButton:hover {
+    background-color: #758eb4;
+  }
+
+  .popupImagen img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .popupInfo h2 {
+    color: #0c2b56;
+  }
+
+  .popupInfo p {
+    color: #0c2b56;
+    font-size: 14px;
+  }
 }
