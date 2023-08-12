@@ -1,5 +1,6 @@
 const path = require("path");
 const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 
 const Product = db.Product;
@@ -13,6 +14,24 @@ module.exports = {
     const productosHabilitados = await Product.findAll();
     return res.render('products/productList', { products: productosHabilitados});
   },  
+  filterByWord: async (req, res) => {
+    try {
+      const searchTerm = req.query.search;
+      const productosHabilitados = await Product.findAll({
+        where: {
+          name: {
+            [Op.like]: `${searchTerm}%`, // Utiliza Op.iLike para una búsqueda case-insensitive
+          },
+        },
+      });
+  
+      console.log(productosHabilitados);
+      return res.render("products/productList", { products: productosHabilitados });
+    } catch (error) {
+      console.error("Error al buscar productos:", error);
+      return res.status(500).send("Error al buscar productos");
+    }
+  },
   add: async(req, res) => {
     const categories = await Category.findAll(); 
     return res.render('products/createProduct', {categories: categories})

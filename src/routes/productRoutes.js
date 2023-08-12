@@ -12,6 +12,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // PRODUCTS / CART
 //router.get('/productos', productControler.productsDetail)
 router.get('/productos', product.list);
+router.get('/productos/filter', product.filterByWord);
 router.get('/cart', authMiddleware, productControler.productsCart)
 
 // CREATE
