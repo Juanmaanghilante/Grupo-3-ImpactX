@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = [
   body("user").notEmpty().withMessage("Debe completar el nombre de usuario"),
   body("name").notEmpty().withMessage("Debe completar el campo con su nombre"),
-  body("lastName")
+  body("lastname")
     .notEmpty()
     .withMessage("Debe completar el campo con su apellido"),
 

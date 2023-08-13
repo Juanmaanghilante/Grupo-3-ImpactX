@@ -34,13 +34,13 @@
 
             <!-- LAST NAME -->
             <div class="erroresForm">
-              <% if (locals.errors && errors.lastName) { %>
-                <%= errors.lastName.msg %>
+              <% if (locals.errors && errors.lastname) { %>
+                <%= errors.lastname.msg %>
                   <% } %>
             </div>
-            <input type="text" name="lastName"
-              class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" placeholder="Apellido"
-              value="<%= locals.oldData?oldData.lastName:null %>" />
+            <input type="text" name="lastname"
+              class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" placeholder="Apellido"
+              value="<%= locals.oldData?oldData.lastname:null %>" />
 
             <!-- EMAIL -->
             <div class="erroresForm">

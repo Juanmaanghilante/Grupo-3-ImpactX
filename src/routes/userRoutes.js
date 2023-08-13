@@ -20,7 +20,7 @@ router.post('/user/login', validationsLogin, user.loginProcess)
 
 //router.get('/user/profile', authMiddleware, userControler.userProfile)
 //router.get('/user/logout', userControler.logout)
-router.get('/user/list', authMiddleware, userControler.userList)
+router.get('/user/list', authMiddleware, user.userList)
 router.get('/user/profile', authMiddleware, user.userProfile)
 router.get('/user/logout', user.logout)
 
@@ -32,8 +32,8 @@ router.get('/user/signup', user.userSignup);
 router.post('/user/signup', fileUpload.single("profilePic"), validations, user.userCreateProcess);
 
 // EDIT
-router.get('/user/edit/:id', authMiddleware, userControler.userEdit)
-router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, userControler.userEditProcess)
+router.get('/user/edit/:id', authMiddleware, user.userEdit)
+router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, user.userEditProcess)
 
 // DELETE
 router.delete("/user/delete/:id", authMiddleware, userControler.userDeleteProcess)

@@ -1,10 +1,11 @@
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-
+const { sequelize } = require('../database/models')
 const Profile = db.Profile;
 const User = db.User;
-
+const fs=require('fs')
+const path=require('path')
 module.exports = {
   userLogin: (req, res) => {
     return res.render("users/loginUser");
@@ -104,7 +105,7 @@ module.exports = {
     try {
       const userToCreate = await User.create({
         name: req.body.name,
-        lastname: req.body.lastName,
+        lastname: req.body.lastname,
         user_name: req.body.user,
         email: req.body.email,
         profile_id: req.body.categoria ? req.body.categoria : "2",
@@ -119,10 +120,89 @@ module.exports = {
   },
   userProfile: (req, res) => {
     return res.render("users/profileUser", { user: req.session.userLogged });
-  },  
+  },
   logout: (req, res) => {
     res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
-  }  
-};
+  },
+
+  userEdit: async (req, res) => {
+    let usuarioE = await db.User.findByPk(req.params.id)
+    if (usuarioE) {
+      return res.render("users/editUser", { usuario: usuarioE });
+    } else {
+      return res.render("error404");
+    }
+
+
+  },
+
+  userEditProcess: async (req, res) => {
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/editUser", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        id: req.params.id,
+      });
+    }
+   
+    const t = await sequelize.transaction()
+    try {
+     
+       if (req.file)
+        {
+          const usuarioEditar = await db.User.update({
+            name: req.body.name,
+            lastname: req.body.lastname,
+            user_name: req.body.user,
+            email: req.body.email,
+            //  profile_id: req.body.categoria ? req.body.categoria : "2",
+    
+          image: req.file.filename
+    
+          
+          },
+            { where: { id: req.params.id } }, { transaction: t }
+          );
+          await t.commit()
+         
+         
+           fs.unlinkSync(path.resolve(__dirname, '../../public/img/' + req.body.oldImage))
+       
+        }
+    else{
+      const usuarioEditar = await db.User.update({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        user_name: req.body.user,
+        email: req.body.email,
+        //  profile_id: req.body.categoria ? req.body.categoria : "2",
+
+      
+      
+      },
+        { where: { id: req.params.id } }, { transaction: t }
+      );
+      await t.commit()
+    } 
+    } catch (error) {
+      console.log(error);
+      if (req.file) {
+         fs.unlinkSync(path.resolve(__dirname, '../../public/img/' + req.file.filename));
+
+      } await t.rollback()
+
+    }
+return res.redirect('/user/list')
+
+   
+  },
+  userList: async(req, res) => {
+    const usersHabilitados =await  db.User.findAll();
+
+    return res.render("users/listUser", { usuarios: usersHabilitados });
+  },
+
+}  

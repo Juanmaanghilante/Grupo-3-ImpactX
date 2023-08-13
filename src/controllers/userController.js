@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-
+const db= require('../database/models')
 const { validationResult } = require("express-validator");
 const rutaBase = path.resolve("./src/database/user.json");
 const datos = JSON.parse(fs.readFileSync(rutaBase));
@@ -77,8 +77,9 @@ module.exports = {
     return res.render("users/signupUser");
   },
   
-  userList: (req, res) => {
-    const usersHabilitados = datos.filter((row) => row.isDelete == false);
+  userList: async(req, res) => {
+    const usersHabilitados =await  db.User.findAll();
+
     return res.render("users/listUser", { usuarios: usersHabilitados });
   },
 
@@ -105,7 +106,7 @@ module.exports = {
     );
     usuarioEditar.user = req.body.user;
     usuarioEditar.name = req.body.name;
-    usuarioEditar.lastName = req.body.lastName;
+    usuarioEditar.lastname = req.body.lastname;
     if (req.body.categoria) {
       usuarioEditar.category = req.body.categoria;
     }
@@ -157,7 +158,7 @@ module.exports = {
       id: datos.length + 1,
       user: req.body.user,
       name: req.body.name,
-      lastName: req.body.lastName,
+      lastname: req.body.lastname,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
       category: req.body.categoria ? req.body.categoria : "Cliente",

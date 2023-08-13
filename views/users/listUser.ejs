@@ -13,11 +13,11 @@
           <% if (locals.userLogged.id!=usuario.id ) { %>
           <article class="tarjetaProductos">
             <div class="containerImagenProductos">
-              <img class="productoImagen" src="/img/<%= usuario.imagen %>" alt="imagen usuario <%= usuario.user %>">
+              <img class="productoImagen" src="/img/<%= usuario.image %>" alt="imagen usuario <%= usuario.user %>">
             </div>
             <div class="containerInfoProductos">
               <h2>
-                <%= usuario.name + ' ' + usuario.lastName %>
+                <%= usuario.name + ' ' + usuario.lastname %>
               </h2>
               <p>
                 <%= usuario.user %>

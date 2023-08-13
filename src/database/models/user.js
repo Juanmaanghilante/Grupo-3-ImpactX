@@ -50,13 +50,15 @@ module.exports = (sequelize, dataTypes) => {
     deleted_at: {
       type: dataTypes.DATE
     }
+  
   };
   let config = {
     tableName: "users",
     timestamps: true,
     createdAt: "created_at",
     updatedAt: "updated_at",
-    deletedAt: "deleted_at"    
+    deletedAt: "deleted_at"   ,
+    paranoid: true 
   };
 
   const Users = sequelize.define(alias, cols, config);
@@ -70,7 +72,9 @@ module.exports = (sequelize, dataTypes) => {
     Users.hasMany(models.ContactMessage, {
       as: "contactmessage",
       foreignKey: "user_id",
-    });    
+    });   
+    
+    
   };
 
   return Users;

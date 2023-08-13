@@ -27,7 +27,7 @@
               </div>
               <input class="control <%= locals.errors && errors.user ? 'invalidError' : null %>" type="text" name="user"
                 id="user" placeholder="Usuario"
-                value="<%= locals.usuario ? usuario.user : locals.oldData ? oldData.user : null %>" />
+                value="<%= locals.usuario ? usuario.user_name : locals.oldData ? oldData.user : null %>" />
             </div>
 
             <div class="control-formulario">
@@ -43,15 +43,15 @@
             </div>
 
             <div class="control-formulario">
-              <label for="lastName"> Apellido/s: </label>
+              <label for="lastname"> Apellido/s: </label>
               <div class="erroresForm">
-                <% if (locals.errors && errors.lastName) { %>
-                  <%= errors.lastName.msg %>
+                <% if (locals.errors && errors.lastname) { %>
+                  <%= errors.lastname.msg %>
                     <% } %>
               </div>
-              <input class="control <%= locals.errors && errors.lastName ? 'invalidError' : null %>" type="text"
-                name="lastName" id="lastName" placeholder="Apellido/s"
-                value="<%= locals.usuario ? usuario.lastName : locals.oldData ? oldData.lastName : null %>" />
+              <input class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" type="text"
+                name="lastname" id="lastname" placeholder="Apellido/s"
+                value="<%= locals.usuario ? usuario.lastname : locals.oldData ? oldData.lastname : null %>" />
             </div>
 
             <div class="control-formulario">
@@ -104,7 +104,7 @@
                       <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>"
                         type="file" name="profilePic" id="profilePic">
                     </div>
-
+<input type="text" name="oldImage" value="<%= usuario.image %>" hidden >
                     <button type="submit" class="botonProductos">Update</button>
                     <a class="botonProductos" href="/user/list">Go back</a>
           </div>
