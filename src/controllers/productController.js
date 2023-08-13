@@ -1,89 +1,123 @@
-const fs = require('fs');
-const path = require("path")
-
+const path = require("path");
+const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
-const rutaBase = path.resolve('./src/database/products.json')
-const productos = JSON.parse(fs.readFileSync(rutaBase));
+
+const Product = db.Product;
+const Category = db.Category;
 
 module.exports = {
 
-  productsCart: (req, res) => {
-    return res.render('products/cartProduct')
-  },
-
-  productsDetail: (req, res) => {
-    const productosHabilitados = productos.filter(row => row.isDeleted == false)
+  'list': async (req, res) => {
+    const productosHabilitados = await Product.findAll({paranoid: true});
     return res.render('products/productList', { products: productosHabilitados});
-  },
-
-  productsCreate: (req, res) => {
-    return res.render('products/createProduct')
-  },
-
-  productsCreateProcess: (req, res) => {  
-    const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-      return res.render("products/createProduct", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
+  },  
+  filterByWord: async (req, res) => {
+    try {
+      const searchTerm = req.query.search;
+      const productosHabilitados = await Product.findAll({
+        where: {
+          name: {
+            [Op.like]: `${searchTerm}%`, // Utiliza Op.iLike para una búsqueda case-insensitive
+          },
+        },
       });
-    }    
-    const nuevoProduct = {
-      "id": productos.length + 1,
-      "categoria": req.body.category,
-      "nombre": req.body.product,
-      "descripcion": req.body.desc,
-      "precio": req.body.price,
-      "imagen": req.file ? req.file.filename : "product-default.png",
-      "isDeleted": false
-    };
-
-    productos.push(nuevoProduct)
-
-    fs.writeFileSync(path.resolve(rutaBase), JSON.stringify(productos, null, 2), 'utf-8');
-    return res.redirect('/productos');
+  
+      console.log(productosHabilitados);
+      return res.render("products/productList", { products: productosHabilitados });
+    } catch (error) {
+      console.error("Error al buscar productos:", error);
+      return res.status(500).send("Error al buscar productos");
+    }
   },
+  add: async(req, res) => {
+    const categories = await Category.findAll(); 
+    return res.render('products/createProduct', {categories: categories})
+  },  
 
-  productsEdit: (req, res) => {
-    const productoEditar = productos.find(row => row.id == req.params.id && row.isDeleted == false)
-    if(productoEditar){
-      return res.render('products/editProduct', { productoEditar: productoEditar });
-    }else{
-      return res.render('error404');
+  create: async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      const categories = await Category.findAll();    
+      return res.render("products/createProduct", {
+        errors: errors.mapped(),
+        oldData: { ...req.body },
+        categories: categories
+      });
+    }
+    try {
+      const productoCreado = await Product.create({
+        name: req.body.product,
+        category_id: req.body.category,
+        price: req.body.price,
+        description: req.body.desc,
+        image: req.file ? req.file.filename : "product-default.png",
+      });
+      return res.redirect("/productos");
+    } catch (error) {
+      console.log(error);
     }
   },
 
-  productsEditProcess: (req, res) => {
+  edit: function (req, res) {
+    let productId = req.params.id;
+    let promProduct = Movies.findByPk(productId);
+
+    Promise.all([promProduct])
+      .then(([Product]) => {
+        return res.render(
+          path.resolve(__dirname, "..", "views", "editProduct"),
+          { Product }
+        );
+      })
+      .catch((error) => res.send(error));
+  },
+  update: function (req, res) {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("products/editProduct", {
         errors: resultValidation.mapped(),
         oldData: req.body,
-        id: req.params.id
+        id: req.params.id,
       });
-    }       
-    const productoEditar = productos.find(row => row.id == req.params.id)
-    productoEditar.nombre = req.body.product
-    productoEditar.descripcion = req.body.desc
-    productoEditar.precio = req.body.price
-    productoEditar.categoria = req.body.category
-
-    if (req.file) {
-      fs.unlinkSync(path.resolve(__dirname, "../../public/img/" + productoEditar.imagen))
-      productoEditar.imagen = req.file.filename
+    } else {
+      let productId = req.params.id;
+      Product.update(
+        {
+          name: req.body.product,
+          category_id: req.body.category,
+          price: req.body.price,
+          description: req.body.desc,
+          image: req.file.filename,
+        },
+        {
+          where: { id: productId },
+        }
+      )
+        .then(() => {
+          return res.redirect("/productos");
+        })
+        .catch((error) => res.send(error));
     }
-
-    fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), JSON.stringify(productos, null, 2))
-
-    return res.redirect("/productos")
   },
 
-  productsDeleteProcess: (req, res) => {
-    const productoEliminado = productos.find(row => row.id == req.params.id)
-
-    productoEliminado.isDeleted = true
-
-    fs.writeFileSync(rutaBase, JSON.stringify(productos, null, 2), "utf-8")
-    return res.redirect("/productos")
+  delete: function (req, res) {
+    let productId = req.params.id;
+    Product.findByPk(productId)
+      .then((Product) => {
+        return res.render(
+          path.resolve(__dirname, "..", "views", "productList"),
+          { Product }
+        );
+      })
+      .catch((error) => res.send(error));
   },
-}
+  destroy: function (req, res) {
+    let productId = req.params.id;
+    Product.destroy({ where: { id: productId }, force: true }) 
+      .then(() => {
+        return res.redirect("/productos");
+      })
+      .catch((error) => res.send(error));
+  },
+};

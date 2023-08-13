@@ -1,55 +1,71 @@
-const path = require("path");
-const fs = require("fs");
-const nodemailer = require("nodemailer");
-require("dotenv").config()
-
+const db = require("../database/models");
 const { validationResult } = require("express-validator");
-const rutaBase = path.resolve("./src/database/requests.json");
-const requests = JSON.parse(fs.readFileSync(rutaBase));
+const nodemailer = require("nodemailer");
+require("dotenv").config();
+const ContactMessage = db.ContactMessage;
 
 module.exports = {
   index: (req, res) => {
     return res.render("index");
   },
-  createContactenos: (req, res) => {
+  createContactenos: async (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      console.log(resultValidation);
       return res.render("index", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
-    const nuevaSolicitud = {
-      id: requests.length + 1,
-      nombre: req.body.nombre,
-      apellido: req.body.apellido,
-      email: req.body.correo,
-      mensaje: req.body.mensaje,
-      respuesta: "",
-      gestionado: false,
-    };
-
-    requests.push(nuevaSolicitud);
-
-    fs.writeFileSync(
-      path.resolve(rutaBase),
-      JSON.stringify(requests, null, 2),
-      "utf-8"
-    );
-    const mensajeCreado = "Solicitud creada correctamente, pronto te estaremos respondiendo via email"
-    return res.render("index", { creado : mensajeCreado });
+    try {
+      const nuevaSolicitud = await ContactMessage.create({
+        user_id: req.session.userLogged.id,
+        message: req.body.mensaje,
+        response: null,
+        is_answered: false,
+      });
+      const mensajeCreado =
+        "Request created correctly, soon we will be answering you via email";
+      return res.render("index", { creado: mensajeCreado });
+    } catch (error) {
+      console.log(error);
+    }
   },
-  request: (req, res) => {
-    const requesthabilitados = requests.filter(
-      (row) => row.gestionado == false
-    );
-    return res.render("main/requests", {
-      requesthabilitados: requesthabilitados,
-    });
+  request: async (req, res) => {
+    try {
+      const requesthabilitados = await ContactMessage.findAll({
+        where: {
+          is_answered: false,
+        },
+        include: [{ association: "contactmessage" }],
+      });
+      return res.render("main/requests", {
+        requesthabilitados: requesthabilitados,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
   sendAnswer: async (req, res) => {
+    const resultValidation = validationResult(req);
+    console.log(resultValidation)
+    if (resultValidation.errors.length > 0) {
+      try {
+        const requesthabilitados = await ContactMessage.findAll({
+          where: {
+            is_answered: false,
+          },
+          include: [{ association: "contactmessage" }],
+        });
+        return res.render("main/requests", {
+          requesthabilitados: requesthabilitados,
+          errors: resultValidation.mapped(),
+          idError: req.params.id
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
     try {
       const correo = "" + req.body.email;
       const respuesta = "" + req.body.answer;
@@ -64,9 +80,9 @@ module.exports = {
       };
 
       const data = {
-        from: "impactxgrupo3@hotmail.com",
+        from: process.env.EMAIL_USER,
         to: correo,
-        subject: "Respuesta a inquietud realizada a Impact X",
+        subject: "Response to request made to Impact X",
         text: respuesta,
       };
 
@@ -86,17 +102,13 @@ module.exports = {
         } else {
           console.log(info.response);
         }
-        const request = requests.find(
-          (request) =>
-            request.id == req.params.id && request.gestionado == false
-        );
 
-        request.gestionado = true;
-        request.respuesta = req.body.answer;
-
-        fs.writeFileSync(
-          path.resolve(__dirname, "../database/requests.json"),
-          JSON.stringify(requests, null, 2)
+        const requestActualizados = ContactMessage.update(
+          {
+            response: req.body.answer,
+            is_answered: true,
+          },
+          { where: { id: req.params.id } }
         );
         return res.redirect("edit");
       });
