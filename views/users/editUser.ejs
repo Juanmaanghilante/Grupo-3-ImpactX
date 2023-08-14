@@ -78,15 +78,14 @@
                   id="category">
                   <option value="">Tipo de Usuario</option>
 
-                  <% let tipoUsuario=['Admin', 'Cliente' ] %>
-                    <% for( const rol of tipoUsuario ) { %>
-                      <option value="<%= rol %>" <% if (locals.usuario) { %>
-                        <%= rol===usuario.category ? 'selected' : null %>
-                          <% } else if (locals.oldData) { %>
-                            <%= rol===oldData.categoria ? 'selected' : null %>
-                              <% } %>
-                                >
-                                <%= rol %>
+                    <% for( const rol of perfiles ) { %>
+                      <option value="<%= rol.id %>" 
+                        <% if (locals.usuario) { %>
+                            <%= rol.id===usuario.profile_id ? 'selected' : null %>
+                        <% } else if (locals.oldData) { %>
+                            <%= rol.id==oldData.categoria ? 'selected' : null %>
+                        <% } %>
+                                ><%= rol.name %>
                       </option>
                       <% } %>
 
@@ -104,7 +103,7 @@
                       <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>"
                         type="file" name="profilePic" id="profilePic">
                     </div>
-                    <input type="text" name="oldImage" value="<%= usuario.image %>" hidden >
+                    <input type="text" name="oldImage" value="<%= locals.usuario ? usuario.image : null %>" hidden >
                     <button type="submit" class="botonProductos">Update</button>
                     <a class="botonProductos" href="/user/list">Go back</a>
           </div>

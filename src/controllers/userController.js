@@ -130,23 +130,26 @@ const path=require('path')
     },
 
     userEdit: async (req, res) => {
-      let usuarioE = await db.User.findByPk(req.params.id)
-      if (usuarioE) {
-        return res.render("users/editUser", { usuario: usuarioE });
+      let usuarioE = await db.User.findByPk(req.params.id);
+      let perfilesE = await Profile.findAll();
+      const [usuario, perfiles] = await Promise.all([usuarioE, perfilesE]);
+      if (usuario) {
+        return res.render("users/editUser", { usuario: usuario, perfiles: perfiles });
       } else {
         return res.render("error404");
       }
-
-
     },
 
     userEditProcess: async (req, res) => {
       const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
+        let perfilesE = await Profile.findAll();
+        console.log(resultValidation.mapped());
         return res.render("users/editUser", {
           errors: resultValidation.mapped(),
           oldData: req.body,
           id: req.params.id,
+          perfiles : perfilesE
         });
       }
     
