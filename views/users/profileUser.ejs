@@ -81,7 +81,20 @@
               <p>></p>
             </section>
           </a>
-          
+
+          <form action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
+            <button type="submit">
+              <section>
+                <div>
+                  <p>/</p>
+                  <div>
+                    <h4>DELETE USER</h4>
+                  </div>
+                </div>
+                <p>></p>
+              </section>
+            </button>
+          </form>
 
         </section>
       </main>
