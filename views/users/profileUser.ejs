@@ -14,7 +14,8 @@
               <img src="../img/<%= user.image %>" alt="">
               <div>
                 <h2><%= user.name %> <%= user.lastname %></h2>
-                <p class="usuario-tipo"><%= user.perfiles.name %> </p>
+                <p class="usuario-tipo">My user name: <%= user.user_name %> </p>
+                <p class="usuario-tipo">Role: <%= user.perfiles.name %> </p>
               </div>
             </div>
               <a class="logoutButton" href="/user/logout">Log Out</a>
@@ -76,6 +77,7 @@
                 <p>/</p>
                 <div>
                   <h4>Change Password</h4>
+                  <h5>Modify your password</h5>
                 </div>
               </div>
               <p>></p>

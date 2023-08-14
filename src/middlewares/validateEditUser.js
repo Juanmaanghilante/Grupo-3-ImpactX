@@ -2,25 +2,25 @@ const { body } = require("express-validator");
 const path = require("path");
 
 module.exports = [
-  body("user").notEmpty().withMessage("Debe completar el nombre de usuario"),
-  body("name").notEmpty().withMessage("Debe completar el campo con su nombre"),
+  body("user").notEmpty().withMessage("You must complete the username"),
+  body("name").notEmpty().withMessage("You must complete the name"),
   body("lastname")
     .notEmpty()
-    .withMessage("Debe completar el campo con su apellido"),
+    .withMessage("You must complete the lastname"),
 
   body("email")
     .notEmpty()
-    .withMessage("Debe completar el campo con su email")
+    .withMessage("You must complete the email")
     .bail()
     .isEmail()
-    .withMessage("Debes escribir un formato de correo válido"),
+    .withMessage("You must write a valid email"),
 
   body("category").custom((value, { req }) => {
     let rol = req.session.userLogged.perfiles.id;
     let categoria = req.body.categoria;
 
     if (rol == "1" && !categoria) {
-      throw new Error("Como Admin, debe seleccionar una categoria");
+      throw new Error("As Admin, you must select a category");
     }
     return true;
   }),
@@ -33,9 +33,11 @@ module.exports = [
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
         throw new Error(
-          `Extensiones permitidas: ${extensionesPermitidas.join(", ")}`
+          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
         );
       }
+    }else{
+      throw new Error("You must select an image");
     }
     return true;
   }),
