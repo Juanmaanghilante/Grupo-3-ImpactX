@@ -20,10 +20,10 @@
                 <%= usuario.name + ' ' + usuario.lastname %>
               </h2>
               <p>
-                <%= usuario.user %>
+                <%= usuario.user_name %>
               </p>
               <p>
-                <%= usuario.category %>
+                <%= usuario.perfiles.name %>
               </p>
               <% if (locals.isLogged) { %>
                 <% if (locals.userLogged.perfiles.name=="Admin" ) { %>

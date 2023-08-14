@@ -201,8 +201,10 @@ const path=require('path')
 
     
     },
-    userList: async(req, res) => {
-      const usersHabilitados = await db.User.findAll();
+    userList: async (req, res) => {
+      const usersHabilitados = await db.User.findAll({
+        include: [{ association: "perfiles" }],
+      });
       return res.render("users/listUser", { usuarios: usersHabilitados });
     },
 
