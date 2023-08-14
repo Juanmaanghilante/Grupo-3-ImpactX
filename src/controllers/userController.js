@@ -190,6 +190,17 @@ module.exports = {
     });
     return res.render("users/listUser", { usuarios: usersHabilitados });
   },
+  userDestroyProcess: function (req, res) {
+    let userId = req.params.id;
+
+    User.destroy({ where: { id: userId }, force: true })
+      .then(() => {
+        res.clearCookie("userEmail");
+        req.session.destroy();
+        return res.redirect("/");
+      })
+      .catch((error) => res.send(error));
+  },
 };
 
 // PARA USAR DE REFERENCIA
