@@ -2,10 +2,9 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { sequelize } = require("../database/models");
+
 const Profile = db.Profile;
 const User = db.User;
-const fs = require("fs");
-const path = require("path");
 
 module.exports = {
   userLogin: (req, res) => {
@@ -48,7 +47,7 @@ module.exports = {
           return res.render("users/loginUser", {
             errors: {
               user: {
-                msg: "Las credenciales son inválidas",
+                msg: "The credentials are invalid",
               },
             },
           });
@@ -58,7 +57,7 @@ module.exports = {
       return res.render("users/loginUser", {
         errors: {
           user: {
-            msg: "No se encuentra este usuario en la base de datos",
+            msg: "Cannot find this user in the database",
           },
         },
       });
@@ -67,21 +66,25 @@ module.exports = {
     }
   },
   userSignup: async (req, res) => {
-    const perfiles = await Profile.findAll();
-    return res.render("users/signupUser", { perfiles: perfiles });
+    try {
+      const perfiles = await Profile.findAll();
+      return res.render("users/signupUser", { perfiles: perfiles });
+    } catch (error) {
+      console.log(error);
+    }
   },
   userCreateProcess: async (req, res) => {
-    const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-      const perfiles = await Profile.findAll();
-      return res.render("users/signupUser", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-        perfiles: perfiles,
-      });
-    }
-
     try {
+      const resultValidation = validationResult(req);
+      if (resultValidation.errors.length > 0) {
+        const perfiles = await Profile.findAll();
+        return res.render("users/signupUser", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          perfiles: perfiles,
+        });
+      }
+
       const userInDb = await User.findOne({
         where: {
           user_name: req.body.user,
@@ -93,7 +96,7 @@ module.exports = {
         return res.render("users/signupUser", {
           errors: {
             user: {
-              msg: "Este usuario ya se encuentra está registrado",
+              msg: "This user is already registered",
             },
           },
           oldData: req.body,
@@ -139,7 +142,7 @@ module.exports = {
           perfiles: perfiles,
         });
       } else {
-        return res.render("El usuario a editar no existe");
+        return res.render("The user to edit does not exist");
       }
     } catch (error) {
       console.log(error);
@@ -147,20 +150,21 @@ module.exports = {
   },
 
   userEditProcess: async (req, res) => {
-    const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-      let perfilesE = await Profile.findAll();
-      console.log(resultValidation.mapped());
-      return res.render("users/editUser", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-        id: req.params.id,
-        perfiles: perfilesE,
-      });
-    }
     try {
+      const resultValidation = validationResult(req);
+      if (resultValidation.errors.length > 0) {
+        let perfilesE = await Profile.findAll();
+        console.log(resultValidation.mapped());
+        return res.render("users/editUser", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          id: req.params.id,
+          perfiles: perfilesE,
+        });
+      }
+
       const t = await sequelize.transaction();
-      const usuarioEditar = await db.User.update(
+      const usuarioEditar = await User.update(
         {
           name: req.body.name,
           lastname: req.body.lastname,
@@ -188,10 +192,14 @@ module.exports = {
     return res.redirect("/user/profile");
   },
   userList: async (req, res) => {
+    try {
     const usersHabilitados = await db.User.findAll({
       include: [{ association: "perfiles" }],
     });
     return res.render("users/listUser", { usuarios: usersHabilitados });
+  } catch (error) {
+   console.log(error);   
+  }
   },
   userDestroyProcess: function (req, res) {
     let userId = req.params.id;

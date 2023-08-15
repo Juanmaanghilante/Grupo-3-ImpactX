@@ -20,7 +20,7 @@
               </div>
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
                 id="">
-                <option value="">Seleccione una opción</option>
+                <option value="">Select a option</option>
                   <% for( const servicio of categories ) { %>
                     <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.category) ? 'selected' :
                       null %>
@@ -36,7 +36,7 @@
                 <% } %>
               </div>
               <input type="text" name="product"
-                class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Nombre"
+                class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Name"
                 value="<%= locals.oldData ? oldData.product : null %>" />
 
               <div class="erroresForm">
@@ -46,7 +46,7 @@
               </div>
               <textarea type="text" name="desc"
                 class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
-                placeholder="Descripción"><%= locals.oldData ? oldData.desc : null %></textarea>
+                placeholder="Description"><%= locals.oldData ? oldData.desc : null %></textarea>
 
               <div class="erroresForm">
                 <% if (locals.errors && errors.price) { %>
@@ -54,7 +54,7 @@
                     <% } %>
               </div>
               <input type="number" name="price"
-                class="control <%= locals.errors && errors.price ? 'invalidError' : null %>" placeholder="Precio"
+                class="control <%= locals.errors && errors.price ? 'invalidError' : null %>" placeholder="Price"
                 value="<%= locals.oldData ? oldData.price : null %>" />
 
 

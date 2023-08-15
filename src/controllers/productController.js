@@ -85,7 +85,7 @@ module.exports = {
       console.log(error);
     }
   },
-  update: async(req, res) =>{
+  update: async (req, res) => {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       let categoriesList = await Category.findAll();
@@ -93,26 +93,26 @@ module.exports = {
         errors: resultValidation.mapped(),
         oldData: req.body,
         id: req.params.id,
-        categories: categoriesList
+        categories: categoriesList,
       });
-    } else {
+    }
+    try {
       let productId = req.params.id;
-      Product.update(
+      const editProduct = await Product.update(
         {
           name: req.body.product,
           category_id: req.body.category,
           price: req.body.price,
           description: req.body.desc,
-          image: req.file.filename
+          image: req.file.filename,
         },
         {
           where: { id: productId },
         }
-      )
-        .then(() => {
-          return res.redirect("/productos");
-        })
-        .catch((error) => res.send(error));
+      );
+      return res.redirect("/productos");
+    } catch (error) {
+      console.log(error);
     }
   },
 
