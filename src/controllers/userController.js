@@ -129,16 +129,20 @@ module.exports = {
   },
 
   userEdit: async (req, res) => {
-    let usuarioE = await db.User.findByPk(req.params.id);
-    let perfilesE = await Profile.findAll();
-    const [usuario, perfiles] = await Promise.all([usuarioE, perfilesE]);
-    if (usuario) {
-      return res.render("users/editUser", {
-        usuario: usuario,
-        perfiles: perfiles,
-      });
-    } else {
-      return res.render("error404");
+    try {
+      let usuarioE = await db.User.findByPk(req.params.id);
+      let perfilesE = await Profile.findAll();
+      const [usuario, perfiles] = await Promise.all([usuarioE, perfilesE]);
+      if (usuario) {
+        return res.render("users/editUser", {
+          usuario: usuario,
+          perfiles: perfiles,
+        });
+      } else {
+        return res.render("El usuario a editar no existe");
+      }
+    } catch (error) {
+      console.log(error);
     }
   },
 
@@ -154,9 +158,8 @@ module.exports = {
         perfiles: perfilesE,
       });
     }
-
-    const t = await sequelize.transaction();
     try {
+      const t = await sequelize.transaction();
       const usuarioEditar = await db.User.update(
         {
           name: req.body.name,

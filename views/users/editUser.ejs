@@ -103,9 +103,8 @@
                       <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>"
                         type="file" name="profilePic" id="profilePic">
                     </div>
-                    <input type="text" name="oldImage" value="<%= locals.usuario ? usuario.image : null %>" hidden >
                     <button type="submit" class="botonProductos">Update</button>
-                    <a class="botonProductos" href="/user/list">Go back</a>
+                    <button class="botonProductos" href="/user/list">Go back</a>
           </div>
         </div>
       </form>

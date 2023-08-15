@@ -2,18 +2,18 @@ const { body } = require("express-validator");
 const path = require("path");
 
 module.exports = [
-  body("category").notEmpty().withMessage("Debe elegir una categoría"),
+  body("category").notEmpty().withMessage("You must select a category product/service"),
   body("product")
     .notEmpty()
-    .withMessage("Debe completar el nombre del producto/servicio"),
+    .withMessage("You must complete the name product/service"),
   body("desc")
     .notEmpty()
     .withMessage(
-      "Debe completar el campo con la descripción del producto/servicio"
+      "You must complete the description product/service"
     ),
   body("price")
     .notEmpty()
-    .withMessage("Debe ingresar el precio del producto/servicio"),
+    .withMessage("You must complete the price product/service"),
 
   body("image").custom((value, { req }) => {
     let file = req.file;
@@ -23,9 +23,11 @@ module.exports = [
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
         throw new Error(
-          `Extensiones permitidas: ${extensionesPermitidas.join(", ")}`
+          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
         );
       }
+    }else{
+      throw new Error("You must select an image");
     }
     return true;
   }),

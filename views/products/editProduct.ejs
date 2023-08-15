@@ -12,7 +12,7 @@
         method="POST" class="create-form">
         <div class="content">
           <div>
-            <h2 class="titulo-registrar-usuario">Editar Producto</h2>
+            <h2 class="titulo-registrar-usuario">Edit product</h2>
             <div class="control-formulario">
 
               <div class="erroresForm">
@@ -23,15 +23,15 @@
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category" id="">
                 <option value="">Seleccione una opción</option>
                 <% let tipoServicio=['producto', 'servicio' ] %>
-                <% for( const servicio of tipoServicio ) { %>
-                  <option value="<%= servicio %>"
+                <% for( const category of categories ) { %>
+                  <option value="<%= category.id %>"
                     <% if (locals.productoEditar) { %>
-                      <%= servicio === productoEditar.categoria ? 'selected' : null %>
+                      <%= category.id == productoEditar.category_id ? 'selected' : null %>
                     <% } else if (locals.oldData) { %>
-                      <%= servicio === oldData.category ? 'selected' : null %>
+                      <%= category.name == oldData.category ? 'selected' : null %>
                     <% } %>
                   >
-                    <%= servicio %>
+                    <%= category.name %>
                   </option>
                 <% } %>
               </select>
@@ -42,7 +42,7 @@
                     <% } %>
               </div>
               <input class="control <%= locals.errors && errors.product ? 'invalidError' : null %>"
-                value="<%= locals.productoEditar ? productoEditar.nombre : locals.oldData ? oldData.product : null %>"
+                value="<%= locals.productoEditar ? productoEditar.name : locals.oldData ? oldData.product : null %>"
                 type="text" name="product" placeholder="Nombre" />
 
               <div class="erroresForm">
@@ -51,7 +51,7 @@
                     <% } %>
               </div>
               <textarea type="text" name="desc" class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
-                placeholder="Descripción"><%= locals.productoEditar ? productoEditar.descripcion : locals.oldData ? oldData.desc : null %></textarea>
+                placeholder="Descripción"><%= locals.productoEditar ? productoEditar.description : locals.oldData ? oldData.desc : null %></textarea>
 
 
               <div class="erroresForm">
@@ -60,7 +60,7 @@
                     <% } %>
               </div>
               <input class="control <%= locals.errors && errors.price ? 'invalidError' : null %>"
-                value="<%= locals.productoEditar ? productoEditar.precio : locals.oldData ? oldData.price : null %>"
+                value="<%= locals.productoEditar ? productoEditar.price : locals.oldData ? oldData.price : null %>"
                 type="number" name="price" placeholder="Precio" />
 
                 <div class="erroresForm">
@@ -70,10 +70,9 @@
                 </div>
                 <input type="file" name="image"
                   class="control <%= locals.errors && errors.image ? 'invalidError' : null %>" />
-          
 
             </div>
-            <button type="submit" class="botonContactanos">Editar</input>
+            <button type="submit" class="botonContactanos">Edit</input>
           </div>
         </div>
       </form>
