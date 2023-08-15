@@ -1,24 +1,34 @@
-const { body } = require('express-validator');
-const path = require('path')
+const { body } = require("express-validator");
+const path = require("path");
 
 module.exports = [
-  body('category').notEmpty().withMessage('You must select a category product/service'),
-  body('product').notEmpty().withMessage('You must complete the name product/service'),
-  body('desc').notEmpty().withMessage('"You must complete the description product/service'),
-  body('price').notEmpty().withMessage('You must complete the price product/service'),
+  body("category")
+    .notEmpty()
+    .withMessage("You must select a category product/service"),
+  body("product")
+    .notEmpty()
+    .withMessage("You must complete the name product/service"),
+  body("desc")
+    .notEmpty()
+    .withMessage('"You must complete the description product/service'),
+  body("price")
+    .notEmpty()
+    .withMessage("You must complete the price product/service"),
 
-  body('image').custom((value, { req }) => {
+  body("image").custom((value, { req }) => {
     let file = req.file;
-    let extensionesPermitidas = ['.jpg', '.png', '.gif'];
-   
+    let extensionesPermitidas = [".jpg", ".png", ".gif"];
+
     if (!file) {
-      throw new Error('You must select an image')
+      throw new Error("You must select an image");
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
-        throw new Error(`Allowed extensions: ${extensionesPermitidas.join(', ')}`)
+        throw new Error(
+          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
+        );
       }
     }
-    return true
-  })
-]
+    return true;
+  }),
+];

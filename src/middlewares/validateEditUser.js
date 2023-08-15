@@ -4,9 +4,7 @@ const path = require("path");
 module.exports = [
   body("user").notEmpty().withMessage("You must complete the username"),
   body("name").notEmpty().withMessage("You must complete the name"),
-  body("lastname")
-    .notEmpty()
-    .withMessage("You must complete the lastname"),
+  body("lastname").notEmpty().withMessage("You must complete the lastname"),
 
   body("email")
     .notEmpty()
@@ -36,7 +34,7 @@ module.exports = [
           `Allowed extensions: ${extensionesPermitidas.join(", ")}`
         );
       }
-    }else{
+    } else {
       throw new Error("You must select an image");
     }
     return true;

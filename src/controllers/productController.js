@@ -7,11 +7,22 @@ const Product = db.Product;
 const Category = db.Category;
 
 module.exports = {
+  productsCart: async (req, res) => {
+    try {
+      return res.render("products/cartProduct");
+    } catch (error) {
+      console.log(error);
+    }
+  },  
   list: async (req, res) => {
-    const productosHabilitados = await Product.findAll({ paranoid: true });
-    return res.render("products/productList", {
-      products: productosHabilitados,
-    });
+    try {
+      const productosHabilitados = await Product.findAll({ paranoid: true });
+      return res.render("products/productList", {
+        products: productosHabilitados,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   },
   filterByWord: async (req, res) => {
     try {
@@ -23,8 +34,6 @@ module.exports = {
           },
         },
       });
-
-      console.log(productosHabilitados);
       return res.render("products/productList", {
         products: productosHabilitados,
       });
@@ -34,21 +43,25 @@ module.exports = {
     }
   },
   add: async (req, res) => {
-    const categories = await Category.findAll();
-    return res.render("products/createProduct", { categories: categories });
+    try {
+      const categories = await Category.findAll();
+      return res.render("products/createProduct", { categories: categories });
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   create: async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      const categories = await Category.findAll();
-      return res.render("products/createProduct", {
-        errors: errors.mapped(),
-        oldData: { ...req.body },
-        categories: categories,
-      });
-    }
     try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        const categories = await Category.findAll();
+        return res.render("products/createProduct", {
+          errors: errors.mapped(),
+          oldData: { ...req.body },
+          categories: categories,
+        });
+      }
       const productoCreado = await Product.create({
         name: req.body.product,
         category_id: req.body.category,
@@ -79,24 +92,25 @@ module.exports = {
           categories: categoriesList,
         });
       } else {
-        return res.render("El producto a editar no existe");
+        return res.render("The product to edit does not exist");
       }
     } catch (error) {
       console.log(error);
     }
   },
   update: async (req, res) => {
-    const resultValidation = validationResult(req);
-    if (resultValidation.errors.length > 0) {
-      let categoriesList = await Category.findAll();
-      return res.render("products/editProduct", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-        id: req.params.id,
-        categories: categoriesList,
-      });
-    }
     try {
+      const resultValidation = validationResult(req);
+      if (resultValidation.errors.length > 0) {
+        let categoriesList = await Category.findAll();
+        return res.render("products/editProduct", {
+          errors: resultValidation.mapped(),
+          oldData: req.body,
+          id: req.params.id,
+          categories: categoriesList,
+        });
+      }
+
       let productId = req.params.id;
       const editProduct = await Product.update(
         {
@@ -115,24 +129,16 @@ module.exports = {
       console.log(error);
     }
   },
-
-  delete: function (req, res) {
-    let productId = req.params.id;
-    Product.findByPk(productId)
-      .then((Product) => {
-        return res.render(
-          path.resolve(__dirname, "..", "views", "productList"),
-          { Product }
-        );
-      })
-      .catch((error) => res.send(error));
-  },
-  destroy: function (req, res) {
-    let productId = req.params.id;
-    Product.destroy({ where: { id: productId }, force: true })
-      .then(() => {
-        return res.redirect("/productos");
-      })
-      .catch((error) => res.send(error));
+  destroy: async (req, res) => {
+    try {
+      let productId = req.params.id;
+      const deleteProduct = await Product.destroy({
+        where: { id: productId },
+        force: true,
+      });
+      return res.redirect("/productos");
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

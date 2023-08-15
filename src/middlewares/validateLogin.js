@@ -1,7 +1,8 @@
-const { body, check } = require("express-validator");
-const path = require("path");
+const { body } = require("express-validator");
 
 module.exports = [
-  body("user").notEmpty().withMessage("Ingrese el usuario"),
-  body("password").notEmpty().withMessage("Debe completar el campo con su contraseña")
+  body("user").notEmpty().withMessage("You must complete the username"),
+  body("password")
+    .notEmpty()
+    .withMessage("You must complete the password"),
 ];

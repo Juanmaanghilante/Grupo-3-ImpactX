@@ -2,30 +2,30 @@ const { body, check } = require("express-validator");
 const path = require("path");
 
 module.exports = [
-  body("user").notEmpty().withMessage("Debe completar el nombre de usuario"),
-  body("name").notEmpty().withMessage("Debe completar el campo con su nombre"),
+  body("user").notEmpty().withMessage("You must complete the username"),
+  body("name").notEmpty().withMessage("You must complete the name"),
   body("lastname")
     .notEmpty()
-    .withMessage("Debe completar el campo con su apellido"),
+    .withMessage("You must complete the lastname"),
 
   body("email")
     .notEmpty()
-    .withMessage("Debe completar el campo con su email")
+    .withMessage("You must complete the email")
     .bail()
     .isEmail()
-    .withMessage("Debes escribir un formato de correo válido"),
+    .withMessage("You must write a valid email"),
 
   check("category")
     .if(
       (value, { req }) =>
-        req.session.userLogged.category === "Admin" && !req.body.categoria
+        req.session.userLogged.perfiles.id == "1" && !req.body.categoria
     )
     .notEmpty()
-    .withMessage("Como Admin, debe seleccionar una categoría"),
+    .withMessage("As Admin, you must select a category"),
 
   body("password")
     .notEmpty()
-    .withMessage("Debe completar el campo con su contraseña")
+    .withMessage("You must complete the password")
     .bail()
     .isStrongPassword({
       minLength: 6,
@@ -34,15 +34,15 @@ module.exports = [
       minSymbols: 1,
     })
     .withMessage(
-      "La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo "
+      "The password must have at least: 6 characters, a lower case letter, an upper case letter and a symbol"
     ),
 
     body('repeatPassword')
-		.notEmpty().withMessage('Debe repetir su contraseña nueva').bail()
+		.notEmpty().withMessage('You must repeat your new password').bail()
 		.custom((value, { req }) => {
 
 			if(req.body.password != req.body.repeatPassword) {
-				throw new Error('Las contraseñas nuevas no coinciden');
+				throw new Error('New passwords do not match');
 			}
 
 			return true;
@@ -54,12 +54,12 @@ module.exports = [
     let extensionesPermitidas = [".jpg", ".png", ".gif"];
 
     if (!file) {
-      throw new Error("Debe seleccionar una imagen de perfil");
+      throw new Error("You must select an image");
     } else {
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
         throw new Error(
-          `Extensiones permitidas: ${extensionesPermitidas.join(", ")}`
+          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
         );
       }
     }
