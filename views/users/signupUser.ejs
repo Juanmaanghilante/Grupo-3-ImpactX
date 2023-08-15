@@ -10,43 +10,43 @@
         </div>
 
         <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
-          <h2 class="titulo-registrar-usuario">¡Crear usuario!</h2>
+          <h2 class="titulo-registrar-usuario">Create user</h2>
           <div class="control-formulario">
 
             <!-- USER NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.user) { %>
                 <%= errors.user.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"
-              placeholder="Usuario" value="<%= locals.oldData?oldData.user:null %>" />
+              placeholder="Username" value="<%= locals.oldData?oldData.user:null %>" />
 
 
             <!-- FIRST NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.name) { %>
                 <%= errors.name.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
-              placeholder="Nombre" value="<%= locals.oldData?oldData.name:null %>" />
+              placeholder="Name" value="<%= locals.oldData?oldData.name:null %>" />
 
             <!-- LAST NAME -->
             <div class="erroresForm">
               <% if (locals.errors && errors.lastname) { %>
                 <%= errors.lastname.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="lastname"
-              class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" placeholder="Apellido"
+              class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" placeholder="Last name"
               value="<%= locals.oldData?oldData.lastname:null %>" />
 
             <!-- EMAIL -->
             <div class="erroresForm">
               <% if (locals.errors && errors.email) { %>
                 <%= errors.email.msg %>
-                  <% } %>
+              <% } %>
             </div>
             <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
               placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
@@ -56,11 +56,11 @@
                 <div class="erroresForm">
                   <% if (locals.errors && errors.category) { %>
                     <%= errors.category.msg %>
-                      <% } %>
+                  <% } %>
                 </div>
                 <select name="categoria" class="control <%= locals.errors && errors.category ? 'invalidError' : null %>"
                   id="category">
-                  <option value="">Seleccione una opción</option>
+                  <option value="">Select an option</option>
                   <% for( const servicio of perfiles ) { %>
                     <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.categoria)
                       ? 'selected' : null %>
@@ -69,14 +69,14 @@
                     </option>
                     <% } %>
                 </select>
-                <% } %>
-                  <% } %>
+              <% } %>
+            <% } %>
 
                     <!-- PROFILE PICTURE -->
                     <div class="erroresForm">
                       <% if (locals.errors && errors.profilePic) { %>
                         <%= errors.profilePic.msg %>
-                          <% } %>
+                      <% } %>
                     </div>
                     <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" type="file"
                       name="profilePic">
@@ -85,20 +85,20 @@
                     <div class="erroresForm">
                       <% if (locals.errors && errors.password) { %>
                         <%= errors.password.msg %>
-                          <% } %>
+                      <% } %>
                     </div>
                     <input type="password" name="password"
                       class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
-                      placeholder="Contraseña" />
+                      placeholder="Password" />
 
                     <div class="erroresForm">
                       <% if (locals.errors && errors.repeatPassword) { %>
                         <%= errors.repeatPassword.msg %>
-                          <% } %>
+                      <% } %>
                     </div>
                     <input type="password" name="repeatPassword"
                       class="control <%= locals.errors && errors.repeatPassword ? 'invalidError' : null %>"
-                      placeholder="Repetir Contraseña" />
+                      placeholder="Repeat password" />
           </div>
           <div>
             <button type="submit" value="ENVIAR" class="botonContactanos">Register</input>

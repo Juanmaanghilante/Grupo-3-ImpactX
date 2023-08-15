@@ -14,10 +14,10 @@
             <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
           </div>
           <div>
-            <h2 class="titulo-registrar-usuario">Cambia tu contraseña</h2>
+            <h2 class="titulo-registrar-usuario">Change your password</h2>
             
             <div class="control-formulario">
-              <input type="password" name="contrasenia" class="control" placeholder="Contraseña anterior"/>
+              <input type="password" name="contrasenia" class="control" placeholder="Old Password"/>
             </div>
             <% if(locals.errors && errors.contrasenia){ %>
               <div class="div-input input-error errorPass">
@@ -27,7 +27,7 @@
             
 
             <div class="control-formulario">
-              <input type="password" name="contraseniaNueva" class="control" placeholder="Contraseña nueva" />
+              <input type="password" name="contraseniaNueva" class="control" placeholder="New password" />
             </div>
             <% if(locals.errors && errors.contraseniaNueva){ %>
               <div class="div-input input-error errorPass">
@@ -36,7 +36,7 @@
             <% } %>
 
             <div class="control-formulario">
-              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repetir contraseña nueva"  />
+              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repeat new password"  />
             </div>
             <% if(locals.errors && errors.contraseniaNuevaRepetir){ %>
               <div class="div-input input-error errorPass">
