@@ -1,5 +1,6 @@
 const searchInput = document.getElementById("search-input");
 const articlesContainer = document.querySelector(".mainProducts");
+const imageProduct = document.querySelector(".containerImagenProductos");
 const newProductContainer = document.querySelector(".nuevoProducto");
 const popupCerrarButton = document.querySelector(".popupCerrarButton");
 const popupProducto = document.querySelector(".popupProducto");
@@ -30,6 +31,7 @@ function closePopup() {
 }
 
 // Evento de filtro
+// Evento de filtro
 searchInput.addEventListener("input", function () {
   const searchTerm = searchInput.value.toLowerCase().trim();
 
@@ -56,15 +58,16 @@ searchInput.addEventListener("input", function () {
 
       newArticles.forEach((newArticle) => {
         articlesContainer.insertBefore(newArticle, newProductContainer);
-      });
 
-      // Reasignar el evento click a las nuevas tarjetas
-      articlesContainer.querySelectorAll(".tarjetaProductos").forEach((tarjeta) => {
-        tarjeta.addEventListener("click", (event) => {
-          event.stopPropagation();
-          // Solo abrir el popup si el ancho es mayor a 768 píxeles
-          if (window.innerWidth > 768) {
-            openPopup(tarjeta);
+        // Agregar el evento de clic a las nuevas imágenes
+        const nuevaImagen = newArticle.querySelector(".productoImagen");
+        nuevaImagen.addEventListener("click", (event) => {
+          const tarjeta = event.target.closest(".tarjetaProductos");
+          if (tarjeta) {
+            // Solo abrir el popup si el ancho es mayor a 768 píxeles
+            if (window.innerWidth > 768) {
+              openPopup(tarjeta);
+            }
           }
         });
       });
@@ -75,14 +78,16 @@ searchInput.addEventListener("input", function () {
 });
 
 // Evento para abrir el popup al hacer clic en la tarjeta
-articlesContainer.addEventListener("click", (event) => {
-  const tarjeta = event.target.closest(".tarjetaProductos");
-  if (tarjeta) {
-    // Solo abrir el popup si el ancho es mayor a 768 píxeles
-    if (window.innerWidth > 768) {
-      openPopup(tarjeta);
+document.querySelectorAll(".productoImagen").forEach((imagen) => {
+  imagen.addEventListener("click", (event) => {
+    const tarjeta = event.target.closest(".tarjetaProductos");
+    if (tarjeta) {
+      // Solo abrir el popup si el ancho es mayor a 768 píxeles
+      if (window.innerWidth > 768) {
+        openPopup(tarjeta);
+      }
     }
-  }
+  });
 });
 
 // Evento para cerrar el popup

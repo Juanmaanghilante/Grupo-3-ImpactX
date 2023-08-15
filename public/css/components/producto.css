@@ -193,10 +193,24 @@
 
   .popupInfo h2 {
     color: #0c2b56;
+    margin-bottom: 5px;
   }
 
   .popupInfo p {
     color: #0c2b56;
     font-size: 14px;
+    margin-bottom: 5px;
   }
+
+  .popupImagen {
+    text-align: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .popupImagen img {
+    max-width: 50%; /* O el valor que funcione mejor para tu diseño */
+    height: auto;
+    display: inline-block; /* Permite centrar verticalmente */
+    margin-top: 10px; /* Agrega un pequeño espacio superior para separar de otros elementos */
+  }
+  
 }

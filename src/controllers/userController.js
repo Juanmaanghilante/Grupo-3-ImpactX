@@ -57,7 +57,7 @@ module.exports = {
       return res.render("users/loginUser", {
         errors: {
           user: {
-            msg: "Cannot find this user in the database",
+            msg: "Username does not exist",
           },
         },
       });
