@@ -201,6 +201,8 @@ module.exports = {
    console.log(error);   
   }
   },
+
+  //borrado fisico de usuario
   userDestroyProcess: function (req, res) {
     let userId = req.params.id;
 
