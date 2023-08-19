@@ -1,40 +1,128 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+<%- include('../partials/head', {title:"Impact X | Cart"})%>
 
-<%- include('../partials/head', {title:"Impact X | Car"})%>
-
-  <body class="carrito">
-
+  <body class="bgCart">
     <%- include('../partials/header')%>
 
-      <main>
-        <section id="carrito" class="cart-section">
-          <h2 class="cart-title">Carrito de Compras</h2>
-          <div class="cart-items">
-            <!-- Aquí van los elementos del carrito -->
-          </div>
-          <div class="cart-summary">
-            <!-- Aquí va el resumen del carrito -->
-          </div>
-          <button class="checkout-btn">Finalizar Compra</button>
+      <main class="mainCart">
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
+        </section>
+        <section class="carrito-items">
+          <article class="tarjetaCart carrito-producto">
+            <div class="containerImagenCart">
+              <img class="cartImagen" src="" alt="">
+            </div>
+            <div class="containerInfoCart carrito-info">
+              <h2 class="name">Producto:</h2>
+              <p class="price">Precio:</p>
+              <p class="cantidad">Cantidad: </p>
+              <p class="subtotal">Subtotal: </p>
+            </div>
+          </article>
         </section>
       </main>
+      <section class="carrito-total">
+        <h2 class="total">Subtotal: $</h2>
+      </section>      
+      <section class="carrito-total">
+        <h2 class="total">Total: $</h2>
+      </section>
+      <section class="carrito-botones">
+        <button class="confirmar">Confirmar Compra</button>
+        <button class="cancelar">Cancelar</button>
+      </section>
 
       <%- include('../partials/footer')%>
-
-      
-      <script>
-        const menu = document.querySelector('.svgMenu')
-        const close = document.querySelector('.closeBtn')
-        const nav = document.querySelector('#navPrincipal')
-
-        menu.addEventListener('click', () => {
-          nav.classList.add('open-nav')
-        })
-        close.addEventListener('click', () => {
-          nav.classList.remove('open-nav')
-        })
-      </script>
   </body>
 
 </html>

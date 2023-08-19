@@ -94,3 +94,52 @@ document.querySelectorAll(".productoImagen").forEach((imagen) => {
 popupCerrarButton.addEventListener("click", () => {
   closePopup();
 });
+
+if (document.readyState == "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}
+
+function ready() {
+  if (JSON.parse(localStorage.getItem("carrito")) == null) {
+    localStorage.setItem("carrito", JSON.stringify([]));
+  }
+
+  articlesContainer.addEventListener("click", function (event) {
+    if (event.target.classList.contains("add-to-cart")) {
+      agregarItem(event.target); 
+    }
+  });
+}
+
+function agregarItem(botonClicado) {
+  let productoContainer = botonClicado.closest(".tarjetaProductos");
+  let productoAgregado = {
+    id: botonClicado.dataset.id,
+    nombre: productoContainer.querySelector(".name").innerText,
+    precio: productoContainer
+      .querySelector(".price")
+      .innerText.replace("$", " "),
+    description: productoContainer.querySelector(".description").innerText,
+    img: productoContainer.querySelector(".productoImagen").alt,
+  };
+  console.log(productoAgregado);
+
+  let productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  let buscarProducto = productosCarrito.find(
+    (producto) => producto.nombre === productoAgregado.nombre
+  );
+
+  if (buscarProducto) {
+    buscarProducto.cantidad += 1;
+    buscarProducto.subTotal = buscarProducto.cantidad * buscarProducto.precio;
+  } else {
+    productoAgregado.cantidad = 1;
+    productoAgregado.subTotal = productoAgregado.cantidad * productoAgregado.precio;
+    productosCarrito.push(productoAgregado);
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+}
