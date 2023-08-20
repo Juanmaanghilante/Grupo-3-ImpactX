@@ -23,7 +23,7 @@ module.exports = {
               total: null,
               url: '/api/products'
           }
-            response.msg = '¡Ups! Hubo un error, no se encontraron productos'
+            response.msg = "Oops! Something went wrong while fetching products."
         return res.json(response)
       }
   },
@@ -50,7 +50,7 @@ module.exports = {
             status: 204,
             url: '/api/products/create'
         }
-          response.msg = '¡Ups! Hubo un error, no se pudo crear el producto'
+          response.msg = "Oops! Something went wrong while creating the product. Please try again later."
       return res.json(response)
     }
   },
@@ -68,7 +68,7 @@ module.exports = {
               status: 200,
               url: '/api/products/delete/:id'
           }
-            response.msg = "Producto eliminado con éxito!"
+            response.msg = "Product successfully deleted!"
       return res.json(response)
 
     } catch (error) {
@@ -76,7 +76,7 @@ module.exports = {
               status: 204,
               url: '/api/products/delete/:id'
           }
-            response.msg = '¡Ups! Hubo un error, no se pudo eliminar el producto'
+            response.msg = "Oops! Something went wrong while deleting the product. Please try again later.";
       return res.json(response)
     }
   },
