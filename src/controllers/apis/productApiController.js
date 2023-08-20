@@ -56,28 +56,35 @@ module.exports = {
   },
 
 
-  destroy: async (req,res) => {
-    let response = {}
+  destroy: async (req, res) => {
+    let response = {};
     try {
-      let productId = req.params.id;
-      const deleteProduct = await Product.destroy({
-        where: { id: productId },
-        force: true,
-      });
+        let productId = req.params.id;
+        const deleteProduct = await Product.destroy({
+            where: { id: productId },
+            force: true,
+        });
+        if (deleteProduct) {
             response.meta = {
-              status: 200,
-              url: '/api/products/delete/:id'
-          }
-            response.msg = "Product successfully deleted!"
-      return res.json(response)
-
+                status: 200,
+                url: `/api/products/delete/${productId}`
+            };
+            response.msg = "Product successfully deleted!";
+        } else {
+            response.meta = {
+                status: 404, 
+                url: `/api/products/delete/${productId}`
+            };
+            response.msg = "Product not found for deletion.";
+        }
+        return res.json(response);
     } catch (error) {
-            response.meta = {
-              status: 204,
-              url: '/api/products/delete/:id'
-          }
-            response.msg = "Oops! Something went wrong while deleting the product. Please try again later.";
-      return res.json(response)
+        response.meta = {
+            status: 500, 
+            url: `/api/products/delete/${productId}`
+        };
+        response.msg = "Oops! Something went wrong while deleting the product. Please try again later.";
+        return res.json(response);
     }
-  },
+},
 }
