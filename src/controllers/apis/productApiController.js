@@ -1,8 +1,5 @@
 const db = require("../../database/models");
-const { Op } = require("sequelize");
-
 const Product = db.Product;
-const Category = db.Category;
 
 module.exports = {
   'list': async (req, res) => {
@@ -15,16 +12,17 @@ module.exports = {
               url: '/api/products'
           }
             response.data = productosHabilitados
-        return res.json(response)
+            return res.json(response)
 
       } catch (error) {
+            console.error("Error fetching products:", error);
             response.meta = {
-              status: 204,
+              status: 500,
               total: null,
               url: '/api/products'
           }
             response.msg = "Oops! Something went wrong while fetching products."
-        return res.json(response)
+            return res.status(500).json(response);
       }
   },
 
@@ -39,19 +37,20 @@ module.exports = {
         image: req.file ? req.file.filename : "product-default.png",
       })
           response.meta = {
-            status: 200,
+            status: 201,
             url: '/api/products/create'
         }
           response.data = productoCrear
-      return res.json(response)
+          return res.json(response)
 
     } catch (error) {
+          console.error("Error creating product:", error);
           response.meta = {
-            status: 204,
+            status: 500,
             url: '/api/products/create'
         }
           response.msg = "Oops! Something went wrong while creating the product. Please try again later."
-      return res.json(response)
+          return res.status(500).json(response)
     }
   },
 
@@ -79,12 +78,13 @@ module.exports = {
         }
         return res.json(response);
     } catch (error) {
+      console.error("Error deleting product:", error);
         response.meta = {
             status: 500, 
             url: `/api/products/delete/${productId}`
         };
         response.msg = "Oops! Something went wrong while deleting the product. Please try again later.";
-        return res.json(response);
+        return res.status(500).json(response)
     }
 },
 }
