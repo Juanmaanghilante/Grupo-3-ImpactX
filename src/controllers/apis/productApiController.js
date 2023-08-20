@@ -66,15 +66,15 @@ module.exports = {
       });
             response.meta = {
               status: 200,
-              url: '/api/products/create'
+              url: '/api/products/delete/:id'
           }
-            response.data = deleteProduct
+            response.msg = "Producto eliminado con éxito!"
       return res.json(response)
 
     } catch (error) {
             response.meta = {
               status: 204,
-              url: '/api/products/create'
+              url: '/api/products/delete/:id'
           }
             response.msg = '¡Ups! Hubo un error, no se pudo eliminar el producto'
       return res.json(response)

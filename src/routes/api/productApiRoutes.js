@@ -5,7 +5,7 @@ const productApiController = require('../../controllers/apis/productApiControlle
 
 router.get('/', productApiController.list)
 router.post('/create', productApiController.create)
-router.post('/delete', productApiController.destroy)
+router.delete('/delete/:id', productApiController.destroy)
 
 
 module.exports = router
