@@ -26,5 +26,33 @@ module.exports = {
             response.msg = '¡Ups! Hubo un error, no se encontraron productos'
         return res.json(response)
       }
+  },
+
+  create: async (req, res) => {
+    let response = {}
+    try {
+      const productoCrear= await Product.create({
+        name: req.body.product,
+        category_id: req.body.category,
+        price: req.body.price,
+        description: req.body.desc,
+        image: req.file ? req.file.filename : "product-default.png",
+      })
+          response.meta = {
+            status: 200,
+            url: '/api/products/create'
+        }
+          response.data = productoCrear
+      return res.json(response)
+
+    } catch (error) {
+          console.log(error)
+          response.meta = {
+            status: 204,
+            url: '/api/products/create'
+        }
+          response.msg = '¡Ups! Hubo un error, no se pudo crear el producto'
+      return res.json(response)
+    }
   }
 }
