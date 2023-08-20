@@ -206,7 +206,7 @@ module.exports = {
   userDestroyProcess: function (req, res) {
     let userId = req.params.id;
 
-    User.destroy({ where: { id: userId }, force: true })
+    User.destroy({ where: { id: userId }})
       .then(() => {
         res.clearCookie("userEmail");
         req.session.destroy();
@@ -215,17 +215,3 @@ module.exports = {
       .catch((error) => res.send(error));
   },
 };
-
-// PARA USAR DE REFERENCIA
-
-// userDeleteProcess: (req, res) => {
-//   const usuarioBorrar = datos.find((usuario) => usuario.id == req.params.id);
-//   usuarioBorrar.isDelete = true;
-
-//   fs.writeFileSync(
-//     path.resolve(rutaBase),
-//     JSON.stringify(datos, null, 2),
-//     "utf-8"
-//   );
-//   return res.redirect("/user/list");
-// },

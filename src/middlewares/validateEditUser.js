@@ -23,20 +23,4 @@ module.exports = [
     return true;
   }),
 
-  body("profilePic").custom((value, { req }) => {
-    let file = req.file;
-    let extensionesPermitidas = [".jpg", ".png", ".gif"];
-
-    if (file) {
-      let fileExtension = path.extname(file.originalname);
-      if (!extensionesPermitidas.includes(fileExtension)) {
-        throw new Error(
-          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
-        );
-      }
-    } else {
-      throw new Error("You must select an image");
-    }
-    return true;
-  }),
 ];

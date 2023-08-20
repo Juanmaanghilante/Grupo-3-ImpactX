@@ -14,21 +14,4 @@ module.exports = [
   body("price")
     .notEmpty()
     .withMessage("You must complete the price product/service"),
-
-  body("image").custom((value, { req }) => {
-    let file = req.file;
-    let extensionesPermitidas = [".jpg", ".png", ".gif"];
-
-    if (file) {
-      let fileExtension = path.extname(file.originalname);
-      if (!extensionesPermitidas.includes(fileExtension)) {
-        throw new Error(
-          `Allowed extensions: ${extensionesPermitidas.join(", ")}`
-        );
-      }
-    } else {
-      throw new Error("You must select an image");
-    }
-    return true;
-  }),
 ];
