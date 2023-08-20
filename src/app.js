@@ -3,12 +3,18 @@ const app = express();
 const session = require('express-session');
 const path = require('path');
 const cookie =require('cookie-parser')
+const methodOverride = require("method-override")
+
+// Routers
 const mainRouter = require('./routes/mainRoutes')
 const userRouter = require('./routes/userRoutes')
 const productRouter = require('./routes/productRoutes')
-const error404Middleware = require('./middlewares/error404Middleware')
-const methodOverride = require("method-override")
 
+// API Routers
+const productApiRouter = require('./routes/api/productApiRoutes')
+
+// App Middlewares
+const error404Middleware = require('./middlewares/error404Middleware')
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.use(session({
@@ -17,6 +23,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Cookies
 app.use(cookie());
 app.use(userLoggedMiddleware);
 
@@ -32,8 +39,13 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.listen(3003, () => console.log('Servidor en puerto 3003'));
 
+
 app.use(mainRouter);
 app.use(userRouter);
 app.use(productRouter);
+
+app.use('/api/products', productApiRouter)
+
+
 app.use(error404Middleware);
 
