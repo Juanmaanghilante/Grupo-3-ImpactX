@@ -46,7 +46,6 @@ module.exports = {
       return res.json(response)
 
     } catch (error) {
-          console.log(error)
           response.meta = {
             status: 204,
             url: '/api/products/create'
@@ -54,5 +53,31 @@ module.exports = {
           response.msg = '¡Ups! Hubo un error, no se pudo crear el producto'
       return res.json(response)
     }
-  }
+  },
+
+
+  destroy: async (req,res) => {
+    let response = {}
+    try {
+      let productId = req.params.id;
+      const deleteProduct = await Product.destroy({
+        where: { id: productId },
+        force: true,
+      });
+            response.meta = {
+              status: 200,
+              url: '/api/products/create'
+          }
+            response.data = deleteProduct
+      return res.json(response)
+
+    } catch (error) {
+            response.meta = {
+              status: 204,
+              url: '/api/products/create'
+          }
+            response.msg = '¡Ups! Hubo un error, no se pudo eliminar el producto'
+      return res.json(response)
+    }
+  },
 }
