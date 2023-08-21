@@ -12,6 +12,7 @@ const productRouter = require('./routes/productRoutes')
 
 // API Routers
 const productApiRouter = require('./routes/api/productApiRoutes')
+const userApiRouter = require('./routes/api/userApiRoutes')
 
 // App Middlewares
 const error404Middleware = require('./middlewares/error404Middleware')
@@ -45,7 +46,7 @@ app.use(userRouter);
 app.use(productRouter);
 
 app.use('/api/products', productApiRouter)
-
+app.use('/api/users', userApiRouter)
 
 app.use(error404Middleware);
 
