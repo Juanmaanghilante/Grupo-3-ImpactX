@@ -26,6 +26,30 @@ module.exports = {
       }
   },
 
+  'detail': async (req, res) => {
+    let response = {}
+    try {
+      const findProduct = await Product.findByPk(req.params.id)
+          response.meta = {
+            status: 200,
+            total: findProduct.length,
+            url: `/api/products/${req.params.id}`
+        }
+          response.data = findProduct
+          return res.json(response)
+
+    } catch (error) {
+          console.error("Error finding product:", error);
+          response.meta = {
+            status: 500,
+            total: null,
+            url: `/api/products/${req.params.id}`
+        }
+          response.msg = `Oops! Something went wrong while finding the product with ID: ${req.params.id}.`
+          return res.status(500).json(response);
+    }
+  },
+
   create: async (req, res) => {
     let response = {}
     try {
@@ -50,6 +74,40 @@ module.exports = {
             url: '/api/products/create'
         }
           response.msg = "Oops! Something went wrong while creating the product. Please try again later."
+          return res.status(500).json(response)
+    }
+  },
+
+  update: async (req, res) => {
+    let response = {}
+    let productId = req.params.id
+    try {
+      const editProduct = await Product.update({
+        name: req.body.product,
+        category_id: req.body.category,
+        price: req.body.price,
+        description: req.body.desc,
+        image: req.file ? req.file.filename : "product-default.png",
+      },
+
+      {
+        where: {id: productId}
+      })
+      console.log(editProduct)
+          response.meta = {
+              status: 201,
+              url: `/api/products/edit/${req.params.id}`
+          }
+          response.msg = `Product successfully updated!`
+          return res.json(response)
+
+    } catch (error) {
+          console.error("Error creating product:", error);
+        response.meta = {
+            status: 500,
+            url:  `/api/products/edit/${req.params.id}`
+        }
+          response.msg = "Oops! Something went wrong while updating the product. Please try again later."
           return res.status(500).json(response)
     }
   },

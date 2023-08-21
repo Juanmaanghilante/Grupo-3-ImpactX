@@ -3,8 +3,11 @@ const router = express.Router();
 
 const productApiController = require('../../controllers/apis/productApiController')
 
+
 router.get('/', productApiController.list)
+router.get('/:id', productApiController.detail)
 router.post('/create', productApiController.create)
+router.put('/edit/:id', productApiController.update)
 router.delete('/delete/:id', productApiController.destroy)
 
 

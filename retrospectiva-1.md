@@ -69,3 +69,37 @@
 3. La organización grupal respecto a los encuentros y la division de tareas.
 4. Undefined.
 5. Undefined.
+## Sprint 5 - Retrospectiva
+
+**Dinámica de la estrella de mar que busca resaltar aquello que hay que:**
+
+1. Comenzar a hacer.
+2. Hacer más.
+3. Continuar haciendo.
+4. Hacer menos.
+5. Dejar de hacer.
+
+**Los integrantes del grupo tres "ImpactX" creemos que la dinámica de equipo y colaboración viene siendo un punto a destacar:**
+
+1. Charlas para manejo de la frustración y presión ante la dinamica del curso.
+2. Completar y organizar mejor el trello.
+3. La organización grupal respecto a los encuentros y la division de tareas.
+4. Undefined.
+5. Undefined.
+## Sprint 6 - Retrospectiva
+
+**Dinámica de la estrella de mar que busca resaltar aquello que hay que:**
+
+1. Comenzar a hacer.
+2. Hacer más.
+3. Continuar haciendo.
+4. Hacer menos.
+5. Dejar de hacer.
+
+**Los integrantes del grupo tres "ImpactX" creemos que la dinámica de equipo y colaboración viene siendo un punto a destacar:**
+
+1. Charlas para manejo de la frustración y presión ante la dinamica del curso.
+2. Completar y organizar mejor el trello.
+3. La organización grupal respecto a los encuentros y la division de tareas.
+4. null
+5. null
