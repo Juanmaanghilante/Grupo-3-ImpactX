@@ -78,40 +78,6 @@ module.exports = {
     }
   },
 
-  update: async (req, res) => {
-    let response = {}
-    let productId = req.params.id
-    try {
-      const editProduct = await Product.update({
-        name: req.body.product,
-        category_id: req.body.category,
-        price: req.body.price,
-        description: req.body.desc,
-        image: req.file ? req.file.filename : "product-default.png",
-      },
-
-      {
-        where: {id: productId}
-      })
-      console.log(editProduct)
-          response.meta = {
-              status: 201,
-              url: `/api/products/edit/${req.params.id}`
-          }
-          response.msg = `Product successfully updated!`
-          return res.json(response)
-
-    } catch (error) {
-          console.error("Error creating product:", error);
-        response.meta = {
-            status: 500,
-            url:  `/api/products/edit/${req.params.id}`
-        }
-          response.msg = "Oops! Something went wrong while updating the product. Please try again later."
-          return res.status(500).json(response)
-    }
-  },
-
 
   destroy: async (req, res) => {
     let response = {};
