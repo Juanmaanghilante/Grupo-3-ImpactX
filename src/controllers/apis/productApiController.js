@@ -90,6 +90,7 @@ module.exports = {
         image: req.file ? req.file.filename : "product-default.png",
       },
 
+      
       {
         where: {id: productId}
       })
