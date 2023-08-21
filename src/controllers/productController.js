@@ -117,7 +117,7 @@ module.exports = {
           category_id: req.body.category,
           price: req.body.price,
           description: req.body.desc,
-          image: req.file.filename,
+          image: req.file ? req.file.filename : "product-default.png",
         },
         {
           where: { id: productId },
@@ -132,8 +132,7 @@ module.exports = {
     try {
       let productId = req.params.id;
       const deleteProduct = await Product.destroy({
-        where: { id: productId },
-        force: true,
+        where: { id: productId }
       });
       return res.redirect("/productos");
     } catch (error) {

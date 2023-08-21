@@ -115,7 +115,7 @@ module.exports = {
         profile_id: req.body.categoria ? req.body.categoria : "2",
         password: bcrypt.hashSync(req.body.password, 10),
         confirm_password: bcrypt.hashSync(req.body.repeatPassword, 10),
-        image: req.file.filename,
+        image: req.file ? req.file.filename : "product-default.png",
       });
       return res.redirect("/user/login");
     } catch (error) {
@@ -171,7 +171,7 @@ module.exports = {
           user_name: req.body.user,
           email: req.body.email,
           profile_id: req.body.categoria,
-          image: req.file.filename,
+          image: req.file ? req.file.filename : "product-default.png",
         },
         { where: { id: req.params.id } },
         { transaction: t }

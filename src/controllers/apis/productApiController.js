@@ -60,8 +60,7 @@ module.exports = {
     try {
         let productId = req.params.id;
         const deleteProduct = await Product.destroy({
-            where: { id: productId },
-            force: true,
+            where: { id: productId }
         });
         if (deleteProduct) {
             response.meta = {

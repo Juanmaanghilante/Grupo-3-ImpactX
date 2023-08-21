@@ -19,9 +19,7 @@ module.exports = [
     let file = req.file;
     let extensionesPermitidas = [".jpg", ".png", ".gif"];
 
-    if (!file) {
-      throw new Error("You must select an image");
-    } else {
+    if (file) {
       let fileExtension = path.extname(file.originalname);
       if (!extensionesPermitidas.includes(fileExtension)) {
         throw new Error(
@@ -29,6 +27,9 @@ module.exports = [
         );
       }
     }
+    //  else {
+    //   throw new Error("You must select an image");
+    // }
     return true;
   }),
 ];
