@@ -140,4 +140,13 @@ module.exports = {
       console.log(error);
     }
   },
+  buyProcess: async(req, res)=> {
+    let detalleCompra = {
+      id_user: req.session.userLogged.id,
+      total: req.body.total,
+      productos: req.body.productos,
+      fecha: new Date()
+    }
+    res.send(detalleCompra)
+  }
 };

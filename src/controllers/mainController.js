@@ -39,6 +39,7 @@ module.exports = {
         },
         include: [{ association: "contactmessage" }],
       });
+      console.log(requesthabilitados.dataValues);
       return res.render("main/requests", {
         requesthabilitados: requesthabilitados,
       });
