@@ -7,7 +7,7 @@ module.exports = {
       let response = {}
       try {
         const usuariosHabilitados = await User.findAll({ paranoid: true })
-            response.meta = {
+              response.meta = {
               status: 200,
               total: usuariosHabilitados.length,
               url: '/api/users'
@@ -40,7 +40,7 @@ module.exports = {
           return res.json(response)
 
     } catch (error) {
-          console.error("Error finding user:", error);
+          console.error("Error finding user:", err  or);
           response.meta = {
             status: 500,
             total: null,
@@ -55,7 +55,6 @@ module.exports = {
     let response = {}
     try {
       const usuarioCrear= await User.create({
-
         name: req.body.name,
         lastname: req.body.lastname,
         user_name: req.body.user,
