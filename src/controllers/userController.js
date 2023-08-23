@@ -5,6 +5,7 @@ const { sequelize } = require("../database/models");
 
 const Profile = db.Profile;
 const User = db.User;
+const ContactMessage = db.ContactMessage;
 
 module.exports = {
   userLogin: (req, res) => {
@@ -204,7 +205,14 @@ module.exports = {
   userDestroyProcess: async (req, res) => {
     try {
       let userId = req.params.id;
+      const contactMessageDelete = await ContactMessage.destroy({ where: { user_id: userId } });
       const userDelete = await User.destroy({ where: { id: userId } });
+
+      let [contactMessageDeleteProcess, userDeleteProcess] = await Promise.all([
+        contactMessageDelete,
+        userDelete,
+      ]);
+
       if (req.params.id == req.session.userLogged.id) {
         if (req.cookies.userEmail) {
           res.clearCookie("userEmail");

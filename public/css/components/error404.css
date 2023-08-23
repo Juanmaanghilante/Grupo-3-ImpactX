@@ -13,6 +13,10 @@ div.error404 .error404-image {
 
 }
 
+.error404 {
+    margin-top: 200px; /* Ajusta este valor según sea necesario */
+  }
+
 div.error404 div{
     width: 100%;
     max-width: 700px;

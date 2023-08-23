@@ -39,7 +39,6 @@ module.exports = {
         },
         include: [{ association: "contactmessage" }],
       });
-      console.log(requesthabilitados.dataValues);
       return res.render("main/requests", {
         requesthabilitados: requesthabilitados,
       });
@@ -49,7 +48,6 @@ module.exports = {
   },
   sendAnswer: async (req, res) => {
     const resultValidation = validationResult(req);
-    console.log(resultValidation)
     if (resultValidation.errors.length > 0) {
       try {
         const requesthabilitados = await ContactMessage.findAll({
@@ -61,7 +59,7 @@ module.exports = {
         return res.render("main/requests", {
           requesthabilitados: requesthabilitados,
           errors: resultValidation.mapped(),
-          idError: req.params.id
+          idError: req.params.id,
         });
       } catch (error) {
         console.log(error);

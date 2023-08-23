@@ -5,8 +5,15 @@
 
     <%- include('../partials/header')%>
 
-        <body class="bodySignUp">
-
+        <body class="error404">
+            <% if (!Array.isArray(requesthabilitados) || requesthabilitados.length === 0) { %>
+                <div class="error404">
+                    <div>
+                        <p class="error404-message">There is no request to answer</p>
+                    </div>
+                    <a class="error404-home-button" href="/">Go back</a>
+                </div>                
+            <% }else{ %>    
             <% for (let i=0; i < requesthabilitados.length; i++) { const request=requesthabilitados[i]; %>
                 <form action="/request/<%= request.id %>" method="POST" class="create-form form-request">
                     <div class="content-request">
@@ -49,6 +56,7 @@
                         </div>
                     </div>
                 </form>
+                <% } %>
                 <% } %>
 
         </body>
