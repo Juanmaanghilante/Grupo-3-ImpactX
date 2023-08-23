@@ -40,7 +40,7 @@ module.exports = {
           return res.json(response)
 
     } catch (error) {
-          console.error("Error finding user:", err  or);
+          console.error("Error finding user:", error);
           response.meta = {
             status: 500,
             total: null,
