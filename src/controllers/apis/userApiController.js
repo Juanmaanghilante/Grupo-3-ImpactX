@@ -7,7 +7,7 @@ module.exports = {
       let response = {}
       try {
         const usuariosHabilitados = await User.findAll({ paranoid: true })
-            response.meta = {
+              response.meta = {
               status: 200,
               total: usuariosHabilitados.length,
               url: '/api/users'
@@ -55,7 +55,6 @@ module.exports = {
     let response = {}
     try {
       const usuarioCrear= await User.create({
-
         name: req.body.name,
         lastname: req.body.lastname,
         user_name: req.body.user,
