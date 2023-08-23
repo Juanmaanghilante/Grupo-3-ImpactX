@@ -25,5 +25,6 @@ router.delete("/productos/delete/:id", authMiddleware, productController.destroy
 
 //CART
 router.get('/cart', productController.productsCart)
+router.post('/cart/done', productController.buyProcess)
 
 module.exports = router

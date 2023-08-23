@@ -23,8 +23,6 @@
           </section>
         </div>
 
-
-
         <section class="wrapperProfileBottom">
 
           <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
@@ -71,7 +69,7 @@
           </a>        
 
 
-          <a  href="/user/edit/<%=user.id %>/changepassword">
+          <a href="/user/edit/<%=user.id %>/changepassword">
             <section>
               <div>
                 <p>/</p>
@@ -85,18 +83,20 @@
           </a>
 
           <form action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
-            <button type="submit">
-              <section>
-                <div>
+            <button class="wrapperProfileBottom-button" type="submit">
+              <section class="button-section">
+                <div class="button-content">
                   <p>/</p>
                   <div>
-                    <h4>DELETE USER</h4>
+                    <h4>Delete user</h4>
+                    <h5>Delete your user</h5>
                   </div>
                 </div>
-                <p>></p>
+                <p class="right-arrow">></p>
               </section>
             </button>
           </form>
+          
 
         </section>
       </main>

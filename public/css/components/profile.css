@@ -11,7 +11,7 @@
 .wrapperProfile {
   width: 100%;
   height: fit-content;
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding: 1.2rem;
   margin-top: 2rem;
   border-radius: 5px;
@@ -36,33 +36,27 @@
 .wrapperProfileTop div:nth-child(2) {
   flex-direction: column;
   align-items: start;
-  margin-left: .8rem;
+  margin-left: 0.8rem;
 }
-.wrapperProfileTop div:nth-child(2) p{
-  color: #185ABC;
+.wrapperProfileTop div:nth-child(2) p {
+  color: #185abc;
   font-size: 1rem;
 }
 
 .logoutButton {
-  margin-top: .3rem;
+  margin-top: 0.3rem;
   text-decoration: none;
   color: white;
-  background-color: #185ABC;
-  padding: .6rem .5rem;
+  background-color: #185abc;
+  padding: 0.6rem 0.5rem;
   border-radius: 5px;
-  transition: .15;
+  transition: 0.15;
 }
-
-.logoutButton:hover {
-  background-color: red;
-}
-
 
 .wrapperProfileTop h2 {
   color: #23539a;
   font-size: 1.5rem;
 }
-
 
 .mainProfile img {
   border-radius: 100%;
@@ -70,11 +64,10 @@
   height: 50px;
 }
 
-
 .wrapperProfileBottom {
   width: 100%;
   height: fit-content;
-  background-color:#ffffff;
+  background-color: #ffffff;
   padding: 1.2rem;
   margin-top: 2rem;
   border-radius: 5px;
@@ -83,12 +76,47 @@
   flex-direction: column;
 }
 
+.wrapperProfileBottom-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #185abc;
+  transition: 0.2s;
+  margin-bottom: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+}
 
+.wrapperProfileBottom-button:hover {
+  color: red;
+}
+
+.button-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 2rem);
+}
+
+.right-arrow {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  color: #185abc;
+}
 
 .wrapperProfileBottom a {
   text-decoration: none;
-  color: #185ABC;
-  transition: .2s;
+  color: #185abc;
+  transition: 0.2s;
   margin-bottom: 1rem;
 }
 
@@ -101,30 +129,27 @@
 .wrapperProfileBottom section div:nth-child(1) {
   display: flex;
   align-items: center;
-  
 }
 .wrapperProfileBottom section div:nth-child(2) {
   margin-left: 1rem;
-
 }
 
 .wrapperProfileBottom h5 {
-    color: #a0bde9;
+  color: #a0bde9;
 }
 .wrapperProfileBottom p:nth-child(1) {
- font-weight: bold;
- font-size: 2rem;
+  font-weight: bold;
+  font-size: 2rem;
 }
 .wrapperProfileBottom p:nth-child(2) {
- font-weight: bold;
+  font-weight: bold;
 }
-
 
 .error {
   font-size: 12px;
   color: red;
   text-align: left;
-  width:250px;
+  width: 250px;
 }
 .input-error {
   margin-bottom: 8px;
@@ -135,12 +160,10 @@
   max-width: none;
 }
 
-
 @media (min-width: 1200px) {
-  
   .mainProfile {
     align-items: center;
-  } 
+  }
 
   .wrapperProfile {
     width: 50%;

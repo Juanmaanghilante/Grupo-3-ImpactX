@@ -87,6 +87,13 @@ body {
   margin-top: 30px;
 }
 
+.carrito-subtotal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
 .carrito-botones {
   display: flex;
   justify-content: center;

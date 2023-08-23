@@ -193,25 +193,28 @@ module.exports = {
   },
   userList: async (req, res) => {
     try {
-    const usersHabilitados = await db.User.findAll({
-      include: [{ association: "perfiles" }],
-    });
-    return res.render("users/listUser", { usuarios: usersHabilitados });
-  } catch (error) {
-   console.log(error);   
-  }
+      const usersHabilitados = await db.User.findAll({
+        include: [{ association: "perfiles" }],
+      });
+      return res.render("users/listUser", { usuarios: usersHabilitados });
+    } catch (error) {
+      console.log(error);
+    }
   },
-
-  //borrado fisico de usuario
-  userDestroyProcess: function (req, res) {
-    let userId = req.params.id;
-
-    User.destroy({ where: { id: userId }})
-      .then(() => {
-        res.clearCookie("userEmail");
+  userDestroyProcess: async (req, res) => {
+    try {
+      let userId = req.params.id;
+      const userDelete = await User.destroy({ where: { id: userId } });
+      if (req.params.id == req.session.userLogged.id) {
+        if (req.cookies.userEmail) {
+          res.clearCookie("userEmail");
+        }
         req.session.destroy();
-        return res.redirect("/");
-      })
-      .catch((error) => res.send(error));
+        res.redirect("/");
+      }      
+      return res.redirect("/user/list");
+    } catch (error) {
+      console.log(error);
+    }
   },
 };

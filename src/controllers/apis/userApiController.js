@@ -68,7 +68,7 @@ module.exports = {
             status: 201,
             url: '/api/users/create'
         }
-          response.data = productoCrear
+          response.data = usuarioCrear
           return res.json(response)
 
     } catch (error) {
