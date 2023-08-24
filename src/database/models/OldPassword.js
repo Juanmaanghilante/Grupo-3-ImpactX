@@ -8,10 +8,6 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
       autoIncrement: true,
     },
-    user_id: {
-      type: dataTypes.BIGINT(20).UNSIGNED,
-      allowNull: false,
-    },
     old_password: {
       type: dataTypes.STRING(255),
       allowNull: false,

@@ -24,10 +24,6 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(255),
       allowNull: false,
     },
-    profile_id: {
-      type: dataTypes.BIGINT(20).UNSIGNED,
-      allowNull: false,
-    },
     password: {
       type: dataTypes.STRING(255),
       allowNull: false,
