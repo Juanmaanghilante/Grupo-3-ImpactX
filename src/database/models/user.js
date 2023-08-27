@@ -68,8 +68,18 @@ module.exports = (sequelize, dataTypes) => {
     Users.hasMany(models.ContactMessage, {
       as: "contactmessage",
       foreignKey: "user_id",
-    });   
-    
+    });
+    Users.belongsToMany(models.Product, {
+      as: "productos",
+      through: "user_product",
+      foreignKey: "user_id",
+      otherKey: "product_id",
+      timestams: false
+    })
+    Users.hasMany(models.Ticket, {
+      as: "tickets",
+      foreignKey: "user_id",
+    });
     
   };
 

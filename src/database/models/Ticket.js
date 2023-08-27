@@ -35,7 +35,21 @@ module.exports = (sequelize, dataTypes) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const Ticket = sequelize.define(alias, cols, config);
+  const Tickets = sequelize.define(alias, cols, config);
 
-  return Ticket;
+  Tickets.associate = (models) => {
+    Tickets.belongsToMany(models.Product, {
+      as: "productos",
+      through: "product_ticket",
+      foreignKey: "ticket_id",
+      otherKey: "product_id",
+      timestamps: false
+    })
+    Tickets.belongsTo(models.User, {
+      as: "usuarios",
+      foreignKey: "user_id",
+    });
+  }
+
+  return Tickets;
 };
