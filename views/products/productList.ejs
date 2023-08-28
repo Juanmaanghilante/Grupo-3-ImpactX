@@ -31,7 +31,7 @@
                 <% if (locals.isLogged) { %>
                   <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                     <div>
-                      <a class="botonProductos" href="/productos/edit/<%=producto.id %>">Edit</a>
+                      <a class="botonProductos" href="/productos/edit/<%=producto.id %>">Edit</a>                  
                       <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
                         <button type="sumbit" class="botonProductos eliminar">Delete</button>
                       </form>

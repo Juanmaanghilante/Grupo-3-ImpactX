@@ -4,7 +4,22 @@ if (document.readyState == "loading") {
   ready();
 }
 
-function ready() {
+async function ready() {
+  /*let fetchProductos = async () => {
+        let url = window.location.href;
+        console.log(url);
+        let id = url.split("/").pop();
+        console.log(id);
+        console.log("ID from URL:", id);
+        let apiUrl = `/api/products/edit/${id}`;
+        let respuestaApiProductos = await fetch(apiUrl)
+        let productosParsed = await respuestaApiProductos.json()
+
+        return productosParsed
+    }      
+    let listadoProductos = await fetchProductos()
+    console.log(listadoProductos);*/
+
   const form = document.querySelector(".create-form");
 
   form.addEventListener("submit", async (e) => {
@@ -62,26 +77,26 @@ function ready() {
     e.target.submit();
 
     /*let model = {
-      product: product.value,
-      category: category.value,
-      price: price.value,
-      desc: desc.value,
-      image: selectedFile.name,
-    };
-
-    let apiResponse = await fetch("/api/products/create", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(model),
-    });
-    let responseToJson = await apiResponse.json();
-
-    if (responseToJson.data) {
-      Swal.fire("Success", "Product successfully created!").then(() => {
-        window.location.href = `/productos`;
+        product: product.value,
+        category: category.value,
+        price: price.value,
+        desc: desc.value,
+        image: selectedFile.name,
+      };
+  
+      let apiResponse = await fetch("/api/products/create", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(model),
       });
-    } else {
-      Swal.fire("Oops! Something went wrong", "error");
-    }*/
+      let responseToJson = await apiResponse.json();
+  
+      if (responseToJson.data) {
+        Swal.fire("Success", "Product successfully updated!").then(() => {
+          window.location.href = `/productos`;
+        });
+      } else {
+        Swal.fire("Oops! Something went wrong", "error");
+      }*/
   });
 }

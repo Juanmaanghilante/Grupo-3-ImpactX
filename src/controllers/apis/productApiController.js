@@ -1,5 +1,6 @@
 const db = require("../../database/models");
 const Product = db.Product;
+const Category = db.Category;
 
 module.exports = {
   list: async (req, res) => {
@@ -75,11 +76,42 @@ module.exports = {
       return res.status(500).json(response);
     }
   },
-
-  update: async (req, res) => {
-    let response = {};
-    let productId = req.params.id;
+  edit: async (req, res) => {
+    console.log("hola edit");
     try {
+      let response = {};
+      let productId = req.params.id;
+      let promProduct = await Product.findByPk(productId);
+      let categories = await Category.findAll();
+
+      let [productoToEdit, categoriesList] = await Promise.all([
+        promProduct,
+        categories,
+      ]);
+
+      response.meta = {
+        status: 200,
+        url: `/api/products/edit/${req.params.id}`,
+      };
+      response.data = {
+        productoToEdit: productoToEdit,
+        categoriesList: categoriesList
+      };
+      return res.json(response);
+    } catch (error) {
+      console.error("Error finding product:", error);
+      response.meta = {
+        status: 500,
+        url: `/api/products/edit/${req.params.id}`,
+      };
+      response.msg = `Oops! Something went wrong while finding the product with ID: ${req.params.id}.`;
+      return res.status(500).json(response);
+    }
+  },
+  update: async (req, res) => {
+    try {
+      let response = {};
+      let productId = req.params.id;
       const editProduct = await Product.update(
         {
           name: req.body.product,
@@ -93,7 +125,6 @@ module.exports = {
           where: { id: productId },
         }
       );
-      console.log(editProduct);
       response.meta = {
         status: 201,
         url: `/api/products/edit/${req.params.id}`,
