@@ -4,50 +4,84 @@ if (document.readyState == "loading") {
   ready();
 }
 
-const form = document.querySelector('.create-form')
-
 function ready() {
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault()
-    
-    
+  const form = document.querySelector(".create-form");
 
-    // HACER ACÁ TODAS LAS VALIDACIONES
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
+    var category = document.getElementsByName("category")[0];
+    var product = document.getElementsByName("product")[0];
+    var desc = document.getElementsByName("desc")[0];
+    var price = document.getElementsByName("price")[0];
+    var image = document.getElementsByName("image")[0];
+    var selectedFile = image.files[0];
 
-
-    if(errors.length > 0) {
-
-      // MANDAR LA LISTA DE ERRORES
-
-    } else {
-      // CAMBIAR 'seleccionarInput' POR NOMBRE VARIABLE DE CADA INPUT QUE AGARRAN DEL DOM
-      let model = {
-        name: seleccionarInput.value,
-        category_id: seleccionarInput.value,
-        price: seleccionarInput.value,
-        description: seleccionarInput.value,
-        image: seleccionarInput.value,
-      }
-      let apiResponse = await fetch('/api/products/create', {method: 'POST', headers: {"Content-Type": "application/json"}, body: JSON.stringify(model)})
-      let responseToJson = await apiResponse.json()
-
-
-      if(responseToJson.data) {
-        Swal.fire(
-            'Product Successfully Created!',
-            'success'
-        ).then(() => {
-            window.location.href = `/productos`
-        }) 
-    } else {
-        Swal.fire(
-            'Oops! Something went wrong',
-            'error'
-        ) 
+    if (category.value === "") {
+      category.focus();
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please select a category",
+      });
+      return false;
     }
+
+    if (product.value === "") {
+      product.focus();
+      //product.classList.add("invalidError");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please enter a product name",
+      });
+      return false;
+    } else {
+      //product.classList.remove("invalidError");
     }
-  })
+
+    if (desc.value === "") {
+      desc.focus();
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please enter a description",
+      });
+      return false;
+    }
+    if (price.value === "") {
+      price.focus();
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Please enter a price",
+      });
+      return false;
+    }
+
+    //e.target.submit();
+
+    let model = {
+      product: product.value,
+      category: category.value,
+      price: price.value,
+      desc: desc.value,
+      image: selectedFile.name,
+    };
+
+    let apiResponse = await fetch("/api/products/create", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(model),
+    });
+    let responseToJson = await apiResponse.json();
+
+    if (responseToJson.data) {
+      Swal.fire("Success", "Product successfully created!").then(() => {
+        window.location.href = `/productos`;
+      });
+    } else {
+      Swal.fire("Oops! Something went wrong", "error");
+    }
+  });
 }
-
-
