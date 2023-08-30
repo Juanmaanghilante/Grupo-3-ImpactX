@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head', {title:"Impact X | Cart"})%>
 
-  <body class="bgCart">
+<%- include('../partials/head', {title:"Impact X | Productos"})%>
+
+  <body class="bgProductos">
+
     <%- include('../partials/header')%>
+      <main class="mainCart carrito-prod">
+        <!--<article class="tarjetaCart">
+          <div class="containerImagenCart">
+            <img class="cartImagen" src="/img/">
+          </div>
 
-      <main class="mainCart">
-          <section class="carrito-items carrito-prod">
-                <article class="tarjetaCart carrito-producto">
-                  <div class="containerImagenCart">
-                    <img class="cartImagen" src="" alt="">
-                  </div>
-                  <div class="containerInfoCart carrito-info">
-                    <h2 class="name">Producto:</h2>
-                    <p class="price">Precio:</p>
-                    <p>Cantidad:</p>
-                    <input type="number" value="" class="prodQuantity">
-                    <p class="subtotal">Subtotal: </p>
-                  </div>
-                </article>
-          </section>
+          <div class="containerInfoCart">
+            <h2 class="name">Product name</h2>
+            <p class="price">Product price $</p>
+            <p class="description">Product description</p>
+
+            <div class="contenedorBotonesCart">
+              <button type="sumbit" class="botonCart eliminar">X</button>
+            </div>
+          </div>
+        </article>-->
       </main>
-      <section class="carrito-subtotal">
-        
-      </section>
-      <section class="carrito-total">
-        <h2 class="total">Total: $</h2>
-      </section>
-      <section class="carrito-botones">
-        <button class="confirmar">Confirmar Compra</button>
-        <button class="cancelar">Cancelar</button>
-      </section>
+      <article class="mainTotal">
+        <!--<div class="containerInfoCart">
+          <p class="price">Envio $</p>
+          <p class="price">Subtotal $</p>
+          <h2 class="name">Total $</h2>
+        </div>
+        <div iv class="nuevoCart">
+          <button type="sumbit" class="botonCart edit">Confirmar compra</button>
+        </div>-->        
+      </article>
+
 
       <%- include('../partials/footer')%>
-      <script src="/js/products/cart.js"></script>
+        <script src="/js/products/cart.js"></script>
   </body>
 
 </html>
