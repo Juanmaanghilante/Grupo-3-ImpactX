@@ -147,6 +147,7 @@ module.exports = {
       productos: req.body.productos,
       fecha: new Date()
     }
-    res.send(detalleCompra)
+    console.log(detalleCompra);
+    res.json(detalleCompra)
   }
 };
