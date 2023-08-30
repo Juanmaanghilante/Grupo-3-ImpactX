@@ -112,6 +112,8 @@ function ready() {
         title: "Added to cart!",
         timer: 1000,
         icon: 'success',
+        showConfirmButton: false,
+        iconColor: '#0c2b56',        
         didOpen: () => {
           const b = Swal.getHtmlContainer().querySelector("b");
           timerInterval = setInterval(() => {

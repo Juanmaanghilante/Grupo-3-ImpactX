@@ -51,13 +51,11 @@
       </section>
       <section class="formulario-contacto" id="contacto">
       </section>
-      <% if (locals.isLogged) { %>
-        <% if (locals.userLogged.perfiles.name=="Cliente" ) { %>
           <section class="formulario-contacto" id="contacto">
 
             <h2>Contact us</h2>
             <form action="/contactenos/create" method="POST">
-    
+              <% const readonly = locals.userLogged ? 'readonly' : ''; %>
               <div class="erroresForm">
                 <% if(locals.errors && errors.nombre){ %>
                   <%= errors.nombre.msg %>
@@ -65,7 +63,7 @@
               </div>
               <input type="text" placeholder="Nombre" maxlength="30" name="nombre"
                 class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
-                value="<%= locals.oldData?oldData.nombre:locals.userLogged.name %>" readonly/>
+                value="<%= locals.oldData ? oldData.nombre : locals.userLogged ? locals.userLogged.name : '' %>" <%= readonly %>/>
     
               <div class="erroresForm">
                 <% if(locals.errors && errors.apellido){ %>
@@ -74,7 +72,7 @@
               </div>
               <input type="text" placeholder="Apellido" maxlength="30" name="apellido"
                 class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
-                value="<%= locals.oldData?oldData.apellido:locals.userLogged.lastname %>" readonly/>
+                value="<%= locals.oldData ? oldData.apellido : locals.userLogged ? locals.userLogged.lastname : '' %>" <%= readonly %>/>
     
               <div class="erroresForm">
                 <% if(locals.errors && errors.correo){ %>
@@ -83,7 +81,7 @@
               </div>
               <input type="text" placeholder="Correo Electrónico" name="correo" maxlength="100"
                 class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>"
-                value="<%= locals.oldData?oldData.correo:locals.userLogged.email %>" readonly/>
+                value="<%= locals.oldData ? oldData.correo : locals.userLogged ? locals.userLogged.email : '' %>" <%= readonly %> />
     
               <label>¡Leave us your message!</label>
               <div class="erroresForm">
@@ -92,7 +90,7 @@
                 <% } %>
               </div>
               <textarea class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5"
-                name="mensaje"><%= locals.oldData?oldData.mensaje:null %></textarea>
+                name="mensaje"><%= locals.oldData ? oldData.mensaje : null %></textarea>
     
               <button type="submit" class="botonContactanos">Send message</button>
 
@@ -103,8 +101,6 @@
               </div>          
             </form>
           </section>
-        <% } %>
-      <% } %>
       <%- include('./partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 

@@ -20,14 +20,11 @@ const validationsSendRequest = [
     body("answer").notEmpty().withMessage("You must write an answer")
 ]
 
-//router.get('/', mainController.index);
-//router.post('/contactenos/create', validations, mainController.createContactenos);
+
 router.get('/', mainControllerDb.index);
-router.post('/contactenos/create', validations, mainControllerDb.createContactenos);
+router.post('/contactenos/create', authMiddleware, validations, mainControllerDb.createContactenos);
 
 //Gestionar requests
-//router.get('/request/edit', authMiddleware, mainController.request);
-//router.post('/request/:id', validationsSendRequest, mainController.sendAnswer);
 router.get('/request/edit', authMiddleware, mainControllerDb.request);
 router.post('/request/:id', validationsSendRequest, mainControllerDb.sendAnswer);
 

@@ -7,7 +7,7 @@ if (document.readyState == "loading") {
 let productos = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function ready() {
-  if (!JSON.parse(!localStorage.getItem("carrito"))) {
+  if (JSON.parse(localStorage.getItem("carrito")) == null) {
     localStorage.setItem("carrito", JSON.stringify([]));
   }
   mostrarCarrito(productos);
@@ -38,6 +38,11 @@ async function finalizarCompra() {
   });
   let response = await finalizarFetch.json();
   console.log(response);
+  Swal.fire(
+    'Congratulations',
+    'Purchase made',
+    'success'
+)
 }
 
 function mostrarCarrito(productosCarrito) {
@@ -61,7 +66,7 @@ function mostrarCarrito(productosCarrito) {
         <p class="description">${element.description}</p>
 
         <div class="contenedorBotonesCart">
-          <button type="sumbit" class="botonCart eliminar" onClick=borrarElemento(${element.id})>X</button>
+          <button type="sumbit" class="botonCartDelete" onClick=borrarElemento(${element.id})>X</button>
         </div>
       </div>
 
@@ -70,13 +75,15 @@ function mostrarCarrito(productosCarrito) {
     document.querySelector(
       ".mainTotal"
     ).innerHTML = `<div class="containerInfoCart">
-    <p class="price">Envio $ 1.500</p>
-    <p class="price">Subtotal ${subTotal}</p>
-    <h2 class="name">Total ${subTotal + 1500}</h2>
+    <p class="price">Tax: ${(1500).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+    <p class="price">Subtotal: ${(subTotal).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+    <div class="totalBox">
+      <h2 class="name totalBox">Total: ${(subTotal + 1500).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
+    </div>
   </div>
   <div iv class="nuevoCart">
-    <button type="sumbit" class="botonCart edit" onClick=finalizarCompra()>Confirmar compra</button>
-    <button type="sumbit" class="botonCart edit" onClick=vaciarCarrito()>Vaciar carrito</button>
+    <button type="sumbit" class="botonCartConfirm" onClick=finalizarCompra()>Confirm purchase</button>
+    <button type="sumbit" class="botonCartDelete" onClick=vaciarCarrito()>Empty cart</button>
   </div>`;
   }
 }
