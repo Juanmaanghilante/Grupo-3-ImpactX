@@ -4,6 +4,8 @@ const { validationResult } = require("express-validator");
 
 const Product = db.Product;
 const Category = db.Category;
+const Ticket = db.Ticket;
+const ProductTicket = db.ProductTicket;
 
 module.exports = {
   productsCart: async (req, res) => {
@@ -12,7 +14,7 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
-  },  
+  },
   list: async (req, res) => {
     try {
       const productosHabilitados = await Product.findAll({ paranoid: true });
@@ -140,13 +142,24 @@ module.exports = {
       console.log(error);
     }
   },
-  buyProcess: async(req, res)=> {
-    let detalleCompra = {
-      id_user: req.session.userLogged.id,
-      total: req.body.total,
-      productos: req.body.productos,
-      fecha: new Date()
+  buyProcess: async (req, res) => {
+    try {
+      const ticketCreado = await Ticket.create({
+        user_id: req.session.userLogged.id,
+        date: new Date(),
+        total: req.body.total,
+      });
+      req.body.productos.forEach(async (producto) => {
+        const productTicket = await ProductTicket.create({
+          ticket_id: ticketCreado.id,
+          product_id: producto.id,
+          price: producto.subTotal,
+        });
+      });
+
+      return res.json(ticketCreado);
+    } catch (error) {
+      console.log(error);
     }
-    res.send(detalleCompra)
-  }
+  },
 };
