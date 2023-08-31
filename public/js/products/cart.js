@@ -28,9 +28,10 @@ function vaciarCarrito() {
 
 async function finalizarCompra() {
   let data = {
-    total: productos.reduce((acum, current) => acum + current.precio, 0),
+    total: productos.reduce((acum, current) => acum + (parseInt(current.precio)*parseInt(current.cantidad)), 0),
     productos: productos,
   };
+  console.log("Total:",data.total);
   let finalizarFetch = await fetch("/cart/done", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -54,7 +55,7 @@ function mostrarCarrito(productosCarrito) {
     let subTotal = 0;
     carritoProd.innerHTML = ``;
     productosCarrito.forEach((element) => {
-      subTotal += parseInt(element.precio);
+      subTotal += parseInt(element.precio) * parseInt(element.cantidad);
       carritoProd.innerHTML += `<article class="tarjetaCart">
       <div class="containerImagenCart">
         <img class="cartImagen" src="/img/${element.img}">
@@ -75,10 +76,9 @@ function mostrarCarrito(productosCarrito) {
     document.querySelector(
       ".mainTotal"
     ).innerHTML = `<div class="containerInfoCart">
-    <p class="price">Tax: ${(1500).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
     <p class="price">Subtotal: ${(subTotal).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
     <div class="totalBox">
-      <h2 class="name totalBox">Total: ${(subTotal + 1500).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
+      <h2 class="name totalBox">Total: ${(subTotal).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
     </div>
   </div>
   <div iv class="nuevoCart">
