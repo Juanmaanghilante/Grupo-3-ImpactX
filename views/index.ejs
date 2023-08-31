@@ -61,7 +61,7 @@
                   <%= errors.nombre.msg %>
                 <% } %>
               </div>
-              <input type="text" placeholder="Nombre" maxlength="30" name="nombre"
+              <input type="text" placeholder="Name" maxlength="30" name="nombre"
                 class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
                 value="<%= locals.oldData ? oldData.nombre : locals.userLogged ? locals.userLogged.name : '' %>" <%= readonly %>/>
     
@@ -70,7 +70,7 @@
                   <%= errors.apellido.msg %>
                 <% } %>
               </div>
-              <input type="text" placeholder="Apellido" maxlength="30" name="apellido"
+              <input type="text" placeholder="Lastname" name="apellido"
                 class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
                 value="<%= locals.oldData ? oldData.apellido : locals.userLogged ? locals.userLogged.lastname : '' %>" <%= readonly %>/>
     
@@ -79,7 +79,7 @@
                   <%= errors.correo.msg %>
                 <% } %>
               </div>
-              <input type="text" placeholder="Correo Electrónico" name="correo" maxlength="100"
+              <input type="text" placeholder="Email" name="correo" maxlength="100"
                 class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>"
                 value="<%= locals.oldData ? oldData.correo : locals.userLogged ? locals.userLogged.email : '' %>" <%= readonly %> />
     
