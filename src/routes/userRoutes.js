@@ -15,6 +15,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 router.get('/user/login', guestMiddlware,user.userLogin)
+router.post('/user/userList', user.userLoginList)
 router.post('/user/login', validationsLogin, user.loginProcess)
 
 

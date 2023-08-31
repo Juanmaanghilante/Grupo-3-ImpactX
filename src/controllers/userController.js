@@ -11,6 +11,16 @@ module.exports = {
   userLogin: (req, res) => {
     return res.render("users/loginUser");
   },
+  userLoginList: async (req, res) => {
+    try {
+      const userToLogin = await User.findAll({
+        attributes: ['user_name']
+      })
+      return res.json(userToLogin)
+    } catch (error) {
+      console.log(error);
+    }
+  },
   loginProcess: async (req, res) => {
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
