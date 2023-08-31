@@ -20,23 +20,25 @@
             </div>
 
             <div class="containerInfoProductos">           
-                <h2 class="name"><%= producto.name %></h2>
-                <p class="price"><%= producto.price %> $</p>
-                <p class="description"><%= producto.description %></p>
-                      <div class="contenedorBotonesProductos">
-                        <a class="botonProductos add-to-cart" id="addCartBtn" data-id="<%= producto.id %>">ADD TO CART</a>
-                        <a class="botonProductos" href="">BUY NOW</a>
-                        <% if (locals.isLogged) { %>
-                          <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
-                            <div>
-                              <a class="botonProductos" href="/productos/edit/<%=producto.id %>">Edit</a>
-                              <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
-                                <button type="sumbit" class="botonProductos eliminar">Delete</button>
-                              </form>
-                            </div>
-                          <% } %>
-                        <% } %>
-                      </div>
+              <h2 class="name"><%= producto.name %></h2>
+              <p class="price"><%= producto.price %> $</p>
+              <p class="description"><%= producto.description %></p>
+
+
+              <div class="contenedorBotonesProductos">
+                <a class="botonProductos add-to-cart" id="addCartBtn" data-id="<%= producto.id %>">ADD TO CART</a>
+                <a class="botonProductos" href="">BUY NOW</a>
+                <% if (locals.isLogged) { %>
+                  <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
+                    <div>
+                      <a class="botonProductos" href="/productos/edit/<%=producto.id %>">Edit</a>                  
+                      <form action="/productos/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                        <button type="sumbit" class="botonProductos eliminar">Delete</button>
+                      </form>
+                    </div>
+                  <% } %>
+                <% } %>
+              </div>
             </div>
           </article>
 
@@ -76,7 +78,7 @@
       </main>
 
       <%- include('../partials/footer')%>
-      <%- include('../partials/scripts')%>
+      <script src="/js/filterByWord.js"></script>
   </body>
 
 </html>

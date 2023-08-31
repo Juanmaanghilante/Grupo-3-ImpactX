@@ -16,16 +16,16 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.category) { %>
                   <%= errors.category.msg %>
-                <% } %>
+                    <% } %>
               </div>
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
                 id="">
                 <option value="">Select a option</option>
-                  <% for( const servicio of categories ) { %>
-                    <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.category) ? 'selected' :
-                      null %>
-                      <%= locals.oldData && (servicio.id===oldData.category) ? "selected" : null %> > <%= servicio.name %>
-                    </option>
+                <% for( const servicio of categories ) { %>
+                  <option value="<%= servicio.id %>" <%=locals.oldData && (servicio.id==oldData.category) ? 'selected' :
+                    null %>
+                    <%= locals.oldData && (servicio.id===oldData.category) ? "selected" : null %> > <%= servicio.name %>
+                  </option>
                   <% } %>
               </select>
 
@@ -33,7 +33,7 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.product) { %>
                   <%= errors.product.msg %>
-                <% } %>
+                    <% } %>
               </div>
               <input type="text" name="product"
                 class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Name"
@@ -42,7 +42,7 @@
               <div class="erroresForm">
                 <% if (locals.errors && errors.desc) { %>
                   <%= errors.desc.msg %>
-                <% } %>
+                    <% } %>
               </div>
               <textarea type="text" name="desc"
                 class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
@@ -72,7 +72,8 @@
       </form>
 
       <%- include('../partials/footer')%>
-      <%- include('../partials/scripts')%>    
+      <script src="/js/products/productCreate.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
   </body>
 
 </html>
