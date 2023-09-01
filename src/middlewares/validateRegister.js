@@ -28,10 +28,10 @@ module.exports = [
     .withMessage("You must complete the password")
     .bail()
     .isStrongPassword({
-      minLength: 6,
+      minLength: 8,
       minUppercase: 1,
       minLowercase: 1,
-      minSymbols: 1,
+      
     })
     .withMessage(
       "The password must have at least: 6 characters, a lower case letter, an upper case letter and a symbol"

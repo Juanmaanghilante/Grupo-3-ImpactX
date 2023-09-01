@@ -8,47 +8,51 @@
         <div>
           <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
         </div>
-
-        <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data">
+<!-- capturo form -->
+        <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data" id="signupForm">
           <h2 class="titulo-registrar-usuario">Create user</h2>
           <div class="control-formulario">
 
             <!-- USER NAME -->
-            <div class="erroresForm">
+            <div class="erroresForm"  id="errorSignupUser">
               <% if (locals.errors && errors.user) { %>
                 <%= errors.user.msg %>
               <% } %>
             </div>
-            <input type="text" name="user" class="control <%= locals.errors && errors.user ? 'invalidError' : null %>"
+         
+         <!-- input 1 -->
+            <input type="text" name="user" class="control" id="userName" <%= locals.errors && errors.user ? 'invalidError' : null %>
               placeholder="Username" value="<%= locals.oldData?oldData.user:null %>" />
 
 
+
+
             <!-- FIRST NAME -->
-            <div class="erroresForm">
+            <div class="erroresForm"   id="errorName" >
               <% if (locals.errors && errors.name) { %>
                 <%= errors.name.msg %>
               <% } %>
             </div>
-            <input type="text" name="name" class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
+            <input type="text" name="name" id="name1"class="control <%= locals.errors && errors.name ? 'invalidError' : null %>"
               placeholder="Name" value="<%= locals.oldData?oldData.name:null %>" />
 
             <!-- LAST NAME -->
-            <div class="erroresForm">
+            <div class="erroresForm"    id="errorLastName">
               <% if (locals.errors && errors.lastname) { %>
                 <%= errors.lastname.msg %>
               <% } %>
             </div>
             <input type="text" name="lastname"
-              class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" placeholder="Last name"
+              class="control <%= locals.errors && errors.lastname ? 'invalidError' : null %>" id="lastName2"placeholder="Last name"
               value="<%= locals.oldData?oldData.lastname:null %>" />
 
             <!-- EMAIL -->
-            <div class="erroresForm">
+            <div class="erroresForm" id="emailError">
               <% if (locals.errors && errors.email) { %>
                 <%= errors.email.msg %>
               <% } %>
             </div>
-            <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
+            <input type="text" name="email" class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"id="email3"
               placeholder="Email" value="<%= locals.oldData?oldData.email:null %>" />
 
             <% if (locals.isLogged) { %>
@@ -79,7 +83,7 @@
                       <% } %>
                     </div>
                     <input class="control <%= locals.errors && errors.profilePic ? 'invalidError' : null %>" type="file"
-                      name="profilePic">
+                      name="profilePic" id="file4">
 
                     <!-- PASSWORD -->
                     <div class="erroresForm">
@@ -89,7 +93,7 @@
                     </div>
                     <input type="password" name="password"
                       class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
-                      placeholder="Password" />
+                      placeholder="Password" id="password5" />
 
                     <div class="erroresForm">
                       <% if (locals.errors && errors.repeatPassword) { %>
@@ -98,7 +102,7 @@
                     </div>
                     <input type="password" name="repeatPassword"
                       class="control <%= locals.errors && errors.repeatPassword ? 'invalidError' : null %>"
-                      placeholder="Repeat password" />
+                      placeholder="Repeat password" id="rPassword6"/>
           </div>
           <div>
             <button type="submit" value="ENVIAR" class="botonContactanos">Register</input>
@@ -108,7 +112,8 @@
 
       <%- include('../partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>       
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+      <script src="/js/users/signupUserValidation.js"></script>     
   </body>
 
 </html>
