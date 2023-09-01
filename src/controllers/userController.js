@@ -6,6 +6,7 @@ const { sequelize } = require("../database/models");
 const Profile = db.Profile;
 const User = db.User;
 const ContactMessage = db.ContactMessage;
+const OldPassword = db.OldPassword;
 
 module.exports = {
   userLogin: (req, res) => {
@@ -14,9 +15,9 @@ module.exports = {
   userLoginList: async (req, res) => {
     try {
       const userToLogin = await User.findAll({
-        attributes: ['user_name']
-      })
-      return res.json(userToLogin)
+        attributes: ["user_name"],
+      });
+      return res.json(userToLogin);
     } catch (error) {
       console.log(error);
     }
@@ -215,7 +216,9 @@ module.exports = {
   userDestroyProcess: async (req, res) => {
     try {
       let userId = req.params.id;
-      const contactMessageDelete = await ContactMessage.destroy({ where: { user_id: userId } });
+      const contactMessageDelete = await ContactMessage.destroy({
+        where: { user_id: userId },
+      });
       const userDelete = await User.destroy({ where: { id: userId } });
 
       let [contactMessageDeleteProcess, userDeleteProcess] = await Promise.all([
@@ -229,8 +232,31 @@ module.exports = {
         }
         req.session.destroy();
         res.redirect("/");
-      }      
+      }
       return res.redirect("/user/list");
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  passwordChange: (req, res) => {
+    const usuarioCambiarPass = req.session.userLogged;
+
+    return res.render("users/changePassUser", { usuario: usuarioCambiarPass });
+  },
+  passwordChangeProcess: async (req, res) => {
+    try {
+      const usuarioEditar = await User.update(
+        {
+          password: bcrypt.hashSync(req.body.contraseniaNueva, 10),
+          confirm_password: bcrypt.hashSync(req.body.contraseniaNueva, 10),
+        },
+        { where: { id: req.session.userLogged.id } }
+      );
+      const oldPassword = await OldPassword.create({
+        user_id: req.session.userLogged.id,
+        old_password: bcrypt.hashSync(req.body.contrasenia, 10),
+      });
+      return res.render("users/profileUser", { user: req.session.userLogged });
     } catch (error) {
       console.log(error);
     }

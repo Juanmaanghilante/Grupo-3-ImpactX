@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     created_at: dataTypes.DATE,
-    updated_at: dataTypes.DATE
+    updated_at: dataTypes.DATE,
   };
 
   let config = {
@@ -25,6 +25,13 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const OldPassword = sequelize.define(alias, cols, config);
+
+  OldPassword.associate = (models) => {
+    OldPassword.belongsTo(models.User, {
+      as: "oldpassword",
+      foreignKey: "user_id",
+    });
+  };
 
   return OldPassword;
 };

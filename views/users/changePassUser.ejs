@@ -16,33 +16,32 @@
           <div>
             <h2 class="titulo-registrar-usuario">Change your password</h2>
             
-            <div class="control-formulario">
-              <input type="password" name="contrasenia" class="control" placeholder="Old Password"/>
-            </div>
             <% if(locals.errors && errors.contrasenia){ %>
               <div class="div-input input-error errorPass">
                   <p class="error"><%= errors.contrasenia.msg %></p>
               </div>
-            <% } %>
-            
-
+            <% } %>            
             <div class="control-formulario">
-              <input type="password" name="contraseniaNueva" class="control" placeholder="New password" />
+              <input type="password" name="contrasenia" class="control" placeholder="Old Password"/>
             </div>
+
             <% if(locals.errors && errors.contraseniaNueva){ %>
               <div class="div-input input-error errorPass">
                   <p class="error"><%= errors.contraseniaNueva.msg %></p>
               </div>
-            <% } %>
-
+            <% } %>            
             <div class="control-formulario">
-              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repeat new password"  />
+              <input type="password" name="contraseniaNueva" class="control" placeholder="New password" />
             </div>
+
             <% if(locals.errors && errors.contraseniaNuevaRepetir){ %>
               <div class="div-input input-error errorPass">
                   <p class="error"><%= errors.contraseniaNuevaRepetir.msg %></p>
               </div>
-            <% } %>
+            <% } %>            
+            <div class="control-formulario">
+              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repeat new password"  />
+            </div>
            
             <button type="submit" class="botonContactanos">Change Password</input>
           </div>

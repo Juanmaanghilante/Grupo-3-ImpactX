@@ -80,7 +80,10 @@ module.exports = (sequelize, dataTypes) => {
       as: "tickets",
       foreignKey: "user_id",
     });
-    
+    Users.hasMany(models.OldPassword, {
+      as: "oldpassword",
+      foreignKey: "user_id",
+    });    
   };
 
   return Users;

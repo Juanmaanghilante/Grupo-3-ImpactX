@@ -10,8 +10,8 @@ const validationsEditUser = require('../middlewares/validateEditUser');
 const validationsLogin = require('../middlewares/validateLogin');
 const guestMiddlware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-// const valChangePassword1 = require("../middlewares/passwordValidation1");
-// const valChangePassword2 = require("../middlewares/passwordValidation2");
+const valChangePassword1 = require("../middlewares/passwordValidation1");
+const valChangePassword2 = require("../middlewares/passwordValidation2");
 
 
 router.get('/user/login', guestMiddlware,user.userLogin)
@@ -35,7 +35,7 @@ router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, us
 router.delete("/user/delete/:id", authMiddleware, userControler.userDestroyProcess)
 
 // // CHANGE PASSWORD
-// router.get("/user/edit/:id/changepassword", authMiddleware, userControler.passwordChange)
-// router.put("/user/edit/changepassword", authMiddleware, valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
+router.get("/user/edit/:id/changepassword", authMiddleware, userControler.passwordChange)
+router.put("/user/edit/changepassword", authMiddleware, valChangePassword1, valChangePassword2, userControler.passwordChangeProcess)
 
 module.exports = router
