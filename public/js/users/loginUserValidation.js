@@ -9,17 +9,8 @@ function ready() {
 
     let form = document.querySelector("form#login_form")
     let busqueda = []
-    let encontrado = undefined
-
-    fetch("/user/userList", {
-        method: "POST"
-    })
     
-        .then(response => response.json())
-        .then(info => {
-           busqueda = info
 
-        });
 
 
     form.addEventListener("submit", async (e) => {
@@ -47,12 +38,27 @@ function ready() {
             return false
 
         } else {
+            await fetch("/user/userList", {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({user: user.value})
+            })
+            
+                .then(response => response.json())
+                .then(info => {
+                   busqueda = info
+        
+                });
+
             errorPassword.innerHTML = ""
             errorUser.innerHTML = ""
+            
 
-            encontrado = busqueda.find((row) => row.user_name == user.value);
+            
 
-            if (!encontrado) {
+            if (busqueda == "noExiste") {
                 errorUser.innerHTML = "<p>Username does not exist</p>"
                 user.value = ""
                 password.value = ""
