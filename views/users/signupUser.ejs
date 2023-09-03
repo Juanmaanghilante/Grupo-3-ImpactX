@@ -86,7 +86,7 @@
                       name="profilePic" id="file4">
 
                     <!-- PASSWORD -->
-                    <div class="erroresForm">
+                    <div class="erroresForm" id="errorPassword">
                       <% if (locals.errors && errors.password) { %>
                         <%= errors.password.msg %>
                       <% } %>
@@ -95,7 +95,7 @@
                       class="control <%= locals.errors && errors.password ? 'invalidError' : null %>"
                       placeholder="Password" id="password5" />
 
-                    <div class="erroresForm">
+                    <div class="erroresForm"  id="errorPassword2" >
                       <% if (locals.errors && errors.repeatPassword) { %>
                         <%= errors.repeatPassword.msg %>
                       <% } %>
@@ -113,7 +113,8 @@
       <%- include('../partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
-      <script src="/js/users/signupUserValidation.js"></script>     
+      <script src="/js/users/signupUserValidation.js"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
   </body>
 
 </html>
