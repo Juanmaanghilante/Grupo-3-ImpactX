@@ -7,6 +7,7 @@
 
     <%- include('../partials/header')%>
       <main class="mainProducts">
+
         <div class="search-container">
           <input type="text" id="search-input" placeholder="Search">
         </div>
@@ -26,7 +27,7 @@
 
 
               <div class="contenedorBotonesProductos">
-                <a class="botonProductos add-to-cart" id="addCartBtn" data-id="<%= producto.id %>">ADD TO CART</a>
+                <a class="botonProductos add-to-cart" id="addCartBtn new-toast" data-id="<%= producto.id %>">ADD TO CART</a>
                 <a class="botonProductos" href="">BUY NOW</a>
                 <% if (locals.isLogged) { %>
                   <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
@@ -80,7 +81,9 @@
       <%- include('../partials/footer')%>
       <script src="/js/filterByWord.js"></script>
       <script src="/js/hamburgMenu.js"></script>
+      <script src="/js/products/cart.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </body>
 
 </html>

@@ -55,12 +55,12 @@ function ready() {
 
         // validamos username
         if (username.value == '') {
-            errorUserName.innerHTML = '<p>Debes crellenar este campo</p>';
+            errorUserName.innerHTML = '<p>You must complete the field</p>';
 
         } else {
             encontrado = busqueda.find((row) => row.user_name == username.value);
             if (encontrado) {
-                errorUserName.innerHTML = '<p>Este nombre de usuario ya esta en uso!!</p>';
+                errorUserName.innerHTML = '<p>Username already registered</p>';
             } else {
                 errorUserName.innerHTML = ''
             }
@@ -73,45 +73,36 @@ function ready() {
         // validamos name
 
         if (name.value == '' || name.value.length <= 3) {
-
-            errorName.innerHTML = '<p>Debes usar un nombre valido</p>';
-
+            errorName.innerHTML = '<p>You must use a valid name</p>';
         } else {
-
             errorName.innerHTML = ''
-
         }
 
 
         // validamos lastName
         if (lastName.value == '' || lastName.value.length <= 3) {
-
-            errorLastName.innerHTML = '<p>Debes ingresar tu apellido </p>';
-
+            errorlastName.innerHTML = '<p>You must complete your last name</p>';
         } else {
-
             errorlastName.innerHTML = ''
-
         }
 
         // validamos email 
 
         if (email.value == '') {
-            emailError.innerHTML = '<p>Debes ingresar un email </p>';
+            emailError.innerHTML = '<p>You must fill the blank with your email</p>';
         } else {
             re = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/;
             if (!email.value.match(re)) {
-
-                emailError.innerHTML = '<p> Email invalido </p>'
+                emailError.innerHTML = '<p>Invalid Email</p>'
             } else {
-
-
                 encontrado = busqueda.find((row) => row.email == email.value)
 
+
                 if (encontrado) {
-                    emailError.innerHTML = '<p>Este email ya esta registrado pueba con otro </p>'
+                    emailError.innerHTML = '<p>This email is already registered, try again</p>'
                 } else {
                     emailError.innerHTML = '';
+                    form.submit()
                 }
 
             }

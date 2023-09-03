@@ -68,22 +68,29 @@
   width: 100%;
   height: fit-content;
   background-color: #ffffff;
-  padding: 1.2rem;
+  padding: .5rem;
   margin-top: 2rem;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(106, 163, 255, 0.2);
   display: flex;
   flex-direction: column;
 }
+.wrapperProfileBottom section {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-radius: 5px;
+}
+
+.wrapperProfileBottom section:hover {
+  background-color:#f0f6ff;
+}
 
 .wrapperProfileBottom-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
   color: #185abc;
   transition: 0.2s;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   border: none;
   background: none;
   cursor: pointer;
@@ -94,30 +101,11 @@
   color: red;
 }
 
-.button-section {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.button-content {
-  display: flex;
-  align-items: center;
-  width: calc(100% - 2rem);
-}
-
-.right-arrow {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  color: #185abc;
-}
 
 .wrapperProfileBottom a {
   text-decoration: none;
   color: #185abc;
   transition: 0.2s;
-  margin-bottom: 1rem;
 }
 
 .wrapperProfileBottom section {
@@ -159,6 +147,13 @@
 .errorPass {
   max-width: none;
 }
+
+
+.containerInfoUserProfile {
+  display: flex;
+  align-items: center;
+}
+
 
 @media (min-width: 1200px) {
   .mainProfile {

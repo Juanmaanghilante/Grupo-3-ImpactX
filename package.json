@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Juanmaanghilante/Grupo-3-ImpactX#readme",
   "dependencies": {
+    "aos": "^2.3.4",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
@@ -31,6 +32,7 @@
     "nodemailer": "^6.9.4",
     "nodemon": "^2.0.22",
     "sequelize": "^6.32.1",
-    "sweetalert2": "^11.7.27"
+    "sweetalert2": "^11.7.27",
+    "toastify-js": "^1.12.0"
   }
 }

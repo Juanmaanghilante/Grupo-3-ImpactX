@@ -13,9 +13,15 @@
             <div>
               <img src="../img/<%= user.image %>" alt="">
               <div>
-                <h2><%= user.name %> <%= user.lastname %></h2>
-                <p class="usuario-tipo">My user name: <%= user.user_name %> </p>
-                <p class="usuario-tipo">Role: <%= user.perfiles.name %> </p>
+                  <h2><%= user.name %> <%= user.lastname %></h2>
+                  <p class="usuario-tipo"><%= user.user_name %> </p>
+                  <p  class="usuario-tipo"><%= user.perfiles.name %> </p>
+                
+                <form  action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
+                  <button class="wrapperProfileBottom-button" type="submit">
+                    Delete User
+                  </button>
+                </form>
               </div>
             </div>
               <a class="logoutButton" href="/user/logout">Log Out</a>
@@ -82,26 +88,13 @@
             </section>
           </a>
 
-          <form action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
-            <button class="wrapperProfileBottom-button" type="submit">
-              <section class="button-section">
-                <div class="button-content">
-                  <p>/</p>
-                  <div>
-                    <h4>Delete user</h4>
-                    <h5>Delete your user</h5>
-                  </div>
-                </div>
-                <p class="right-arrow">></p>
-              </section>
-            </button>
-          </form>
           
         </section>
       </main>
 
       <%- include('../partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
+      <script src="/js/users/userProfile.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
   </body>
 

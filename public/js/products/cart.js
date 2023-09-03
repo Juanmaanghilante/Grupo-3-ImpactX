@@ -49,50 +49,58 @@ async function finalizarCompra() {
   localStorage.setItem("carrito", JSON.stringify([]));
 }
 
+
+
 function mostrarCarrito(productosCarrito) {
   let carritoProd = document.querySelector(".carrito-prod");
+
+  
   if (productosCarrito.length == 0) {
     carritoProd.innerHTML = `<h2>The cart is empty <a href='/productos'>¡Buy now!</a></h2>`;
     document.querySelector(".mainTotal").innerHTML = ``;
+
+
   } else {
     let subTotal = 0;
     carritoProd.innerHTML = ``;
+
+
     productosCarrito.forEach((element) => {
+
       subTotal += parseInt(element.precio) * parseInt(element.cantidad);
-      carritoProd.innerHTML += `<article class="tarjetaCart">
-      <div class="containerImagenCart">
-        <img class="cartImagen" src="/img/${element.img}">
-      </div>
+      carritoProd.innerHTML += 
+      `<article class="tarjetaCart">
+          <div class="containerImagenCart">
+              <img class="cartImagen" src="/img/${element.img}">
+          </div>
 
-      <div class="containerInfoCart">
-        <h2 class="name">${element.nombre}</h2>
-        <p class="price">${element.precio} $</p>
-        <p class="description">${element.description}</p>
+          <div class="containerInfoCart">
+              <h2 class="name">${element.nombre}</h2>
+              <p class="price">${element.precio} $</p>
+              <p class="description">${element.description}</p>
 
-        <div class="contenedorBotonesCart">
-          <button type="sumbit" class="botonCartDelete" onClick=borrarElemento(${element.id})>X</button>
-        </div>
-      </div>
-
-    </article>`;
+              <div class="contenedorBotonesCart">
+                <button type="sumbit" class="botonCartDelete" onClick=borrarElemento(${element.id})>X</button>
+              </div>
+          </div>
+      </article>`;
     });
-    document.querySelector(
-      ".mainTotal"
-    ).innerHTML = `<div class="containerInfoCart">
-    <p class="price">Subtotal: ${subTotal.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    })}</p>
-    <div class="totalBox">
-      <h2 class="name totalBox">Total: ${subTotal.toLocaleString("en-US", {
-        style: "currency",
-        currency: "USD",
-      })}</h2>
+
+
+    document.querySelector(".mainTotal").innerHTML = 
+    `<div class="containerInfoCart">
+      <p class="price">Subtotal: ${subTotal.toLocaleString("en-US", { style: "currency", currency: "USD",})}</p>
+      
+        <div class="totalBox">
+          <h2 class="name totalBox">Total: ${subTotal.toLocaleString("en-US", { style: "currency", currency: "USD", })}</h2>
+        </div>
     </div>
-  </div>
-  <div iv class="nuevoCart">
-    <button type="sumbit" class="botonCartConfirm" onClick=finalizarCompra()>Confirm purchase</button>
-    <button type="sumbit" class="botonCartDelete" onClick=vaciarCarrito()>Empty cart</button>
-  </div>`;
+    <div iv class="nuevoCart">
+      <button type="sumbit" class="botonCartConfirm" onClick=finalizarCompra()>Confirm purchase</button>
+      <button type="sumbit" class="botonCartDelete" onClick=vaciarCarrito()>Empty cart</button>
+    </div>`;
+
+    document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`
+
   }
 }

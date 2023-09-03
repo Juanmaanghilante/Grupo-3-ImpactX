@@ -26,10 +26,10 @@ function ready() {
 
         e.preventDefault();
 
-        var user = document.querySelector("#login_user");
-        var errorUser = document.querySelector("#login_err_1");
-        var errorPassword = document.querySelector("#login_err_2");
-        var password = document.querySelector("#login_password");
+        const user = document.querySelector("#login_user");
+        const errorUser = document.querySelector("#login_err_1");
+        const errorPassword = document.querySelector("#login_err_2");
+        const password = document.querySelector("#login_password");
 
         if ((user.value === "") || (password.value === "")) {
 

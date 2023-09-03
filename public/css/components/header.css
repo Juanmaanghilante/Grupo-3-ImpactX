@@ -121,6 +121,30 @@ header nav a {
   cursor: pointer;
 }
 
+.cartContainer {
+  text-decoration: none;
+  position: relative;
+}
+
+
+.cartIconNumber {
+  position: absolute;
+  right: 0;
+  background-color: red;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartIconNumber p {
+  font-size: 11px;
+  color: white;
+  font-weight: bold;
+}
+
 .menu { 
   display: none;
 }
