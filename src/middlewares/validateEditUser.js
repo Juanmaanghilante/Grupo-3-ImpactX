@@ -5,11 +5,20 @@ const db = require("../database/models");
 module.exports = [
   body("user")
   .notEmpty().withMessage("You must complete the username").bail()
-  .custom((value, { req }) => {
+  .custom( async (value, { req }) => {
 
-    
+    const usuarioEncontrado = await db.User.findOne({
+      where: {
+        user_name: req.session.userLogged.user_name,
+      },
+      include: [{ association: "oldpassword" }],
+    })
+  
+    if (usuarioEncontrado) {
+      throw new Error("The entered user name has already been used");
+    }
 
-
+    return true;
   }),
 
   body("name").notEmpty().withMessage("You must complete the name"),
@@ -20,7 +29,23 @@ module.exports = [
     .withMessage("You must complete the email")
     .bail()
     .isEmail()
-    .withMessage("You must write a valid email"),
+    .withMessage("You must write a valid email")
+    .bail()
+    .custom(async (value, { req }) => {
+
+      const emailEncontrado = await db.User.findOne({
+        where: {
+          email: req.session.userLogged.email,
+        },
+        include: [{ association: "oldpassword" }],
+      })
+     
+      if (emailEncontrado) {
+        throw new Error("The entered email has already been used");
+      }
+  
+      return true;
+    }),
 
   body("category").custom((value, { req }) => {
     let rol = req.session.userLogged.perfiles.id;
