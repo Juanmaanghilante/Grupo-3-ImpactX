@@ -1,8 +1,17 @@
 const { body } = require("express-validator");
 const path = require("path");
+const db = require("../database/models");
 
 module.exports = [
-  body("user").notEmpty().withMessage("You must complete the username"),
+  body("user")
+  .notEmpty().withMessage("You must complete the username").bail()
+  .custom((value, { req }) => {
+
+    
+
+
+  }),
+
   body("name").notEmpty().withMessage("You must complete the name"),
   body("lastname").notEmpty().withMessage("You must complete the lastname"),
 

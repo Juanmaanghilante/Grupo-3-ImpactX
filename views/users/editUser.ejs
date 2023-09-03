@@ -104,7 +104,7 @@
                         type="file" name="profilePic" id="profilePic">
                     </div>
 
-                    <input id="userID" type="hidden" value="<%= usuario.id %>">
+                    <input id="userID" type="hidden" value="<%= locals.usuario ? usuario.id : locals.id ? id : null %>">
 
                     <button type="submit" class="botonProductos">Update</button>
                     <button class="botonProductos" href="/user/list">Go back</a>
@@ -120,7 +120,8 @@
 
       <%- include('../partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="/js/users/userUpdate.js"></script> 
   </body>
 
 </html>
