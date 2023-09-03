@@ -45,7 +45,7 @@ function ready() {
     // validamos username
     if (username.value == "") {
       errorUserName.innerHTML =
-        "<p>please fill in this field with your name</p>";
+        "<p>Please fill in this field with your name</p>";
       errores++;
     } else {
       encontrado = busqueda.find((row) => row.user_name == username.value);
@@ -102,7 +102,7 @@ function ready() {
 
     if (!regex.test(password.value)) {
       errorPassword.innerHTML =
-        "<p> you have to use 8 characters and a capital letter</p>";
+        "<p> You have to use 8 characters and a capital letter</p>";
       errores++;
     } else {
       errorPassword.innerHTML = "";
@@ -110,19 +110,20 @@ function ready() {
 
     // valido repeat password
     if (password.value != repeatPassword.value) {
-      errorPassword2.innerHTML = "<p> your passwords must be the same</p>";
+      errorPassword2.innerHTML = "<p> Your passwords must be the same</p>";
       errores++;
     }
 
     if (errores === 0) {
       form.submit();
       Swal.fire({
-        title: "successful operation your user is logged in!",
+        title: "Successful operation your user has been created!",
         text: "Are you ready to take your company to the next level? Fasten your seat belts.",
         imageUrl: "/img/logo-impactx.png",
         imageWidth: 300,
         imageHeight: 100,
         imageAlt: "Custom image",
+        showConfirmButton: false,
       }).then((result) => {
         window.location = "/";
       });

@@ -4,22 +4,23 @@ const db = require("../database/models");
 
 module.exports = [
   body("user")
-  .notEmpty().withMessage("You must complete the username").bail()
-  .custom( async (value, { req }) => {
+    .notEmpty()
+    .withMessage("You must complete the username")
+    .bail()
+    .custom(async (value, { req }) => {
+      const usuarioEncontrado = await db.User.findOne({
+        where: {
+          user_name: req.session.userLogged.user_name,
+        },
+        include: [{ association: "oldpassword" }],
+      });
 
-    const usuarioEncontrado = await db.User.findOne({
-      where: {
-        user_name: req.session.userLogged.user_name,
-      },
-      include: [{ association: "oldpassword" }],
-    })
-  
-    if (usuarioEncontrado) {
-      throw new Error("The entered user name has already been used");
-    }
+      if (usuarioEncontrado) {
+        throw new Error("The entered user name has already been used");
+      }
 
-    return true;
-  }),
+      return true;
+    }),
 
   body("name").notEmpty().withMessage("You must complete the name"),
   body("lastname").notEmpty().withMessage("You must complete the lastname"),
@@ -32,18 +33,17 @@ module.exports = [
     .withMessage("You must write a valid email")
     .bail()
     .custom(async (value, { req }) => {
-
       const emailEncontrado = await db.User.findOne({
         where: {
           email: req.session.userLogged.email,
         },
         include: [{ association: "oldpassword" }],
-      })
-     
+      });
+
       if (emailEncontrado) {
         throw new Error("The entered email has already been used");
       }
-  
+
       return true;
     }),
 
@@ -59,7 +59,7 @@ module.exports = [
 
   body("profilePic").custom((value, { req }) => {
     let file = req.file;
-    let extensionesPermitidas = [".jpg", ".png", ".gif"];
+    let extensionesPermitidas = [".jpg", ".jpeg", ".png", ".gif"];
 
     if (file) {
       let fileExtension = path.extname(file.originalname);
@@ -68,7 +68,7 @@ module.exports = [
           `Allowed extensions: ${extensionesPermitidas.join(", ")}`
         );
       }
-    } 
+    }
     // else {
     //   throw new Error("You must select an image");
     // }

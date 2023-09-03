@@ -46,7 +46,7 @@ function ready() {
 
     if (product.value.length < 5) {
       product.focus();
-      errorName.innerHTML = "Name must be at least 20 characters";
+      errorName.innerHTML = "Name must be at least 5 characters";
       product.classList.add("invalidError");
       return false;
     } else {
@@ -86,7 +86,7 @@ function ready() {
 
     e.target.submit();
     Swal.fire({
-      title: "Product created!",
+      title: "Product edited!",
       timer: 1000,
       icon: "success",
       showConfirmButton: false,
