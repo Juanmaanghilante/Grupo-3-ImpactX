@@ -93,11 +93,22 @@ module.exports = {
         email: req.body.email,
         profile_id: req.body.categoria ? req.body.categoria : "2",
         image: req.file ? req.file.filename : "product-default.png",
+        
       },
 
       {
         where: {id: userId}
       })
+
+      if (req.params.id == req.session.userLogged.id) {
+        if (req.cookies.userEmail) {
+          res.clearCookie("userEmail");
+          res.cookie("userEmail", req.body.user, { maxAge: 1000 * 60 * 60 });
+        }
+        delete editUser.password;
+        req.session.userLogged = editUser;
+      }
+
       console.log(editUser)
           response.meta = {
               status: 201,

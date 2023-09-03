@@ -9,27 +9,18 @@ function ready() {
 
     let form = document.querySelector("form#login_form")
     let busqueda = []
-    let encontrado = undefined
-
-    fetch("/user/userList", {
-        method: "POST"
-    })
     
-        .then(response => response.json())
-        .then(info => {
-           busqueda = info
 
-        });
 
 
     form.addEventListener("submit", async (e) => {
 
         e.preventDefault();
 
-        var user = document.querySelector("#login_user");
-        var errorUser = document.querySelector("#login_err_1");
-        var errorPassword = document.querySelector("#login_err_2");
-        var password = document.querySelector("#login_password");
+        const user = document.querySelector("#login_user");
+        const errorUser = document.querySelector("#login_err_1");
+        const errorPassword = document.querySelector("#login_err_2");
+        const password = document.querySelector("#login_password");
 
         if ((user.value === "") || (password.value === "")) {
 
@@ -47,12 +38,27 @@ function ready() {
             return false
 
         } else {
+            await fetch("/user/userList", {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body: JSON.stringify({user: user.value})
+            })
+            
+                .then(response => response.json())
+                .then(info => {
+                   busqueda = info
+        
+                });
+
             errorPassword.innerHTML = ""
             errorUser.innerHTML = ""
+            
 
-            encontrado = busqueda.find((row) => row.user_name == user.value);
+            
 
-            if (!encontrado) {
+            if (busqueda == "noExiste") {
                 errorUser.innerHTML = "<p>Username does not exist</p>"
                 user.value = ""
                 password.value = ""
