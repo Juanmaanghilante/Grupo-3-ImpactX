@@ -14,11 +14,13 @@ module.exports = {
   },
   userLoginList: async (req, res) => {
     try {
-      const userToLogin = await User.findAll({
-        attributes: ["user_name"],
-      });
-      return res.json(userToLogin);
-    } catch (error) {
+      const userExistance = await User.findOne({ attributes: ['user_name'], where: { user_name: req.body.user } });
+      if (userExistance === null) {
+        return res.json("noExiste")
+      } else {
+        return res.json("Existe");
+      }
+      } catch (error) {
       console.log(error);
     }
   },

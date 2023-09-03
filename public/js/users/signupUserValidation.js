@@ -33,24 +33,24 @@ function ready() {
         e.preventDefault();
         console.log(busqueda);
        
-        let username = document.querySelector('#userName')
-        let name = document.querySelector('#name1')
-        let lastName = document.querySelector('#lastName2')
-        let email = document.querySelector('#email3')
-        let img = document.querySelector('#file4')
+        const username = document.querySelector('#userName')
+        const name = document.querySelector('#name1')
+        const lastName = document.querySelector('#lastName2')
+        const email = document.querySelector('#email3')
+        const img = document.querySelector('#file4')
         
         console.log(img.type);
 
         // agarro errores
-        let errorUserName = document.querySelector('#errorSignupUser')
-        let errorName = document.querySelector('#errorName')
-        let errorlastName = document.querySelector('#errorLastName')
-        let emailError = document.querySelector('#emailError')
-        let errorImg = document.querySelector('#errorImg')
+        const errorUserName = document.querySelector('#errorSignupUser')
+        const errorName = document.querySelector('#errorName')
+        const errorlastName = document.querySelector('#errorLastName')
+        const emailError = document.querySelector('#emailError')
+        const errorImg = document.querySelector('#errorImg')
 
 
-        let password = document.querySelector('#password5')
-        let repeatPassword = document.querySelector('#rPassword6')
+        const password = document.querySelector('#password5')
+        const repeatPassword = document.querySelector('#rPassword6')
 
 
         // validamos username
@@ -106,7 +106,7 @@ function ready() {
                 }
 
             }
-            // validamos imagen
+            
 
       
 
