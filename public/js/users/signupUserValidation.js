@@ -23,7 +23,7 @@ function ready() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-let errores=0
+    let errores = 0
 
 
     const username = document.querySelector("#userName");
@@ -51,9 +51,10 @@ let errores=0
     errores++
     } else {
       encontrado = busqueda.find((row) => row.user_name == username.value);
+      console.log(busqueda)
       if (encontrado) {
         errorUserName.innerHTML =
-          "<p>This username is already in use!!!</p>"
+          "<p>This username is already in use!</p>"
           errores++;
       } else {
         errorUserName.innerHTML = "";
@@ -69,8 +70,8 @@ let errores=0
     }
 
     // validamos lastName
-    if (lastName.value == "" || lastName.value.length <= 3) {
-      errorLastName.innerHTML = "<p>You must enter your last name</p>"
+    if (lastName.value == "" || lastName.value.length < 3) {
+      errorLastName.innerHTML = "<p>Your last name must have more than 3 charecters</p>"
       errores++;
     } else {
       errorlastName.innerHTML = "";
