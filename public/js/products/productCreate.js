@@ -10,12 +10,12 @@ function ready() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    var category = document.getElementsByName("category")[0];
-    var product = document.getElementsByName("product")[0];
-    var desc = document.getElementsByName("desc")[0];
-    var price = document.getElementsByName("price")[0];
-    var image = document.getElementsByName("image")[0];
-    var selectedFile = image.files[0];
+    const category = document.getElementsByName("category")[0];
+    const product = document.getElementsByName("product")[0];
+    const desc = document.getElementsByName("desc")[0];
+    const price = document.getElementsByName("price")[0];
+    const image = document.getElementsByName("image")[0];
+    const selectedFile = image.files[0];
 
     if (category.value === "") {
       category.focus();

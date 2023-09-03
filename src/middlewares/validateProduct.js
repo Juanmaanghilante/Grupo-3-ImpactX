@@ -27,9 +27,7 @@ module.exports = [
         );
       }
     }
-    //  else {
-    //   throw new Error("You must select an image");
-    // }
+  
     return true;
   }),
 ];

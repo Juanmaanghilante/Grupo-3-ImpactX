@@ -1,68 +1,105 @@
-const path = require('path');
-const { body } = require('express-validator');
-const fs = require('fs');
+const db = require("../database/models");
+const User = db.User;
+const path = require("path");
+const { body } = require("express-validator");
+const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
 const rutaBase = path.resolve("./src/database/user.json");
 const datos = JSON.parse(fs.readFileSync(rutaBase));
-const archivoPass = JSON.parse(fs.readFileSync(path.resolve(__dirname, "../database/passwords.json")));
+const archivoPass = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../database/passwords.json"))
+);
 
 module.exports = [
-	body('contrasenia')
-		.notEmpty().withMessage('Debe ingresar su contraseña').bail()
-		.custom((value, { req }) => {
+  body("contrasenia")
+    .notEmpty()
+    .withMessage("You must enter your password")
+    .bail()
+    .custom(async (value, { req }) => {
 
-			const usuarioAEvaluarSinPass = req.session.userLogged
-			console.log(usuarioAEvaluarSinPass)
-			const usuarioAEvaluarConPass = datos.find(row => row.user == usuarioAEvaluarSinPass.user)
-			console.log(usuarioAEvaluarConPass)
-			const passDescifrada = bcrypt.compareSync(req.body.contrasenia, usuarioAEvaluarConPass.password)
-			console.log(passDescifrada)
+      const usuarioAEvaluarConPass = await User.findOne({
+        where: {
+          user_name: req.session.userLogged.user_name,
+        },
+      });
+      const passDescifrada = bcrypt.compareSync(
+        req.body.contrasenia,
+        usuarioAEvaluarConPass.password
+      );
 
-			if (!passDescifrada) {
-				throw new Error('La contraseña ingresada no es correcta');
-			}
+      if (!passDescifrada) {
+        throw new Error("The password entered is not correct");
+      }
 
-			return true;
+      return true;
+    }),
 
-		}),
+  body("contraseniaNueva")
+    .notEmpty()
+    .withMessage("You must enter your new password")
+    .bail(),
+  //.isStrongPassword({ minLength: 6, minUppercase: 1, minLowercase: 1, minSymbols: 1 }).withMessage('La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo ').bail(),
 
-	body("contraseniaNueva")
-		.notEmpty().withMessage('Debe ingresar su contraseña nueva').bail(),
-		//.isStrongPassword({ minLength: 6, minUppercase: 1, minLowercase: 1, minSymbols: 1 }).withMessage('La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo ').bail(),
+  body("contraseniaNuevaRepetir")
+    .notEmpty()
+    .withMessage("You must repeat your new password")
+    .bail()
+    .custom((value, { req }) => {
+      if (req.body.contraseniaNueva != req.body.contraseniaNuevaRepetir) {
+        throw new Error("New passwords don't match");
+      }
 
-	body('contraseniaNuevaRepetir')
-		.notEmpty().withMessage('Debe repetir su contraseña nueva').bail()
-		.custom((value, { req }) => {
+      return true;
+    })
+    .bail()
+    .custom((value, { req }) => {
+      if (req.body.contraseniaNueva == req.body.contrasenia) {
+        throw new Error(
+          "You must enter a different password than the current one"
+        );
+      }
 
-			if(req.body.contraseniaNueva != req.body.contraseniaNuevaRepetir) {
-				throw new Error('Las contraseñas nuevas no coinciden');
-			}
+      return true;
+    })
+    .bail()
+    .custom(async (value, { req }) => {
 
-			return true;
+      const passAModificar = await User.findOne({
+        where: {
+          user_name: req.session.userLogged.user_name,
+        },
+        include: [{ association: "oldpassword" }],
+      });
 
-		}).bail()
-		.custom((value, { req }) => {
+      const contraseniaNueva = req.body.contraseniaNueva;
 
-			if(req.body.contraseniaNueva == req.body.contrasenia) {
-				throw new Error('Debe ingresar una contraseña distinta de la actual');
-			}
+      if (passAModificar.oldpassword && passAModificar.oldpassword.length > 0) {
+        const contraseniaEncontrada = await Promise.all(
+          passAModificar.oldpassword.map(async (oldPassword) => {
+            const contraseniaCoincide = await bcrypt.compare(
+              contraseniaNueva,
+              oldPassword.old_password
+            );
 
-			return true;
+            return contraseniaCoincide;
+          })
+        );
 
-		}).bail()
-		.custom((value, { req }) => {
+        if (contraseniaEncontrada.some((match) => match === true)) {
+          console.log(
+            "La contraseña ingresada ya existe en el historial de contraseñas."
+          );
+          throw new Error("The entered password has already been used");
+        } else {
+          console.log(
+            "La contraseña ingresada es nueva y no existe en el historial de contraseñas."
+          );
+        }
+      } else {
+        console.log("No se encontraron contraseñas antiguas en el historial.");
+      }
 
-			const usuarioAEvaluar = req.session.userLogged
-
-			const passAModificar = archivoPass.find(row => row.user == usuarioAEvaluar.user && bcrypt.compareSync(req.body.contraseniaNueva, row.password))
-			
-			if (passAModificar) {
-				throw new Error('La contraseña ingresada ya ha sido utilizada');
-			}
-
-			return true;
-
-		})
-
+      return true;
+    }),
 ];
