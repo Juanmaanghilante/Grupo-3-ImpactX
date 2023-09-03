@@ -13,10 +13,10 @@
             <h2 class="titulo-registrar-usuario">Add new product</h2>
             <div class="control-formulario">
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorCategory">
                 <% if (locals.errors && errors.category) { %>
                   <%= errors.category.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category"
                 id="">
@@ -30,7 +30,7 @@
               </select>
 
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorName">
                 <% if (locals.errors && errors.product) { %>
                   <%= errors.product.msg %>
                     <% } %>
@@ -39,7 +39,7 @@
                 class="control <%= locals.errors && errors.product ? 'invalidError' : null %>" placeholder="Name"
                 value="<%= locals.oldData ? oldData.product : null %>" />
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorDesc">
                 <% if (locals.errors && errors.desc) { %>
                   <%= errors.desc.msg %>
                     <% } %>
@@ -48,7 +48,7 @@
                 class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
                 placeholder="Description"><%= locals.oldData ? oldData.desc : null %></textarea>
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorPrice">
                 <% if (locals.errors && errors.price) { %>
                   <%= errors.price.msg %>
                     <% } %>
@@ -58,7 +58,7 @@
                 value="<%= locals.oldData ? oldData.price : null %>" />
 
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorImg">
                 <% if (locals.errors && errors.image) { %>
                   <%= errors.image.msg %>
                     <% } %>

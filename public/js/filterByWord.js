@@ -107,7 +107,6 @@ function ready() {
     if (event.target.classList.contains("add-to-cart")) {
       agregarItem(event.target);
       let timerInterval;
-      console.log("hola");
       Swal.fire({
         title: "Added to cart!",
         timer: 1000,

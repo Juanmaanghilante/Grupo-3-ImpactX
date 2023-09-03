@@ -9,12 +9,13 @@ module.exports = [
     .notEmpty()
     .withMessage("You must complete the name product/service")
     .bail()
-    .isLength({min: 5,max:255}),
+    .isLength({ min: 5, max: 255 })
+    .withMessage("Name must be at least 20 characters"),
   body("desc")
     .notEmpty()
-    .withMessage('"You must complete the description product/service')
-    .isLength({min: 20, max:1000}),
-
+    .withMessage("You must complete the description product/service")
+    .isLength({ min: 20, max: 1000 })
+    .withMessage("Description must be at least 20 characters"),
   body("price")
     .notEmpty()
     .withMessage("You must complete the price product/service"),
@@ -31,7 +32,7 @@ module.exports = [
         );
       }
     }
-  
+
     return true;
   }),
 ];
