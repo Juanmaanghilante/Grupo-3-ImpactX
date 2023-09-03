@@ -93,11 +93,9 @@ function ready() {
             }
 
             let respuestaApi = await fetch(`/api/users/edit/${ID.value}`, {method: 'PUT',  headers:{"Content-Type": "application/json"}, body: JSON.stringify(userEdited)})
-
             let response = await respuestaApi.json()
 
             if(response.meta) {
-
                 Swal.fire(
                     'Felicidades!',
                     'Tu cuenta ha sido actualizada!',
