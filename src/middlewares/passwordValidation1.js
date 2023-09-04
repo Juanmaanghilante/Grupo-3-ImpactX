@@ -17,7 +17,6 @@ module.exports = [
     .withMessage("You must enter your password")
     .bail()
     .custom(async (value, { req }) => {
-
       const usuarioAEvaluarConPass = await User.findOne({
         where: {
           user_name: req.session.userLogged.user_name,
@@ -38,8 +37,16 @@ module.exports = [
   body("contraseniaNueva")
     .notEmpty()
     .withMessage("You must enter your new password")
-    .bail(),
-  //.isStrongPassword({ minLength: 6, minUppercase: 1, minLowercase: 1, minSymbols: 1 }).withMessage('La contraseña debe tener como minimo: 6 caracteres, una minuscula, una mayuscula y un simbolo ').bail(),
+    .bail()
+    .isStrongPassword({
+      minLength: 8,
+      minUppercase: 1,
+      minNumbers: 0,
+      minSymbols: 0,
+    })
+    .withMessage(
+      "The password must have at least: 8 characters, an upper case letter"
+    ),
 
   body("contraseniaNuevaRepetir")
     .notEmpty()
@@ -64,7 +71,6 @@ module.exports = [
     })
     .bail()
     .custom(async (value, { req }) => {
-
       const passAModificar = await User.findOne({
         where: {
           user_name: req.session.userLogged.user_name,

@@ -101,15 +101,8 @@
                     <input id="userID" type="hidden" value="<%= locals.usuario ? usuario.id : locals.id ? id : null %>">
 
                     <button type="submit" class="botonProductos">Update</button>
-                    <button class="botonProductos" href="/user/list">Go back</a>
           </div>
         </div>
-      </form>
-      <form class="create-form" method="post"
-        action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>/?_method=delete">
-
-        <button hidden type="submit" id="botonBorrar">Delete user </button>
-
       </form>
 
       <%- include('../partials/footer')%>

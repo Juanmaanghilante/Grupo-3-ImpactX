@@ -30,6 +30,7 @@ function ready() {
     const lastName = document.querySelector("#lastName2");
     const email = document.querySelector("#email3");
     const img = document.querySelector("#file4");
+    const categoriaField = document.querySelector("#category");
 
     // agarro errores
     const errorUserName = document.querySelector("#errorSignupUser");
@@ -41,6 +42,7 @@ function ready() {
     const errorPassword2 = document.querySelector("#errorPassword2");
     const password = document.querySelector("#password5");
     const repeatPassword = document.querySelector("#rPassword6");
+    const errorCategory = document.querySelector("#errorCategory");
 
     // validamos username
     if (username.value == "") {
@@ -108,6 +110,15 @@ function ready() {
       errorPassword.innerHTML = "";
     }
 
+    if (categoriaField) {
+      if (categoriaField.value === "") {
+        errorCategory.innerHTML = "<p>Please select a category</p>";
+        errores++;
+      } else {
+        errorCategory.innerHTML = "";
+      }
+    }
+
     // valido repeat password
     if (password.value != repeatPassword.value) {
       errorPassword2.innerHTML = "<p> Your passwords must be the same</p>";
@@ -117,7 +128,7 @@ function ready() {
     if (errores === 0) {
       form.submit();
       Swal.fire({
-        title: "Successful operation your user has been created!",
+        title: "Successful operation the user has been created!",
         text: "Are you ready to take your company to the next level? Fasten your seat belts.",
         imageUrl: "/img/logo-impactx.png",
         imageWidth: 300,

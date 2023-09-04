@@ -184,7 +184,7 @@ module.exports = {
           lastname: req.body.lastname,
           user_name: req.body.user,
           email: req.body.email,
-          profile_id: req.body.categoria,
+          profile_id: req.body.categoria ? req.body.categoria : "2",
           image: req.file ? req.file.filename : "product-default.png",
         },
         { where: { id: req.params.id } },
