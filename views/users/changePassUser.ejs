@@ -15,42 +15,43 @@
           </div>
           <div>
             <h2 class="titulo-registrar-usuario">Change your password</h2>
-            
-            <% if(locals.errors && errors.contrasenia){ %>
-              <div class="div-input input-error errorPass">
-                  <p class="error"><%= errors.contrasenia.msg %></p>
-              </div>
-            <% } %>            
+
+            <div class="erroresForm" id="errorContrasenia">
+              <% if (locals.errors && errors.contrasenia) { %>
+                <%= errors.contrasenia.msg %>
+              <% } %>
+            </div>
             <div class="control-formulario">
-              <input type="password" name="contrasenia" class="control" placeholder="Old Password"/>
+              <input type="password" name="contrasenia" class="control" placeholder="Old Password" />
             </div>
 
-            <% if(locals.errors && errors.contraseniaNueva){ %>
-              <div class="div-input input-error errorPass">
-                  <p class="error"><%= errors.contraseniaNueva.msg %></p>
-              </div>
-            <% } %>            
+            <div class="erroresForm" id="errorContraseniaNueva">
+              <% if (locals.errors && errors.contraseniaNueva) { %>
+                <%= errors.contraseniaNueva.msg %>
+              <% } %>
+            </div>
             <div class="control-formulario">
               <input type="password" name="contraseniaNueva" class="control" placeholder="New password" />
             </div>
 
-            <% if(locals.errors && errors.contraseniaNuevaRepetir){ %>
-              <div class="div-input input-error errorPass">
-                  <p class="error"><%= errors.contraseniaNuevaRepetir.msg %></p>
-              </div>
-            <% } %>            
-            <div class="control-formulario">
-              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repeat new password"  />
+            <div class="erroresForm" id="errorContraseniaNuevaRepetir">
+              <% if (locals.errors && errors.errorContraseniaNuevaRepetir) { %>
+                <%= errors.contraseniaNuevaRepetir.msg %>
+              <% } %>
             </div>
-           
+            <div class="control-formulario">
+              <input type="password" name="contraseniaNuevaRepetir" class="control" placeholder="Repeat new password" />
+            </div>
+
             <button type="submit" class="botonContactanos">Change Password</input>
           </div>
         </div>
       </form>
 
       <%- include('../partials/footer')%>
-      <script src="/js/hamburgMenu.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>       
+        <script src="/js/hamburgMenu.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/users/changePassUser.js"></script>
   </body>
 
 </html>
