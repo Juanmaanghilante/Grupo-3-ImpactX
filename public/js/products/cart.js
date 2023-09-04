@@ -16,7 +16,11 @@ function ready() {
 
 function actualizarContadorCarrito() {
   const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`;
+  if (productosCarrito.length == 0) {
+    document.querySelector(".cartIconNumber").classList.remove("cartIconNumber")
+  } else {
+    document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`;
+  }
 }
 
 function borrarElemento(id) {
