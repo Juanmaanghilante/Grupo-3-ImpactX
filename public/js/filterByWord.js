@@ -162,4 +162,12 @@ function agregarItem(botonClicado) {
   }
 
   localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+  actualizarContadorCarrito();
+}
+
+function actualizarContadorCarrito() {
+  const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  document.querySelector(
+    ".cartIconNumber p"
+  ).innerHTML = `${productosCarrito.length}`;
 }

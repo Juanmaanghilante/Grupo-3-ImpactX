@@ -11,6 +11,12 @@ function ready() {
     localStorage.setItem("carrito", JSON.stringify([]));
   }
   mostrarCarrito(productos);
+  actualizarContadorCarrito();
+}
+
+function actualizarContadorCarrito() {
+  const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`;
 }
 
 function borrarElemento(id) {
@@ -19,12 +25,14 @@ function borrarElemento(id) {
   mostrarCarrito(productos);
   // Actualizar los productos en el localStorage
   localStorage.setItem("carrito", JSON.stringify(productos));
+  actualizarContadorCarrito();
 }
 
 function vaciarCarrito() {
   //tengo que setar en el localstorage el array vacio
   mostrarCarrito([]);
   localStorage.setItem("carrito", JSON.stringify([]));
+  actualizarContadorCarrito();
 }
 
 async function finalizarCompra() {
@@ -100,8 +108,6 @@ function mostrarCarrito(productosCarrito) {
       <button type="sumbit" class="botonCartConfirm" onClick=finalizarCompra()>Confirm purchase</button>
       <button type="sumbit" class="botonCartDelete" onClick=vaciarCarrito()>Empty cart</button>
     </div>`;
-
-    document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`
 
   }
 }
