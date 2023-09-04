@@ -1,9 +1,9 @@
 const db = require("../database/models");
 const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
 const ContactMessage = db.ContactMessage;
+//const nodemailer = require("nodemailer");
+//require("dotenv").config();
 
 module.exports = {
   index: (req, res) => {
@@ -86,7 +86,7 @@ module.exports = {
       }
     }
     try {
-      const correo = "" + req.body.email;
+      /*const correo = "" + req.body.email;
       const respuesta = "" + req.body.answer;
       const config = {
         host: "smtp-mail.outlook.com",
@@ -120,17 +120,17 @@ module.exports = {
           console.log(err);
         } else {
           console.log(info.response);
-        }
+        }*/
 
-        const requestActualizados = ContactMessage.update(
-          {
-            response: req.body.answer,
-            is_answered: true,
-          },
-          { where: { id: req.params.id } }
-        );
-        return res.redirect("edit");
-      });
+      const requestActualizados = ContactMessage.update(
+        {
+          response: req.body.answer,
+          is_answered: true,
+        },
+        { where: { id: req.params.id } }
+      );
+      return res.redirect("edit");
+      /*});*/
     } catch (error) {
       console.log(error);
     }
