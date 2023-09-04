@@ -16,12 +16,19 @@ function ready() {
 
 function actualizarContadorCarrito() {
   const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const contadorElement = document.querySelector(".cartContainer div p");
+
   if (productosCarrito.length == 0) {
-    document.querySelector(".cartIconNumber").classList.remove("cartIconNumber")
+    contadorElement.innerText = "";
+    document.querySelector(".cartContainer div").classList.remove("cartIconNumber")
   } else {
-    document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`;
+    document.querySelector(".cartContainer div").classList.add("cartIconNumber")
+    contadorElement.innerText = productosCarrito.length;
   }
+
 }
+
+
 
 function borrarElemento(id) {
   // Filtrar los elementos cuyo ID no coincide con el proporcionado
@@ -32,12 +39,16 @@ function borrarElemento(id) {
   actualizarContadorCarrito();
 }
 
+
+
 function vaciarCarrito() {
   //tengo que setar en el localstorage el array vacio
   mostrarCarrito([]);
   localStorage.setItem("carrito", JSON.stringify([]));
   actualizarContadorCarrito();
 }
+
+
 
 async function finalizarCompra() {
   let data = {
@@ -48,18 +59,18 @@ async function finalizarCompra() {
     ),
     productos: productos,
   };
-  console.log("Total:", data.total);
+
   let finalizarFetch = await fetch("/cart/done", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
   let response = await finalizarFetch.json();
-  console.log(response);
+
   Swal.fire("Congratulations", "Purchase made", "success");
   mostrarCarrito([]);
   localStorage.setItem("carrito", JSON.stringify([]));
-  document.querySelector(".cartIconNumber p").innerHTML = ``
+  document.querySelector(".cartIconNumber p").innerHTML = ""
 }
 
 
@@ -112,6 +123,5 @@ function mostrarCarrito(productosCarrito) {
       <button type="sumbit" class="botonCartConfirm" onClick=finalizarCompra()>Confirm purchase</button>
       <button type="sumbit" class="botonCartDelete" onClick=vaciarCarrito()>Empty cart</button>
     </div>`;
-
   }
 }

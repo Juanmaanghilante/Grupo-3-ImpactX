@@ -14,11 +14,15 @@ window.addEventListener("load", () => {
 });
 
 function actualizarContadorCarrito() {
-  
   const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  const contadorElement = document.querySelector(".cartContainer div p");
+
   if (productosCarrito.length == 0) {
-    document.querySelector(".cartIconNumber").classList.remove("cartIconNumber")
+    contadorElement.innerText = "";
+    document.querySelector(".cartContainer div").classList.remove("cartIconNumber")
   } else {
-    document.querySelector(".cartIconNumber p").innerHTML = `${productosCarrito.length}`;
+    document.querySelector(".cartContainer div").classList.add("cartIconNumber")
+    contadorElement.innerText = productosCarrito.length;
   }
+
 }
