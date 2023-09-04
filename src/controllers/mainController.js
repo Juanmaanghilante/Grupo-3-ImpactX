@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
@@ -32,18 +33,37 @@ module.exports = {
     }
   },
   request: async (req, res) => {
-    try {
-      const requesthabilitados = await ContactMessage.findAll({
-        where: {
-          is_answered: false,
-        },
-        include: [{ association: "contactmessage" }],
-      });
-      return res.render("main/requests", {
-        requesthabilitados: requesthabilitados,
-      });
-    } catch (error) {
-      console.log(error);
+    if (req.session.userLogged.perfiles.name == "Admin") {
+      try {
+        const requesthabilitados = await ContactMessage.findAll({
+          where: {
+            is_answered: false,
+          },
+          include: [{ association: "contactmessage" }],
+        });
+        return res.render("main/requests", {
+          requesthabilitados: requesthabilitados,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const requesthabilitados = await ContactMessage.findAll({
+          where: {
+            [Op.and]: [
+              { is_answered: true },
+              { user_id: req.session.userLogged.id },
+            ],
+          },
+          include: [{ association: "contactmessage" }],
+        });
+        return res.render("main/requests", {
+          requesthabilitados: requesthabilitados,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   sendAnswer: async (req, res) => {
