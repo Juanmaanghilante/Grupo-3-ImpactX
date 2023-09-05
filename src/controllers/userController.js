@@ -261,7 +261,7 @@ module.exports = {
         user_id: req.session.userLogged.id,
         old_password: bcrypt.hashSync(req.body.contrasenia, 10),
       });
-      return res.render("users/profileUser", { user: req.session.userLogged });
+      return res.redirect("/user/profile");
     } catch (error) {
       console.log(error);
     }

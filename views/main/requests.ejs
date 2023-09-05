@@ -9,7 +9,11 @@
             <% if (!Array.isArray(requesthabilitados) || requesthabilitados.length === 0) { %>
                 <div class="error404">
                     <div>
+                        <% if (locals.userLogged && locals.userLogged.perfiles.name == 'Admin') { %>
                         <p class="error404-message">There is no request to answer</p>
+                        <% } else { %>
+                        <p class="error404-message">They have not answered any questions</p>
+                        <% } %>
                     </div>
                     <a class="error404-home-button" href="/">Go back</a>
                 </div>                
@@ -44,15 +48,21 @@
                             <label>Question</label>
                             <textarea class="control" rows="5" name="mensaje" readonly><%=request.message%></textarea>
                           
-                            <label>Answer</label>
-                            <div class="erroresForm">
+                            <label>Answer</label>  
+                            <% if (locals.userLogged && locals.userLogged.perfiles.name == 'Admin') { %>                            
+                            <div class="erroresForm" id="answerError">
                                 <% if (locals.errors && errors.answer && idError && idError==request.id) { %>
-                                  <%= errors.answer.msg %>
+                                    <%= errors.answer.msg %>
                                 <% } %>
-                            </div>                              
+                            </div>                            
                             <textarea class="control" rows="5" name="answer"></textarea>
+                            <% }else{ %>
+                            <textarea class="control" rows="5" name="answerClient" readonly><%=request.message%></textarea>
+                            <% } %>
 
-                            <button type="submit" class="botonProductos">Send email</button>
+                            <% if (locals.userLogged && locals.userLogged.perfiles.name == 'Admin') { %>
+                                <button type="submit" class="botonProductos">Send answer</button>
+                            <% } %>                                
                         </div>
                     </div>
                 </form>
