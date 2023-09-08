@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   const close = document.querySelector(".closeBtn");
   const nav = document.querySelector("#navPrincipal");
   actualizarContadorCarrito();
+  profilePicSubMenu();
 
   menu.addEventListener("click", () => {
     nav.classList.add("open-nav");
@@ -11,6 +12,7 @@ window.addEventListener("load", () => {
   close.addEventListener("click", () => {
     nav.classList.remove("open-nav");
   });
+
 });
 
 function actualizarContadorCarrito() {
@@ -25,4 +27,23 @@ function actualizarContadorCarrito() {
     contadorElement.innerText = productosCarrito.length;
   }
 
+}
+
+function profilePicSubMenu() {
+  const img = document.querySelector('.perfilPic')
+  const subMenu = document.querySelector(".profilePicMenu") 
+
+  img.addEventListener('click', () => {
+    if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+      subMenu.style.display = 'block'; 
+    } else {
+      subMenu.style.display = 'none';
+    }
+  })
+
+  document.addEventListener('click', (e) => {
+    if (e.target !== img && e.target !== subMenu) {
+      subMenu.style.display = 'none'; 
+    }
+  });
 }
