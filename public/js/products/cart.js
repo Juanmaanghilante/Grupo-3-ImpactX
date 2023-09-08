@@ -70,7 +70,7 @@ async function finalizarCompra() {
   Swal.fire("Congratulations", "Purchase made", "success");
   mostrarCarrito([]);
   localStorage.setItem("carrito", JSON.stringify([]));
-  document.querySelector(".cartIconNumber p").innerHTML = ""
+  actualizarContadorCarrito();
 }
 
 

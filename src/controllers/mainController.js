@@ -1,8 +1,9 @@
 const db = require("../database/models");
+const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
-const nodemailer = require("nodemailer");
-require("dotenv").config();
 const ContactMessage = db.ContactMessage;
+//const nodemailer = require("nodemailer");
+//require("dotenv").config();
 
 module.exports = {
   index: (req, res) => {
@@ -32,18 +33,37 @@ module.exports = {
     }
   },
   request: async (req, res) => {
-    try {
-      const requesthabilitados = await ContactMessage.findAll({
-        where: {
-          is_answered: false,
-        },
-        include: [{ association: "contactmessage" }],
-      });
-      return res.render("main/requests", {
-        requesthabilitados: requesthabilitados,
-      });
-    } catch (error) {
-      console.log(error);
+    if (req.session.userLogged.perfiles.name == "Admin") {
+      try {
+        const requesthabilitados = await ContactMessage.findAll({
+          where: {
+            is_answered: false,
+          },
+          include: [{ association: "contactmessage" }],
+        });
+        return res.render("main/requests", {
+          requesthabilitados: requesthabilitados,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      try {
+        const requesthabilitados = await ContactMessage.findAll({
+          where: {
+            [Op.and]: [
+              { is_answered: true },
+              { user_id: req.session.userLogged.id },
+            ],
+          },
+          include: [{ association: "contactmessage" }],
+        });
+        return res.render("main/requests", {
+          requesthabilitados: requesthabilitados,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   sendAnswer: async (req, res) => {
@@ -66,7 +86,7 @@ module.exports = {
       }
     }
     try {
-      const correo = "" + req.body.email;
+      /*const correo = "" + req.body.email;
       const respuesta = "" + req.body.answer;
       const config = {
         host: "smtp-mail.outlook.com",
@@ -100,17 +120,17 @@ module.exports = {
           console.log(err);
         } else {
           console.log(info.response);
-        }
+        }*/
 
-        const requestActualizados = ContactMessage.update(
-          {
-            response: req.body.answer,
-            is_answered: true,
-          },
-          { where: { id: req.params.id } }
-        );
-        return res.redirect("edit");
-      });
+      const requestActualizados = ContactMessage.update(
+        {
+          response: req.body.answer,
+          is_answered: true,
+        },
+        { where: { id: req.params.id } }
+      );
+      return res.redirect("edit");
+      /*});*/
     } catch (error) {
       console.log(error);
     }
