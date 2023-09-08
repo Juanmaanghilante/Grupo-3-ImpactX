@@ -126,17 +126,18 @@ function ready() {
     }
 
     if (errores === 0) {
-      form.submit();
-      Swal.fire({
-        title: "Successful operation the user has been created!",
-        text: "Are you ready to take your company to the next level? Fasten your seat belts.",
-        imageUrl: "/img/logo-impactx.png",
-        imageWidth: 300,
-        imageHeight: 100,
-        imageAlt: "Custom image",
-        showConfirmButton: false,
-      }).then((result) => {
-        window.location = "/";
+      form.submit()
+      // Swal.fire({
+      //   title: "Successful operation the user has been created!",
+      //   text: "Are you ready to take your company to the next level? Fasten your seat belts.",
+      //   imageUrl: "/img/logo-impactx.png",
+      //   imageWidth: 300,
+      //   imageHeight: 100,
+      //   imageAlt: "Custom image",
+      //   showConfirmButton: false,
+      // })
+      .then((result) => {
+        window.location = "/user/profile";
       });
     }
   });
