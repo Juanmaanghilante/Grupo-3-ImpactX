@@ -2,7 +2,7 @@
 .mainCart {
   margin-top: 100px;
   width: 100%;
-  height: 73vh;
+  height: 80vh;
   gap: 10px;
   /* display: grid;
   flex-wrap: wrap;
@@ -12,11 +12,49 @@
   display: flex;
   flex-direction: column;
   align-items: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  background-color: white;
 }
+
+.mainCart::-webkit-scrollbar {
+  width: 0px; 
+  
+  background-color: white;
+}
+
+/* Estilos para el thumb */
+.mainCart::-webkit-scrollbar-thumb {
+  background-color: #b4b4b49a; 
+  border-radius: 5px; 
+}
+
+.emptyCartMsg {
+  background-color: #02337d17;
+  border: 1px solid #02337d12;
+  padding: .5rem .6rem;
+  border-radius: 30px;
+  color: #02337d;
+  text-align: center;
+  font-weight: 400;
+}
+
+.emptyCartMsg a {
+  color: #02337d;
+  transition: .15s;
+}
+
+.emptyCartMsg a:hover {
+  color: #02337d9c;
+  text-decoration: none;
+}
+
 
 /* ARTICLE */
 .tarjetaCart {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   align-items: right;
@@ -39,9 +77,6 @@
   border-radius: 100%;
   object-fit: cover;
 }
-.containerInfoCart {
-  width: 70%;
-}
 
 
 .containerInfoCart .price {
@@ -62,6 +97,8 @@
 .mainTotal {
   gap: 30px;
   display: flex;
+  max-width: 1200px;
+  /* margin: auto ; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -179,7 +216,8 @@
   cursor: pointer;
   transition-duration: .3s;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  top: -80px;
 }
 
 .botonCartDelete .svgIcon {
@@ -239,7 +277,17 @@
 }
 
 @media (min-width: 768px) {
+
+  .mainTotal {
+    margin: auto;
+  }
   .mainCart {
+    margin: auto;
+    margin-top: 4.3rem;
     max-width: 1200px;
+  }
+
+  .tarjetaCart {
+    gap: 30px;
   }
 }
