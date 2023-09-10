@@ -77,7 +77,6 @@ module.exports = {
     }
   },
   edit: async (req, res) => {
-    console.log("hola edit");
     try {
       let response = {};
       let productId = req.params.id;

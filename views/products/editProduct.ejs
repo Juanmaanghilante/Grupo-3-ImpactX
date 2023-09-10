@@ -15,10 +15,10 @@
             <h2 class="titulo-registrar-usuario">Edit product</h2>
             <div class="control-formulario">
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorCategory">
                 <% if (locals.errors && errors.category) { %>
                   <%= errors.category.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <select class="control <%= locals.errors && errors.category ? 'invalidError' : null %>" name="category" id="">
                 <option value="">Seleccione una opción</option>
@@ -36,7 +36,7 @@
                 <% } %>
               </select>
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorName">
                 <% if (locals.errors && errors.product) { %>
                   <%= errors.product.msg %>
                     <% } %>
@@ -45,28 +45,28 @@
                 value="<%= locals.productoEditar ? productoEditar.name : locals.oldData ? oldData.product : null %>"
                 type="text" name="product" placeholder="Nombre" />
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorDesc">
                 <% if (locals.errors && errors.desc) { %>
                   <%= errors.desc.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <textarea type="text" name="desc" class="control <%= locals.errors && errors.desc ? 'invalidError' : null %>"
                 placeholder="Descripción"><%= locals.productoEditar ? productoEditar.description : locals.oldData ? oldData.desc : null %></textarea>
 
 
-              <div class="erroresForm">
+              <div class="erroresForm" id="errorPrice">
                 <% if (locals.errors && errors.price) { %>
                   <%= errors.price.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <input class="control <%= locals.errors && errors.price ? 'invalidError' : null %>"
                 value="<%= locals.productoEditar ? productoEditar.price : locals.oldData ? oldData.price : null %>"
                 type="number" name="price" placeholder="Precio" />
 
-                <div class="erroresForm">
+                <div class="erroresForm" id="errorImg">
                   <% if (locals.errors && errors.image) { %>
                     <%= errors.image.msg %>
-                      <% } %>
+                  <% } %>
                 </div>
                 <input type="file" name="image"
                   class="control <%= locals.errors && errors.image ? 'invalidError' : null %>" />

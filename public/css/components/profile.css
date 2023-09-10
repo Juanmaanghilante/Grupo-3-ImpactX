@@ -43,15 +43,79 @@
   font-size: 1rem;
 }
 
+
+
+.btnLogOut {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+.btnLogOut .sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnLogOut .sign svg {
+  width: 17px;
+}
+
+.btnLogOut .sign svg path {
+  fill: white;
+}
+
+
+.btnLogOut:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.btnLogOut:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+
+.btnLogOut:hover .logoutButton {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+.btnLogOut:active {
+  transform: translate(2px ,2px);
+}
+
 .logoutButton {
-  margin-top: 0.3rem;
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
   text-decoration: none;
   color: white;
-  background-color: #185abc;
-  padding: 0.6rem 0.5rem;
-  border-radius: 5px;
-  transition: 0.15;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
 }
+
+
+
+
 
 .wrapperProfileTop h2 {
   color: #23539a;
@@ -68,22 +132,29 @@
   width: 100%;
   height: fit-content;
   background-color: #ffffff;
-  padding: 1.2rem;
+  padding: .5rem;
   margin-top: 2rem;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(106, 163, 255, 0.2);
   display: flex;
   flex-direction: column;
 }
+.wrapperProfileBottom section {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-radius: 5px;
+}
+
+.wrapperProfileBottom section:hover {
+  background-color:#f0f6ff;
+}
 
 .wrapperProfileBottom-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-decoration: none;
   color: #185abc;
   transition: 0.2s;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   border: none;
   background: none;
   cursor: pointer;
@@ -94,30 +165,11 @@
   color: red;
 }
 
-.button-section {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.button-content {
-  display: flex;
-  align-items: center;
-  width: calc(100% - 2rem);
-}
-
-.right-arrow {
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  color: #185abc;
-}
 
 .wrapperProfileBottom a {
   text-decoration: none;
   color: #185abc;
   transition: 0.2s;
-  margin-bottom: 1rem;
 }
 
 .wrapperProfileBottom section {
@@ -159,6 +211,13 @@
 .errorPass {
   max-width: none;
 }
+
+
+.containerInfoUserProfile {
+  display: flex;
+  align-items: center;
+}
+
 
 @media (min-width: 1200px) {
   .mainProfile {

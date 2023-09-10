@@ -107,7 +107,6 @@ function ready() {
     if (event.target.classList.contains("add-to-cart")) {
       agregarItem(event.target);
       let timerInterval;
-      console.log("hola");
       Swal.fire({
         title: "Added to cart!",
         timer: 1000,
@@ -163,4 +162,12 @@ function agregarItem(botonClicado) {
   }
 
   localStorage.setItem("carrito", JSON.stringify(productosCarrito));
+  actualizarContadorCarrito();
+}
+
+function actualizarContadorCarrito() {
+  const productosCarrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  document.querySelector(
+    ".cartIconNumber p"
+  ).innerHTML = `${productosCarrito.length}`;
 }

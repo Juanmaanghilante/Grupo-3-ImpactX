@@ -13,12 +13,29 @@
             <div>
               <img src="../img/<%= user.image %>" alt="">
               <div>
-                <h2><%= user.name %> <%= user.lastname %></h2>
-                <p class="usuario-tipo">My user name: <%= user.user_name %> </p>
-                <p class="usuario-tipo">Role: <%= user.perfiles.name %> </p>
+                  <h2><%= user.name %> <%= user.lastname %></h2>
+                  <p class="usuario-tipo"><%= user.user_name %> </p>
+                  <p  class="usuario-tipo"><%= user.perfiles.name %> </p>
+                
+                <form  action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
+                  <button class="wrapperProfileBottom-button" type="submit">
+                    Delete User
+                  </button>
+                </form>
               </div>
             </div>
-              <a class="logoutButton" href="/user/logout">Log Out</a>
+            <button class="btnLogOut">
+              <div class="sign">
+                <svg viewBox="0 0 512 512">
+                  <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z">
+
+                  </path>
+                </svg>
+              </div>
+
+              <a class="logoutButton" href="/user/logout">Logout</a>
+
+            </button>
             </div>
           </section>
         </div>
@@ -40,20 +57,23 @@
             </a>
           <% } %>
 
-          <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
+          
             <a href="/request/edit">
               <section>
                 <div>
                   <p>/</p>
                   <div>
                     <h4>Answer requests</h4>
-                    <h5>Answer user questions by email</h5>
+                    <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
+                    <h5>Answer user questions</h5>
+                    <% }else{ %> 
+                    <h5>See answers to your questions</h5>
+                    <% } %>
                   </div>
                 </div>
                 <p>></p>
               </section>
             </a>
-          <% } %>                  
 
           <a href="/user/edit/<%=user.id %>">
             <section>
@@ -82,26 +102,14 @@
             </section>
           </a>
 
-          <form action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
-            <button class="wrapperProfileBottom-button" type="submit">
-              <section class="button-section">
-                <div class="button-content">
-                  <p>/</p>
-                  <div>
-                    <h4>Delete user</h4>
-                    <h5>Delete your user</h5>
-                  </div>
-                </div>
-                <p class="right-arrow">></p>
-              </section>
-            </button>
-          </form>
           
         </section>
       </main>
 
       <%- include('../partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
+      <script src="/js/users/userProfile.js"></script>
+      <script src="/js/users/profilePicSubMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
   </body>
 

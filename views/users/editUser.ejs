@@ -19,7 +19,6 @@
 
 
             <div class="control-formulario">
-              <label for="user"> User: </label>
               <div class="erroresForm errorUser">
                 <% if (locals.errors && errors.user) { %>
                   <%= errors.user.msg %>
@@ -31,7 +30,6 @@
             </div>
 
             <div class="control-formulario">
-              <label for="name"> Name: </label>
               <div class="erroresForm errorName">
                 <% if (locals.errors && errors.name) { %>
                   <%= errors.name.msg %>
@@ -43,7 +41,6 @@
             </div>
 
             <div class="control-formulario">
-              <label for="lastname"> Last Name: </label>
               <div class="erroresForm errorLastname">
                 <% if (locals.errors && errors.lastname) { %>
                   <%= errors.lastname.msg %>
@@ -55,7 +52,6 @@
             </div>
 
             <div class="control-formulario">
-              <label for="email"> Email </label>
               <div class="erroresForm errorEmail">
                 <% if (locals.errors && errors.email) { %>
                   <%= errors.email.msg %>
@@ -68,7 +64,6 @@
 
             <% if (locals.isLogged) { %>
               <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
-                <label for="category"> Category </label>
                 <div class="erroresForm errorCategory">
                   <% if (locals.errors && errors.category) { %>
                     <%= errors.category.msg %>
@@ -94,7 +89,6 @@
                   <% } %>
 
                     <div class="control-formulario">
-                      <label for="fotoPerfil">User photo</label>
                       <div class="erroresForm errorProfilepic">
                         <% if (locals.errors && errors.profilePic) { %>
                           <%= errors.profilePic.msg %>
@@ -107,15 +101,8 @@
                     <input id="userID" type="hidden" value="<%= locals.usuario ? usuario.id : locals.id ? id : null %>">
 
                     <button type="submit" class="botonProductos">Update</button>
-                    <button class="botonProductos" href="/user/list">Go back</a>
           </div>
         </div>
-      </form>
-      <form class="create-form" method="post"
-        action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>/?_method=delete">
-
-        <button hidden type="submit" id="botonBorrar">Delete user </button>
-
       </form>
 
       <%- include('../partials/footer')%>

@@ -10,17 +10,17 @@ function ready() {
   forms.forEach((form) => {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      console.log("hola");
-      var answer = form.querySelector("[name='answer']");
+      const answer = form.querySelector("[name='answer']");
+      const answerError = form.querySelector("#answerError");
 
       if (answer.value === "") {
         answer.focus();
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Please enter an answer",
-        });
+        answerError.innerHTML = "As Admin, please enter an answer";
+        answer.classList.add("invalidError");
         return false;
+      } else {
+        answerError.innerHTML = "";
+        answer.classList.remove("invalidError");
       }
 
       e.target.submit();

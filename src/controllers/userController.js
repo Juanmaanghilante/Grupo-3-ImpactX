@@ -184,7 +184,7 @@ module.exports = {
           lastname: req.body.lastname,
           user_name: req.body.user,
           email: req.body.email,
-          profile_id: req.body.categoria,
+          profile_id: req.body.categoria ? req.body.categoria : "2",
           image: req.file ? req.file.filename : "product-default.png",
         },
         { where: { id: req.params.id } },
@@ -258,7 +258,7 @@ module.exports = {
         user_id: req.session.userLogged.id,
         old_password: bcrypt.hashSync(req.body.contrasenia, 10),
       });
-      return res.render("users/profileUser", { user: req.session.userLogged });
+      return res.redirect("/user/profile");
     } catch (error) {
       console.log(error);
     }
