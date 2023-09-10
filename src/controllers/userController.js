@@ -131,7 +131,7 @@ module.exports = {
         confirm_password: bcrypt.hashSync(req.body.repeatPassword, 10),
         image: req.file ? req.file.filename : "product-default.png",
       });
-      return res.redirect("/user/login");
+      return res.redirect("/user/login") ;
     } catch (error) {
       console.log(error);
     }
