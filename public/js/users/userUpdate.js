@@ -17,12 +17,14 @@ function ready() {
     const category = document.getElementsByName("categoria")[0];
     const ID = document.getElementById("userID");
     const categoriaField = document.querySelector("#category");
+    const profilePicInput = document.querySelector("#profilePic");
 
     const errorUser = document.querySelector(".errorUser");
     const errorName = document.querySelector(".errorName");
     const errorLastname = document.querySelector(".errorLastname");
     const errorEmail = document.querySelector(".errorEmail");
     const errorCategory = document.querySelector(".errorCategory");
+    
 
     let fetchUsers = async () => {
       let respuestaApiUsers = await fetch("/api/users");
@@ -54,13 +56,13 @@ function ready() {
       delete errores.userError;
     }
 
-    if (email.value == "") {
+    /*if (email.value == "") {
       errores.emailError = "You must fill in the email field";
     } else if (usuarioEncontradoEmail != undefined) {
       errores.emailError = "The email you entered has already been used";
     } else {
       delete errores.emailError;
-    }
+    }*/
 
     if (name.value == "") {
       errores.name = "You must fill in the name field";
@@ -87,7 +89,7 @@ function ready() {
         } else {
             errores.category;
         }*/
-
+    console.log(profilePicInput);
     if (Object.keys(errores).length > 0) {
       errorUser.innerHTML = errores.userError ? errores.userError : "";
       errorName.innerHTML = errores.name ? errores.name : "";
@@ -100,6 +102,7 @@ function ready() {
         lastname: lastname.value,
         user: users.value,
         email: email.value,
+        file: profilePicInput.files.length > 0 ? profilePicInput.files[0] : "",
         profile_id: categoriaField ? categoriaField.value : "2",
       };
       console.log(userEdited);

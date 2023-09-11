@@ -83,6 +83,7 @@ module.exports = {
   update: async (req, res) => {
     let response = {};
     let userId = req.params.id;
+    console.log(req);
     try {
       const editUser = await User.update(
         {
