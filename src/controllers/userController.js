@@ -14,13 +14,16 @@ module.exports = {
   },
   userLoginList: async (req, res) => {
     try {
-      const userExistance = await User.findOne({ attributes: ['user_name'], where: { user_name: req.body.user } });
+      const userExistance = await User.findOne({
+        attributes: ["user_name"],
+        where: { user_name: req.body.user },
+      });
       if (userExistance === null) {
-        return res.json("noExiste")
+        return res.json("noExiste");
       } else {
         return res.json("Existe");
       }
-      } catch (error) {
+    } catch (error) {
       console.log(error);
     }
   },
@@ -223,23 +226,45 @@ module.exports = {
       });
       const userDelete = await User.destroy({ where: { id: userId } });
 
-      let [contactMessageDeleteProcess, userDeleteProcess] = await Promise.all([
-        contactMessageDelete,
-        userDelete,
-      ]);
+      await Promise.all([contactMessageDelete, userDelete]);
 
       if (req.params.id == req.session.userLogged.id) {
         if (req.cookies.userEmail) {
           res.clearCookie("userEmail");
         }
         req.session.destroy();
-        res.redirect("/");
+        return res.redirect("/");
       }
       return res.redirect("/user/list");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   },
+  // userDestroyProcess: async (req, res) => {
+  //   try {
+  //     let userId = req.params.id;
+  //     const contactMessageDelete = await ContactMessage.destroy({
+  //       where: { user_id: userId },
+  //     });
+  //     const userDelete = await User.destroy({ where: { id: userId } });
+
+  //     let [contactMessageDeleteProcess, userDeleteProcess] = await Promise.all([
+  //       contactMessageDelete,
+  //       userDelete,
+  //     ]);
+
+  //     if (req.params.id == req.session.userLogged.id) {
+  //       if (req.cookies.userEmail) {
+  //         res.clearCookie("userEmail");
+  //       }
+  //       req.session.destroy();
+  //       res.redirect("/");
+  //     }
+  //     return res.redirect("/user/list");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // },
   passwordChange: (req, res) => {
     const usuarioCambiarPass = req.session.userLogged;
 

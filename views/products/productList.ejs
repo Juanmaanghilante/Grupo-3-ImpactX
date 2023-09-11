@@ -28,7 +28,6 @@
 
               <div class="contenedorBotonesProductos">
                 <a class="botonProductos add-to-cart" id="addCartBtn new-toast" data-id="<%= producto.id %>">ADD TO CART</a>
-                <a class="botonProductos" href="">BUY NOW</a>
                 <% if (locals.isLogged) { %>
                   <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
                     <div>
