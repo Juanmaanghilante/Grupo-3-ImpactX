@@ -10,15 +10,16 @@ module.exports = [
     .custom(async (value, { req }) => {
       const usuarioEncontrado = await db.User.findOne({
         where: {
-          user_name: req.session.userLogged.user_name,
-        },
-        include: [{ association: "oldpassword" }],
+          user_name: req.body.user,
+        }
       });
 
       if (usuarioEncontrado) {
-        throw new Error("The entered user name has already been used");
-      }
+        if (usuarioEncontrado.id != req.params.id) {
+          throw new Error("The entered user name has already been used"); 
+        }
 
+      }
       return true;
     }),
 
@@ -35,13 +36,14 @@ module.exports = [
     .custom(async (value, { req }) => {
       const emailEncontrado = await db.User.findOne({
         where: {
-          email: req.session.userLogged.email,
-        },
-        include: [{ association: "oldpassword" }],
+          email: req.body.email,
+        }
       });
-
       if (emailEncontrado) {
-        throw new Error("The entered email has already been used");
+        if (emailEncontrado.id != req.params.id) {
+          throw new Error("The entered user name has already been used"); 
+        }
+
       }
 
       return true;

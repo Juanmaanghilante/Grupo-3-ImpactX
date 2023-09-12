@@ -47,21 +47,13 @@ function ready() {
     // validamos username
     if (username.value == "") {
       errorUserName.innerHTML =
-<<<<<<< HEAD
         "<p>please fill in this field with your name</p>";
-=======
-        "<p>Please fill in this field with your name</p>";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
       errores++;
     } else {
       encontrado = busqueda.find((row) => row.user_name == username.value);
       console.log(busqueda);
       if (encontrado) {
-<<<<<<< HEAD
         errorUserName.innerHTML = "<p>This username is already in use!!!</p>";
-=======
-        errorUserName.innerHTML = "<p>This username is already in use!</p>";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
         errores++;
       } else {
         errorUserName.innerHTML = "";
@@ -77,14 +69,8 @@ function ready() {
     }
 
     // validamos lastName
-<<<<<<< HEAD
     if (lastName.value == "" || lastName.value.length <= 3) {
       errorLastName.innerHTML = "<p>You must enter your last name</p>";
-=======
-    if (lastName.value == "" || lastName.value.length < 3) {
-      errorLastName.innerHTML =
-        "<p>Your last name must have more than 3 charecters</p>";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
       errores++;
     } else {
       errorlastName.innerHTML = "";
@@ -117,11 +103,7 @@ function ready() {
 
     if (!regex.test(password.value)) {
       errorPassword.innerHTML =
-<<<<<<< HEAD
         "<p> you have to use 8 characters and a capital letter</p>";
-=======
-        "<p> You have to use 8 characters and a capital letter</p>";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
       errores++;
     } else {
       errorPassword.innerHTML = "";
@@ -138,19 +120,14 @@ function ready() {
 
     // valido repeat password
     if (password.value != repeatPassword.value) {
-<<<<<<< HEAD
       errorPassword2.innerHTML = "<p> your passwords must be the same</p>";
-=======
-      errorPassword2.innerHTML = "<p> Your passwords must be the same</p>";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
       errores++;
     }
 
     if (errores === 0) {
-<<<<<<< HEAD
       form.submit();
       Swal.fire({
-        title: "successful operation your user is logged in!",
+        title: "User created!",
         text: "Are you ready to take your company to the next level? Fasten your seat belts.",
         imageUrl: "/img/logo-impactx.png",
         imageWidth: 300,
@@ -158,20 +135,6 @@ function ready() {
         imageAlt: "Custom image",
       }).then((result) => {
         window.location = "/";
-=======
-      form.submit()
-      // Swal.fire({
-      //   title: "Successful operation the user has been created!",
-      //   text: "Are you ready to take your company to the next level? Fasten your seat belts.",
-      //   imageUrl: "/img/logo-impactx.png",
-      //   imageWidth: 300,
-      //   imageHeight: 100,
-      //   imageAlt: "Custom image",
-      //   showConfirmButton: false,
-      // })
-      .then((result) => {
-        window.location = "/user/profile";
->>>>>>> c682394013a44f3145392b5825d449378e795db9
       });
     }
   });

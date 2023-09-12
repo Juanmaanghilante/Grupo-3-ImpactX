@@ -29,7 +29,7 @@ router.post('/user/signup', fileUpload.single("profilePic"), validations, user.u
 
 // EDIT
 router.get('/user/edit/:id', authMiddleware, user.userEdit)
-//router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, user.userEditProcess)
+router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, user.userEditProcess)
 
 // DELETE
 router.delete("/user/delete/:id", authMiddleware, userControler.userDestroyProcess)
