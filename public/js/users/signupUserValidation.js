@@ -133,6 +133,7 @@ function ready() {
         imageWidth: 300,
         imageHeight: 100,
         imageAlt: "Custom image",
+        showConfirmButton: false,
       }).then((result) => {
         window.location = "/";
       });

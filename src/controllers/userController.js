@@ -171,7 +171,6 @@ module.exports = {
       const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
         let perfilesE = await Profile.findAll();
-        console.log(resultValidation.mapped());
         return res.render("users/editUser", {
           errors: resultValidation.mapped(),
           oldData: req.body,

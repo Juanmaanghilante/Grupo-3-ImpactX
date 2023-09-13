@@ -1,15 +1,7 @@
 const db = require("../database/models");
 const User = db.User;
-const path = require("path");
 const { body } = require("express-validator");
-const fs = require("fs");
 const bcrypt = require("bcryptjs");
-
-const rutaBase = path.resolve("./src/database/user.json");
-const datos = JSON.parse(fs.readFileSync(rutaBase));
-const archivoPass = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../database/passwords.json"))
-);
 
 module.exports = [
   body("contrasenia")
