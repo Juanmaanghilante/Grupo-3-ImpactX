@@ -33,7 +33,7 @@
               <div class="erroresForm errorName">
                 <% if (locals.errors && errors.name) { %>
                   <%= errors.name.msg %>
-                    <% } %>
+                <% } %>
               </div>
               <input class="control <%= locals.errors && errors.name ? 'invalidError' : null %>" type="text"
                 placeholder="Name" name="name" id="name"
@@ -57,7 +57,7 @@
                   <%= errors.email.msg %>
                 <% } %>
               </div>
-              <input class="control <%= locals.errors && errors.email ? 'invalidError' : null %>" type="email"
+              <input class="control <%= locals.errors && errors.email ? 'invalidError' : null %>"
                 name="email" id="email" placeholder="Email"
                 value="<%= locals.usuario ? usuario.email : locals.oldData ? oldData.email : null %>" />
             </div>

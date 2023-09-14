@@ -18,7 +18,7 @@
                   <p  class="usuario-tipo"><%= user.perfiles.name %> </p>
                 
                 <form  action="/user/delete/<%=user.id %>?_method=DELETE" method="POST">
-                  <button class="wrapperProfileBottom-button" type="submit">
+                  <button class="wrapperProfileBottom-button" type="submit" id="deleteButton">
                     Delete User
                   </button>
                 </form>

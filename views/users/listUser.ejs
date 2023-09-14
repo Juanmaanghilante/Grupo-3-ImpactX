@@ -1,59 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('../partials/head', {title:"Impact X | Users"})%>
+  <%- include('../partials/head', {title:"Impact X | Users"})%>
 
   <body class="bgProductos">
-
     <%- include('../partials/header')%>
 
-      <main class="mainUser">
-
-        <% usuarios.forEach(usuario=> { %>
-          <% if (locals.userLogged.id!=usuario.id ) { %>
-          <article class="tarjetaProductos">
-            <div class="containerImagenProductos">
-              <img class="productoImagen" src="/img/<%= usuario.image %>" alt="imagen usuario <%= usuario.user %>">
+    <main class="mainUser">
+      <% usuarios.forEach(usuario=> { %> <% if (locals.userLogged.id!=usuario.id
+      ) { %>
+      <article class="tarjetaProductos">
+        <div class="containerImagenProductos">
+          <img
+            class="productoImagen"
+            src="/img/<%= usuario.image %>"
+            alt="imagen usuario <%= usuario.user %>"
+          />
+        </div>
+        <div class="containerInfoProductos">
+          <h2><%= usuario.name + ' ' + usuario.lastname %></h2>
+          <p><%= usuario.user_name %></p>
+          <p><%= usuario.perfiles.name %></p>
+          <% if (locals.isLogged) { %> <% if
+          (locals.userLogged.perfiles.name=="Admin" ) { %>
+          <div class="contenedorBotonesProductos">
+            <div>
+              <a class="botonProductos" href="/user/edit/<%=usuario.id %>"
+                >Edit</a
+              >
+              <form
+                action="/user/delete/<%= usuario.id %>?_method=DELETE"
+                method="POST"
+              >
+                <button type="sumbit" class="deleteButton" id="deleteButton">
+                  Delete
+                </button>
+              </form>
             </div>
-            <div class="containerInfoProductos">
-              <h2>
-                <%= usuario.name + ' ' + usuario.lastname %>
-              </h2>
-              <p>
-                <%= usuario.user_name %>
-              </p>
-              <p>
-                <%= usuario.perfiles.name %>
-              </p>
-              <% if (locals.isLogged) { %>
-                <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
-                  <div class="contenedorBotonesProductos">
-                    <div>
-                      <a class="botonProductos" href="/user/edit/<%=usuario.id %>">Edit</a>
-                      <form action="/user/delete/<%= usuario.id %>?_method=DELETE" method="POST">
-                        <button type="sumbit" class="botonProductos eliminar">Delete</button>
-                      </form>
-                    </div>
-                  </div>
-                  <% } %>
-                    <% } %>
-            </div>
-          </article>
-          <% } %>
-          <% }) %>
-            <% if (locals.isLogged) { %>
-              <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
-                <div iv class="nuevoProducto">
-                  <a href="/user/signup">+</a>
-                  <p>Add new user</p>
-                </div>
-              <% } %>
-            <% } %>
-      </main>
+          </div>
+          <% } %> <% } %>
+        </div>
+      </article>
+      <% } %> <% }) %> <% if (locals.isLogged) { %> <% if
+      (locals.userLogged.perfiles.name=="Admin" ) { %>
+      <div iv class="nuevoProducto">
+        <a href="/user/signup">+</a>
+        <p>Add new user</p>
+      </div>
+      <% } %> <% } %>
+    </main>
 
-      <%- include('../partials/footer')%>
-      <script src="/js/hamburgMenu.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>       
+    <%- include('../partials/footer')%>
+    <script src="/js/hamburgMenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
-
 </html>

@@ -22,7 +22,7 @@
               <% } %>
             </div>
             <div class="control-formulario">
-              <input type="password" name="contrasenia" class="control" placeholder="Old Password" />
+              <input type="password" name="contrasenia" class="control" placeholder="Current Password" />
             </div>
 
             <div class="erroresForm" id="errorContraseniaNueva">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="erroresForm" id="errorContraseniaNuevaRepetir">
-              <% if (locals.errors && errors.errorContraseniaNuevaRepetir) { %>
+              <% if (locals.errors && errors.contraseniaNuevaRepetir) { %>
                 <%= errors.contraseniaNuevaRepetir.msg %>
               <% } %>
             </div>
