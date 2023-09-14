@@ -3,39 +3,63 @@ const bcrypt = require("bcryptjs");
 const User = db.User;
 
 module.exports = {
+  // list: async (req, res) => {
+  //   let response = {};
+  //   try {
+  //     const usuariosHabilitados = await User.findAll({ paranoid: true });
+  //     response.meta = {
+  //       status: 200,
+  //       total: usuariosHabilitados.length,
+  //       url: "/api/users",
+  //     };
+  //     response.data = usuariosHabilitados;
+  //     return res.json(response);
+  //   } catch (error) {
+  //     console.error("Error fetching users:", error);
+  //     response.meta = {
+  //       status: 500,
+  //       total: null,
+  //       url: "/api/users",
+  //     };
+  //     response.msg = "Oops! Something went wrong while fetching users.";
+  //     return res.status(500).json(response);
+  //   }
+  // },
+
   list: async (req, res) => {
-    let response = {};
+    let response = {data: {}};
     try {
-      const usuariosHabilitados = await User.findAll({ paranoid: true });
-      response.meta = {
-        status: 200,
-        total: usuariosHabilitados.length,
-        url: "/api/users",
-      };
-      response.data = usuariosHabilitados;
-      return res.json(response);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-      response.meta = {
-        status: 500,
-        total: null,
-        url: "/api/users",
-      };
-      response.msg = "Oops! Something went wrong while fetching users.";
-      return res.status(500).json(response);
+      const usuarios = await User.findAll()
+
+      
+      response.data.count = usuarios.length
+      response.data.users = usuarios.map((usuario) => {
+        return {
+          id: usuario.id,
+          name: usuario.name,
+          email: usuario.email,
+          detail: `api/users/${usuario.id}`
+        }
+      })
+      return res.json(response)
+
+    } catch (e) {
+      response.msg = "Hubo un error!"
+      return res.json(response)
     }
   },
 
   detail: async (req, res) => {
     let response = {};
     try {
-      const findUser = await User.findByPk(req.params.id);
+      const findUser = await User.findByPk(req.params.id, {attributes: {exclude: ["password", "confirm_password", "profile_id"]}});
       response.meta = {
         status: 200,
         total: findUser.length,
         url: `/api/users/${req.params.id}`,
       };
       response.data = findUser;
+      response.data.image = `/public/img/${findUser.image}`
       return res.json(response);
     } catch (error) {
       console.error("Error finding user:", error);
