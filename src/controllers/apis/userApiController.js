@@ -3,31 +3,14 @@ const bcrypt = require("bcryptjs");
 const User = db.User;
 
 module.exports = {
-  // list: async (req, res) => {
-  //   let response = {};
-  //   try {
-  //     const usuariosHabilitados = await User.findAll({ paranoid: true });
-  //     response.meta = {
-  //       status: 200,
-  //       total: usuariosHabilitados.length,
-  //       url: "/api/users",
-  //     };
-  //     response.data = usuariosHabilitados;
-  //     return res.json(response);
-  //   } catch (error) {
-  //     console.error("Error fetching users:", error);
-  //     response.meta = {
-  //       status: 500,
-  //       total: null,
-  //       url: "/api/users",
-  //     };
-  //     response.msg = "Oops! Something went wrong while fetching users.";
-  //     return res.status(500).json(response);
-  //   }
-  // },
 
   list: async (req, res) => {
-    let response = {data: {}};
+    let response = {
+      meta: {
+           status: 200,
+           url: "/api/users",
+      },
+      data: {}};
     try {
       const usuarios = await User.findAll()
 
@@ -44,8 +27,12 @@ module.exports = {
       return res.json(response)
 
     } catch (e) {
-      response.msg = "Hubo un error!"
-      return res.json(response)
+      console.error("Error fetching users:", error);
+      response.meta = {
+        status: 500
+      };
+      response.msg = "Oops! Something went wrong while fetching users."
+      return res.status(500).json(response);
     }
   },
 
