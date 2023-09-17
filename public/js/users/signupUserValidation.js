@@ -17,7 +17,7 @@ function ready() {
   })
     .then((response) => response.json())
     .then((info) => {
-      busqueda = info.data;
+      busqueda = info.data.users;
     });
 
   form.addEventListener("submit", async (e) => {
@@ -53,7 +53,7 @@ function ready() {
       encontrado = busqueda.find((row) => row.user_name == username.value);
       console.log(busqueda);
       if (encontrado) {
-        errorUserName.innerHTML = "<p>This username is already in use!!!</p>";
+        errorUserName.innerHTML = "<p>This username is already in use!</p>";
         errores++;
       } else {
         errorUserName.innerHTML = "";

@@ -13,8 +13,6 @@ module.exports = {
       data: {}};
     try {
       const usuarios = await User.findAll()
-
-      
       response.data.count = usuarios.length
       response.data.users = usuarios.map((usuario) => {
         return {
