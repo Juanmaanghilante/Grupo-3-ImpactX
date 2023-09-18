@@ -107,27 +107,26 @@ function ready() {
     if (event.target.classList.contains("add-to-cart")) {
       agregarItem(event.target);
       let timerInterval;
-      Swal.fire({
-        title: "Added to cart!",
-        timer: 1000,
-        icon: 'success',
-        showConfirmButton: false,
-        iconColor: '#0c2b56',        
-        didOpen: () => {
-          const b = Swal.getHtmlContainer().querySelector("b");
-          timerInterval = setInterval(() => {
-            b.textContent = Swal.getTimerLeft();
-          }, 100);
-        },
-        willClose: () => {
-          clearInterval(timerInterval);
-        },
-      }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log("I was closed by the timer");
-        }
-      });
+      // Swal.fire({
+      //   title: "Added to cart!",
+      //   timer: 1000,
+      //   icon: 'success',
+      //   showConfirmButton: false,
+      //   iconColor: '#0c2b56',        
+      //   didOpen: () => {
+      //     const b = Swal.getHtmlContainer().querySelector("b");
+      //     timerInterval = setInterval(() => {
+      //       b.textContent = Swal.getTimerLeft();
+      //     }, 100);
+      //   },
+      //   willClose: () => {
+      //     clearInterval(timerInterval);
+      //   },
+      // })
+      Toastify({
+        text: "Item added to cart",
+        duration: 1000
+        }).showToast();
     }
   });
 }

@@ -17,6 +17,7 @@ module.exports = {
       response.data.users = usuarios.map((usuario) => {
         return {
           id: usuario.id,
+          user_name: usuario.user_name,
           name: usuario.name,
           email: usuario.email,
           detail: `api/users/${usuario.id}`
