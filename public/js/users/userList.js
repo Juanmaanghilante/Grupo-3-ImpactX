@@ -12,7 +12,7 @@ const isConfirmed = await Swal.fire({
 });
 // si el usuario confirma la eliminación, lo elimina
 if (isConfirmed.isConfirmed) {
-  format.submit();
+  form.submit();
   const response = await fetch(`/user/${ID}/?_method=delete`, {
     method: "POST",
   });

@@ -17,7 +17,7 @@ function ready() {
   })
     .then((response) => response.json())
     .then((info) => {
-      busqueda = info.data;
+      busqueda = info.data.users;
     });
 
   form.addEventListener("submit", async (e) => {
