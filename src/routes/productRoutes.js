@@ -24,7 +24,7 @@ router.put("/productos/:id", fileUpload.single("image"), validationsProductEdit,
 router.delete("/productos/delete/:id", authMiddleware, productController.destroy)
 
 //CART
-router.get('/cart', authMiddleware, productController.productsCart)
-router.post('/cart/done', productController.buyProcess)
+router.get('/cart',  productController.productsCart)
+router.post('/cart/done', authMiddleware, productController.buyProcess)
 
 module.exports = router

@@ -94,7 +94,7 @@ module.exports = {
   update: async (req, res) => {
     let response = {};
     let userId = req.params.id;
-    console.log(req);
+
     try {
       const editUser = await User.update(
         {
@@ -103,14 +103,15 @@ module.exports = {
           user_name: req.body.user,
           email: req.body.email,
           profile_id: req.body.profile_id ? req.body.profile_id : "2",
-          image: req.file ? req.file.filename : "product-default.png",
+          image: req.file.filename,
         },
 
+        
         {
           where: { id: userId },
         }
-      );
-
+        );
+        
       if (req.params.id == req.session.userLogged.id) {
         if (req.cookies.userEmail) {
           res.clearCookie("userEmail");

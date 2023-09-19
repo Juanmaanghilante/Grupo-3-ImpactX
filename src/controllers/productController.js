@@ -101,6 +101,7 @@ module.exports = {
   },
   update: async (req, res) => {
     try {
+      const findProduct = await Product.findByPk(req.params.id);
       const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
         let categoriesList = await Category.findAll();
@@ -119,7 +120,7 @@ module.exports = {
           category_id: req.body.category,
           price: req.body.price,
           description: req.body.desc,
-          image: req.file ? req.file.filename : "product-default.png",
+          image: req.file ? req.file.filename : findProduct.image,
         },
         {
           where: { id: productId },

@@ -51,6 +51,7 @@ function vaciarCarrito() {
 
 
 async function finalizarCompra() {
+  
   let data = {
     total: productos.reduce(
       (acum, current) =>

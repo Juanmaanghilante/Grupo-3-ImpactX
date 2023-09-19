@@ -167,7 +167,10 @@ module.exports = {
   },
 
   userEditProcess: async (req, res) => {
+
+
     try {
+      const findUser = await User.findByPk(req.params.id);
       const resultValidation = validationResult(req);
       if (resultValidation.errors.length > 0) {
         let perfilesE = await Profile.findAll();
@@ -187,7 +190,7 @@ module.exports = {
           user_name: req.body.user,
           email: req.body.email,
           profile_id: req.body.categoria ? req.body.categoria : "2",
-          image: req.file ? req.file.filename : "product-default.png",
+          image: req.file ? req.file.filename : findUser.image,
         },
         { where: { id: req.params.id } },
         { transaction: t }
