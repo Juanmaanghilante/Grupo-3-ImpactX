@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-const deleteButton = document.getElementById("deleteButton");
-const ID = document.getElementById("userID");
-// muestra el modal de confirmación
-const isConfirmed = await Swal.fire({
-  title: "¿Estás seguro de querer eliminar el usuario?",
-  text: "No será posible recuperarlo después de esta acción",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Sí, eliminar",
-  cancelButtonText: "No, no deseo eliminarlo",
-});
-// si el usuario confirma la eliminación, lo elimina
-if (isConfirmed.isConfirmed) {
-  form.submit();
-  const response = await fetch(`/user/${ID}/?_method=delete`, {
-    method: "POST",
-=======
 const usersContainer = document.querySelector(".mainUser");
 
 if (document.readyState == "loading") {
@@ -48,6 +29,5 @@ function ready() {
         }
       });
     }
->>>>>>> e1e0bde9fbfd55e68bfe8c589f75f7cece194ede
   });
 }
