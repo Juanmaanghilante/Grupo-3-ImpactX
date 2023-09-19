@@ -6,29 +6,35 @@ module.exports = {
 
 
   list: async (req, res) => {
-    let response = {data: {}};
+    let response = {
+      meta: {
+           status: 200,
+           url: "/api/users",
+      },
+      data: {}};
     try {
       const usuarios = await User.findAll()
-
-      
       response.data.count = usuarios.length
       response.data.users = usuarios.map((usuario) => {
         return {
           id: usuario.id,
+          user_name: usuario.user_name,
           name: usuario.name,
           email: usuario.email,
-          detail: `api/users/${usuario.id}`,
-          avatar: usuario.image
+          detail: `api/users/${usuario.id}`
         }
       })
       return res.json(response)
 
     } catch (e) {
-      response.msg = "Hubo un error!"
-      return res.json(response)
+      console.error("Error fetching users:", error);
+      response.meta = {
+        status: 500
+      };
+      response.msg = "Oops! Something went wrong while fetching users."
+      return res.status(500).json(response);
     }
   },
-
   detail: async (req, res) => {
     let response = {};
     try {
@@ -37,7 +43,7 @@ module.exports = {
         status: 200,
         total: findUser.length,
         url: `/api/users/${req.params.id}`,
-        avatar: usuario.image
+        
       };
       response.data = findUser;
       response.data.image = `/public/img/${findUser.image}`

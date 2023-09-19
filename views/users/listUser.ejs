@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', {title:"Impact X | Users"})%>
+<%- include('../partials/head', {title:"Impact X | Users"})%>
 
   <body class="bgProductos">
     <%- include('../partials/header')%>
@@ -31,9 +31,7 @@
                 action="/user/delete/<%= usuario.id %>?_method=DELETE"
                 method="POST"
               >
-                <button type="sumbit" class="deleteButton" id="deleteButton">
-                  Delete
-                </button>
+                <button type="sumbit" class="botonProductos deleteProcess" id="deleteButton">Delete</button>
               </form>
             </div>
           </div>
@@ -49,8 +47,10 @@
       <% } %> <% } %>
     </main>
 
-    <%- include('../partials/footer')%>
-    <script src="/js/hamburgMenu.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <%- include('../partials/footer')%>
+        <script src="/js/hamburgMenu.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/users/userList.js"></script>
   </body>
+
 </html>

@@ -3,31 +3,14 @@ const Product = db.Product;
 const Category = db.Category;
 
 module.exports = {
-  // list: async (req, res) => {
-  //   let response = {};
-  //   try {
-  //     const productosHabilitados = await Product.findAll({ paranoid: true });
-  //     response.meta = {
-  //       status: 200,
-  //       total: productosHabilitados.length,
-  //       url: "/api/products",
-  //     };
-  //     response.data = productosHabilitados;
-  //     return res.json(response);
-  //   } catch (error) {
-  //     console.error("Error fetching products:", error);
-  //     response.meta = {
-  //       status: 500,
-  //       total: null,
-  //       url: "/api/products",
-  //     };
-  //     response.msg = "Oops! Something went wrong while fetching products.";
-  //     return res.status(500).json(response);
-  //   }
-  // },
 
   list: async (req, res) => {
-    let response = {data: {}};
+    let response = {
+      meta: {
+           status: 200,
+           url: "/api/products",
+      },
+      data: {}};
     try {
       const [ productos, categorias ] = await Promise.all([Product.findAll({include: [{association: "categorias"}]}), Category.findAll({include: [{association: "categorias"}]})])
       response.data.count = productos.length
@@ -46,11 +29,17 @@ module.exports = {
           detail: `/api/products/${producto.id}`,
         }
       })
+
+      response.data.lastProduct = productos[productos.length - 1]
       return res.json(response)
 
     } catch (e) {
-      response.msg = "Hubo un error"
-      return res.json(response)
+      console.error("Error fetching product:", error);
+      response.meta = {
+        status: 500
+      };
+      response.msg = "Oops! Something went wrong while fetching products."
+      return res.status(500).json(response);
     }
   },
 
@@ -71,8 +60,7 @@ module.exports = {
     } catch (error) {
       console.error("Error finding product:", error);
       response.meta = {
-        status: 500,
-        url: `/api/products/${req.params.id}`,
+        status: 500
       };
       response.msg = `Oops! Something went wrong while finding the product with ID: ${req.params.id}.`;
       return res.status(500).json(response);

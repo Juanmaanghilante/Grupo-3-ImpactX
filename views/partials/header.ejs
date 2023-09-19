@@ -10,6 +10,12 @@
                     <li><a href="/#nosotros">About Us</a></li>
                     <li><a href="/#contacto">Contact</a></li>  
                     <li><a href="/productos">Products</a></li>
+                    <% if (locals.userLogged && locals.userLogged.perfiles.name == 'Admin') { %>
+                        <li><a href="/user/list">Users</a></li>
+                    <% } else  { %>
+                          
+                    <% } %>
+
                 </ul>
           </nav>
     </div>

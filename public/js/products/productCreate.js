@@ -86,7 +86,7 @@ function ready() {
 
     e.target.submit();
     Swal.fire({
-      title: "Product edited!",
+      title: "Product created!",
       timer: 1000,
       icon: "success",
       showConfirmButton: false,

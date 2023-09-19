@@ -53,7 +53,7 @@ function ready() {
       encontrado = busqueda.find((row) => row.user_name == username.value);
       console.log(busqueda);
       if (encontrado) {
-        errorUserName.innerHTML = "<p>This username is already in use!!!</p>";
+        errorUserName.innerHTML = "<p>This username is already in use</p>";
         errores++;
       } else {
         errorUserName.innerHTML = "";
@@ -82,7 +82,7 @@ function ready() {
       emailError.innerHTML = "<p>You must enter an email </p>";
       errores++;
     } else {
-      re = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/;
+      re = /^[a-zA-Z0-9.!#$%&'+/=?^`{|}~]+@[a-zA-Z0-9]+(?:.[a-zA-Z0-9]+)$/;
       if (!email.value.match(re)) {
         emailError.innerHTML = "<p> Invalid Email  </p>";
         errores++;
@@ -134,9 +134,7 @@ function ready() {
         imageHeight: 100,
         imageAlt: "Custom image",
         showConfirmButton: false,
-      }).then((result) => {
-        window.location = "/";
-      });
+      })
     }
   });
 }

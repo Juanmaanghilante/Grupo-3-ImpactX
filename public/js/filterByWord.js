@@ -107,28 +107,46 @@ function ready() {
     if (event.target.classList.contains("add-to-cart")) {
       agregarItem(event.target);
       let timerInterval;
+      // Swal.fire({
+      //   title: "Added to cart!",
+      //   timer: 1000,
+      //   icon: 'success',
+      //   showConfirmButton: false,
+      //   iconColor: '#0c2b56',        
+      //   didOpen: () => {
+      //     const b = Swal.getHtmlContainer().querySelector("b");
+      //     timerInterval = setInterval(() => {
+      //       b.textContent = Swal.getTimerLeft();
+      //     }, 100);
+      //   },
+      //   willClose: () => {
+      //     clearInterval(timerInterval);
+      //   },
+      // })
+      Toastify({
+        text: "Item added to cart",
+        duration: 1000
+        }).showToast();
+    }
+
+    if (event.target.classList.contains("eliminar")) {
+      event.preventDefault();
+      const closestForm = event.target.closest("form");
       Swal.fire({
-        title: "Added to cart!",
-        timer: 1000,
-        icon: 'success',
-        showConfirmButton: false,
-        iconColor: '#0c2b56',        
-        didOpen: () => {
-          const b = Swal.getHtmlContainer().querySelector("b");
-          timerInterval = setInterval(() => {
-            b.textContent = Swal.getTimerLeft();
-          }, 100);
-        },
-        willClose: () => {
-          clearInterval(timerInterval);
-        },
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
       }).then((result) => {
-        /* Read more about handling dismissals below */
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log("I was closed by the timer");
+        if (result.isConfirmed) {
+          closestForm.submit();
+          Swal.fire("Deleted!", "Your file has been deleted.", "success");
         }
       });
-    }
+    }    
   });
 }
 
