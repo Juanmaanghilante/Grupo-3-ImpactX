@@ -26,7 +26,7 @@ module.exports = {
         is_answered: false,
       });
       const mensajeCreado =
-        "Request created correctly, soon we will be answering you via email";
+        "Request created correctly, soon we will be answering you";
       return res.render("index", { creado: mensajeCreado });
     } catch (error) {
       console.log(error);
