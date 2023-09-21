@@ -10,7 +10,7 @@ function openPopup(tarjeta) {
   const productoImagen = tarjeta.querySelector(".productoImagen");
   const productoNombre = tarjeta.querySelector("h2");
   const productoPrecio = tarjeta.querySelector("p:nth-child(2)");
-  const productoDescripcion = tarjeta.querySelector("p:nth-child(3)");
+  const productoDescripcion = tarjeta.querySelector(".description");
 
   const popupImagen = popupProducto.querySelector(".popupImagen img");
   const popupNombre = popupProducto.querySelector("h2");
@@ -77,6 +77,7 @@ searchInput.addEventListener("input", function () {
 // Evento para abrir el popup al hacer clic en la tarjeta
 document.querySelectorAll(".productoImagen").forEach((imagen) => {
   imagen.addEventListener("click", (event) => {
+
     const tarjeta = event.target.closest(".tarjetaProductos");
     if (tarjeta) {
       // Solo abrir el popup si el ancho es mayor a 768 píxeles

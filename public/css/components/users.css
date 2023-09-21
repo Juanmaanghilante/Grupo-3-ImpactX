@@ -12,7 +12,7 @@
 @media (min-width: 768px) {
   .tarjetaProductos {
     overflow: hidden;
-    max-width: 250px;
+    /* max-width: 250px; */
   }
 
 

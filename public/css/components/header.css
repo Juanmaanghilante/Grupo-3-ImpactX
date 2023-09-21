@@ -32,14 +32,17 @@ header nav a {
   color: white;
   text-decoration: none;
   background-color: #185ABC;
-  border: 1px solid #185ABC;
-  padding: .6rem 1rem;
-  border-radius: 4px;
+  padding: 0.6rem 1.6rem;
+  border-radius: 30px;
   transition: .15s;
   margin-right: 1.5rem;
+  /* margin-left: 1.5rem; */
+  
+  border: 1px solid #185abc00;
 }
 
 .botonLogin:hover {
+  border: 1px solid #185ABC;
   color: #185ABC;
   background-color: white;
 }
@@ -150,7 +153,7 @@ header nav a {
 }
 
 .svgCart {
-  margin-right: 10px;
+  margin-right: 0.5rem;
   margin-top: 5px;
 }
 
@@ -170,6 +173,7 @@ header nav a {
 .cartContainer {
   text-decoration: none;
   position: relative;
+  margin-right: 1.2rem;
 }
 
 

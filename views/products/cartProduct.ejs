@@ -33,6 +33,14 @@
         </div>-->        
       </article>
 
+      <p style="height: 0px; width: 0px" class="controlIsLog">
+        <% if (locals.userLogged) { %> 
+          <%="loggeado"%>
+        <% } else { %>
+          <%="noLog"%>
+        <% } %>
+      </p>
+
 
       <%- include('../partials/footer')%>
         <script src="/js/products/cart.js"></script>
