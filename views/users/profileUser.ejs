@@ -41,6 +41,18 @@
         </div>
 
         <section class="wrapperProfileBottom">
+          <a href="/user/edit/<%=user.id %>">
+            <section>
+              <div>
+                <p>/</p>
+                <div>
+                  <h4>Edit Profile</h4>
+                  <h5>Modify your profile settings</h5>
+                </div>
+              </div>
+              <p>></p>
+            </section>
+          </a>  
 
           <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
             <a href="/user/list">
@@ -55,6 +67,19 @@
                 <p>></p>
               </section>
             </a>
+            <a href="/productos">
+              <section>
+                <div>
+                  <p>/</p>
+                  <div>
+                    <h4>Edit Products</h4>
+                    <h5>Modify and control product settings</h5>
+                  </div>
+                </div>
+                <p>></p>
+              </section>
+            </a>
+ 
           <% } %>
 
           
@@ -75,18 +100,7 @@
               </section>
             </a>
 
-          <a href="/user/edit/<%=user.id %>">
-            <section>
-              <div>
-                <p>/</p>
-                <div>
-                  <h4>Edit Profile</h4>
-                  <h5>Modify your profile settings</h5>
-                </div>
-              </div>
-              <p>></p>
-            </section>
-          </a>        
+      
 
 
           <a href="/user/edit/<%=user.id %>/changepassword">
