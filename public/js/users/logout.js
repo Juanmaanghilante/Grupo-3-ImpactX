@@ -1,4 +1,4 @@
-var btnLogOut = document.querySelector(".logoutButton");
+var btnLogOut = document.querySelector("#logoutButton");
 
 // Agrega un evento de clic al botón
 btnLogOut.addEventListener("click", function (e) {
