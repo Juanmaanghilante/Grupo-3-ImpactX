@@ -40,9 +40,6 @@ select[disabled] {
   margin-bottom: 2rem;
 }
 
-.content > div {
-  flex-grow: 1;
-}
 
 .image-sign-up {
   display: none;

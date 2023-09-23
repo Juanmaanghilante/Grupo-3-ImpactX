@@ -8,10 +8,10 @@
     <%- include('../partials/header')%>
       <div class="search-container">
 
-        <input type="text" id="search-input" placeholder="Search">
+        <input type="text" id="search-input" placeholder="Search a product">
         <% if (locals.isLogged) { %>
           <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
-            <a href="/productos/create">
+            <a class="addNewProductBtn" href="/productos/create">
               <p>Add new product +</p>
             </a>
           <% } %>

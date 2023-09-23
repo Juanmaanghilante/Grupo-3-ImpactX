@@ -4,7 +4,15 @@
 
   <body class="bgProductos">
     <%- include('../partials/header')%>
-
+    <div class="search-container">
+      <% if (locals.isLogged) { %>
+        <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
+          <a class="addNewProductBtn" href="/user/signup">
+            <p>Add new user +</p>
+          </a>
+        <% } %>
+      <% } %>
+    </div>
     <main class="mainUser">
       <% usuarios.forEach(usuario=> { %> <% if (locals.userLogged.id!=usuario.id
       ) { %>
