@@ -4,19 +4,6 @@ if (document.readyState == "loading") {
   ready();
 }
 
-/*let productos = [{
-        id: 1,
-        imagen: 'imagen',
-        nombre: 'nombre',
-        precio: 250000
-    },
-    {
-        id: 2,
-        imagen: 'imagen',
-        nombre: 'nombre',
-        precio: 250000
-    }]*/
-
 let productos = JSON.parse(localStorage.getItem("carrito")) || [];
 
 function ready() {
