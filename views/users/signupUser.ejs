@@ -6,10 +6,14 @@
     <%- include('../partials/header')%>
       <div class="content">
         <div>
-          <img src="/img/logo-impactx.png" alt="" class="image-sign-up" />
+          <img data-aos="fade-in"
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="1000" src="/img/logo-impactx.png" alt="" class="image-sign-up" />
         </div>
         <!-- capturo form -->
-        <form action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data" id="signupForm">
+        <form data-aos="fade-in"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="1000" action="/user/signup" method="POST" class="create-form" enctype="multipart/form-data" id="signupForm">
           <h2 class="titulo-registrar-usuario">Create user</h2>
           <div class="control-formulario">
 
@@ -114,6 +118,10 @@
         <script src="/js/hamburgMenu.js"></script>
         <script src="/js/users/signupUserValidation.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
   </body>
 
 </html>

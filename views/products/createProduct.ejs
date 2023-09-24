@@ -7,7 +7,9 @@
 
     <%- include('../partials/header')%>
 
-      <form action="/productos/create" method="post" class="create-form" enctype="multipart/form-data">
+      <form data-aos="fade-in"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="1000" action="/productos/create" method="post" class="create-form" enctype="multipart/form-data">
         <div class="content">
           <div>
             <h2 class="titulo-registrar-usuario">Add new product</h2>
@@ -75,6 +77,10 @@
       <script src="/js/products/productCreate.js"></script>
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>

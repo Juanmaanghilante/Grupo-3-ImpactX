@@ -7,7 +7,9 @@
 
     <%- include('../partials/header')%>
 
-      <form action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>?_method=PUT" method="POST"
+      <form  data-aos="fade-in"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="1000"action="/user/<%= locals.usuario ? usuario.id : locals.id ? id : null %>?_method=PUT" method="POST"
         class="create-form edit-form" enctype="multipart/form-data">
         <div class="content">
           <div>
@@ -109,6 +111,10 @@
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="/js/users/userUpdate.js"></script> 
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>

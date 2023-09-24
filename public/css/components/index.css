@@ -70,10 +70,9 @@
     background-color: #185ABC;
     border: 1px solid #185ABC;
     padding: 1rem 1.3rem;
-    border-radius: 5px;
+    border-radius: 30px;
+    margin-top: 2rem;
     transition: .15s;
-
-    margin: 0 auto;
   }
 
   .botonContactanos:hover {
@@ -89,9 +88,13 @@
   /* SECCION QUIENES CONFIARON EN NOSOTROS */
 
   .seccionConfiaron {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    /* background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%); */
+    justify-content: center;
+    width: 98%;
+    margin-bottom: 3rem;
   }
 
   .imagenes {
@@ -110,17 +113,71 @@
 
 
   .seccionConfiaron h2 {
-    margin-bottom: 2rem;
+    font-size: 2rem;
     font-weight: 300;
-    color: #185ABC;
+    color: #0d3167;
   }
 
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 350px;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  /* .logos:hover .logos-slide {
+    animation-play-state: paused;
+  } */
+  
+  .logos-slide {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 35px;
+    margin: 0 20px;
+  }
 
-
-
-
-
-
+  .spaceXlogo {
+    height: 25px !important;
+  }
 
 
 
@@ -128,6 +185,7 @@
 
   .seccionQuienesSomos {
     overflow: hidden;
+    margin-top: 3rem;
     width: 100%;
     /* background-color: #0c2c59; */
 
@@ -183,29 +241,34 @@
   /* SECCION CONTACTANOS */
 
   .formulario-contacto {
-    text-align: center;
-    padding: 20px;
-    background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%);
-    border-radius: 5px;
+    height: 100vh;
+    /* background-image: linear-gradient(to bottom, #F9FBFD 0%, #fff 100%); */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column-reverse;
 
   }
 
-  .formulario-contacto h2 {
-    margin-bottom: 20px;
-    font-weight: 300;
-    color: #185ABC;
+  .formulario-wrapper h2 {
+    margin-bottom: 50px;
+    color: #0d3167;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
 
   }
 
   .formulario-contacto form {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .formulario-contacto label {
     display: block;
     margin-bottom: 5px;
-    color: #185ABC;
+    color: #0d3167;
     margin-top: 10px;
   }
 
@@ -214,26 +277,14 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #185abc91;
+    border-radius: 12px;
     max-width: 300px;
     margin: 0 auto;
     margin-bottom: 20px;
   }
 
 
-
-  .formulario-contacto {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-
-  /* Estilos para el formulario de contacto */
-  .formulario-contacto {
-    padding: 30px;
-  }
 
 
 
@@ -267,23 +318,27 @@
     }
     /* Estilos para el formulario de contacto */
     .formulario-contacto {
-      padding: 40px;
-    }
-
-    /* Estilos para las imágenes en el contenedor "imagenes" */
-    .seccionConfiaron .imagenes {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      align-items: center;
+      justify-content: center;
     }
 
-    .seccionConfiaron .imagenes img {
-      width: 100px;
-      margin-right: 1rem;
+    .formulario-wrapper {
+      width:none;
     }
 
-    .arrowDown {
-      display: none;
+    .seccionConfiaron {
+      width: fit-content;
+      margin-left: 5rem;
+    }
+
+    .logos {
+      width: 500px;
+    }
+
+    .seccionQuienesSomos {
+      margin-top: 0px;
     }
 
   }

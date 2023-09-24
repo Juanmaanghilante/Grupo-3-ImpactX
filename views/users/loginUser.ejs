@@ -7,7 +7,9 @@
 
     <%- include('../partials/header')%>
 
-      <form action="/user/login" method="POST" class="create-form" id="login_form">
+      <form data-aos="fade-in"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="800" action="/user/login" method="POST" class="create-form" id="login_form">
         <div class="content">
           <div>
 
@@ -43,6 +45,10 @@
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script src="/js/users/loginUserValidation.js"></script>  
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>

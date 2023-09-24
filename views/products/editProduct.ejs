@@ -7,7 +7,9 @@
 
     <%- include('../partials/header')%>
 
-      <form enctype="multipart/form-data"
+      <form data-aos="fade-in"
+      data-aos-easing="ease-in-sine"
+      data-aos-duration="1000" enctype="multipart/form-data"
         action="/productos/<%= locals.productoEditar ? productoEditar.id : locals.id ? id : null  %>/?_method=put"
         method="POST" class="create-form">
         <div class="content">
@@ -81,6 +83,10 @@
       <script src="/js/products/productEdit.js"></script>
       <script src="/js/hamburgMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>

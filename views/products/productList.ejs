@@ -22,7 +22,9 @@
 
 
         <% products.forEach(producto=> { %>
-          <article class="tarjetaProductos">
+          <article class="tarjetaProductos" data-aos="fade-in"         
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="1000">
             <input type="text" id="inputProdId" hidden value=<%= producto.id %>>
 
             <div class="containerImagenProductos">
@@ -87,6 +89,10 @@
       <script src="/js/products/cart.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>

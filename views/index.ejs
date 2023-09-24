@@ -35,11 +35,11 @@
 
         class="containerTextoQuienesSomos" id="nosotros">
           <h2 
-          data-aos="fade-left"         
+          data-aos="fade-in"         
           data-aos-easing="ease-in-sine"
           data-aos-duration="1000" >About us</h2>
           <p 
-          data-aos="fade-left"         
+          data-aos="fade-in"         
           data-aos-easing="ease-in-sine"
           data-aos-duration="1000" >
             We are a company dedicated to software development, web pages and marketing. our products and
@@ -51,76 +51,94 @@
               src="/img/quienesSomos.jpg" 
               alt="Imagen de quienes somos" />
       </section>
-      <section class="seccionConfiaron">
-        <h2>They trust us.</h2>
-        <div class="imagenes">
-          <img src="/img/jesusLogo.png" alt="Jesus Cars Logo" />
-          <img src="/img/spacexLogo.png" alt="Space X Logo" />
-          <img src="/img/neuralinkLogo.png" alt="Neuralink Logo" />
-          <img src="/img/globantLogo.png" alt="Globant Logo" />
-          <img src="/img/accentureLogo.png" alt="sdsd" />
-        </div>
-      </section>
 
-          <section class="formulario-contacto" id="contacto">
 
-            <h2>Contact us</h2>
-            <form action="/contactenos/create" method="POST">
-              <% const readonly = locals.userLogged ? 'readonly' : ''; %>
-              <div class="erroresForm">
-                <% if(locals.errors && errors.nombre){ %>
-                  <%= errors.nombre.msg %>
-                <% } %>
+          <section  
+          data-aos="fade-in"         
+          data-aos-easing="ease-in-sine"
+          data-aos-duration="1000" class="formulario-contacto" id="contacto">
+            <div class="formulario-wrapper">
+              <h2>Contact us</h2>
+              <form action="/contactenos/create" method="POST">
+                <% const readonly = locals.userLogged ? 'readonly' : ''; %>
+                <div class="erroresForm">
+                  <% if(locals.errors && errors.nombre){ %>
+                    <%= errors.nombre.msg %>
+                  <% } %>
+                </div>
+                <input type="text" placeholder="Name" maxlength="30" name="nombre"
+                  class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
+                  value="<%= locals.oldData ? oldData.nombre : locals.userLogged ? locals.userLogged.name : '' %>" <%= readonly %>/>
+      
+                <div class="erroresForm">
+                  <% if(locals.errors && errors.apellido){ %>
+                    <%= errors.apellido.msg %>
+                  <% } %>
+                </div>
+                <input type="text" placeholder="Lastname" name="apellido"
+                  class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
+                  value="<%= locals.oldData ? oldData.apellido : locals.userLogged ? locals.userLogged.lastname : '' %>" <%= readonly %>/>
+      
+                <div class="erroresForm">
+                  <% if(locals.errors && errors.correo){ %>
+                    <%= errors.correo.msg %>
+                  <% } %>
+                </div>
+                <input type="text" placeholder="Email" name="correo" maxlength="100"
+                  class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>"
+                  value="<%= locals.oldData ? oldData.correo : locals.userLogged ? locals.userLogged.email : '' %>" <%= readonly %> />
+      
+                <label></label>
+                <div class="erroresForm">
+                  <% if(locals.errors && errors.mensaje){ %>
+                    <%= errors.mensaje.msg %>
+                  <% } %>
+                </div>
+                <textarea placeholder="Leave us a message!" class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5"
+                  name="mensaje"><%= locals.oldData ? oldData.mensaje : null %></textarea>
+      
+                <button type="submit" class="botonContactanos">Send message</button>
+  
+                <div class="erroresForm">
+                  <% if(locals.creado){ %>
+                    <%= locals.creado %>
+                  <% } %>
+                </div>          
+              </form>
+            </div>
+            <div class="seccionConfiaron">
+              <h2>They trust us.</h2>
+              <div class="logos">
+                  <div class="logos-slide">
+                    <img src="/img/jesusLogo.png" alt="Jesus Cars Logo" />
+                    <img class="spaceXlogo" src="/img/spacexLogo.png" alt="Space X Logo" />
+                    <img src="/img/neuralinkLogo.png" alt="Neuralink Logo" />
+                    <img src="/img/globantLogo.png" alt="Globant Logo" />
+                    <img src="/img/accentureLogo.png" alt="sdsd" />
+                  </div>
+                  <div class="logos-slide">
+                    <img src="/img/jesusLogo.png" alt="Jesus Cars Logo" />
+                    <img class="spaceXlogo" src="/img/spacexLogo.png" alt="Space X Logo" />
+                    <img src="/img/neuralinkLogo.png" alt="Neuralink Logo" />
+                    <img src="/img/globantLogo.png" alt="Globant Logo" />
+                    <img src="/img/accentureLogo.png" alt="sdsd" />
+                  </div>
               </div>
-              <input type="text" placeholder="Name" maxlength="30" name="nombre"
-                class="control <%= locals.errors && errors.nombre ? 'invalidError' : null %>"
-                value="<%= locals.oldData ? oldData.nombre : locals.userLogged ? locals.userLogged.name : '' %>" <%= readonly %>/>
-    
-              <div class="erroresForm">
-                <% if(locals.errors && errors.apellido){ %>
-                  <%= errors.apellido.msg %>
-                <% } %>
-              </div>
-              <input type="text" placeholder="Lastname" name="apellido"
-                class="control <%= locals.errors && errors.apellido ? 'invalidError' : null %>"
-                value="<%= locals.oldData ? oldData.apellido : locals.userLogged ? locals.userLogged.lastname : '' %>" <%= readonly %>/>
-    
-              <div class="erroresForm">
-                <% if(locals.errors && errors.correo){ %>
-                  <%= errors.correo.msg %>
-                <% } %>
-              </div>
-              <input type="text" placeholder="Email" name="correo" maxlength="100"
-                class="control <%= locals.errors && errors.correo ? 'invalidError' : null %>"
-                value="<%= locals.oldData ? oldData.correo : locals.userLogged ? locals.userLogged.email : '' %>" <%= readonly %> />
-    
-              <label>¡Leave us your message!</label>
-              <div class="erroresForm">
-                <% if(locals.errors && errors.mensaje){ %>
-                  <%= errors.mensaje.msg %>
-                <% } %>
-              </div>
-              <textarea class="control <%= locals.errors && errors.mensaje ? 'invalidError' : null %>" rows="5"
-                name="mensaje"><%= locals.oldData ? oldData.mensaje : null %></textarea>
-    
-              <button type="submit" class="botonContactanos">Send message</button>
+            </div>
 
-              <div class="erroresForm">
-                <% if(locals.creado){ %>
-                  <%= locals.creado %>
-                <% } %>
-              </div>          
-            </form>
+
           </section>
 
           
       <%- include('./partials/footer')%>
       <script src="/js/hamburgMenu.js"></script>
+      <script src="/js/slider.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
         AOS.init();
       </script>
+
 
   </body>
 

@@ -7,9 +7,11 @@
 
     <%- include('../partials/header')%>
 
-      <main class="mainProfile">
-        <div class="wrapperProfile">
-          <section class="wrapperProfileTop">
+      <main class="mainProfile"  >
+        <div class="wrapperProfile" data-aos="fade-in"
+        data-aos-easing="ease-in-sine"
+        data-aos-duration="800">
+          <section class="wrapperProfileTop" >
             <div>
               <img src="../img/<%= user.image %>" alt="">
               <div>
@@ -42,7 +44,9 @@
 
         <section class="wrapperProfileBottom">
           <a href="/user/edit/<%=user.id %>">
-            <section>
+            <section data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="200">
               <div>
                 <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -65,7 +69,9 @@
 
           <% if (locals.userLogged && user.perfiles.name == 'Admin') { %>
             <a href="/user/list">
-              <section>
+              <section data-aos="fade-in"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="300">
                 <div>
                   <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -86,7 +92,9 @@
               </section>
             </a>
             <a href="/productos">
-              <section>
+              <section data-aos="fade-in"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="400">
                 <div>
                   <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -106,7 +114,9 @@
               </section>
             </a>
             <a href="http://localhost:3000/" target="_blank">
-              <section>
+              <section data-aos="fade-in"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="500">
                 <div>
                   <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -129,7 +139,9 @@
 
           
             <a href="/request/edit">
-              <section>
+              <section data-aos="fade-in"
+              data-aos-easing="ease-in-sine"
+              data-aos-duration="600">
                 <div>
                   <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -156,7 +168,9 @@
 
 
           <a href="/user/edit/<%=user.id %>/changepassword">
-            <section>
+            <section data-aos="fade-in"
+            data-aos-easing="ease-in-sine"
+            data-aos-duration="700">
               <div>
                 <p><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 0C1.80398 0 0 1.80406 0 3.99984C0 6.19594 1.80398 8 4 8C6.12112 8 7.8604 6.3126 7.97769 4.21913C7.99235 4.14695 7.99982 4.0735 8 3.99984C7.99988 3.92587 7.99241 3.85209 7.97769 3.77959C7.85976 1.68612 6.12048 0 4 0ZM4 2.23116C4.99028 2.23116 5.76892 3.00952 5.76892 3.99984C5.76892 4.99016 4.99028 5.76884 4 5.76884C3.00972 5.76884 2.23108 4.99016 2.23108 3.99984C2.23108 3.00952 3.00972 2.23116 4 2.23116Z" fill="#185ABC" fill-opacity="0.53"/>
@@ -185,6 +199,10 @@
       <script src="/js/users/userProfile.js"></script>
       <script src="/js/users/profilePicSubMenu.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
   </body>
 
 </html>
