@@ -30,7 +30,13 @@ function actualizarContadorCarrito() {
 }
 
 function profilePicSubMenu() {
-  const img = document.querySelector('.perfilPic')
+  let img = ""
+  if (document.querySelector('.perfilPic')){
+    img = document.querySelector('.perfilPic')
+  }else{
+    img = document.querySelector('.laPrueba')
+  }
+  
   const subMenu = document.querySelector(".profilePicMenu") 
 
   img.addEventListener('click', () => {

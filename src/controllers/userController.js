@@ -208,7 +208,7 @@ module.exports = {
       console.log(error);
       await t.rollback();
     }
-    return res.redirect("/user/list");
+    return res.redirect("/user/profile");
   },
   userList: async (req, res) => {
     try {
