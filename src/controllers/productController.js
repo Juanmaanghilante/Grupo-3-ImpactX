@@ -93,7 +93,7 @@ module.exports = {
           categories: categoriesList,
         });
       } else {
-        return res.render("The product to edit does not exist");
+        return res.render("error404.ejs");
       }
     } catch (error) {
       console.log(error);
