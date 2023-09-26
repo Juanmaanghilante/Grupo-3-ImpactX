@@ -100,7 +100,12 @@ header nav a {
 
 .logoHeader {
   margin-top: 0.9rem;
-  width: 110px;
+  width: 120px;
+  opacity: 0.9;
+  transition: .15s;
+}
+.logoHeader:hover {
+  opacity:0.6;
 }
 
 
