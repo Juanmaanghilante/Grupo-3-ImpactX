@@ -159,7 +159,7 @@ module.exports = {
           perfiles: perfiles,
         });
       } else {
-        return res.render("The user to edit does not exist");
+        return res.render("error404.ejs");
       }
     } catch (error) {
       console.log(error);
