@@ -35,9 +35,13 @@
             <nav class="contenedorNavDos">
                 <ul>
                         <% if (!locals.isLogged) { %>
+                            <img display="none" class="laPrueba">
                             <li><a class="botonLogin" href="/user/login">Log In</a></li>
+                            <img display="none">
+                            
                         <% } else  { %>
-                                <img class="perfilPic" src="/img/<%= locals.userLogged.image %>" alt="">
+                                <img class="perfilPic" src="/img/<%= locals.userLogged.image %>" alt=" ">
+                                
                         <% } %>
                 </ul>   
             </nav>

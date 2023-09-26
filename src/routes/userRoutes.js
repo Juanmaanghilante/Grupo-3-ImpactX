@@ -12,6 +12,8 @@ const guestMiddlware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 const valChangePassword1 = require("../middlewares/passwordValidation1");
 const valChangePassword2 = require("../middlewares/passwordValidation2");
+const adminMiddleware = require("../middlewares/adminMiddleware")
+const selfUserMiddleware = require("../middlewares/selfUserMiddleware")
 
 
 router.get('/user/login', guestMiddlware,user.userLogin)
@@ -19,7 +21,7 @@ router.post('/user/userList', user.userLoginList)
 router.post('/user/login', validationsLogin, user.loginProcess)
 
 
-router.get('/user/list', authMiddleware, user.userList)
+router.get('/user/list', authMiddleware,adminMiddleware, user.userList)
 router.get('/user/profile', authMiddleware, user.userProfile)
 router.get('/user/logout', user.logout)
 
@@ -28,7 +30,7 @@ router.get('/user/signup', user.userSignup);
 router.post('/user/signup', fileUpload.single("profilePic"), validations, user.userCreateProcess);
 
 // EDIT
-router.get('/user/edit/:id', authMiddleware, user.userEdit)
+router.get('/user/edit/:id', authMiddleware,selfUserMiddleware, user.userEdit)
 router.put("/user/:id", fileUpload.single("profilePic"), validationsEditUser, user.userEditProcess)
 
 // DELETE
