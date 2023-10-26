@@ -1,7 +1,9 @@
 const db = require("../database/models");
 const { Op } = require("sequelize");
 const { validationResult } = require("express-validator");
+const { enviarEmail } = require("../helpers/email");
 const ContactMessage = db.ContactMessage;
+
 //const nodemailer = require("nodemailer");
 //require("dotenv").config();
 
@@ -27,6 +29,20 @@ module.exports = {
       });
       const mensajeCreado =
         "Request created correctly, soon we will be answering you";
+
+      //codigo de nodemailer
+
+      const mailOptions = {
+        from: "themebrandarg@gmail.com",
+        to: req.body.correo,
+        subject: "Asunto del mail",
+        text: `Texto del mail`,
+      };
+
+      enviarEmail(mailOptions);
+
+      //fin codigo nodemailer
+
       return res.render("index", { creado: mensajeCreado });
     } catch (error) {
       console.log(error);
