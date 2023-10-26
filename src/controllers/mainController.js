@@ -13,7 +13,8 @@ module.exports = {
   },
   createContactenos: async (req, res) => {
     const resultValidation = validationResult(req);
-
+    console.log(req.body)
+    console.log(req.session.userLogged)
     if (resultValidation.errors.length > 0) {
       return res.render("index", {
         errors: resultValidation.mapped(),
@@ -22,10 +23,11 @@ module.exports = {
     }
     try {
       const nuevaSolicitud = await ContactMessage.create({
-        user_id: req.session.userLogged.id,
+        user_id: req.session.userLogged!==undefined?req.session.userLogged.id:7,
         message: req.body.mensaje,
         response: null,
         is_answered: false,
+        contact_email:req.body.correo
       });
       const mensajeCreado =
         "Request created correctly, soon we will be answering you";
