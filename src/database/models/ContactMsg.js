@@ -15,6 +15,9 @@ module.exports = (sequelize, dataTypes) => {
       response: {
         type: dataTypes.STRING(255)
       },
+      contact_email: {
+        type: dataTypes.STRING(255)
+      },
       is_answered: {
         type: dataTypes.BOOLEAN
       },    

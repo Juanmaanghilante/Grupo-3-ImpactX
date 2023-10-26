@@ -22,7 +22,7 @@ const validationsSendRequest = [
 
 
 router.get('/', mainControllerDb.index);
-router.post('/contactenos/create', authMiddleware, validations, mainControllerDb.createContactenos);
+router.post('/contactenos/create',  validations, mainControllerDb.createContactenos);
 
 //Gestionar requests
 router.get('/request/edit', authMiddleware, mainControllerDb.request);
