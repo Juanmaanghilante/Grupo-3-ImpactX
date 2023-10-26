@@ -12,7 +12,6 @@ window.addEventListener("load", () => {
   close.addEventListener("click", () => {
     nav.classList.remove("open-nav");
   });
-
 });
 
 function actualizarContadorCarrito() {
@@ -21,35 +20,38 @@ function actualizarContadorCarrito() {
 
   if (productosCarrito.length == 0) {
     contadorElement.innerText = "";
-    document.querySelector(".cartContainer div").classList.remove("cartIconNumber")
+    document
+      .querySelector(".cartContainer div")
+      .classList.remove("cartIconNumber");
   } else {
-    document.querySelector(".cartContainer div").classList.add("cartIconNumber")
+    document
+      .querySelector(".cartContainer div")
+      .classList.add("cartIconNumber");
     contadorElement.innerText = productosCarrito.length;
   }
-
 }
 
 function profilePicSubMenu() {
-  let img = ""
-  if (document.querySelector('.perfilPic')){
-    img = document.querySelector('.perfilPic')
-  }else{
-    img = document.querySelector('.laPrueba')
+  let img = "";
+  if (document.querySelector(".perfilPic")) {
+    img = document.querySelector(".perfilPic");
+  } else {
+    img = document.querySelector(".laPrueba");
   }
-  
-  const subMenu = document.querySelector(".profilePicMenu") 
 
-  img.addEventListener('click', () => {
-    if (subMenu.style.display === 'none' || subMenu.style.display === '') {
-      subMenu.style.display = 'block'; 
+  const subMenu = document.querySelector(".profilePicMenu");
+
+  img.addEventListener("click", () => {
+    if (subMenu.style.display === "none" || subMenu.style.display === "") {
+      subMenu.style.display = "block";
     } else {
-      subMenu.style.display = 'none';
+      subMenu.style.display = "none";
     }
-  })
+  });
 
-  document.addEventListener('click', (e) => {
+  document.addEventListener("click", (e) => {
     if (e.target !== img && e.target !== subMenu) {
-      subMenu.style.display = 'none'; 
+      subMenu.style.display = "none";
     }
   });
 }

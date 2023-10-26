@@ -8,6 +8,7 @@
     <%- include('../partials/header')%>
       <div class="search-container">
 
+
         <input type="text" id="search-input" placeholder="Search a product">
         <% if (locals.isLogged) { %>
           <% if (locals.userLogged.perfiles.name=="Admin" ) { %>
@@ -35,9 +36,12 @@
               <div class="textoContainerInfoProducto">
                 <div>
                   <h2 class="name"><%= producto.name %></h2>
-                  <p class="price"><%= producto.price %> $</p>
+                  <p class="price">usd$<%= producto.price %> </p>
                 </div>
-                <p class="description"><%= producto.description %></p>
+                <p class="liOrder"><%= producto.description %></p>
+               
+                
+             
               </div>           
 
 
@@ -67,7 +71,7 @@
                   <%= producto.name %>
                 </h2>
                 <p>
-                  <%= producto.price %> $
+                 $ <%= producto.price %> 
                 </p>
                 <p class="popupProductDescription">
                   <%= producto.description %>

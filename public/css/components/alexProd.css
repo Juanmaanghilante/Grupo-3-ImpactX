@@ -64,6 +64,7 @@ body .card .description {
     float: left;
     width: 55%;
     border-left: 2px solid #efefef;
+
 }
 
 body .card .description h1 {
@@ -90,7 +91,7 @@ body .card .description h4 {
     font-size: 12px;
 }
 
-body .card .description p {
+body .card .description li {
     font-size: 12px;
     line-height: 20px;
     color: #727272;

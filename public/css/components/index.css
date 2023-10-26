@@ -223,11 +223,12 @@
   }
 
   .containerTextoQuienesSomos p {
-    color: #185ABC;
-    font-weight: 300;
+    color: #123e7f;
+    font-weight: 500;
     line-height: 1.7;
     text-align: center;
     max-width: 400px;
+    font-size: 2em;
   }
 
 
